@@ -1,0 +1,145 @@
+{
+  "run_id": "ecodatacenter-sites-20261106T023000Z",
+  "validated_at": "2026-11-06T02:30:00Z",
+  "base_main_sha": "4ef42de474f69b5cdca5824410c06db0d851b434",
+  "branch": "research/data-center-database-20261105T2217Z",
+  "catalogue": {
+    "canonical_records": 3315,
+    "projects": 541,
+    "project_scopes": {
+      "facility": 414,
+      "phase": 3,
+      "campus": 124
+    },
+    "equipment": 2774,
+    "countries": 38,
+    "operators": 17,
+    "oems": 74,
+    "added_projects": 3,
+    "enriched_projects": 0,
+    "added_equipment": 0,
+    "enriched_equipment": 0
+  },
+  "inventory": {
+    "source_ids": [
+      "ecodatacenter-directory-current-20261106",
+      "ecodatacenter-falun-current-20261106",
+      "ecodatacenter-borlange-current-20261106",
+      "ecodatacenter-smedjebacken-announcement-20260825"
+    ],
+    "site_identities_processed": 3,
+    "facility_records_added": 1,
+    "campus_aggregates_added": 2,
+    "records_added": 3,
+    "records_enriched": 0,
+    "quarantined_field_groups": 2,
+    "originals_available": 4,
+    "original_bytes": 171146,
+    "rights_review_bytes": 82353,
+    "reuse_prohibited": false,
+    "new_reuse_holds": [
+      "DATA4 public campus pages"
+    ]
+  },
+  "local_checks": [
+    {
+      "command": "JSON parsing for sources, backlog, source review, coverage, validation and decision ledger",
+      "result": "passed"
+    },
+    {
+      "command": "uv run python -m energy_data_retrieval.data_center_catalogue validate",
+      "result": "passed; 3315 records"
+    },
+    {
+      "command": "build_data_center_ecodatacenter_batch.py replay twice from checksum-verified official captures plus cmp against canonical JSONL",
+      "result": "passed; three records reproduced byte-identically"
+    },
+    {
+      "command": "focused Data Center pytest suites",
+      "result": "passed; 113 tests"
+    },
+    {
+      "command": "node --test tests/js/test_database_viewer.mjs",
+      "result": "passed; 33 tests"
+    },
+    {
+      "command": "uv run ruff format --check . and ruff check .",
+      "result": "passed; 1170 files formatted"
+    },
+    {
+      "command": "repository-wide uv run ty check",
+      "result": "passed"
+    },
+    {
+      "command": "uv run python scripts/check_repository.py",
+      "result": "passed; 5811 candidate files"
+    },
+    {
+      "command": "uv run python scripts/check_citations.py",
+      "result": "passed"
+    },
+    {
+      "command": "MPLBACKEND=Agg uv run python examples/database/plot_data_center_catalogue.py",
+      "result": "passed; project scopes 414 facility, 124 campus and 3 phase"
+    },
+    {
+      "command": "two independent data_center_catalogue build commands plus cmp",
+      "result": "passed; byte-identical typed Zstandard snapshots"
+    },
+    {
+      "command": "uv run --group dev pytest -q",
+      "result": "3109 passed, 5 optional skips, 1 unrelated transient PV subprocess failure caused by psutil.NoSuchProcess"
+    },
+    {
+      "command": "git diff --check",
+      "result": "passed"
+    }
+  ],
+  "snapshot_sha256": {
+    "input": "395ffdf876e89c81d3bbf092e26a70395dbd0baaec4725031362ed7f526e937b",
+    "projects": "d435a3e625648ed79b0062db06a74b7c8fb0fefd4119152ebf2ebb42c1bc1257",
+    "equipment": "661c1ade3e6095557e8924691747d85b1078ac13ec18dbbb36a66667940ee05b",
+    "manifest": "d2662b8c715c6282585ac6ca4c93cfb046ae07a145fe3bdc1490f6d08d74afd7",
+    "schema": "560593771c719e11e0a4cb0577f6a17330e22cfca840e627734b58be4fa9566b",
+    "sources": "e31cfa04554ac5b8e8661c49e6581e17888168d6b74cc59b43921c8fe4d2256b",
+    "ecodatacenter_canonical_jsonl": "826ec38f2a8e8c3f539cd6856744b95ee67b15b4546cd8313c85a0a719d54829"
+  },
+  "capacity_summaries": {
+    "it_capacity_mw": {
+      "excluded": 124,
+      "unknown": 375,
+      "by_basis": {
+        "ultimate_planned": {"reported_mw": 697.1, "records": 12},
+        "design_maximum": {"reported_mw": 562.775, "records": 25},
+        "operational": {"reported_mw": 146.0, "records": 5}
+      }
+    },
+    "grid_capacity_mw": {
+      "excluded": 124,
+      "unknown": 414,
+      "by_basis": {
+        "design_maximum": {"reported_mw": 207.5, "records": 3}
+      }
+    },
+    "facility_capacity_mw": {
+      "excluded": 124,
+      "unknown": 416,
+      "by_basis": {
+        "ultimate_planned": {"reported_mw": 75.0, "records": 1}
+      }
+    }
+  },
+  "remote_ci": {
+    "validated_data_head": "5ccff71adf1ba6cc38b7adc88a80e5f4ba15a0a7",
+    "python_quality_and_tests": {
+      "run_id": 42152544474,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    "documentation": {
+      "run_id": 42152544462,
+      "status": "completed",
+      "conclusion": "success"
+    }
+  }
+}

@@ -20,9 +20,26 @@ from energy_data_retrieval.data_center_catalogue.catalogue import validate_recor
 from energy_data_retrieval.data_center_catalogue.portfolios import (
     parse_africa_data_centres_footprint,
     parse_airtrunk_locations,
+    parse_bulk_infrastructure_directory,
+    parse_bulk_infrastructure_n01_expansion,
+    parse_bulk_infrastructure_operations,
+    parse_bulk_infrastructure_site_page,
     parse_carrier_19dv_table,
     parse_cummins_generator_table,
+    parse_digital_realty_nbo2_release,
+    parse_ecodatacenter_portfolio,
+    parse_ecodatacenter_site_page,
+    parse_ecodatacenter_smedjebacken_announcement,
+    parse_glesys_finland_integration,
+    parse_glesys_owned_portfolio,
+    parse_glesys_site_page,
+    parse_green_mountain_facility_page,
+    parse_green_mountain_portfolio,
+    parse_icolo_facility_page,
+    parse_icolo_home_portfolio,
     parse_meta_locations,
+    parse_penta_infra_directory,
+    parse_penta_infra_site_page,
     parse_portfolio,
     parse_raxio_facility_page,
     parse_schneider_galaxy_vs_model_list,
@@ -286,6 +303,240 @@ def test_raxio_parser_keeps_public_design_metrics_without_contact_details():
         parse_raxio_facility_page(content, source_url="https://example.com/")
 
 
+def test_icolo_parsers_keep_exact_current_metrics_and_capacity_boundaries():
+    facility = parse_icolo_facility_page(
+        (FIXTURES / "icolo-facility.html").read_bytes(),
+        source_url="https://www.icolo.io/location/mba2/",
+        expected_code="MBA2",
+    )["candidate"]
+    assert facility == {
+        "external_id": "MBA2",
+        "rack_capacity": 600,
+        "customer_space_m2": 1200.0,
+        "campus_area_m2": 4000.0,
+        "lifecycle_marker": "launched in 2022",
+        "locator": "MBA2 current facility page / public facility metrics",
+    }
+    home = parse_icolo_home_portfolio(
+        (FIXTURES / "icolo-home.html").read_bytes(), source_url="https://www.icolo.io/"
+    )["candidates"]
+    assert [(row["external_id"], row["it_power_mw"]) for row in home] == [
+        ("MPM1", 0.2),
+        ("MBA1", 0.9),
+        ("MBA2", 1.75),
+    ]
+    nbo2 = parse_digital_realty_nbo2_release(
+        (FIXTURES / "digital-realty-nbo2.html").read_bytes(),
+        source_url=(
+            "https://investor.digitalrealty.com/news-releases/news-release-details/"
+            "digital-realty-strengthens-nairobi-east-africa-digital-gateway"
+        ),
+    )["candidate"]
+    assert nbo2["reported_capacity_mw"] == 6.4
+    assert nbo2["opening_date"] == "2026-09-07"
+    assert "DO NOT EXTRACT" not in json.dumps([facility, home, nbo2])
+    with pytest.raises(ValueError, match="facility identity"):
+        parse_icolo_facility_page(
+            (FIXTURES / "icolo-facility.html").read_bytes(),
+            source_url="https://www.icolo.io/location/mba2/",
+            expected_code="NBO1",
+        )
+    with pytest.raises(ValueError, match="official iColo"):
+        parse_icolo_home_portfolio(b"", source_url="https://example.com/")
+
+
+def test_green_mountain_parsers_preserve_site_and_capacity_boundaries():
+    portfolio = parse_green_mountain_portfolio(
+        (FIXTURES / "green-mountain-portfolio.html").read_bytes(),
+        source_url="https://greenmountain.no/data-centers/",
+    )
+    assert [(row["external_id"], row["status"]) for row in portfolio["candidates"]] == [
+        ("SVG-Rennesøy", "operational"),
+        ("TEL-Rjukan", "operational"),
+        ("OSL-Enebakk", "operational"),
+        ("OSL-Hamar", "operational"),
+        ("LON-East", "operational"),
+        ("FRA-Mainz", "under_construction"),
+        ("SVG-Undheim", "under_construction"),
+    ]
+    facility = parse_green_mountain_facility_page(
+        (FIXTURES / "green-mountain-facility.html").read_bytes(),
+        source_url="https://greenmountain.no/data-center/osl-enebakk/",
+        expected_code="OSL-Enebakk",
+    )["candidate"]
+    assert facility["campus_area_m2"] == 72200
+    assert facility["total_it_capacity_mw"] == 75
+    assert facility["average_pue"] == 1.2
+    assert facility["grid_supplies"] == 2
+    assert facility["building_count"] == 3
+    with pytest.raises(ValueError, match="site identity"):
+        parse_green_mountain_facility_page(
+            (FIXTURES / "green-mountain-facility.html").read_bytes(),
+            source_url="https://greenmountain.no/data-center/osl-enebakk/",
+            expected_code="OSL-Hamar",
+        )
+    with pytest.raises(ValueError, match="official Green Mountain"):
+        parse_green_mountain_portfolio(b"", source_url="https://example.com/")
+
+
+def test_glesys_parsers_preserve_owned_sites_and_conflicts():
+    portfolio = parse_glesys_owned_portfolio(
+        (FIXTURES / "glesys-portfolio.html").read_bytes(),
+        source_url="https://glesys.com/locations/our-data-centers/",
+    )
+    assert [(row["external_id"], row["record_scope"]) for row in portfolio["candidates"]] == [
+        ("falkenberg", "facility"),
+        ("oulu", "campus"),
+        ("pori", "facility"),
+        ("stockholm", "facility"),
+        ("tampere", "facility"),
+    ]
+    falkenberg = parse_glesys_site_page(
+        (FIXTURES / "glesys-falkenberg.html").read_bytes(),
+        source_url="https://glesys.com/locations/our-data-centers/falkenberg/",
+        expected_site="Falkenberg",
+    )["candidate"]
+    assert falkenberg["reported_power_mw"] == 10
+    assert falkenberg["conflicting_reported_power_mw"] == 5
+    assert falkenberg["pue"] == 1.1
+    assert falkenberg["conflicting_pue"] == 1.2
+    integration = parse_glesys_finland_integration(
+        (FIXTURES / "glesys-integration.html").read_bytes(),
+        source_url=(
+            "https://glesys.com/blog/glesys-strengthens-its-nordic-footprint-through-full-"
+            "integration-of-private-cloud-operations-in-finland/"
+        ),
+    )
+    assert [row["external_id"] for row in integration["candidates"]] == ["pori", "tampere"]
+    with pytest.raises(ValueError, match="site identity"):
+        parse_glesys_site_page(
+            (FIXTURES / "glesys-falkenberg.html").read_bytes(),
+            source_url="https://glesys.com/locations/our-data-centers/falkenberg/",
+            expected_site="Stockholm",
+        )
+    with pytest.raises(ValueError, match="official GleSYS"):
+        parse_glesys_owned_portfolio(b"", source_url="https://example.com/")
+
+
+def test_ecodatacenter_parsers_preserve_site_and_capacity_boundaries():
+    portfolio = parse_ecodatacenter_portfolio(
+        (FIXTURES / "ecodatacenter-portfolio.html").read_bytes(),
+        source_url="https://ecodatacenter.tech/data-center",
+    )
+    assert [(row["external_id"], row["record_scope"]) for row in portfolio["candidates"]] == [
+        ("ecodatacenter-1", "facility"),
+        ("ecodatacenter-2", "campus"),
+    ]
+    falun = parse_ecodatacenter_site_page(
+        (FIXTURES / "ecodatacenter-falun.html").read_bytes(),
+        source_url="https://ecodatacenter.tech/data-center/sweden-falun",
+        expected_site="EcoDataCenter 1",
+    )["candidate"]
+    assert falun["reported_power_mw"] == 80
+    assert falun["reported_pue"] == 1.2
+    borlange = parse_ecodatacenter_site_page(
+        (FIXTURES / "ecodatacenter-borlange.html").read_bytes(),
+        source_url="https://ecodatacenter.tech/data-center/ecodatacenter2",
+        expected_site="EcoDataCenter 2",
+    )["candidate"]
+    assert borlange["reported_power_upper_bound_mw"] == 600
+    assert borlange["reported_land_area_m2"] == 200000
+    smedjebacken = parse_ecodatacenter_smedjebacken_announcement(
+        (FIXTURES / "ecodatacenter-smedjebacken.html").read_bytes(),
+        source_url=(
+            "https://ecodatacenter.tech/press/"
+            "ecodatacenter-to-establish-third-datacenter-campus-in-sweden-3462219"
+        ),
+    )["candidate"]
+    assert smedjebacken["reported_unclassified_power_mw"] == 150
+    assert smedjebacken["publication_date"] == "2026-08-25"
+    with pytest.raises(ValueError, match="site identity"):
+        parse_ecodatacenter_site_page(
+            (FIXTURES / "ecodatacenter-falun.html").read_bytes(),
+            source_url="https://ecodatacenter.tech/data-center/sweden-falun",
+            expected_site="EcoDataCenter 2",
+        )
+    with pytest.raises(ValueError, match="official EcoDataCenter"):
+        parse_ecodatacenter_portfolio(b"", source_url="https://example.com/")
+
+
+def test_penta_infra_parsers_preserve_exact_facility_boundaries():
+    directory = parse_penta_infra_directory(
+        (FIXTURES / "penta-infra-directory.html").read_bytes(),
+        source_url="https://penta-infra.com/data-centers/",
+    )
+    assert len(directory["candidates"]) == 12
+    assert directory["candidates"][0] == {
+        "external_id": "amsterdam",
+        "name": "Amsterdam",
+        "status": "under_construction",
+        "status_label": "RFS H1 2026",
+        "it_capacity_mw": 8.0,
+        "technical_area_m2": 4000.0,
+        "url": "https://penta-infra.com/data-centers/amsterdam/",
+        "locator": "current directory card / Amsterdam",
+    }
+    assert directory["candidates"][-1]["name"] == "Copenhagen"
+    duesseldorf = parse_penta_infra_site_page(
+        (FIXTURES / "penta-infra-duesseldorf.html").read_bytes(),
+        source_url="https://penta-infra.com/data-centers/duesseldorf/",
+        expected_code="DUS01",
+    )["candidate"]
+    assert duesseldorf["it_capacity_mw"] == 2.4
+    assert duesseldorf["technical_area_m2"] == 1942.0
+    assert duesseldorf["future_scope_markers"] == [
+        "up to 9,5 planned MW of IT capacity",
+        "Düsseldorf data center campus",
+    ]
+    with pytest.raises(ValueError, match="facility code"):
+        parse_penta_infra_site_page(
+            (FIXTURES / "penta-infra-duesseldorf.html").read_bytes(),
+            source_url="https://penta-infra.com/data-centers/duesseldorf/",
+            expected_code="DUS01-DUS02",
+        )
+
+
+def test_bulk_infrastructure_parsers_preserve_capacity_boundaries():
+    directory = parse_bulk_infrastructure_directory(
+        (FIXTURES / "bulk-infrastructure-directory.html").read_bytes(),
+        source_url="https://bulkinfrastructure.com/data-centers/",
+    )
+    assert [row["external_id"] for row in directory["candidates"]] == [
+        "OS-IX",
+        "N01",
+        "DK01",
+    ]
+    n01 = parse_bulk_infrastructure_site_page(
+        (FIXTURES / "bulk-infrastructure-n01.html").read_bytes(),
+        source_url="https://bulkinfrastructure.com/data-centers/n01/",
+        expected_code="N01",
+    )["candidate"]
+    assert n01["campus_land_hectares"] == 300
+    assert n01["reported_unclassified_power_mw"] == 1000
+    assert n01["substation_apparent_power_mva"] == 125
+    expansion = parse_bulk_infrastructure_n01_expansion(
+        (FIXTURES / "bulk-infrastructure-n01-expansion.html").read_bytes(),
+        source_url=(
+            "https://bulkinfrastructure.com/newsroom/"
+            "bulk-data-centers-expands-n01-campus-with-42mw-facility/"
+        ),
+    )["candidate"]
+    assert expansion["publication_date"] == "2024-01-23"
+    assert expansion["existing_facility_mw"] == 12
+    assert expansion["expansion_it_space_mw"] == 42
+    operations = parse_bulk_infrastructure_operations(
+        (FIXTURES / "bulk-infrastructure-operations.html").read_bytes(),
+        source_url="https://bulkinfrastructure.com/data-centers/services/",
+    )
+    assert operations["operating_codes"] == ["N01", "DK01", "OS-IX"]
+    with pytest.raises(ValueError, match="site code"):
+        parse_bulk_infrastructure_site_page(
+            b"",
+            source_url="https://bulkinfrastructure.com/data-centers/n01/",
+            expected_code="N01-42MW",
+        )
+
+
 def test_vertiv_powerups_parser_keeps_only_explicit_topology_ratings():
     content = (FIXTURES / "vertiv-powerups6000.txt").read_bytes()
     data = parse_vertiv_powerups6000_table(
@@ -359,6 +610,29 @@ def test_cummins_parser_deduplicates_dcc_and_quarantines_rating_conflicts():
         )
     with pytest.raises(ValueError, match="official Cummins"):
         parse_cummins_generator_table(content, source_url="https://example.com/test")
+
+
+def test_cummins_qsk50_fixture_preserves_complete_dcc_inventory():
+    content = (FIXTURES / "cummins-qsk50.html").read_bytes()
+    data = parse_cummins_generator_table(
+        content,
+        source_url="https://www.cummins.com/en-na/generators/products/qsk50",
+        expected_count=8,
+    )
+    rows = data["candidates"]
+    assert [(row["model"], row["frequency_hz"]) for row in rows] == [
+        ("DQGAN", 50.0),
+        ("DQGAH", 50.0),
+        ("DQGAK", 50.0),
+        ("DQGAE", 60.0),
+        ("DQGAG", 50.0),
+        ("DQGAJ", 50.0),
+        ("DQGAM", 50.0),
+        ("DQGAF", 60.0),
+    ]
+    assert all(not row["conflicts"] for row in rows)
+    assert rows[0]["ratings"]["data_center_continuous"] == [{"kw": 1020.0, "kva": 1275.0}]
+    assert rows[-1]["data_center_continuous_kva"] == 1706.0
 
 
 def test_schneider_model_list_parser_keeps_only_explicit_commercial_references():

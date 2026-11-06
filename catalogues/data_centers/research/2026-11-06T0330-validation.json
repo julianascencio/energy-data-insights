@@ -1,0 +1,163 @@
+{
+  "run_id": "penta-infra-directory-20261106T033000Z",
+  "validated_at": "2026-11-06T03:30:00Z",
+  "base_main_sha": "4ef42de474f69b5cdca5824410c06db0d851b434",
+  "branch": "research/data-center-database-20261105T2217Z",
+  "catalogue": {
+    "canonical_records": 3327,
+    "projects": 553,
+    "project_scopes": {
+      "facility": 426,
+      "phase": 3,
+      "campus": 124
+    },
+    "equipment": 2774,
+    "countries": 39,
+    "operators": 18,
+    "oems": 74,
+    "added_projects": 12,
+    "enriched_projects": 0,
+    "added_equipment": 0,
+    "enriched_equipment": 0
+  },
+  "inventory": {
+    "source_ids": [
+      "penta-infra-directory-current-20261106",
+      "penta-infra-amsterdam-current-20261106",
+      "penta-infra-geleen-current-20261106",
+      "penta-infra-leeuwarden-01-current-20261106",
+      "penta-infra-leeuwarden-02-current-20261106",
+      "penta-infra-berlin-current-20261106",
+      "penta-infra-cologne-current-20261106",
+      "penta-infra-duesseldorf-current-20261106",
+      "penta-infra-hamburg-current-20261106",
+      "penta-infra-leipzig-current-20261106",
+      "penta-infra-brussels-current-20261106",
+      "penta-infra-paris-current-20261106",
+      "penta-infra-copenhagen-current-20261106"
+    ],
+    "site_identities_processed": 12,
+    "facility_records_added": 12,
+    "campus_aggregates_added": 0,
+    "records_added": 12,
+    "records_enriched": 0,
+    "quarantined_field_groups": 0,
+    "originals_available": 13,
+    "original_bytes": 2807973,
+    "rights_review_bytes": 181123,
+    "reuse_prohibited": false,
+    "new_reuse_holds": []
+  },
+  "local_checks": [
+    {
+      "command": "JSON parsing for sources, backlog, source review, coverage, validation and decision ledger",
+      "result": "passed"
+    },
+    {
+      "command": "uv run python -m energy_data_retrieval.data_center_catalogue validate",
+      "result": "passed; 3327 records"
+    },
+    {
+      "command": "build_data_center_penta_infra_batch.py replay twice from checksum-verified official captures plus cmp against canonical JSONL",
+      "result": "passed; 12 records reproduced byte-identically"
+    },
+    {
+      "command": "focused Data Center pytest suites",
+      "result": "passed; 114 tests"
+    },
+    {
+      "command": "node --test tests/js/test_database_viewer.mjs",
+      "result": "passed; 33 tests"
+    },
+    {
+      "command": "uv run ruff format --check . and ruff check .",
+      "result": "passed; 1171 files formatted"
+    },
+    {
+      "command": "repository-wide uv run ty check",
+      "result": "passed"
+    },
+    {
+      "command": "uv run python scripts/check_repository.py and scripts/check_citations.py",
+      "result": "passed"
+    },
+    {
+      "command": "MPLBACKEND=Agg uv run python examples/database/plot_data_center_catalogue.py",
+      "result": "passed; project scopes 426 facility, 124 campus and 3 phase"
+    },
+    {
+      "command": "two independent data_center_catalogue build commands plus cmp",
+      "result": "passed; byte-identical typed Zstandard snapshots"
+    },
+    {
+      "command": "uv run --group dev pytest -q",
+      "result": "3110 passed, 5 optional skips, 1 unrelated environment-specific PV subprocess failure caused by psutil.NoSuchProcess; isolated retry reproduced the same process-environment failure"
+    },
+    {
+      "command": "git diff --check",
+      "result": "passed"
+    }
+  ],
+  "snapshot_sha256": {
+    "input": "b00027af7437f62efb2c63cbb517d58a27b9935b6353e8058fc33654e1375c32",
+    "projects": "ac2cee9512ff9342a751b9c762c6fee16e0cbedf8ef7bead68c109d924e08f32",
+    "equipment": "661c1ade3e6095557e8924691747d85b1078ac13ec18dbbb36a66667940ee05b",
+    "manifest": "efd275374ac8f5e5048162aa0b6dbac16d0d32332153f5bc03511d9af4046fed",
+    "schema": "560593771c719e11e0a4cb0577f6a17330e22cfca840e627734b58be4fa9566b",
+    "sources": "a66d0fe1a3ef9739cc14a08d128be7f523261f98249e89e29adf6224e1d5a127",
+    "penta_infra_canonical_jsonl": "02e247ccc44288666c163b39537a49996ac9ee4f7a93ed2d881a266287a7a793"
+  },
+  "capacity_summaries": {
+    "it_capacity_mw": {
+      "excluded": 124,
+      "unknown": 375,
+      "by_basis": {
+        "ultimate_planned": {
+          "reported_mw": 712.1,
+          "records": 13
+        },
+        "design_maximum": {
+          "reported_mw": 593.675,
+          "records": 36
+        },
+        "operational": {
+          "reported_mw": 146.0,
+          "records": 5
+        }
+      }
+    },
+    "grid_capacity_mw": {
+      "excluded": 124,
+      "unknown": 426,
+      "by_basis": {
+        "design_maximum": {
+          "reported_mw": 207.5,
+          "records": 3
+        }
+      }
+    },
+    "facility_capacity_mw": {
+      "excluded": 124,
+      "unknown": 428,
+      "by_basis": {
+        "ultimate_planned": {
+          "reported_mw": 75.0,
+          "records": 1
+        }
+      }
+    }
+  },
+  "remote_ci": {
+    "validated_data_head": "c432d23c96fba3984138f00a85096bdea548460a",
+    "python_quality_and_tests": {
+      "run_id": 42158122941,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    "documentation": {
+      "run_id": 42158122985,
+      "status": "completed",
+      "conclusion": "success"
+    }
+  }
+}

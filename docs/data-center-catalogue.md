@@ -2,8 +2,8 @@
 
 ## Data Center Projects
 
-The current continuation branch has 520 project records across 36 countries:
-403 facilities, three phases and 114 explicitly scoped campus aggregates, from 13 operators.
+The current continuation branch has 556 project records across 39 countries:
+427 facilities, three phases and 126 explicitly scoped campus aggregates, from 19 operators.
 Coverage spans North America, Latin America, Europe, Africa, the Middle East and
 Asia-Pacific. This is a research catalogue, not an operating-capacity census.
 
@@ -34,6 +34,22 @@ reference year and scope; performance observations must preserve precision,
 workload and test conditions. `renewable_supply_json` explicitly separates
 physical generation, contractual procurement and environmental claims.
 Certificates require issuer, scope and validity evidence, not marketing badges.
+
+The Green Mountain continuation processes the operator's complete current
+seven-site portfolio. SVG-Rennesøy is an independent facility; TEL-Rjukan,
+OSL-Enebakk, OSL-Hamar, LON-East, FRA-Mainz and SVG-Undheim are explicit
+multi-building campus aggregates and remain excluded from capacity totals under
+every filter. Only source-labelled IT capacity is normalized. Site power,
+secured power, future power and cooling capacity remain separate observations,
+and unnamed building counts do not create inferred child records.
+
+The EcoDataCenter continuation adds the operator's three evidenced Swedish
+establishments: Falun as an independent facility, and Borlänge and Smedjebacken
+as campus aggregates excluded from every capacity total. Reported 80 MW, up-to
+600 MW and immediate 150 MW statements retain their printed boundaries because
+the sources do not identify them as IT, grid or total facility demand. Land,
+renewable-electricity, PUE, permit and construction statements remain dated
+observations; the announced Smedjebacken campus is not treated as permitted.
 
 The current U.S. facility continuation includes all 133 entries whose most recent
 label year is 2026, all 50 from 2025, all 23 from 2024, all 31 from 2023, and
@@ -100,6 +116,11 @@ The Cummins continuation adds 22 exact KTA50/QSK60 model-frequency rows with
 explicit Data Center Continuous kW and kVA. Prime, standby and general continuous
 ratings remain observations. Four conflicting non-DCC fields on three duplicated
 QSK60 live-page rows are quarantined without discarding their matching DCC data.
+The QSK50 continuation adds all eight exact model/frequency identities with a
+populated Data Center Continuous rating. Five identities also retain the printed
+prime, standby and general-continuous ratings and engine model; the three DCC-only
+identities remain otherwise null. Repeated live-page rows are reconciled only
+where their DCC values agree, and no family range is assigned to a model.
 The mtu continuation adds all 20 Series 4000 model/frequency rows with an explicit
 Data Center Continuous (3F) rating: 12 at 50 Hz and eight at 60 Hz. The brochures
 report apparent kVA for these exact rows, so active kW remains null. Standby,

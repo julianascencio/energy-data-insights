@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-05T21:23:00Z",
+  "updated_at": "2026-11-06T03:30:00Z",
   "completed_offsets": {
     "nextdc_dc_rows": 28,
     "odata_map_entries": 12,
@@ -29,6 +29,7 @@
     "carrier_aquaedge_19dv_configurations": 28,
     "raxio_current_facilities": 7,
     "cummins_data_center_continuous_configurations": 22,
+    "cummins_qsk50_dcc_configurations": 8,
     "atnorth_named_sites": 13,
     "atnorth_contractor_disclosures": 3,
     "atnorth_explicit_first_phase": 1,
@@ -127,7 +128,13 @@
     "volvo_penta_current_powergen_configurations": 22,
     "volvo_penta_stage_iiia_powergen_configurations": 22,
     "doe_ccms_crac_displayed_rows": 50,
-    "doe_ccms_ups_displayed_rows": 50
+    "doe_ccms_ups_displayed_rows": 50,
+    "icolo_current_east_africa_facilities": 5,
+    "digital_realty_nairobi_campus_aggregates": 1,
+    "green_mountain_current_sites": 7,
+    "glesys_current_owned_locations": 5,
+    "ecodatacenter_current_sites": 3,
+    "penta_infra_displayed_current_directory": 12
   },
   "next_batches": [
     {
@@ -200,12 +207,15 @@
         "https://www.africadatacentres.com/"
       ],
       "offset": 15,
-      "scope": "Africa Data Centres current five-facility footprint and Accra announcement complete at offsets 5+1; Uruguay/Paraguay batch complete at offset 2; Raxio complete displayed seven-country portfolio at offset 7. Continue issuer registries, JHB1 phase reconciliation, Raxio dated lifecycle/permit evidence, Accra post-announcement evidence, and additional underrepresented-country primary inventories",
+      "scope": "Africa Data Centres current five-facility footprint and Accra announcement complete at offsets 5+1; Uruguay/Paraguay batch complete at offset 2; Raxio complete displayed seven-country portfolio at offset 7; Penta Infra's exact displayed 12-facility directory is complete at offset 12; Bulk Infrastructure's complete current three-site portfolio is complete at offset 3. Continue issuer registries, JHB1 phase reconciliation, Raxio dated lifecycle/permit evidence, Accra post-announcement evidence, Penta's portfolio reconciliation, exact Bulk N01 child-facility identities, and additional underrepresented-country primary inventories",
       "questions": [
         "Issuer-verify facility certifications rather than normalizing operator badges",
         "Resolve JHB1 14.5 MW facility-sheet versus 20 MW expansion boundary and date",
         "Find Accra permit/construction status and open regulator/environmental source inventories",
-        "Find dated issuer award records for Antel Massera and Tigo Paraguay before normalizing certifications"
+        "Find dated issuer award records for Antel Massera and Tigo Paraguay before normalizing certifications",
+        "Reconcile Penta Infra's 12 displayed directory facilities against its January 2026 claim of a 15-facility portfolio; Munich and two other identities remain outside the accepted directory batch",
+        "Obtain actual AMS01 ready-for-service evidence and exact lifecycle/rating evidence for DUS02, LEJ02, CPH02 and CPH03 before adding child facilities",
+        "Resolve exact identities and current lifecycle for N01's unnamed 12 MW and 42 MW facilities from official current or permit evidence; do not turn campus power potential into IT capacity"
       ]
     },
     {
@@ -233,15 +243,17 @@
       "urls": [
         "https://www.eaton.com/gb/en-gb/skuPage.9PX1000IRT2U.html",
         "https://www.vertiv.com/",
-        "https://www.cummins.com/en-na/generators/products/qsk60"
+        "https://www.cummins.com/en-na/generators/products/qsk60",
+        "https://www.cummins.com/en-na/generators/products/qsk50?application=Data%20Centers&v=3021"
       ],
-      "offset": 1954,
-      "scope": "Prior Vertiv/Eaton/Schneider/STULZ tables, 19 PowerUPS 6000 rows, four Trinergy CE ratings, all 28 Carrier AquaEdge 19DV rows, 22 Cummins KTA50/QSK60 Data Center Continuous configurations, 20 mtu Series 4000 Data Center Continuous model/frequency rows, all 34 Baudouin April 2025 Data Centre Power rows, eight current Motivair CDU models, six nVent RackChiller SKUs, 16 Eaton dry-transformer rows, five Siemens NXAIR variants, all 23 Toshiba, 26 Mitsubishi Electric and 20 Fuji Electric reviewed UPS configurations, all 25 Kehua current model columns, all 23 KSTAR GP800/MASTER/EPI model columns, all 38 KSTAR EPOWER/EPOWER-L/EPOWER-H model columns, all 25 current Borri rating columns, all 34 Makelsan LEVELUPS/LEVELUPS T3/LEVELUPS T4 columns, all 27 SIEL Safepower S/Evo HF/Modular SPM columns, all 22 Tescom DS POWER/SH/MTI250 rows, all 923 rows across the 19 EPA ENERGY STAR UPS partner partitions, all 476 rows across all 17 partner partitions in the EPA ENERGY STAR Enterprise Servers dataset, the first 50 displayed current DOE CCMS low-voltage dry-type, medium-voltage dry-type and liquid-immersed transformer basic-model rows, the first 50 displayed DOE CCMS computer-room air-conditioner rows, the first 50 displayed DOE CCMS UPS individual-model rows, and 44 current Volvo Penta model/frequency rows across the baseline and Stage IIIA batches complete; continue the DOE registry with an exact stable pagination/filter boundary or another independent unheld generator/electrical, liquid-cooling or newly revised issuer inventory without recounting completed datasets",
+      "offset": 1962,
+      "scope": "Prior Vertiv/Eaton/Schneider/STULZ tables, 19 PowerUPS 6000 rows, four Trinergy CE ratings, all 28 Carrier AquaEdge 19DV rows, 22 Cummins KTA50/QSK60 plus eight QSK50 Data Center Continuous configurations, 20 mtu Series 4000 Data Center Continuous model/frequency rows, all 34 Baudouin April 2025 Data Centre Power rows, eight current Motivair CDU models, six nVent RackChiller SKUs, 16 Eaton dry-transformer rows, five Siemens NXAIR variants, all 23 Toshiba, 26 Mitsubishi Electric and 20 Fuji Electric reviewed UPS configurations, all 25 Kehua current model columns, all 23 KSTAR GP800/MASTER/EPI model columns, all 38 KSTAR EPOWER/EPOWER-L/EPOWER-H model columns, all 25 current Borri rating columns, all 34 Makelsan LEVELUPS/LEVELUPS T3/LEVELUPS T4 columns, all 27 SIEL Safepower S/Evo HF/Modular SPM columns, all 22 Tescom DS POWER/SH/MTI250 rows, all 923 rows across the 19 EPA ENERGY STAR UPS partner partitions, all 476 rows across all 17 partner partitions in the EPA ENERGY STAR Enterprise Servers dataset, the first 50 displayed current DOE CCMS low-voltage dry-type, medium-voltage dry-type and liquid-immersed transformer basic-model rows, the first 50 displayed DOE CCMS computer-room air-conditioner rows, the first 50 displayed DOE CCMS UPS individual-model rows, and 44 current Volvo Penta model/frequency rows across the baseline and Stage IIIA batches complete; continue the DOE registry with an exact stable pagination/filter boundary or another independent unheld generator/electrical, liquid-cooling or newly revised issuer inventory without recounting completed datasets",
       "questions": [
         "Explicit rating configurations only; no cross-product Cartesian synthesis",
         "Keep kW/kVA, nominal/usable battery energy and runtime loads distinct",
         "Reference existing BESS battery models rather than duplicating them",
-        "Resolve QSK78 duplicate/model-table inconsistencies before any continuation; QST30 table was absent from the retrieved page",
+        "QSK50 DCC offset 8 is complete; five identities have full prime/standby/continuous rows and three have exact DCC-only rows, so missing rating kinds remain absent",
+        "Resolve QSK78 duplicate/model-table inconsistencies before any continuation; do not bind the QST30 family DCC range to individual model cards",
         "mtu 50/60 Hz DCC tables are complete at 12+8; never convert their kVA ratings to active kW or select a portfolio voltage",
         "Find exact mtu model-level fuel consumption, dimensions, weight, emissions calibration and ordered voltage tables before enrichment",
         "Mitsubishi family efficiency, cabinet/weight groups and compatible peripherals remain observations until exact rating-level tables bind them; do not infer 9900D 1500/1600/2000 kVA rows from the portfolio range",
@@ -320,6 +332,56 @@
       "questions": [
         "Do not combine memory, power and form-factor options across variants",
         "Keep workload precision and sparsity conditions with any performance observation"
+      ]
+    },
+    {
+      "rank": 11,
+      "source": "Digital Realty East Africa building and power-boundary continuation",
+      "urls": [
+        "https://www.icolo.io/locations/",
+        "https://investor.digitalrealty.com/news-events/news-releases"
+      ],
+      "offset": 6,
+      "scope": "Five current named facilities and one explicit Nairobi campus aggregate are complete. MPM1, MBA1, MBA2 and NBO1 normalize only exact customer/IT capability statements; NBO2 remains observation-only because its 6.4 MW opening claim does not state an IT, facility or grid boundary. Continue only with exact building/phase evidence and a boundary-qualified NBO2 rating.",
+      "questions": [
+        "Reconcile MPM1 9,500 m2 campus versus 5,000 m2 current home-card total area without replacing either dated observation",
+        "Reconcile MBA1 0.9 MW current IT Power with the earlier 675 kW customer-power capability and MBA2 4,000 m2 current campus area with the 4,460 m2 technical sheet total",
+        "Seek exact NBO2 customer-space, rack and IT/grid/facility capacity evidence; do not infer from the unclassified 6.4 MW opening claim",
+        "Do not promote exact addresses, coordinates, security controls or access procedures from technical sheets"
+      ]
+    },
+    {
+      "rank": 12,
+      "source": "Green Mountain exact building and phase continuation",
+      "urls": [
+        "https://greenmountain.no/data-centers/",
+        "https://greenmountain.no/data-center/osl-hamar/",
+        "https://greenmountain.no/data-center/fra-mainz/"
+      ],
+      "offset": 7,
+      "scope": "The complete current seven-site portfolio is processed at offset seven: one independent facility and six explicit multi-building campus aggregates. Continue only with official exact building/phase identities, dated commissioning or construction evidence and boundary-qualified facility ratings.",
+      "questions": [
+        "Do not recount the seven current portfolio identities or create child records from unnamed building counts",
+        "Keep Green Mountain IT, site, secured-power, future-power and cooling statements in their explicit source boundaries",
+        "Obtain dated commissioning evidence for OSL-Hamar buildings and exact building identity for the 90 MW operating portion",
+        "Resolve FRA-Mainz 54 MW current versus parenthetical 80 MW in 2026 power statements without treating either as IT capacity"
+      ]
+    },
+    {
+      "rank": 13,
+      "source": "Glesys exact Oulu child sites and capacity-boundary continuation",
+      "urls": [
+        "https://glesys.com/locations/our-data-centers/",
+        "https://glesys.com/locations/our-data-centers/oulu/",
+        "https://glesys.com/campus-oulu/"
+      ],
+      "offset": 5,
+      "scope": "The complete current five-entry owned-location directory is processed: four independent facilities and one Oulu four-site campus aggregate. Continue only with exact current child-site identities, lifecycle evidence and boundary-qualified IT/grid/facility ratings.",
+      "questions": [
+        "Do not recount the five owned-location directory entries or invent Oulu child records from street-address mentions alone",
+        "Resolve Falkenberg 10 MW versus 5 MW, 1.1 versus 1.2 PUE and 44 versus 43 kW/rack conflicts before scalar normalization",
+        "Keep Oulu's three established sites separate from Campus Oulu's phased 300 MW planned capacity and 250 kW/rack claim",
+        "Treat Pori, Stockholm and Tampere power cards as unclassified observations until IT, grid or facility boundaries are stated"
       ]
     }
   ],
@@ -449,16 +511,26 @@
       "source": "Doosan Portable Power generator tables",
       "url": "https://doosanportablepower.com/dpp-la/la/en/legal/terms-of-use",
       "reason": "Current official terms restrict stored, reproduced, republished or distributed website content to narrow personal-use exceptions. Candidate generator tables were screened only; no facts or bytes were imported."
+    },
+    {
+      "source": "Wingu Africa portfolio",
+      "url": "https://www.wingu.africa/legal/terms-of-use",
+      "reason": "Official terms prohibit reproduction, republication, distribution and use of website content for other purposes without prior written permission. Candidate facility pages were screened only; no Wingu facts or bytes were imported."
+    },
+    {
+      "source": "DATA4 public campus pages",
+      "url": "https://www.data4group.com/en/terms-and-conditions/",
+      "reason": "Current official general terms state that site contents are DATA4's exclusive property and prohibit partial or total representation or reproduction without prior written permission. Candidate campus pages were screened only; no DATA4 facts or bytes were imported."
     }
   ],
   "run_policy": "Inspect current main, compatible open PRs and ledgers first; target 50 projects and 20 exact models when evidence permits; alternate major and underrepresented markets/OEMs; never pad; publish validated incremental commits and leave PR open.",
   "latest_run": {
-    "run_id": "volvo-penta-stage-iiia-powergen-20261105T192000Z",
-    "report": "2026-11-05-report.md",
-    "validation": "2026-11-05T1920-validation.json",
-    "added_projects": 0,
+    "run_id": "ecodatacenter-sites-20261106T023000Z",
+    "report": "2026-11-06-report.md",
+    "validation": "2026-11-06T0230-validation.json",
+    "added_projects": 3,
     "enriched_projects": 0,
-    "added_equipment": 22,
-    "branch": "research/data-center-database-20261105T1320Z"
+    "added_equipment": 0,
+    "branch": "research/data-center-database-20261105T2217Z"
   }
 }

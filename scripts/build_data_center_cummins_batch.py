@@ -34,14 +34,19 @@ def compact(value: object) -> str:
     return json.dumps(value, ensure_ascii=False, separators=(",", ":"), sort_keys=True)
 
 
-def observations(candidate: dict[str, Any], source_id: str) -> list[dict[str, object]]:
+def observations(
+    candidate: dict[str, Any],
+    source_id: str,
+    *,
+    as_of: str = AS_OF,
+) -> list[dict[str, object]]:
     rows: list[dict[str, object]] = []
     for kind, values in candidate["ratings"].items():
         for rating in values:
             for field, unit in (("kw", "kW"), ("kva", "kVA")):
                 rows.append(
                     {
-                        "as_of": AS_OF,
+                        "as_of": as_of,
                         "boundary": (
                             f"{candidate['model']} at {candidate['frequency_hz']:g} Hz; "
                             f"Cummins {kind.replace('_', ' ')} rating"
@@ -56,7 +61,7 @@ def observations(candidate: dict[str, Any], source_id: str) -> list[dict[str, ob
                 )
     rows.append(
         {
-            "as_of": AS_OF,
+            "as_of": as_of,
             "boundary": f"{candidate['model']} exact table configuration",
             "field": "fuel_type",
             "kind": "reported",
@@ -82,7 +87,12 @@ def observations(candidate: dict[str, Any], source_id: str) -> list[dict[str, ob
     return rows
 
 
-def conflict_payload(candidate: dict[str, Any], source_id: str) -> str | None:
+def conflict_payload(
+    candidate: dict[str, Any],
+    source_id: str,
+    *,
+    retrieved_at: str = RETRIEVED_AT,
+) -> str | None:
     conflicts = candidate["conflicts"]
     if not conflicts:
         return None
@@ -99,7 +109,7 @@ def conflict_payload(candidate: dict[str, Any], source_id: str) -> str | None:
                         f"duplicate Cummins {rating_kind} rows"
                     ),
                     "field": f"{rating_kind}_{field}",
-                    "observed_at": RETRIEVED_AT,
+                    "observed_at": retrieved_at,
                     "sources": [source_id],
                     "unit": unit,
                     "value": value,
@@ -112,7 +122,14 @@ def conflict_payload(candidate: dict[str, Any], source_id: str) -> str | None:
     return compact({"notes": unresolved}) if unresolved else None
 
 
-def build_record(candidate: dict[str, Any], source_id: str, url: str) -> dict[str, object]:
+def build_record(
+    candidate: dict[str, Any],
+    source_id: str,
+    url: str,
+    *,
+    retrieved_at: str = RETRIEVED_AT,
+    as_of: str = AS_OF,
+) -> dict[str, object]:
     fields = [
         "apparent_power_kva",
         "capacity_scope",
@@ -130,7 +147,7 @@ def build_record(candidate: dict[str, Any], source_id: str, url: str) -> dict[st
         "record_scope",
         "variant",
     ]
-    conflicts = conflict_payload(candidate, source_id)
+    conflicts = conflict_payload(candidate, source_id, retrieved_at=retrieved_at)
     if conflicts:
         fields.append("conflicts_json")
     locator = candidate["locator"]
@@ -156,18 +173,18 @@ def build_record(candidate: dict[str, Any], source_id: str, url: str) -> dict[st
             f"Exact Cummins {model} {frequency:g} Hz configuration; normalized kW and kVA "
             "are Data Center Continuous ratings, not facility backup capacity"
         ),
-        "created_at": RETRIEVED_AT,
+        "created_at": retrieved_at,
         "entity_type": "equipment",
         "equipment_category": "backup_generator",
         "evidence_json": compact(evidence),
         "field_sources_json": compact({field: [source_id] for field in fields}),
         "form_factor": "stationary diesel generator set",
         "frequency_hz": frequency,
-        "last_verified_at": RETRIEVED_AT,
+        "last_verified_at": retrieved_at,
         "manufacturer": "Cummins",
         "model": model,
         "name": f"Cummins {model} {frequency:g} Hz Data Center Continuous generator",
-        "observations_json": compact(observations(candidate, source_id)),
+        "observations_json": compact(observations(candidate, source_id, as_of=as_of)),
         "official_url": url,
         "output_power_kw": candidate["data_center_continuous_kw"],
         "power_conditions": (
@@ -181,7 +198,7 @@ def build_record(candidate: dict[str, Any], source_id: str, url: str) -> dict[st
         "record_scope": "configuration",
         "source_urls": [url],
         "sources": [source_id],
-        "updated_at": RETRIEVED_AT,
+        "updated_at": retrieved_at,
         "variant": f"{frequency:g} Hz; Data Center Continuous; diesel",
     }
     if conflicts:

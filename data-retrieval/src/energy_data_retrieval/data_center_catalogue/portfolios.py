@@ -799,6 +799,910 @@ def parse_raxio_facility_page(
     }
 
 
+def parse_icolo_facility_page(
+    content: bytes, *, source_url: str, expected_code: str | None = None
+) -> dict[str, Any]:
+    """Stage public iColo/Digital Realty facility identity and current metrics."""
+    if urlsplit(source_url).hostname not in {"icolo.io", "www.icolo.io"}:
+        raise ValueError("Expected official iColo URL")
+    parser = _VisibleText()
+    parser.feed(content.decode("utf-8-sig"))
+    text = " ".join(" ".join(parser.parts).split())
+
+    codes = list(dict.fromkeys(re.findall(r"\b(MPM1|MBA1|MBA2|NBO1)\b", text)))
+    if len(codes) != 1:
+        raise ValueError("Changed iColo facility identity shape")
+    code = codes[0]
+    if expected_code is not None and code != expected_code:
+        raise ValueError("Changed iColo facility identity")
+
+    def optional_number(pattern: str, label: str) -> float | None:
+        matches = list(dict.fromkeys(re.findall(pattern, text, re.IGNORECASE)))
+        if len(matches) > 1:
+            raise ValueError(f"Changed iColo {label} shape")
+        return float(matches[0].replace(",", "")) if matches else None
+
+    rack_count = optional_number(r"(\d+(?:,\d+)?)\s+(?:Rack Capacity|Racks?)\b", "rack")
+    customer_space = optional_number(
+        r"(\d+(?:,\d+)?)\s*(?:sqm|m\s*2)\s+(?:IT Space|Total Customer Space)",
+        "customer-space",
+    )
+    campus_area = optional_number(
+        r"(\d+(?:,\d+)?)\s*(?:sqm|m\s*2)\s+(?:Campus Size|Total Campus Area)",
+        "campus-area",
+    )
+    lifecycle = next(
+        (
+            marker
+            for marker in (
+                "operational since 2017",
+                "launched in 2022",
+                "launched in September 2019",
+            )
+            if marker.casefold() in text.casefold()
+        ),
+        None,
+    )
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidate": {
+            "external_id": code,
+            "rack_capacity": int(rack_count) if rack_count is not None else None,
+            "customer_space_m2": customer_space,
+            "campus_area_m2": campus_area,
+            "lifecycle_marker": lifecycle,
+            "locator": f"{code} current facility page / public facility metrics",
+        },
+        "review_required": True,
+    }
+
+
+def parse_icolo_home_portfolio(content: bytes, *, source_url: str) -> dict[str, Any]:
+    """Stage the three exact power/area cards currently printed on iColo's home page."""
+    if urlsplit(source_url).hostname not in {"icolo.io", "www.icolo.io"}:
+        raise ValueError("Expected official iColo URL")
+    parser = _VisibleText()
+    parser.feed(content.decode("utf-8-sig"))
+    text = " ".join(" ".join(parser.parts).split())
+    patterns = {
+        "MPM1": r"MAPUTO ONE[^0-9]+IT Power:\s*(\d+(?:\.\d+)?)\s*MW\s+Total Area:\s*(\d+(?:,\d+)?)",
+        "MBA1": (
+            r"MOMBASA ONE[^0-9]+IT Power:\s*(\d+(?:\.\d+)?)\s*MW\s+"
+            r"Total Area:\s*(\d+(?:,\d+)?)"
+        ),
+        "MBA2": r"MOMBASA TWO[^0-9]+IT Load:\s*(\d+(?:\.\d+)?)\s*MW\s+Total Area:\s*(\d+(?:,\d+)?)",
+    }
+    candidates = []
+    for code, pattern in patterns.items():
+        match = re.search(pattern, text, re.IGNORECASE)
+        if match is None:
+            raise ValueError("Changed iColo home portfolio shape")
+        candidates.append(
+            {
+                "external_id": code,
+                "it_power_mw": float(match.group(1)),
+                "total_area_m2": float(match.group(2).replace(",", "")),
+                "locator": f"home page campus card / {code}",
+            }
+        )
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidates": candidates,
+        "review_required": True,
+    }
+
+
+def parse_digital_realty_nbo2_release(content: bytes, *, source_url: str) -> dict[str, Any]:
+    """Stage the opening and unclassified capacity claim for NBO2."""
+    if urlsplit(source_url).hostname != "investor.digitalrealty.com":
+        raise ValueError("Expected official Digital Realty investor URL")
+    parser = _VisibleText()
+    parser.feed(content.decode("utf-8-sig"))
+    text = " ".join(" ".join(parser.parts).split())
+    if "opening of the 6.4-megawatt (MW) Nairobi Two Data Center (NBO2)" not in text:
+        raise ValueError("Changed NBO2 opening-release shape")
+    if re.search(r"Built alongside Nairobi One \(\s*NBO1\s*\)", text) is None:
+        raise ValueError("Missing NBO1/NBO2 campus relationship")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidate": {
+            "external_id": "NBO2",
+            "reported_capacity_mw": 6.4,
+            "opening_date": "2026-09-07",
+            "campus_external_id": "Nairobi campus",
+            "locator": "opening paragraph and Built alongside Nairobi One paragraph",
+        },
+        "review_required": True,
+    }
+
+
+def parse_green_mountain_portfolio(content: bytes, *, source_url: str) -> dict[str, Any]:
+    """Stage the complete current Green Mountain site list and lifecycle split."""
+    if urlsplit(source_url).hostname not in {"greenmountain.no", "www.greenmountain.no"}:
+        raise ValueError("Expected official Green Mountain URL")
+    parser = _VisibleText()
+    parser.feed(content.decode("utf-8-sig"))
+    text = " ".join(" ".join(parser.parts).split())
+    expected = {
+        "SVG-Rennesøy": "operational",
+        "TEL-Rjukan": "operational",
+        "OSL-Enebakk": "operational",
+        "OSL-Hamar": "operational",
+        "LON-East": "operational",
+        "FRA-Mainz": "under_construction",
+        "SVG-Undheim": "under_construction",
+    }
+    required = (
+        "currently operates four different data center sites in Norway and one the UK",
+        "data center under construction in Undheim, Norway and one in Mainz, Germany",
+    )
+    if not all(marker.casefold() in text.casefold() for marker in required):
+        raise ValueError("Changed Green Mountain portfolio lifecycle shape")
+    for code in expected:
+        if code not in text:
+            raise ValueError("Changed Green Mountain portfolio identity shape")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidates": [
+            {
+                "external_id": code,
+                "status": status,
+                "locator": f"current data-centers portfolio / {code}",
+            }
+            for code, status in expected.items()
+        ],
+        "review_required": True,
+    }
+
+
+def parse_glesys_owned_portfolio(content: bytes, *, source_url: str) -> dict[str, Any]:
+    """Stage the complete current GleSYS owned-location directory."""
+    if urlsplit(source_url).hostname not in {"glesys.com", "www.glesys.com"}:
+        raise ValueError("Expected official GleSYS URL")
+    parser = _VisibleText()
+    parser.feed(content.decode("utf-8-sig"))
+    text = " ".join(" ".join(parser.parts).split())
+    if "Most of our services run from our own data centers" not in text:
+        raise ValueError("Changed GleSYS owned-portfolio shape")
+    expected = (
+        ("falkenberg", "Falkenberg", "facility"),
+        ("oulu", "Oulu", "campus"),
+        ("pori", "Pori", "facility"),
+        ("stockholm", "Stockholm", "facility"),
+        ("tampere", "Tampere", "facility"),
+    )
+    for _, name, _ in expected:
+        if text.count(name) < 2:
+            raise ValueError("Changed GleSYS owned-portfolio identity shape")
+    if "three enterprise data centers and Campus Oulu" not in text:
+        raise ValueError("Changed GleSYS Oulu aggregate shape")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidates": [
+            {
+                "external_id": slug,
+                "name": name,
+                "record_scope": scope,
+                "status": "operational",
+                "locator": f"current owned data-center directory / {name}",
+            }
+            for slug, name, scope in expected
+        ],
+        "review_required": True,
+    }
+
+
+def parse_glesys_site_page(
+    content: bytes, *, source_url: str, expected_site: str | None = None
+) -> dict[str, Any]:
+    """Stage bounded public metrics from one current GleSYS owned-site page."""
+    if urlsplit(source_url).hostname not in {"glesys.com", "www.glesys.com"}:
+        raise ValueError("Expected official GleSYS URL")
+    parser = _VisibleText()
+    parser.feed(content.decode("utf-8-sig"))
+    text = " ".join(" ".join(parser.parts).split())
+    sites = [
+        site
+        for site in ("Falkenberg", "Oulu", "Pori", "Stockholm", "Tampere")
+        if f"{site} data center" in text
+    ]
+    if len(sites) != 1:
+        raise ValueError("Changed GleSYS site identity shape")
+    site = sites[0]
+    if expected_site is not None and site != expected_site:
+        raise ValueError("Changed GleSYS site identity")
+    metric_start = text.find(
+        "Figures that reflect our Oulu operations"
+        if site == "Oulu"
+        else f"Metrics of our {site} facility"
+    )
+    if metric_start < 0:
+        metric_start = text.find(f"Key metrics of our {site} facility")
+    metric_end = text.find("Built for performance", metric_start)
+    if site == "Oulu":
+        metric_end = text.find("Room to scale AI in Europe", metric_start)
+    if metric_start < 0 or metric_end < 0:
+        raise ValueError("Changed GleSYS metric-card shape")
+    metrics = text[metric_start:metric_end]
+
+    def one(pattern: str, label: str) -> float | None:
+        values = list(dict.fromkeys(float(value) for value in re.findall(pattern, metrics)))
+        if len(values) > 1:
+            raise ValueError(f"Changed GleSYS {label} shape")
+        return values[0] if values else None
+
+    candidate: dict[str, Any] = {
+        "external_id": site.casefold(),
+        "pue": one(r"(\d+(?:\.\d+)?)\s+PUE\b", "PUE"),
+        "renewable_electricity_pct": one(
+            r"(\d+(?:\.\d+)?)\s+%\s+Powered entirely by renewable electricity",
+            "renewable-electricity",
+        ),
+        "rack_density_kw": one(r"(\d+(?:\.\d+)?)\s+(?:max )?kW/rack", "rack-density"),
+        "reported_power_mw": one(r"(\d+(?:\.\d+)?)\s+MW\b", "power-capacity"),
+        "data_center_count": one(r"(\d+(?:\.\d+)?)\s+data centers\b", "site-count"),
+        "locator": f"current {site} page / public metric cards and narrative",
+    }
+    if site == "Falkenberg":
+        required = (
+            "With up to 43 kW per rack aircooled",
+            "achieving a PUE of 1.2",
+            "With a total capacity of 5 MW",
+        )
+        if not all(marker in text for marker in required):
+            raise ValueError("Changed GleSYS Falkenberg conflict shape")
+        candidate.update(
+            {
+                "conflicting_pue": 1.2,
+                "conflicting_rack_density_kw": 43.0,
+                "conflicting_reported_power_mw": 5.0,
+            }
+        )
+    elif site == "Oulu":
+        required = (
+            "Our three data centers at Elektroniikkatie 5, Elektroniikkatie 15 "
+            "and Yrttipellontie 1",
+            "Campus Oulu adds room to scale AI and HPC workloads with up to "
+            "300 MW of planned capacity",
+            "Four interconnected data centers",
+            "Across the three sites, up to 22 kW per rack",
+            "With PUE values as low as 1.3",
+            "has capacity available now, and is being built out in phases toward "
+            "300 MW of planned capacity",
+        )
+        if not all(marker in text for marker in required):
+            raise ValueError("Changed GleSYS Oulu campus shape")
+        candidate.update(
+            {
+                "established_site_count": 3,
+                "established_rack_density_kw": 22.0,
+                "established_pue_lower_bound": 1.3,
+                "campus_oulu_planned_capacity_mw": 300.0,
+            }
+        )
+    elif site == "Stockholm":
+        area = re.search(r"providing\s+(\d+)\s+m² of premium colocation space", text)
+        if area is None:
+            raise ValueError("Changed GleSYS Stockholm area shape")
+        candidate["reported_colocation_space_m2"] = float(area.group(1))
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidate": candidate,
+        "review_required": True,
+    }
+
+
+def parse_glesys_finland_integration(content: bytes, *, source_url: str) -> dict[str, Any]:
+    """Stage the completed ownership transition for Pori and Tampere."""
+    if urlsplit(source_url).hostname not in {"glesys.com", "www.glesys.com"}:
+        raise ValueError("Expected official GleSYS URL")
+    parser = _VisibleText()
+    parser.feed(content.decode("utf-8-sig"))
+    text = " ".join(" ".join(parser.parts).split())
+    required = (
+        "completed the integration of private cloud services and two Finnish data "
+        "centers previously operated under Verne",
+        "production environments now operating in Helsinki, Pori, and Tampere",
+        "transition was completed without any service disruption",
+    )
+    if not all(marker in text for marker in required):
+        raise ValueError("Changed GleSYS Finland integration shape")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidates": [
+            {
+                "external_id": site.casefold(),
+                "status": "operational",
+                "former_operator": "Verne",
+                "locator": "2026 completed-integration announcement",
+            }
+            for site in ("Pori", "Tampere")
+        ],
+        "review_required": True,
+    }
+
+
+def parse_ecodatacenter_portfolio(content: bytes, *, source_url: str) -> dict[str, Any]:
+    """Stage the complete current EcoDataCenter site directory."""
+    if urlsplit(source_url).hostname not in {"ecodatacenter.tech", "www.ecodatacenter.tech"}:
+        raise ValueError("Expected official EcoDataCenter URL")
+    parser = _VisibleText()
+    parser.feed(content.decode("utf-8-sig"))
+    text = " ".join(" ".join(parser.parts).split())
+    required = (
+        "Sites 2",
+        "EcoDataCenter 1 - Falun",
+        "EcoDataCenter 2 - Borlänge",
+        "Our biggest project yet, under construction",
+    )
+    if not all(marker in text for marker in required):
+        raise ValueError("Changed EcoDataCenter portfolio shape")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidates": [
+            {
+                "external_id": "ecodatacenter-1",
+                "name": "EcoDataCenter 1",
+                "locality": "Falun",
+                "record_scope": "facility",
+                "status": "operational",
+                "locator": "current data-center directory / Falun",
+            },
+            {
+                "external_id": "ecodatacenter-2",
+                "name": "EcoDataCenter 2",
+                "locality": "Borlänge",
+                "record_scope": "campus",
+                "status": "under_construction",
+                "locator": "current data-center directory / Borlänge",
+            },
+        ],
+        "review_required": True,
+    }
+
+
+def parse_ecodatacenter_site_page(
+    content: bytes, *, source_url: str, expected_site: str | None = None
+) -> dict[str, Any]:
+    """Stage bounded metrics from the Falun or Borlänge current site page."""
+    if urlsplit(source_url).hostname not in {"ecodatacenter.tech", "www.ecodatacenter.tech"}:
+        raise ValueError("Expected official EcoDataCenter URL")
+    parser = _VisibleText()
+    parser.feed(content.decode("utf-8-sig"))
+    text = " ".join(" ".join(parser.parts).split())
+    sites = [site for site in ("EcoDataCenter 1", "EcoDataCenter 2") if site in text]
+    if expected_site not in {"EcoDataCenter 1", "EcoDataCenter 2"}:
+        raise ValueError("Expected an exact EcoDataCenter site identity")
+    if expected_site not in sites:
+        raise ValueError("Changed EcoDataCenter site identity")
+    if expected_site == "EcoDataCenter 1":
+        required = (
+            "A large-scale data center site for HPC, AI in Falun, Sweden",
+            "Renewable electricity on-site 100 %",
+            "75% comes from hydropower and 25% from wind power",
+            "Total available power 80 MW",
+            "PUE 1.2 Achieved according to ISO standards",
+        )
+        if not all(marker in text for marker in required):
+            raise ValueError("Changed EcoDataCenter 1 metric shape")
+        candidate = {
+            "external_id": "ecodatacenter-1",
+            "locality": "Falun",
+            "reported_power_mw": 80.0,
+            "renewable_electricity_pct": 100.0,
+            "hydropower_pct": 75.0,
+            "wind_power_pct": 25.0,
+            "reported_pue": 1.2,
+            "locator": "current Falun page / metric cards and narrative",
+        }
+    else:
+        required = (
+            "Renewable electricity on-site 100 %",
+            "Total available power up to 600 MW",
+            "Total available land 200 k m2",
+            "Construction start 2025",
+            "All environmental permits have been approved",
+            "Construction began in September 2025",
+            "first phase of the site set to be completed by mid-2027",
+        )
+        if not all(marker in text for marker in required):
+            raise ValueError("Changed EcoDataCenter 2 metric shape")
+        candidate = {
+            "external_id": "ecodatacenter-2",
+            "locality": "Borlänge",
+            "reported_power_upper_bound_mw": 600.0,
+            "renewable_electricity_pct": 100.0,
+            "reported_land_area_m2": 200000.0,
+            "construction_start": "2025-09",
+            "first_phase_target": "2027-mid-year",
+            "environmental_permits": "approved",
+            "locator": "current Borlänge page / metric cards and construction narrative",
+        }
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidate": candidate,
+        "review_required": True,
+    }
+
+
+def parse_ecodatacenter_smedjebacken_announcement(
+    content: bytes, *, source_url: str
+) -> dict[str, Any]:
+    """Stage the announced third EcoDataCenter campus without inferring permits."""
+    if urlsplit(source_url).hostname not in {"ecodatacenter.tech", "www.ecodatacenter.tech"}:
+        raise ValueError("Expected official EcoDataCenter URL")
+    parser = _VisibleText()
+    parser.feed(content.decode("utf-8-sig"))
+    text = " ".join(" ".join(parser.parts).split())
+    required = (
+        "EcoDataCenter to Establish Third Datacenter Campus in Sweden",
+        "25.08.2026",
+        "signed an agreement with Smedjebacken Municipality for the purchase of land",
+        "purchase covers 52 hectares of land",
+        "building and environmental permits are finalized",
+        "anticipated in early 2027",
+        "green light of an immediate 150MW with credible opportunity to expand further",
+    )
+    if not all(marker in text for marker in required):
+        raise ValueError("Changed EcoDataCenter Smedjebacken announcement shape")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidate": {
+            "external_id": "ecodatacenter-3",
+            "locality": "Smedjebacken",
+            "reported_land_area_hectares": 52.0,
+            "reported_unclassified_power_mw": 150.0,
+            "construction_target": "2027-early",
+            "publication_date": "2026-08-25",
+            "status": "announced",
+            "locator": "dated land-purchase and third-campus announcement",
+        },
+        "review_required": True,
+    }
+
+
+def parse_penta_infra_directory(content: bytes, *, source_url: str) -> dict[str, Any]:
+    """Stage the exact 12 facilities displayed in Penta Infra's current directory."""
+    if urlsplit(source_url).hostname not in {"penta-infra.com", "www.penta-infra.com"}:
+        raise ValueError("Expected official Penta Infra URL")
+    parser = _VisibleText()
+    parser.feed(content.decode("utf-8-sig"))
+    text = " ".join(" ".join(parser.parts).split())
+    expected = (
+        ("amsterdam", "Amsterdam", "under_construction", "RFS H1 2026", 8.0, 4000.0),
+        ("geleen", "Geleen", "operational", "In operation", 0.75, 320.0),
+        ("leeuwarden-01", "Leeuwarden 01", "operational", "In operation", 0.45, 400.0),
+        ("leeuwarden-02", "Leeuwarden 02", "operational", "In operation", 0.4, 400.0),
+        ("berlin", "Berlin", "operational", "In operation", 2.7, 1800.0),
+        ("cologne", "Cologne", "operational", "In operation", 0.2, 500.0),
+        ("duesseldorf", "Düsseldorf", "operational", "In operation", 2.4, 1942.0),
+        ("hamburg", "Hamburg", "operational", "In operation", 4.4, 2500.0),
+        ("leipzig", "Leipzig", "operational", "In operation", 2.8, 1500.0),
+        ("brussels", "Brussels", "operational", "In operation", 7.2, 3500.0),
+        ("paris", "Paris", "operational", "In operation", 15.0, 4200.0),
+        ("copenhagen", "Copenhagen", "operational", "In operation", 1.6, 1000.0),
+    )
+    positions: list[int] = []
+    candidates: list[dict[str, Any]] = []
+    for slug, name, status, label, capacity_mw, area_m2 in expected:
+        capacity_label = (
+            f"{int(capacity_mw * 1000)} kW"
+            if capacity_mw < 1
+            else f"{str(capacity_mw).replace('.', ',').removesuffix(',0')} MW"
+        )
+        area_label = f"{int(area_m2):,}".replace(",", ".") + " m²"
+        marker = f"{name} {label}"
+        position = text.find(marker)
+        if position < 0:
+            raise ValueError(f"Changed Penta Infra directory card for {name}")
+        card_end = text.find("View more", position)
+        if card_end < 0:
+            raise ValueError(f"Changed Penta Infra directory boundary for {name}")
+        card = text[position:card_end]
+        if capacity_label not in card or area_label not in card:
+            raise ValueError(f"Changed Penta Infra directory metrics for {name}")
+        positions.append(position)
+        candidates.append(
+            {
+                "external_id": slug,
+                "name": name,
+                "status": status,
+                "status_label": label,
+                "it_capacity_mw": capacity_mw,
+                "technical_area_m2": area_m2,
+                "url": urljoin(source_url, f"{slug}/"),
+                "locator": f"current directory card / {name}",
+            }
+        )
+    if positions != sorted(positions) or len(set(positions)) != len(expected):
+        raise ValueError("Changed Penta Infra directory order or duplicate identity")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidates": candidates,
+        "review_required": True,
+    }
+
+
+def parse_penta_infra_site_page(
+    content: bytes, *, source_url: str, expected_code: str
+) -> dict[str, Any]:
+    """Stage exact IT-capacity and IT-space cards from one Penta Infra site page."""
+    if urlsplit(source_url).hostname not in {"penta-infra.com", "www.penta-infra.com"}:
+        raise ValueError("Expected official Penta Infra URL")
+    if not re.fullmatch(r"[A-Z]{3}\d{2}", expected_code):
+        raise ValueError("Expected an exact Penta Infra facility code")
+    parser = _VisibleText()
+    parser.feed(content.decode("utf-8-sig"))
+    text = " ".join(" ".join(parser.parts).split())
+    start = text.find(f"Penta Infra {expected_code}")
+    end = text.find("About the region", start)
+    if start < 0 or end < 0:
+        raise ValueError("Changed Penta Infra facility identity or metric boundary")
+    metric_section = text[start:end]
+    capacity = re.search(
+        r"(\d+(?:[.,]\d+)?)\s*(MW|kW)\s+(planned\s+)?IT capacity\b",
+        metric_section,
+    )
+    area = re.search(r"(\d+(?:[.,]\d+)?)\s*m²\s+IT space\b", metric_section)
+    if capacity is None or area is None:
+        raise ValueError("Changed Penta Infra facility metric-card shape")
+
+    def decimal(value: str) -> float:
+        return float(value.replace(".", "").replace(",", "."))
+
+    capacity_value = decimal(capacity.group(1))
+    if capacity.group(2) == "kW":
+        capacity_value /= 1000
+    candidate: dict[str, Any] = {
+        "external_id": expected_code,
+        "it_capacity_mw": capacity_value,
+        "it_capacity_is_planned": bool(capacity.group(3)),
+        "technical_area_m2": decimal(area.group(1)),
+        "locator": f"current {expected_code} page / IT capacity and IT space cards",
+    }
+    future_markers = {
+        "AMS01": ("currently being developed", "Ready for service planned in H1-2026"),
+        "CPH01": (
+            "planned IT capacity of 7,6 MW",
+            "expansion will lead into CPH02 and eventually CPH03",
+        ),
+        "DUS01": (
+            "up to 9,5 planned MW of IT capacity",
+            "Düsseldorf data center campus",
+        ),
+        "LEJ01": ("expanded into a data center campus together with Penta Infra LEJ02",),
+        "PAR01": ("IT capacity potential of 15+ MW",),
+    }
+    if expected_code in future_markers:
+        if not all(marker in text for marker in future_markers[expected_code]):
+            raise ValueError(f"Changed Penta Infra {expected_code} future-scope shape")
+        candidate["future_scope_markers"] = list(future_markers[expected_code])
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidate": candidate,
+        "review_required": True,
+    }
+
+
+def parse_bulk_infrastructure_directory(content: bytes, *, source_url: str) -> dict[str, Any]:
+    """Stage the exact three sites displayed in Bulk's current directory."""
+    if urlsplit(source_url).hostname not in {
+        "bulkinfrastructure.com",
+        "www.bulkinfrastructure.com",
+    }:
+        raise ValueError("Expected official Bulk Infrastructure URL")
+    parser = _VisibleText()
+    parser.feed(content.decode("utf-8-sig"))
+    text = " ".join(" ".join(parser.parts).split())
+    expected = (
+        ("OS-IX", "Oslo Internet Exchange - OS-IX", "14 MW colocation"),
+        ("N01", "Norway Data Center Campus - N01", "scaling to 1GW"),
+        ("DK01", "Denmark Data Center Campus - DK01", "30 MW power secured"),
+    )
+    positions: list[int] = []
+    candidates: list[dict[str, str]] = []
+    for code, name, metric in expected:
+        position = text.find(name)
+        if position < 0 or metric not in text[position : position + 500]:
+            raise ValueError(f"Changed Bulk Infrastructure directory card for {code}")
+        positions.append(position)
+        candidates.append(
+            {
+                "external_id": code,
+                "name": name,
+                "reported_power_text": metric,
+                "locator": f"current data-center directory card / {code}",
+            }
+        )
+    if positions != sorted(positions) or len(set(positions)) != 3:
+        raise ValueError("Changed Bulk Infrastructure directory order or identities")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidates": candidates,
+        "review_required": True,
+    }
+
+
+def parse_bulk_infrastructure_site_page(
+    content: bytes, *, source_url: str, expected_code: str
+) -> dict[str, Any]:
+    """Stage bounded public site facts without classifying generic power claims."""
+    if urlsplit(source_url).hostname not in {
+        "bulkinfrastructure.com",
+        "www.bulkinfrastructure.com",
+    }:
+        raise ValueError("Expected official Bulk Infrastructure URL")
+    if expected_code not in {"OS-IX", "N01", "DK01"}:
+        raise ValueError("Expected an exact Bulk Infrastructure site code")
+    parser = _VisibleText()
+    parser.feed(content.decode("utf-8-sig"))
+    text = " ".join(" ".join(parser.parts).split())
+    markers = {
+        "OS-IX": (
+            "Opened in 2014",
+            "14MW of 2N redundant predominately renewable power",
+        ),
+        "N01": (
+            "300-hectare (3km²) site",
+            "up to 1GW power",
+            "125MVA high-voltage primary substations",
+        ),
+        "DK01": (
+            "Located in Esbjerg",
+            "up to 2,300m² of white space",
+        ),
+    }
+    if not all(marker in text for marker in markers[expected_code]):
+        raise ValueError(f"Changed Bulk Infrastructure {expected_code} page shape")
+    candidate: dict[str, Any] = {
+        "external_id": expected_code,
+        "locator": f"current {expected_code} public site page",
+    }
+    if expected_code == "OS-IX":
+        candidate.update(opened_year=2014, reported_unclassified_power_mw=14.0)
+    elif expected_code == "N01":
+        candidate.update(
+            campus_land_hectares=300.0,
+            reported_unclassified_power_mw=1000.0,
+            substation_apparent_power_mva=125.0,
+        )
+    else:
+        candidate["technical_area_m2"] = 2300.0
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidate": candidate,
+        "review_required": True,
+    }
+
+
+def parse_bulk_infrastructure_n01_expansion(content: bytes, *, source_url: str) -> dict[str, Any]:
+    """Stage the dated N01 facility-expansion claims as observations only."""
+    if urlsplit(source_url).hostname not in {
+        "bulkinfrastructure.com",
+        "www.bulkinfrastructure.com",
+    }:
+        raise ValueError("Expected official Bulk Infrastructure URL")
+    parser = _VisibleText()
+    parser.feed(content.decode("utf-8-sig"))
+    text = " ".join(" ".join(parser.parts).split())
+    markers = (
+        "23rd January, 2024",
+        "new 42MW data center facility",
+        "42MW of IT space",
+        "12MW data center facility",
+        "ready for service in 2023",
+        "300MW of additional, redundant power capacity",
+        "grow beyond 1000MW",
+    )
+    if not all(marker in text for marker in markers):
+        raise ValueError("Changed Bulk Infrastructure N01 expansion release shape")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidate": {
+            "publication_date": "2024-01-23",
+            "existing_facility_mw": 12.0,
+            "existing_facility_ready_year": 2023,
+            "expansion_it_space_mw": 42.0,
+            "expansion_target_year": 2024,
+            "future_power_mw": 300.0,
+            "campus_power_potential_mw": 1000.0,
+            "locator": "dated 2024 N01 expansion announcement",
+        },
+        "review_required": True,
+    }
+
+
+def parse_bulk_infrastructure_operations(content: bytes, *, source_url: str) -> dict[str, Any]:
+    """Verify the operator's current three-campus operating statement."""
+    if urlsplit(source_url).hostname not in {
+        "bulkinfrastructure.com",
+        "www.bulkinfrastructure.com",
+    }:
+        raise ValueError("Expected official Bulk Infrastructure URL")
+    parser = _VisibleText()
+    parser.feed(content.decode("utf-8-sig"))
+    text = " ".join(" ".join(parser.parts).split())
+    marker = (
+        "Operating three campuses across the Norway and Denmark \N{EN DASH} N01 data center "
+        "campus in Kristiansand, DK01 data center campus in Esbjerg and OS-IX in Oslo"
+    )
+    if marker not in text:
+        raise ValueError("Changed Bulk Infrastructure operating-portfolio statement")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "operating_codes": ["N01", "DK01", "OS-IX"],
+        "review_required": True,
+    }
+
+
+def parse_green_mountain_facility_page(
+    content: bytes, *, source_url: str, expected_code: str | None = None
+) -> dict[str, Any]:
+    """Stage bounded public design facts from one Green Mountain site page."""
+    if urlsplit(source_url).hostname not in {"greenmountain.no", "www.greenmountain.no"}:
+        raise ValueError("Expected official Green Mountain URL")
+    parser = _VisibleText()
+    parser.feed(content.decode("utf-8-sig"))
+    text = " ".join(" ".join(parser.parts).split())
+    codes = [
+        code
+        for code in (
+            "SVG-Rennesøy",
+            "TEL-Rjukan",
+            "OSL-Enebakk",
+            "OSL-Hamar",
+            "LON-East",
+            "FRA-Mainz",
+            "SVG-Undheim",
+        )
+        if re.search(rf"Data Centers\s+{re.escape(code)}\b", text)
+    ]
+    if len(codes) != 1:
+        raise ValueError("Changed Green Mountain site identity shape")
+    code = codes[0]
+    if expected_code is not None and code != expected_code:
+        raise ValueError("Changed Green Mountain site identity")
+
+    def number(pattern: str, label: str) -> float | None:
+        values: list[float] = []
+        for match in re.findall(pattern, text, re.IGNORECASE):
+            token = match.replace(" ", "").replace(",", "")
+            if re.fullmatch(r"\d{1,3}(?:\.\d{3})+", token):
+                token = token.replace(".", "")
+            value = float(token)
+            if value not in values:
+                values.append(value)
+        if len(values) > 1:
+            raise ValueError(f"Changed Green Mountain {label} shape")
+        return values[0] if values else None
+
+    candidate: dict[str, Any] = {
+        "external_id": code,
+        "campus_area_m2": number(
+            r"(\d(?:[\d .]*\d)?)\s*m2\s+Total Campus Footprint", "campus-area"
+        ),
+        "total_it_capacity_mw": number(r"([\d.]+)\s*MW\s+Total IT Capacity", "total-IT-capacity"),
+        "potential_site_capacity_mw": number(
+            r"([\d.]+)\s*MW\s+Potential Site Capacity", "potential-site-capacity"
+        ),
+        "total_site_capacity_mw": number(
+            r"([\d.]+)\s*MW\s+Total Site Capacity", "total-site-capacity"
+        ),
+        "secured_power_capacity_mw": number(
+            r"([\d.]+)\s*MW\s+Secured Power Capacity", "secured-power"
+        ),
+        "power_capacity_mw": number(r"([\d.]+)\s*MW\s+Power Capacity", "power-capacity"),
+        "average_pue": number(r"([\d.]+)\s+Average PUE", "average-PUE"),
+        "grid_supplies": number(r"([\d.]+)\s+Grid [Ss]upplies", "grid-supplies"),
+        "building_count": number(r"([\d.]+)\s+Buildings\s+Campus Size", "buildings"),
+        "it_space_m2": number(r"Power Capacity\s+(\d(?:[\d .]*\d)?)\s*m2\s+IT Space", "IT-space"),
+        "existing_it_space_m2": number(
+            r"(\d(?:[\d .]*\d)?)\s*m2\s+of IT space in existing buildings",
+            "existing-IT-space",
+        ),
+        "planned_it_space_m2": number(
+            r"(\d(?:[\d .]*\d)?)\s+IT space in planned buildings", "planned-IT-space"
+        ),
+        "locator": f"current {code} site page / public metric cards and narrative",
+    }
+    if code == "TEL-Rjukan":
+        if "1 .08\u2013 1.20 Average PUE" not in text or "site consists of 4 buildings" not in text:
+            raise ValueError("Changed TEL-Rjukan PUE/building shape")
+        candidate.update(
+            {
+                "average_pue": None,
+                "average_pue_min": 1.08,
+                "average_pue_max": 1.20,
+                "building_count": 4,
+            }
+        )
+    elif code == "OSL-Enebakk":
+        markers = (
+            "line-of-sight capacity of 94 MW",
+            "first 4 MW building was completed in October 2020",
+            "new 14,5 MW colocation building was completed",
+            "In 2024, another 10 MW building was completed",
+        )
+        if not all(marker in text for marker in markers):
+            raise ValueError("Changed OSL-Enebakk building narrative")
+        candidate["building_count"] = 3
+    elif code == "OSL-Hamar":
+        markers = (
+            "initial three buildings are now fully complete and in operation",
+            "entire 90 MW capacity",
+            "option to expand their capacity to 150 MW",
+        )
+        if not all(marker in text for marker in markers):
+            raise ValueError("Changed OSL-Hamar phase narrative")
+        candidate.update({"building_count": 5, "operational_it_capacity_mw": 90.0})
+    elif code == "LON-East":
+        if (
+            "30 MW of new capacity secured" not in text
+            or "Maximum cooling capacity: 40 MW" not in text
+        ):
+            raise ValueError("Changed LON-East capacity narrative")
+        candidate.update(
+            {
+                "existing_space_m2": number(
+                    r"(\d(?:[\d .]*\d)?)\s*m2\s+Space in existing building",
+                    "existing-space",
+                ),
+                "construction_space_m2": number(
+                    r"(\d(?:[\d .]*\d)?)\s*m2\s+Space currently in construction",
+                    "construction-space",
+                ),
+                "new_secured_capacity_mw": 30.0,
+                "maximum_cooling_capacity_mw": 40.0,
+            }
+        )
+    elif code == "FRA-Mainz":
+        markers = (
+            "new 54 MW data center site in Mainz",
+            "three planned data center buildings",
+            "Ready for service: Q4 2026",
+            "Power Capacity: 54 MW (80 MW in 2026)",
+        )
+        if not all(marker in text for marker in markers):
+            raise ValueError("Changed FRA-Mainz construction/capacity narrative")
+        candidate.update({"future_power_capacity_mw": 80.0, "building_count": 3})
+    elif code == "SVG-Undheim":
+        markers = (
+            "two interconnected data center buildings",
+            "total IT capacity of 80 MW",
+            "Construction is currently underway",
+            "full completion scheduled for 2028",
+        )
+        if not all(marker in text for marker in markers):
+            raise ValueError("Changed SVG-Undheim construction/capacity narrative")
+        candidate.update({"total_it_capacity_mw": 80.0, "building_count": 2})
+    elif code == "SVG-Rennesøy":
+        if "Build Year: 2013" not in text or "6 mountain halls" not in text:
+            raise ValueError("Changed SVG-Rennesøy facility narrative")
+        candidate["building_count"] = 6
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidate": candidate,
+        "review_required": True,
+    }
+
+
 def parse_vertiv_powerups6000_table(
     content: bytes, *, source_url: str, expected_count: int | None = None
 ) -> dict[str, Any]:

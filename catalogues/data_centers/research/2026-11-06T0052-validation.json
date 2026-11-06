@@ -1,0 +1,165 @@
+{
+  "run_id": "glesys-owned-sites-20261106T005200Z",
+  "validated_at": "2026-11-06T00:52:00Z",
+  "base_main_sha": "4ef42de474f69b5cdca5824410c06db0d851b434",
+  "branch": "research/data-center-database-20261105T2217Z",
+  "catalogue": {
+    "canonical_records": 3312,
+    "projects": 538,
+    "project_scopes": {
+      "facility": 413,
+      "phase": 3,
+      "campus": 122
+    },
+    "equipment": 2774,
+    "countries": 38,
+    "operators": 16,
+    "oems": 74,
+    "added_projects": 5,
+    "enriched_projects": 0,
+    "added_equipment": 0,
+    "enriched_equipment": 0
+  },
+  "inventory": {
+    "source_ids": [
+      "glesys-owned-data-centers-current-20261106",
+      "glesys-falkenberg-current-20261106",
+      "glesys-oulu-current-20261106",
+      "glesys-pori-current-20261106",
+      "glesys-stockholm-current-20261106",
+      "glesys-tampere-current-20261106",
+      "glesys-finland-integration-20260203"
+    ],
+    "owned_location_identities_processed": 5,
+    "facility_records_added": 4,
+    "campus_aggregates_added": 1,
+    "records_added": 5,
+    "records_enriched": 0,
+    "quarantined_field_groups": 2,
+    "originals_available": 7,
+    "original_bytes": 1859236,
+    "rights_review_bytes": 538459,
+    "reuse_prohibited": false,
+    "new_reuse_holds": []
+  },
+  "local_checks": [
+    {
+      "command": "JSON parsing for sources, backlog, source review, coverage, validation and decision ledger",
+      "result": "passed"
+    },
+    {
+      "command": "uv run python -m energy_data_retrieval.data_center_catalogue validate",
+      "result": "passed; 3312 records"
+    },
+    {
+      "command": "build_data_center_glesys_batch.py replay twice from checksum-verified official captures plus cmp against canonical JSONL",
+      "result": "passed; five records reproduced byte-identically"
+    },
+    {
+      "command": "focused Data Center pytest suites",
+      "result": "passed; 112 tests"
+    },
+    {
+      "command": "node --test tests/js/test_database_viewer.mjs",
+      "result": "passed; 33 tests"
+    },
+    {
+      "command": "uv run ruff format --check . and ruff check .",
+      "result": "passed; 1169 files formatted"
+    },
+    {
+      "command": "repository-wide uv run ty check",
+      "result": "passed"
+    },
+    {
+      "command": "uv run python scripts/check_repository.py",
+      "result": "passed; 5804 candidate files"
+    },
+    {
+      "command": "uv run python scripts/check_citations.py",
+      "result": "passed"
+    },
+    {
+      "command": "MPLBACKEND=Agg uv run python examples/database/plot_data_center_catalogue.py",
+      "result": "passed; project scopes 413 facility, 122 campus and 3 phase"
+    },
+    {
+      "command": "two independent data_center_catalogue build commands plus cmp",
+      "result": "passed; byte-identical typed Zstandard snapshots"
+    },
+    {
+      "command": "uv run --group dev pytest -q",
+      "result": "local run reached 94% before unrelated workspace exhaustion caused OSError 28; focused Data Center tests passed and fresh remote CI is authoritative"
+    },
+    {
+      "command": "local strict Sphinx build",
+      "result": "not repeated because the current Python 3.12 environment lacks the Python 3.13-only Orbital PV gallery dependency; fresh remote Documentation CI is authoritative"
+    },
+    {
+      "command": "git diff --check",
+      "result": "passed"
+    }
+  ],
+  "snapshot_sha256": {
+    "input": "4db4cb044ba3207d27bee7879425a6f6dd1b0a2c82cc78d32e7e3bc17e701701",
+    "projects": "fef1bc0c89894cc19d7dc443c7b510089fbdd8717a2036170062d76cf6ce2444",
+    "equipment": "661c1ade3e6095557e8924691747d85b1078ac13ec18dbbb36a66667940ee05b",
+    "manifest": "e5b336f8342bd28ca97a8d2adfaf9769517743c626a955675eed72c2b7f5d8d1",
+    "schema": "560593771c719e11e0a4cb0577f6a17330e22cfca840e627734b58be4fa9566b",
+    "sources": "f5a1c6aaf123f158f1c1c8394a431b639a1fe279d3d8d9008d5dcac55de315b3",
+    "glesys_canonical_jsonl": "461038ba79ff75132389190b4b07ef81e4b484f33f13e264981d01c1ed0d6a1e"
+  },
+  "capacity_summaries": {
+    "it_capacity_mw": {
+      "excluded": 122,
+      "unknown": 374,
+      "by_basis": {
+        "ultimate_planned": {
+          "reported_mw": 697.1,
+          "records": 12
+        },
+        "design_maximum": {
+          "reported_mw": 562.775,
+          "records": 25
+        },
+        "operational": {
+          "reported_mw": 146.0,
+          "records": 5
+        }
+      }
+    },
+    "grid_capacity_mw": {
+      "excluded": 122,
+      "unknown": 413,
+      "by_basis": {
+        "design_maximum": {
+          "reported_mw": 207.5,
+          "records": 3
+        }
+      }
+    },
+    "facility_capacity_mw": {
+      "excluded": 122,
+      "unknown": 415,
+      "by_basis": {
+        "ultimate_planned": {
+          "reported_mw": 75.0,
+          "records": 1
+        }
+      }
+    }
+  },
+  "remote_ci": {
+    "validated_data_head": "aa6b152558320efbfbb929dabfb66117fd21a090",
+    "python_quality_and_tests": {
+      "run_id": 42142266942,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    "documentation": {
+      "run_id": 42142266953,
+      "status": "completed",
+      "conclusion": "success"
+    }
+  }
+}
