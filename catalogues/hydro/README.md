@@ -49,3 +49,12 @@ status, technology, hydraulic metadata or scope. Preserve creation dates and
 use the existing conflict-quarantining upsert API. Reuse the open hydro PR; refresh
 remote refs before writing and never overwrite concurrent PV/BESS/Wind work.
 See `DATA_DICTIONARY.md` for all typed fields.
+
+
+The 6 November new-identity review adds **eight CEG-keyed Brazilian plants** to
+that historical baseline: 7,164 total records in 128 countries. They carry 21
+ONS generating-unit observations; five have independently reported installed
+MW, three have turbine descriptors, and one has total reservoir volume.
+These values remain excluded from additive totals while physical overlaps are
+unresolved. The eight new records have no invented WRI IDs or map coordinates.
+See `research/ons-new-20261106.json` for acceptance and held decisions.

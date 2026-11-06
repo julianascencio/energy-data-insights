@@ -84,3 +84,14 @@ equipment IDs), and `source_ids`. The relationship is `powerhouse_of`; the role
 `excluded_component_evidence` prevents interpreting components as additional
 plants or capacity totals. Scope rationale and reported technical context live
 in `ons_component_review`, with a primary `scope_source_id` and locator.
+
+
+### New ONS identities
+
+`extensions_json.ons_new_identity_review` records the full CEG, source name,
+explicit acceptance rationale and collision screen. UUIDv5 uses the immutable
+`ANEEL-CEG` namespace and complete CEG; historical WRI identifiers are never
+fabricated. Nested source retrieval timestamps differ from acceptance time.
+Reviewed plant facts use their own source IDs and locators in field evidence.
+`deferred_capacity_review`, when present, retains differing reported plant and
+unit ratings outside canonical capacity totals until their bases are reconciled.

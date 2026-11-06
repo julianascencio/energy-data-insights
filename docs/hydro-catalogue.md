@@ -674,3 +674,49 @@ uv run python scripts/enrich_hydro_components.py --batch catalogues/hydro/resear
 
 Next: nine missing ONS identities, starting São Manoel and Baixo Iguaçu, with
 explicit duplicate/registry review; retain the two scope conflicts above.
+
+
+## New Brazilian registry identities — 6 November 2026
+
+Eight reviewed CEG identities absent from the historical baseline are now
+accepted: Areado, Jesuíta, Colíder, Sinop, Juruena, São Manoel, Baixo Iguaçu and
+São Roque. The first two are PCH small-hydro facilities. Canonical UUIDs use the
+full ANEEL CEG, never an invented WRI ID. The importer checks every Brazilian
+name/alias and all external IDs before writing, rejects collisions and changed
+replays, and leaves existing records unchanged. Bandeirante remains held because
+its normalized name collides with a different historical registry identity.
+Simplício/Anta and Itaipu retain the earlier scope holds.
+
+All eight have ONS owner/operator, unit power/date and dispatch observations,
+retaining original CSV checksums and row locators. Eight primary plant sources
+add supported facts: EDP São Manoel, ENERGO-PRO Baixo Iguaçu, EDF Sinop, Nova
+Participações São Roque, Atiaia Areado, AXIA Colíder, MME Juruena and the Bom
+Futuro PCH Cidezal PAE's Jesuíta section. The original 2024 PAE was downloaded
+after web extraction failed; its SHA256 and page locator are retained. Only
+bounded facts are redistributed from owner pages; no bulk licence is assumed.
+
+Five records carry reported installed generating MW, not operating MW. Areado's
+rating is explicitly dated December 2024; undated portfolio ratings retain their
+retrieval basis. São Manoel supplies run-of-river type, four Kaplan turbines,
+May 2018 operation start and 577.22 hm³ total reservoir volume, converted to
+577,220,000 m³; usable water volume and storage MWh remain unknown. Baixo Iguaçu
+and Jesuíta also have turbine descriptors. Rivers and Sinop's 2019 start year
+retain source provenance. AXIA's Colíder safety classification is attributed to
+the owner and is not a lifecycle determination. Jesuíta's differing plant/unit
+ratings remain an explicit unresolved capacity review; Juruena's old permit is
+used for geography only. No generating MW are summed from ONS unit ratings.
+
+Coverage is **7,164 records / 128 countries**, comprising 7,156 historical WRI
+records (1,496 enriched existing identities) and eight new CEG records. Brazil
+has 709 records; ONS evidence covers 177 identities and 791 units. All eight new
+records retain unknown current status, absent coordinates and unresolved
+aggregation scope. Existing map and KPI components consume the same typed
+snapshot and exclude these unresolved ratings from capacity totals.
+
+```bash
+uv run python scripts/accept_hydro_ons_new.py --batch catalogues/hydro/research/ons-new-20261106.json --output catalogues/hydro/records/projects/ons-new-20261106.jsonl
+uv run python examples/database/plot_hydro_catalogue.py
+```
+
+Replay is idempotent. The next regional partition is the first 100 retained AHA
+Existing holds, beginning Excel row 4, using primary alias/phase/location evidence.

@@ -7711,3 +7711,67 @@ Agencia Estatal Boletín Oficial del Estado (2026). **Somaloma-Las Quemadas prio
 **Role:** data_source. Authorized proposal, not commissioned capacity; grid access separate.
 
 **Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
+
+### hydro-br-areado-20261106
+
+Atiaia Renováveis (2024). **Atiaia passa a ter 7 usinas que atendem aos 17 ODS da ONU**. [Source](https://atiaiarenovaveis.com.br/atiaia-passa-a-ter-7-usinas-que-atendem-aos-17-ods-da-onu/)
+
+**Role:** data_source. Primary hydropower factual evidence; source date/precision, locator and reuse assessment in source registry. Undated pages use retrieval year, not an asserted publication year.
+
+**Used by:** `catalogues/hydro/sources.json`, `docs/hydro-catalogue.md`.
+
+### hydro-br-saomanoel-20261106
+
+EDP São Manoel (2026). **A Usina**. [Source](https://www.saomanoelenergia.com.br/pt-br/usina)
+
+**Role:** data_source. Primary hydropower factual evidence; source date/precision, locator and reuse assessment in source registry. Undated pages use retrieval year, not an asserted publication year.
+
+**Used by:** `catalogues/hydro/sources.json`, `docs/hydro-catalogue.md`.
+
+### hydro-br-baixo-20261106
+
+ENERGO-PRO Brasil (2026). **UHE Baixo Iguaçu**. [Source](https://energoprobrasil.com.br/nossos-ativos/uhe-baixo-iguacu)
+
+**Role:** data_source. Primary hydropower factual evidence; source date/precision, locator and reuse assessment in source registry. Undated pages use retrieval year, not an asserted publication year.
+
+**Used by:** `catalogues/hydro/sources.json`, `docs/hydro-catalogue.md`.
+
+### hydro-br-sinop-20261106
+
+EDF power solutions (2026). **Energia hídrica**. [Source](https://brazil.edf-powersolutions.com/nossos-projetos/energia-hidrica/)
+
+**Role:** data_source. Primary hydropower factual evidence; source date/precision, locator and reuse assessment in source registry. Undated pages use retrieval year, not an asserted publication year.
+
+**Used by:** `catalogues/hydro/sources.json`, `docs/hydro-catalogue.md`.
+
+### hydro-br-saoroque-20261106
+
+Nova Participações (2026). **Organização**. [Source](https://www.novaparticipacoes.com/organizacao/)
+
+**Role:** data_source. Primary hydropower factual evidence; source date/precision, locator and reuse assessment in source registry. Undated pages use retrieval year, not an asserted publication year.
+
+**Used by:** `catalogues/hydro/sources.json`, `docs/hydro-catalogue.md`.
+
+### hydro-br-colider-20261106
+
+AXIA Energia (2026). **Atualizações sobre a Usina Colíder**. [Source](https://axia.com.br/colider)
+
+**Role:** data_source. Primary hydropower factual evidence; source date/precision, locator and reuse assessment in source registry. Undated pages use retrieval year, not an asserted publication year.
+
+**Used by:** `catalogues/hydro/sources.json`, `docs/hydro-catalogue.md`.
+
+### hydro-br-juruena-20261106
+
+Ministério de Minas e Energia (2026). **Portaria_n_600/GM/MME/2022**. [Source](https://www.gov.br/mme/pt-br/acesso-a-informacao/legislacao/portarias/2022/portaria-n-600-gm-mme-2022.pdf/view)
+
+**Role:** data_source. Primary hydropower factual evidence; source date/precision, locator and reuse assessment in source registry. Undated pages use retrieval year, not an asserted publication year.
+
+**Used by:** `catalogues/hydro/sources.json`, `docs/hydro-catalogue.md`.
+
+### hydro-br-jesuita-pae-20261106
+
+Bom Futuro / Campos de Júlio Energia S.A. (2024). **Plano de Ação de Emergências — PCH Cidezal**. [Source](https://bomfuturo.com.br/site/assets/pdf/CID-BA-PAE-001-01-24-PAE_PCH_Cidezal.pdf)
+
+**Role:** data_source. Primary hydropower factual evidence; source date/precision, locator and reuse assessment in source registry. Undated pages use retrieval year, not an asserted publication year.
+
+**Used by:** `catalogues/hydro/sources.json`, `docs/hydro-catalogue.md`.
