@@ -1987,6 +1987,99 @@ def parse_jrc_code_of_conduct_participants(content: bytes, *, source_url: str) -
     }
 
 
+def parse_jrc_equinix_participants(content: bytes, *, source_url: str) -> dict[str, Any]:
+    """Stage the complete JRC Equinix EMEA corporate participant partition.
+
+    The registry displays 35 rows but repeats ``The Netherlands: AM7,
+    Amsterdam`` verbatim. The parser preserves that source anomaly separately
+    and returns 34 unique facility identities. Participant status is not
+    ownership, operation, certification or evidence of current lifecycle.
+    """
+    if urlsplit(source_url).hostname != "e3p.jrc.ec.europa.eu":
+        raise ValueError("Expected official European Commission JRC URL")
+    parser = _HtmlTables()
+    parser.feed(content.decode("utf-8-sig"))
+    rows = [row for table in parser.tables for row in table if len(row) >= 5]
+    expected_rows = [
+        ("BGR", "Bulgaria", "SO1", "Sofia"),
+        *(("FRA", "France", f"PA{i}", "Paris") for i in range(3, 8)),
+        ("DEU", "Germany", "FR4", "Frankfurt"),
+        ("DEU", "Germany", "FR7", "Frankfurt"),
+        *(("IRL", "Ireland", f"DB{i}", "Dublin") for i in range(1, 5)),
+        *(("ITA", "Italy", f"ML{i}", "Milan") for i in range(1, 4)),
+        ("NLD", "The Netherlands", "AM3", "Amsterdam"),
+        ("NLD", "The Netherlands", "AM5", "Amsterdam"),
+        ("NLD", "The Netherlands", "AM6", "Amsterdam"),
+        ("NLD", "The Netherlands", "AM7", "Amsterdam"),
+        ("NLD", "The Netherlands", "AM7", "Amsterdam"),
+        *(("SWE", "Sweden", f"SK{i}", "Stockholm") for i in range(1, 4)),
+        ("CHE", "Switzerland", "ZH4", "Zurich"),
+        ("TUR", "Turkey", "IS1", "Istanbul"),
+        ("POL", "Poland", "WA1", "Warsaw"),
+        ("POL", "Poland", "WA2", "Warsaw"),
+        ("GBR", "United Kingdom", "LD4", "Slough"),
+        ("GBR", "United Kingdom", "LD5", "London"),
+        ("GBR", "United Kingdom", "LD9", "London"),
+        ("GBR", "United Kingdom", "LD8", "London"),
+        *(("GBR", "United Kingdom", f"MA{i}", "Manchester") for i in range(1, 5)),
+    ]
+    expected_labels = [
+        f"{country}: {code}, {locality}" for _, country, code, locality in expected_rows
+    ]
+    candidates: list[dict[str, Any]] = []
+    duplicate_rows: list[dict[str, Any]] = []
+    found = False
+    for row in rows:
+        if row[0] != "Equinix, EMEA (Corporate Level)":
+            continue
+        try:
+            displayed_count = int(row[1])
+            adhesion_year = int(row[3])
+        except ValueError as exc:
+            raise ValueError("Changed JRC Equinix count or adhesion year") from exc
+        labels = [part.strip() for part in row[2].split("|") if part.strip()]
+        if displayed_count != 35 or adhesion_year != 2013 or labels != expected_labels:
+            raise ValueError("Changed JRC Equinix facility identity set")
+        found = True
+        seen: set[str] = set()
+        for (country_code, country, code, locality), label in zip(
+            expected_rows, labels, strict=True
+        ):
+            if label in seen:
+                duplicate_rows.append(
+                    {
+                        "label": label,
+                        "occurrences": 2,
+                        "reason": "verbatim duplicate registry row; normalized once",
+                    }
+                )
+                continue
+            seen.add(label)
+            candidates.append(
+                {
+                    "adhesion_year": adhesion_year,
+                    "country_code": country_code,
+                    "country_label": country,
+                    "external_id": code,
+                    "locality": locality,
+                    "name": f"Equinix EMEA {code}",
+                    "participant": row[0],
+                    "registry_label": label,
+                    "locator": f"Participants table / {row[0]} / {label}",
+                }
+            )
+    if not found or len(candidates) != 34 or len(duplicate_rows) != 1:
+        raise ValueError("Changed JRC Equinix participant partition")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "displayed_rows": 35,
+        "candidates": candidates,
+        "duplicate_rows": duplicate_rows,
+        "review_required": True,
+    }
+
+
 def parse_rack_centre_campus(content: bytes, *, source_url: str) -> dict[str, Any]:
     """Stage Rack Centre's explicit two-building Lagos campus boundary.
 

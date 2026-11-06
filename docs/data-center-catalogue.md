@@ -2,8 +2,8 @@
 
 ## Data Center Projects
 
-The current continuation branch has 591 project records across 40 countries:
-460 facilities, three phases and 128 explicitly scoped campus aggregates, from 22 operators.
+The current continuation branch has 625 project records across 45 countries:
+494 facilities, three phases and 128 explicitly scoped campus aggregates, from 22 operators.
 Coverage spans North America, Latin America, Europe, Africa, the Middle East and
 Asia-Pacific. This is a research catalogue, not an operating-capacity census.
 
@@ -61,6 +61,16 @@ filter. The Commission page was available through the public indexed reader
 while direct original retrieval was rejected; this is recorded as an access
 failure, not a reuse restriction. The Commission CC BY 4.0 reuse notice is
 captured and checksummed separately.
+
+The next JRC partition processes all 35 displayed Equinix EMEA corporate rows
+as 34 unique facility identities across 11 countries. The registry repeats
+`The Netherlands: AM7, Amsterdam` verbatim; it is normalized once and the source
+anomaly remains reviewable rather than becoming a duplicate facility. Bulgaria,
+Italy, Poland, Switzerland and Türkiye are new country coverage. The registry
+supports each site code, city and 2013 adhesion year, but it does not establish
+current lifecycle, ownership, operation, physical aggregation, capacity or
+certification. All 34 records therefore remain lifecycle-unknown and
+aggregation-unresolved and are excluded from every capacity total.
 
 The current U.S. facility continuation includes all 133 entries whose most recent
 label year is 2026, all 50 from 2025, all 23 from 2024, all 31 from 2023, and

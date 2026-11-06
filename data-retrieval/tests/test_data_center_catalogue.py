@@ -40,6 +40,7 @@ from energy_data_retrieval.data_center_catalogue.portfolios import (
     parse_icolo_facility_page,
     parse_icolo_home_portfolio,
     parse_jrc_code_of_conduct_participants,
+    parse_jrc_equinix_participants,
     parse_maincubes_directory,
     parse_maincubes_site_page,
     parse_meta_locations,
@@ -697,6 +698,44 @@ def test_jrc_participant_parser_preserves_registry_boundaries():
             (FIXTURES / "jrc-code-of-conduct-digital-realty.html")
             .read_bytes()
             .replace(b"STO6", b"STO7"),
+            source_url=source_url,
+        )
+
+
+def test_jrc_equinix_parser_deduplicates_verbatim_am7_row():
+    source_url = (
+        "https://e3p.jrc.ec.europa.eu/en/groups/data-centres-code-conduct/"
+        "participants?order=field_adhesion_date&page=2&sort=desc"
+    )
+    fixture = (FIXTURES / "jrc-code-of-conduct-equinix.html").read_bytes()
+    parsed = parse_jrc_equinix_participants(fixture, source_url=source_url)
+    assert parsed["displayed_rows"] == 35
+    assert len(parsed["candidates"]) == 34
+    assert parsed["duplicate_rows"] == [
+        {
+            "label": "The Netherlands: AM7, Amsterdam",
+            "occurrences": 2,
+            "reason": "verbatim duplicate registry row; normalized once",
+        }
+    ]
+    assert len({row["external_id"] for row in parsed["candidates"]}) == 34
+    assert {row["country_code"] for row in parsed["candidates"]} == {
+        "BGR",
+        "CHE",
+        "DEU",
+        "FRA",
+        "GBR",
+        "IRL",
+        "ITA",
+        "NLD",
+        "POL",
+        "SWE",
+        "TUR",
+    }
+    assert {row["adhesion_year"] for row in parsed["candidates"]} == {2013}
+    with pytest.raises(ValueError, match="facility identity set"):
+        parse_jrc_equinix_participants(
+            fixture.replace(b"MA4, Manchester", b"MA5, Manchester"),
             source_url=source_url,
         )
 
