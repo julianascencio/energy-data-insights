@@ -1,0 +1,309 @@
+{
+  "baseline": "223ea922baa60291efec649d50d5d03737ce9c10",
+  "projects": {
+    "new": 8,
+    "enriched": 0,
+    "decisions": [
+      {
+        "record_id": "0af9b42b-e388-5925-a22c-1ce49e664236",
+        "name": "Agersted BESS",
+        "country": "DNK",
+        "decision": "new",
+        "sources": [
+          "ee_denmark_20261106",
+          "ee_portfolio_20261106"
+        ]
+      },
+      {
+        "record_id": "07e67788-f797-5845-bff5-b0676d6d3179",
+        "name": "Stouby BESS",
+        "country": "DNK",
+        "decision": "new",
+        "sources": [
+          "ee_denmark_20261106",
+          "ee_portfolio_20261106"
+        ]
+      },
+      {
+        "record_id": "583412ad-eae2-57b1-b855-9217014a0201",
+        "name": "Kvosted BESS",
+        "country": "DNK",
+        "decision": "new",
+        "sources": [
+          "ee_kvosted_20261106",
+          "ee_portfolio_20261106"
+        ]
+      },
+      {
+        "record_id": "0c47772d-e2a9-506e-a3ff-6c4613911bf0",
+        "name": "Måde BESS",
+        "country": "DNK",
+        "decision": "new",
+        "sources": [
+          "ee_made_20261106",
+          "ee_portfolio_20261106"
+        ]
+      },
+      {
+        "record_id": "4e00087f-52a0-5617-883d-922503e1ea16",
+        "name": "Kragerup BESS",
+        "country": "DNK",
+        "decision": "new",
+        "sources": [
+          "ee_kragerup_20261106",
+          "ee_portfolio_20261106"
+        ]
+      },
+      {
+        "record_id": "b7e0257a-9ea1-5e3d-b4ae-f90da8b8ff33",
+        "name": "Anykščiai BESS",
+        "country": "LTU",
+        "decision": "new",
+        "sources": [
+          "ee_anyksciai_20261106",
+          "ee_baltic_20261106"
+        ]
+      },
+      {
+        "record_id": "72a1c6c1-af55-50ce-ab7c-69dfc089ae04",
+        "name": "Saldus BESS",
+        "country": "LVA",
+        "decision": "new",
+        "sources": [
+          "ee_baltic_20261106",
+          "ee_portfolio_20261106",
+          "ee_sale_20261106"
+        ]
+      },
+      {
+        "record_id": "bd769cc0-9b2a-5fec-9f61-0b9c5f137372",
+        "name": "Telšiai BESS",
+        "country": "LTU",
+        "decision": "new",
+        "sources": [
+          "ee_anyksciai_20261106"
+        ]
+      }
+    ],
+    "new_conflicting_records": 3,
+    "held": [
+      {
+        "candidate": "Skuodas Renew",
+        "reason": "No exact battery capacity/phase scope; avoid thin hybrid row"
+      },
+      {
+        "candidate": "Eurowind GreenLab1MWtest installation",
+        "reason": "Explicit personal/noncommercial reuse terms; no ingestion"
+      },
+      {
+        "candidate": "GreenLab44MWh expansion",
+        "reason": "Independent host announcement reviewed; phase/current status reconciliation pending; not merged with test asset"
+      }
+    ],
+    "registry_result": "Energistyrelsen public page exposes wind datasets, not an accessible battery inventory; no wind records classified as batteries",
+    "whole_record_quarantines": 0,
+    "held_claim_sets": [
+      {
+        "candidate": "Kvosted NIB financing, power, owner and administrative metadata",
+        "url": "https://www.nib.int/news/nib-finances-battery-storage-addition-to-solar-park-in-denmark",
+        "reason": "NIB terms sections2 and5 restrict copying to personal noncommercial use and redistribution/derivative works; removed all NIB-only claims and citation before publication; independent European Energy site facts retained",
+        "retry": "Find independently reusable owner or government evidence"
+      }
+    ]
+  },
+  "equipment": {
+    "new": 4,
+    "enriched": 18,
+    "decisions": [
+      {
+        "record_id": "07c107d5-ac0c-58d0-b3a4-2715a5624889",
+        "model": "HV100Ah",
+        "variant": "Stack; 6 modules in series; V1.3",
+        "decision": "enrich",
+        "warranty_scope": "HV-SERIES (100Ah)",
+        "source_id": "hubble_warranty_hv100_20261106"
+      },
+      {
+        "record_id": "320ea92c-045b-5e2f-b8f6-fc3830215202",
+        "model": "HV100Ah",
+        "variant": "Stack; 5 modules in series; V1.3",
+        "decision": "enrich",
+        "warranty_scope": "HV-SERIES (100Ah)",
+        "source_id": "hubble_warranty_hv100_20261106"
+      },
+      {
+        "record_id": "4844a669-3d17-51d6-8a32-2c63ed982f88",
+        "model": "AM10+",
+        "variant": "V1.2",
+        "decision": "enrich",
+        "warranty_scope": "AM10+",
+        "source_id": "hubble_warranty_am10_20261106"
+      },
+      {
+        "record_id": "556c4541-f7ef-55d6-961d-51b196ca1ce6",
+        "model": "AM5+",
+        "variant": "V1.2",
+        "decision": "enrich",
+        "warranty_scope": "AM5+",
+        "source_id": "hubble_warranty_am5_20261106"
+      },
+      {
+        "record_id": "56c67884-d9f4-54a3-9149-69f1b82b2719",
+        "model": "HV-512",
+        "variant": "Rack; REV 3; V1.3",
+        "decision": "enrich",
+        "warranty_scope": "HV-SERIES (100Ah)",
+        "source_id": "hubble_warranty_hv100_20261106"
+      },
+      {
+        "record_id": "6cc8e027-e6d0-5de0-97ea-9daf59aba20c",
+        "model": "HV100Ah",
+        "variant": "Stack; 3 modules in series; V1.3",
+        "decision": "enrich",
+        "warranty_scope": "HV-SERIES (100Ah)",
+        "source_id": "hubble_warranty_hv100_20261106"
+      },
+      {
+        "record_id": "721698eb-1d4b-5ca0-b305-5e6f0468c26e",
+        "model": "HV100Ah",
+        "variant": "Stack; 7 modules in series; V1.3",
+        "decision": "enrich",
+        "warranty_scope": "HV-SERIES (100Ah)",
+        "source_id": "hubble_warranty_hv100_20261106"
+      },
+      {
+        "record_id": "734ddc3e-f254-5d4f-af12-a7f1636d95f7",
+        "model": "AM16+",
+        "variant": "V2.3",
+        "decision": "enrich",
+        "warranty_scope": "AM16+",
+        "source_id": "hubble_warranty_am16_20261106"
+      },
+      {
+        "record_id": "8a3fabe3-aa5e-5b74-a9e9-a92d527adb20",
+        "model": "HV-307",
+        "variant": "Rack; REV 3; V1.3",
+        "decision": "enrich",
+        "warranty_scope": "HV-SERIES (100Ah)",
+        "source_id": "hubble_warranty_hv100_20261106"
+      },
+      {
+        "record_id": "ab831f4c-8db8-5167-930a-da03d9b7b416",
+        "model": "HV100Ah",
+        "variant": "Stack; 4 modules in series; V1.3",
+        "decision": "enrich",
+        "warranty_scope": "HV-SERIES (100Ah)",
+        "source_id": "hubble_warranty_hv100_20261106"
+      },
+      {
+        "record_id": "b595a89f-865f-5abf-9fd0-8d2482292900",
+        "model": "AM-4",
+        "variant": "Revision 3; V1.1",
+        "decision": "enrich",
+        "warranty_scope": "AM-4",
+        "source_id": "hubble_warranty_am4_20261106"
+      },
+      {
+        "record_id": "bb472ffa-a529-5cf0-af55-19e832a8ddca",
+        "model": "HV 768-215",
+        "variant": "15-module rack; V5",
+        "decision": "enrich",
+        "warranty_scope": "HV-SERIES (280Ah/314Ah)",
+        "source_id": "hubble_warranty_hv280_20261106"
+      },
+      {
+        "record_id": "c467b422-5341-5de3-b4f2-b6c9bd6fdab0",
+        "model": "HV-615",
+        "variant": "Rack; REV 3; V1.3",
+        "decision": "enrich",
+        "warranty_scope": "HV-SERIES (100Ah)",
+        "source_id": "hubble_warranty_hv100_20261106"
+      },
+      {
+        "record_id": "d9d6c802-e199-5524-a720-15172ae82107",
+        "model": "HV-768",
+        "variant": "Rack; REV 3; V1.3",
+        "decision": "enrich",
+        "warranty_scope": "HV-SERIES (100Ah)",
+        "source_id": "hubble_warranty_hv100_20261106"
+      },
+      {
+        "record_id": "dce55b6b-100a-564d-8748-f21b9e8860e2",
+        "model": "HV 768-241",
+        "variant": "15-module rack; V1.1",
+        "decision": "enrich",
+        "warranty_scope": "HV-SERIES (280Ah/314Ah)",
+        "source_id": "hubble_warranty_hv280_20261106"
+      },
+      {
+        "record_id": "f2e2afb6-3511-501a-ae56-2209446cd613",
+        "model": "HV-410",
+        "variant": "Rack; REV 3; V1.3",
+        "decision": "enrich",
+        "warranty_scope": "HV-SERIES (100Ah)",
+        "source_id": "hubble_warranty_hv100_20261106"
+      },
+      {
+        "record_id": "f849c33b-197d-5600-a677-ffddee624933",
+        "model": "HV100Ah",
+        "variant": "Stack; 8 modules in series; V1.3",
+        "decision": "enrich",
+        "warranty_scope": "HV-SERIES (100Ah)",
+        "source_id": "hubble_warranty_hv100_20261106"
+      },
+      {
+        "record_id": "fa54c9f3-2375-5222-add5-7f31be05715d",
+        "model": "BLADE",
+        "variant": "V1.1",
+        "decision": "enrich",
+        "warranty_scope": "BLADE 10KW",
+        "source_id": "hubble_warranty_blade_20261106"
+      },
+      {
+        "record_id": "bb8a9ccc-0ead-58d3-8976-cb5a73e5decc",
+        "model": "Energy Cube",
+        "variant": "50kW/143kWh; V1.1",
+        "decision": "new",
+        "source_id": "hubble_cube50_20261106"
+      },
+      {
+        "record_id": "7b58a587-c035-522e-812f-42e36ce4b30a",
+        "model": "Energy Cube",
+        "variant": "80kW/160kWh; V1.1",
+        "decision": "new",
+        "source_id": "hubble_cube50_20261106"
+      },
+      {
+        "record_id": "ab3d47e2-ffab-5c54-80f6-fd39f0160fe4",
+        "model": "Energy Cube",
+        "variant": "105kW/241kWh; V5",
+        "decision": "new",
+        "source_id": "hubble_cube105_20261106"
+      },
+      {
+        "record_id": "ef0f12e7-7d2a-5372-b974-80e16ba45144",
+        "model": "Energy Cube",
+        "variant": "125kW/261kWh; V1",
+        "decision": "new",
+        "source_id": "hubble_cube125_20261106"
+      }
+    ],
+    "additive_namespace_collisions_reviewed": 18,
+    "new_conflicting_records": 13,
+    "whole_record_quarantines": 0
+  },
+  "equipment_deferred": [
+    {
+      "candidate": "Energy Cube 105kW/215kWh older catalogue",
+      "reason": "Older 280Ah configuration has no clear printed revision/date; reconcile with 241kWh V5 before creating historical generation",
+      "url": "https://www.hubbleenergy.com/_files/ugd/49fdd5_3ac323c4571d482db5cf00ba5a59ca27.pdf"
+    }
+  ],
+  "equipment_held_claim_sets": [
+    {
+      "candidate": "Cube V2 warranty assignment",
+      "reason": "Warranty heading does not explicitly identify all four accepted Cube configurations; no transfer from HV rack warranty or marketing ten-year claim",
+      "url": "https://www.hubbleenergy.com/_files/ugd/49fdd5_9241b453e62b4808bcfec2e533980c5c.pdf"
+    }
+  ]
+}

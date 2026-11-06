@@ -96,3 +96,12 @@ delivery. Reserve applications do not promote a preferred bidder to operation.
 land hectares, village and planned-operator corporate facts. Corporate formation,
 land transfer and a historical completion target do not establish project permits,
 construction, commissioning or operation. Compact funding is not site capex.
+
+## European Energy named-site evidence
+
+`extensions_json.european_energy`, `lifecycle` and site-specific namespaces preserve
+publication versus inauguration/operation dates, optimization and balancing roles,
+historical capacity options and hybrid boundaries. A signed stake-sale agreement
+does not establish closing/current ownership. Solar MW/MWp disagreements remain
+in `conflicts_json`; they never alter battery energy or power. Kragerup's earlier
+planned power is retained as historical evidence, not the later operating rating.

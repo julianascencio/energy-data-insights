@@ -392,3 +392,20 @@ units, eight-to-seventeen SS6143 modules and valid voltage envelopes. It never
 computes stack power from volts/amps or module power. Current classification is
 unspecified. Match warranties by exact unsuffixed model AND nominal energy;
 never transfer -05 terms or module-only life/efficiency to a complete stack.
+
+## Hubble warranty offline staging
+
+After checking the original PDF's heading, revision, access terms and exact model
+applicability, run `pdftotext -layout` outside Git, then:
+
+```bash
+uv run python scripts/stage_bess_hubble_warranty.py warranty.txt --scope 'HV-SERIES (100Ah)' --output staged.json
+```
+
+The adapter requires a reviewed exact heading and separates cell, electronics,
+cycle-limit, temperature and monitoring-fallback observations. It fails on missing
+or ambiguous terms and preserves competing fallback values. It never fetches,
+assigns warranties to models, overwrites output or writes canonical rows. Manually
+review remaining conditions and cross-reference exact cell-size/model identities
+before using the existing upsert API. Ten years of cell cover does not mean ten
+years for electronics; warranty cycle limits are not tested cycle life.
