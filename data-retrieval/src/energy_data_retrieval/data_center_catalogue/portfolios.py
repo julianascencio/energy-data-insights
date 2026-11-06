@@ -1703,6 +1703,387 @@ def parse_green_mountain_facility_page(
     }
 
 
+def parse_maincubes_directory(content: bytes, *, source_url: str) -> dict[str, Any]:
+    """Stage the complete current maincubes directory identity set.
+
+    Directory capacity cards establish only a reported number or range. They do
+    not establish an IT boundary; exact facility pages are reviewed separately
+    before any scalar is normalized.
+    """
+    if urlsplit(source_url).hostname not in {"maincubes.com", "www.maincubes.com"}:
+        raise ValueError("Expected official maincubes URL")
+    parser = _VisibleText()
+    parser.feed(content.decode("utf-8-sig"))
+    text = " ".join(" ".join(parser.parts).split())
+    expected = {
+        "FRA05": "Pipeline",
+        "FRA04": "In Planning",
+        "FRA03": "In Operation",
+        "FRA02": "In Operation",
+        "FRA01": "In Operation",
+        "BER02": "Construction",
+        "BER01": "In Operation",
+        "AMS01": "In Operation",
+    }
+    candidates = []
+    for code, status in expected.items():
+        pattern = (
+            rf"\b{code}\s+{re.escape(status)}\s+"
+            rf"(?:Hyperscale & HPC|Government-Leased|Colocation(?:/OCP Ready™)?)\s+"
+            rf"(\d+(?:[\u2013-]\d+)?)\s+MW\s+Capacity(?:\s+\(N\+1\))?"
+        )
+        values = list(dict.fromkeys(re.findall(pattern, text)))
+        if len(values) != 1:
+            raise ValueError(f"Changed maincubes directory row for {code}")
+        bounds = [float(value) for value in re.split(r"[\u2013-]", values[0])]
+        candidates.append(
+            {
+                "external_id": code,
+                "status_label": status,
+                "reported_capacity_min_mw": bounds[0],
+                "reported_capacity_max_mw": bounds[-1],
+                "locator": f"current directory card / {code}",
+            }
+        )
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidates": candidates,
+        "review_required": True,
+    }
+
+
+def parse_maincubes_site_page(
+    content: bytes, *, source_url: str, expected_code: str
+) -> dict[str, Any]:
+    """Stage explicit IT-capacity and IT-area facts from one maincubes page."""
+    if urlsplit(source_url).hostname not in {"maincubes.com", "www.maincubes.com"}:
+        raise ValueError("Expected official maincubes URL")
+    if expected_code not in {"AMS01", "FRA01", "FRA02", "BER01", "FRA03", "FRA04", "BER02"}:
+        raise ValueError("Unexpected maincubes site code")
+    parser = _VisibleText()
+    parser.feed(content.decode("utf-8-sig"))
+    text = " ".join(" ".join(parser.parts).split())
+    spaced_code = f"{expected_code[:3]} {expected_code[3:]}"
+    if expected_code not in text and spaced_code not in text:
+        raise ValueError("Changed maincubes site identity")
+    status_labels = {
+        "AMS01": "In Operation",
+        "FRA01": "In Operation",
+        "FRA02": "In Operation",
+        "BER01": "In Operation",
+        "FRA03": "In Operation",
+        "FRA04": "In Planning",
+        "BER02": "Construction",
+    }
+    status = status_labels[expected_code]
+    if status not in text:
+        raise ValueError("Changed maincubes site lifecycle")
+
+    capacity_tokens: list[str] = []
+    for pattern in (
+        r"IT capacity:\s*(\d+(?:[\u2013-]\d+)?)\s*MW",
+        r"(\d+(?:[\u2013-]\d+)?)\s*MW\s+IT [Cc]apacity",
+    ):
+        capacity_tokens.extend(re.findall(pattern, text))
+    capacity_tokens = list(dict.fromkeys(capacity_tokens))
+    if len(capacity_tokens) != 1:
+        raise ValueError("Changed maincubes IT-capacity shape")
+    capacity_bounds = [float(value) for value in re.split(r"[\u2013-]", capacity_tokens[0])]
+
+    area_tokens = list(
+        dict.fromkeys(re.findall(r"IT area:\s*(\d[\d,]*(?:[\u2013-]\d[\d,]*)?)\s*m²", text))
+    )
+    if len(area_tokens) != 1:
+        raise ValueError("Changed maincubes IT-area shape")
+    area_bounds = [
+        float(value.replace(",", "")) for value in re.split(r"[\u2013-]", area_tokens[0])
+    ]
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidate": {
+            "external_id": expected_code,
+            "status_label": status,
+            "it_capacity_min_mw": capacity_bounds[0],
+            "it_capacity_max_mw": capacity_bounds[-1],
+            "technical_area_min_m2": area_bounds[0],
+            "technical_area_max_m2": area_bounds[-1],
+            "locator": f"current {expected_code} page / IT capacity and IT area",
+        },
+        "review_required": True,
+    }
+
+
+class _DatacenterUnitedCards(HTMLParser):
+    """Collect only explicit directory-card attributes, never map/contact data."""
+
+    def __init__(self) -> None:
+        super().__init__()
+        self.cards: list[dict[str, str]] = []
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        values = dict(attrs)
+        if values.get("data-name"):
+            self.cards.append(
+                {
+                    "name": values["data-name"] or "",
+                    "description": values.get("data-description") or "",
+                    "path": values.get("data-url") or "",
+                }
+            )
+
+
+def parse_datacenter_united_directory(content: bytes, *, source_url: str) -> dict[str, Any]:
+    """Stage the exact 14 facility identities displayed in the current directory."""
+    if urlsplit(source_url).hostname not in {
+        "datacenterunited.com",
+        "www.datacenterunited.com",
+    }:
+        raise ValueError("Expected official Datacenter United URL")
+    parser = _DatacenterUnitedCards()
+    parser.feed(content.decode("utf-8-sig"))
+    expected = [
+        "DC Antwerp 1",
+        "DC Antwerp 2",
+        "DC Antwerp 3",
+        "DC Burcht",
+        "DC Mechelen",
+        "DC Evere 1",
+        "DC Evere 2",
+        "DC Brussels",
+        "DC Machelen",
+        "DC Ghent",
+        "DC Ghent 2",
+        "DC Hasselt 1",
+        "DC Oostkamp",
+        "DC Mouscron",
+    ]
+    cards = [card for card in parser.cards if card["name"] in expected]
+    if [card["name"] for card in cards] != expected:
+        raise ValueError("Changed Datacenter United directory identity set")
+    if cards[10]["description"].strip().lower() != "under construction":
+        raise ValueError("Changed Datacenter United Ghent 2 lifecycle")
+    for card in cards:
+        card.update(
+            {
+                "external_id": card.pop("name"),
+                "status_label": (
+                    "under_construction"
+                    if card["description"].strip().lower() == "under construction"
+                    else "operational"
+                ),
+                "locator": f"current directory card / {card.get('external_id', '')}",
+            }
+        )
+        card["locator"] = f"current directory card / {card['external_id']}"
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidates": cards,
+        "review_required": True,
+    }
+
+
+def parse_datacenter_united_site_page(
+    content: bytes, *, source_url: str, expected_group: str
+) -> dict[str, Any]:
+    """Fail closed on grouped facility identity and construction markers."""
+    if urlsplit(source_url).hostname not in {
+        "datacenterunited.com",
+        "www.datacenterunited.com",
+    }:
+        raise ValueError("Expected official Datacenter United URL")
+    markers = {
+        "antwerp": ("DC Antwerp", "ANTW1 and ANTW2"),
+        "flanders": ("DC Flanders",),
+        "evere": ("DC Evere",),
+        "ghent": ("DC Ghent", "Coming : Ghent 2"),
+        "mouscron": ("DC Mouscron", "currently under development"),
+    }
+    if expected_group not in markers:
+        raise ValueError("Unexpected Datacenter United site group")
+    parser = _VisibleText()
+    parser.feed(content.decode("utf-8-sig"))
+    text = " ".join(" ".join(parser.parts).split()).replace("&", "and")
+    if not all(marker in text for marker in markers[expected_group]):
+        raise ValueError("Changed Datacenter United site identity or lifecycle")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidate": {
+            "group": expected_group,
+            "locator": f"current {expected_group} facility page",
+        },
+        "review_required": True,
+    }
+
+
+def parse_rack_centre_campus(content: bytes, *, source_url: str) -> dict[str, Any]:
+    """Stage Rack Centre's explicit two-building Lagos campus boundary.
+
+    Campus totals are returned separately from the two named facilities. Callers
+    must keep the campus aggregate excluded from capacity totals and must not use
+    the published total to fill either building.
+    """
+    if urlsplit(source_url).hostname not in {"rack-centre.com", "www.rack-centre.com"}:
+        raise ValueError("Expected official Rack Centre URL")
+    parser = _VisibleText()
+    parser.feed(content.decode("utf-8-sig"))
+    text = " ".join(" ".join(parser.parts).split())
+    markers = (
+        "Two facilities. One connected campus.",
+        "Rack Centre LGS 1",
+        "Rack Centre LGS 2",
+        "13.5 MW total IT power",
+        "7,200 sqm net lettable space",
+        "6 data halls",
+        "White space 3,240 sqm",
+    )
+    if not all(marker in text for marker in markers):
+        raise ValueError("Changed Rack Centre campus identity or capacity shape")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidate": {
+            "external_id": "Lagos Campus",
+            "facility_codes": ["LGS1", "LGS2"],
+            "it_capacity_mw": 13.5,
+            "technical_area_m2": 7200.0,
+            "lgs2_white_space_m2": 3240.0,
+            "locator": "current Lagos campus page / campus buildings and specifications",
+        },
+        "review_required": True,
+    }
+
+
+def parse_rack_centre_facility_page(
+    content: bytes, *, source_url: str, expected_code: str
+) -> dict[str, Any]:
+    """Stage exact Rack Centre LGS1/LGS2 IT ratings without merging areas."""
+    if urlsplit(source_url).hostname not in {"rack-centre.com", "www.rack-centre.com"}:
+        raise ValueError("Expected official Rack Centre URL")
+    if expected_code not in {"LGS1", "LGS2"}:
+        raise ValueError("Unexpected Rack Centre facility code")
+    parser = _VisibleText()
+    parser.feed(content.decode("utf-8-sig"))
+    text = " ".join(" ".join(parser.parts).split())
+    if f"Rack Centre {expected_code[:3]} {expected_code[3:]}" not in text:
+        raise ValueError("Changed Rack Centre facility identity")
+    if expected_code == "LGS1":
+        markers = (
+            "1.5MW I.T Load",
+            "Tier III TCCF Constructed facility certified",
+            "WHITE SPACE 1,094 SQM",
+            "100% Uptime Since 2013",
+        )
+        if not all(marker in text for marker in markers):
+            raise ValueError("Changed Rack Centre LGS1 specification shape")
+        candidate = {
+            "external_id": expected_code,
+            "it_capacity_mw": 1.5,
+            "technical_area_m2": 1094.0,
+            "status_year": 2013,
+            "locator": "current LGS1 page / data center specifications",
+        }
+    else:
+        markers = (
+            "IT POWER CAPACITY 12 MW",
+            "Utility Power Supply Capacity of 25mva",
+            "WHITE SPACE 7200 Sqm.",
+            "6 Data Halls each of 2 MW IT Load",
+        )
+        if not all(marker in text for marker in markers):
+            raise ValueError("Changed Rack Centre LGS2 specification shape")
+        candidate = {
+            "external_id": expected_code,
+            "it_capacity_mw": 12.0,
+            "reported_white_space_m2": 7200.0,
+            "utility_apparent_power_mva": 25.0,
+            "data_hall_count": 6,
+            "locator": "current LGS2 page / data center specifications",
+        }
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidate": candidate,
+        "review_required": True,
+    }
+
+
+def parse_rack_centre_lgs2_commissioning(content: bytes, *, source_url: str) -> dict[str, Any]:
+    """Stage the exact dated LGS2 commissioning event and reported IT load."""
+    if urlsplit(source_url).hostname not in {"rack-centre.com", "www.rack-centre.com"}:
+        raise ValueError("Expected official Rack Centre URL")
+    parser = _VisibleText()
+    parser.feed(content.decode("utf-8-sig"))
+    text = " ".join(" ".join(parser.parts).split()).replace("\N{RIGHT SINGLE QUOTATION MARK}", "'")
+    markers = (
+        "Rack Centre's LGS2 12MW Data Centre Commissioned",
+        "commissioning of the data centre held",
+        "Thursday, April 10, 2025",
+        "12MW IT load LGS2",
+    )
+    if not all(marker in text for marker in markers):
+        raise ValueError("Changed Rack Centre LGS2 commissioning evidence")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidate": {
+            "external_id": "LGS2",
+            "commissioning_date": "2025-04-10",
+            "it_capacity_mw": 12.0,
+            "locator": "commissioning article / event date and 12 MW IT load",
+        },
+        "review_required": True,
+    }
+
+
+def parse_uptime_rack_centre_story(content: bytes, *, source_url: str) -> dict[str, Any]:
+    """Stage issuer evidence for the original Rack Centre Lagos facility.
+
+    The issuer story predates LGS2 and identifies the original facility's launch
+    and award months. It does not establish any certification for LGS2.
+    """
+    if urlsplit(source_url).hostname not in {"uptimeinstitute.com", "www.uptimeinstitute.com"}:
+        raise ValueError("Expected official Uptime Institute URL")
+    parser = _VisibleText()
+    parser.feed(content.decode("utf-8-sig"))
+    text = " ".join(" ".join(parser.parts).split())
+    markers = (
+        "Client Story: Rack Centre Tier III Certification of Constructed Facility",
+        "Tier Certification of Design Documents in May, 2014",
+        "Tier Certification of Constructed Facility in April, 2017",
+        "launch of the company in October, 2013",
+    )
+    if not all(marker in text for marker in markers):
+        raise ValueError("Changed Uptime Rack Centre issuer evidence")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidate": {
+            "issuer": "Uptime Institute",
+            "issuer_identity": "Rack Centre Lagos Data Centre",
+            "tier": "Tier III",
+            "awards": [
+                {
+                    "award": "Tier Certification of Design Documents",
+                    "date_precision": "month",
+                    "date": "2014-05",
+                },
+                {
+                    "award": "Tier Certification of Constructed Facility",
+                    "date_precision": "month",
+                    "date": "2017-04",
+                },
+            ],
+            "launch_period": "2013-10",
+            "locator": "issuer client story / certification and launch chronology",
+        },
+        "review_required": True,
+    }
+
+
 def parse_vertiv_powerups6000_table(
     content: bytes, *, source_url: str, expected_count: int | None = None
 ) -> dict[str, Any]:

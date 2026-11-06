@@ -1,5 +1,5 @@
 {
-  "retrieved_at": "2026-11-06T04:20:00Z",
+  "retrieved_at": "2026-11-06T07:23:39Z",
   "accepted": [
     {
       "inventory": "Green Mountain complete current site portfolio",
@@ -40,6 +40,30 @@
       "enriched_records": 0,
       "reuse": "Public copyrighted operator pages; bounded factual extraction only. No open licence is asserted, source HTML is not redistributed and addresses, security and access details are excluded.",
       "originals": "Six factual official HTML originals total 255,824 bytes and have individual SHA-256 checksums in sources.json. A separate 37,277-byte privacy-policy capture supported rights review but is not a factual source."
+    },
+    {
+      "inventory": "Datacenter United complete current displayed facility directory",
+      "processed_offset": 14,
+      "accepted_records": 14,
+      "enriched_records": 0,
+      "reuse": "Public copyrighted operator pages; bounded factual extraction only. No open licence is asserted, source HTML is not redistributed and exact addresses, coordinates, contacts, security and access details are excluded.",
+      "originals": "Twelve factual official HTML originals total 2,277,615 bytes and have individual SHA-256 checksums in sources.json. A separate 176,805-byte privacy-policy capture supported rights review but is not a factual source."
+    },
+    {
+      "inventory": "maincubes complete current data center directory",
+      "processed_offset": 8,
+      "accepted_records": 8,
+      "enriched_records": 0,
+      "reuse": "Public copyrighted operator pages; bounded factual extraction only. No open licence is asserted, source HTML is not redistributed and addresses, security and access details are excluded.",
+      "originals": "Eight factual official HTML originals total 5,192,862 bytes and have individual SHA-256 checksums in sources.json. Separate imprint and privacy captures total 1,120,130 bytes and supported rights review but are not factual sources."
+    },
+    {
+      "inventory": "Rack Centre complete explicit current Lagos boundary",
+      "processed_offset": 3,
+      "accepted_records": 3,
+      "enriched_records": 0,
+      "reuse": "Public copyrighted operator and issuer pages; bounded factual extraction only. No open licence is asserted, source HTML is not redistributed and exact addresses, contacts, security and access details are excluded.",
+      "originals": "Five factual official HTML originals total 941,065 bytes and have individual SHA-256 checksums in sources.json. A separate 177,649-byte privacy-policy capture supported rights review but is not a factual source."
     }
   ],
   "deferred": [
@@ -70,6 +94,22 @@
     {
       "candidate": "Bulk N01 exact child facilities and current completion evidence",
       "reason": "The January 2024 release reports unnamed 12 MW and 42 MW facilities but provides no stable child identities. Its 2024 completion target is stale and is not actual commissioning evidence."
+    },
+    {
+      "candidate": "maincubes BER02 exact buildings and FRA03 phase allocation",
+      "reason": "BER02 is a design-dependent multi-building campus and current pages do not assign capacity or technical area to exact buildings. FRA03 is operational while its page retains separate phase milestones, but no exact phase rating allocation is provided."
+    },
+    {
+      "candidate": "Colt Data Centre Services public facility portfolio",
+      "reason": "Official terms restrict site content to personal, non-commercial use and prohibit copying or redistribution without permission. No Colt facts, captures or source-registry entries were published."
+    },
+    {
+      "candidate": "STACK Infrastructure public facility portfolio",
+      "reason": "Official terms restrict copying, reproduction and commercial reuse without permission. No STACK facts, captures or source-registry entries were published."
+    },
+    {
+      "candidate": "Open Access Data Centres public facility portfolio",
+      "reason": "Official terms prohibit reproduction except under the copyright notice. This is a reuse hold, not an access failure; no OADC facts, captures or source-registry entries were published."
     }
   ],
   "quarantined": [
@@ -127,6 +167,39 @@
         "facility_capacity_mw"
       ],
       "reason": "OS-IX 14 MW 2N redundant power, DK01 30 MW secured power and N01 up-to 1 GW power potential do not identify IT, grid or total facility demand. All remain observations and normalized capacity scalars remain null."
+    },
+    {
+      "candidate": "maincubes FRA05 capacity boundary",
+      "fields": [
+        "it_capacity_mw",
+        "grid_capacity_mw",
+        "facility_capacity_mw"
+      ],
+      "reason": "The current directory reports 75 MW capacity for the FRA05 pipeline identity, but no exact site page or electrical boundary is available. All normalized capacity scalars remain null."
+    },
+    {
+      "candidate": "maincubes BER02 design-dependent ranges",
+      "fields": [
+        "it_capacity_mw",
+        "technical_area_m2"
+      ],
+      "reason": "The current page reports 144-186 MW IT capacity and 12,000-41,184 m2 IT area depending on selected design/cooling. Both whole-campus ranges remain observations; no scalar upper bound or building allocation is selected."
+    },
+    {
+      "candidate": "Datacenter United facility capacity boundaries",
+      "fields": [
+        "it_capacity_mw",
+        "grid_capacity_mw",
+        "facility_capacity_mw"
+      ],
+      "reason": "The current directory and linked pages do not establish facility-level IT, grid or total demand MW. All normalized capacity scalars remain null for all 14 records."
+    },
+    {
+      "candidate": "Rack Centre LGS2 white-space conflict",
+      "fields": [
+        "technical_area_m2"
+      ],
+      "reason": "Current official pages report 7,200 m2 and 3,240 m2 of LGS2 white space. Both values remain conflict observations and technical_area_m2 remains null."
     }
   ],
   "normalization_notes": [
@@ -156,6 +229,21 @@
     "Bulk Infrastructure's complete current directory is processed at offset three: OS-IX is independent, while N01 and DK01 are campus aggregates excluded from every capacity sum.",
     "No Bulk MW statement is normalized because 2N power, secured power and campus power potential do not establish IT, grid or total facility demand boundaries.",
     "N01's unnamed 12 MW and 42 MW facilities remain dated observations pending exact identities and current lifecycle evidence; the stale 2024 target is not commissioning.",
-    "DK01's exact 2,300 m2 white space is technical area and is not used to infer capacity. This run introduces no new reuse hold and preserves every prior hold and quarantine."
+    "DK01's exact 2,300 m2 white space is technical area and is not used to infer capacity. This run introduces no new reuse hold and preserves every prior hold and quarantine.",
+    "maincubes' complete current directory is processed at offset eight: seven exact facility identities and the BER02 campus aggregate.",
+    "Five facilities are currently labelled in operation, FRA04 is announced/in planning, BER02 is under construction and FRA05 remains an announced pipeline identity.",
+    "Six exact site-page IT capacities are normalized: AMS01 5 MW, FRA01 6 MW, FRA02 8 MW, BER01 9 MW and FRA03 16 MW as design maximums, and FRA04 40 MW as ultimate planned. These are not measured load, grid capacity or operational demand.",
+    "Exact site-page IT area for the same six identities is technical area. FRA05's unclassified 75 MW and BER02's design-dependent capacity and area ranges remain observations; the campus aggregate stays excluded from every capacity sum.",
+    "Operator certification, renewable-energy, availability, redundancy and rack-density language does not create issuer-registry certifications or deployments. No new reuse hold was introduced.",
+    "Datacenter United's complete displayed current directory is processed at offset 14: 12 operational facilities and two under construction.",
+    "Antwerp 1/2 and Evere 1/2 remain separate exact directory facility identities sharing grouped pages. Antwerp 3 links to DC Flanders, retained as an alias. No sibling capacity allocation or city-level campus aggregate is synthesized.",
+    "Ghent 2 is explicitly under construction/coming and Mouscron is currently under development. No target is treated as actual commissioning evidence.",
+    "All Datacenter United IT, grid and facility-capacity scalars remain null. Operator Tier, ISO, availability, sustainability, connectivity and security claims do not create issuer-registry certifications, deployments or sensitive normalized details.",
+    "Colt and STACK screenings are reuse holds, not access failures. No candidate facts, captures or source-registry entries were published; all prior holds and quarantines remain in force.",
+    "Rack Centre's complete explicit Lagos boundary is processed at offset three: LGS1 and LGS2 are exact operational facilities and the Lagos Campus aggregate is excluded from every capacity sum.",
+    "LGS1's exact 1.5 MW IT load and 1,094 m2 white space are normalized. LGS2's exact 12 MW IT load and 2025-04-10 commissioning date are normalized; the separately stated 13.5 MW campus total remains only on the excluded aggregate.",
+    "LGS2's conflicting 7,200 m2 and 3,240 m2 white-space claims remain observations. Its 25 MVA utility commitment is not converted to grid MW; LGS1 PUE 1.5 lacks a measurement period and LGS2 PUE 1.35 is a design value.",
+    "Uptime Institute month-precision Tier III awards for the original Lagos facility remain issuer-verified observations on LGS1 rather than certifications_json entries. No LGS2 certification is inferred.",
+    "The OADC screening preserves an existing reuse hold and imports no facts or bytes. All prior holds and quarantines remain in force."
   ]
 }

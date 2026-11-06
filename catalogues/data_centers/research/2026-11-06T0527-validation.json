@@ -1,0 +1,154 @@
+{
+  "run_id": "maincubes-directory-20261106T052714Z",
+  "validated_at": "2026-11-06T05:27:14Z",
+  "base_main_sha": "036429f93354749517d91ac62b18390ec7bccddc",
+  "branch": "research/data-center-database-20261106T0527Z",
+  "catalogue": {
+    "canonical_records": 3338,
+    "projects": 564,
+    "project_scopes": {
+      "facility": 434,
+      "phase": 3,
+      "campus": 127
+    },
+    "equipment": 2774,
+    "countries": 39,
+    "operators": 20,
+    "oems": 74,
+    "added_projects": 8,
+    "enriched_projects": 0,
+    "added_equipment": 0,
+    "enriched_equipment": 0
+  },
+  "inventory": {
+    "source_ids": [
+      "maincubes-directory-current-20261106",
+      "maincubes-fra04-current-20261106",
+      "maincubes-fra03-current-20261106",
+      "maincubes-fra02-current-20261106",
+      "maincubes-fra01-current-20261106",
+      "maincubes-ber02-current-20261106",
+      "maincubes-ber01-current-20261106",
+      "maincubes-ams01-current-20261106"
+    ],
+    "site_identities_processed": 8,
+    "facility_records_added": 7,
+    "campus_aggregates_added": 1,
+    "records_added": 8,
+    "records_enriched": 0,
+    "normalized_exact_it_capacity_records": 6,
+    "normalized_exact_technical_area_records": 6,
+    "quarantined_field_groups": 2,
+    "quarantined_records": 2,
+    "originals_available": 8,
+    "original_bytes": 5192862,
+    "rights_review_bytes": 1120130,
+    "reuse_prohibited": false,
+    "new_reuse_holds": []
+  },
+  "local_checks": [
+    {
+      "command": "JSON parsing for sources, backlog, source review, coverage, validation and decision ledger",
+      "result": "passed"
+    },
+    {
+      "command": "uv run python -m energy_data_retrieval.data_center_catalogue validate",
+      "result": "passed; 3338 records"
+    },
+    {
+      "command": "build_data_center_maincubes_batch.py replay twice from checksum-verified official captures plus cmp against canonical JSONL",
+      "result": "passed; 8 records reproduced byte-identically"
+    },
+    {
+      "command": "focused Data Center pytest suites",
+      "result": "passed; 116 tests"
+    },
+    {
+      "command": "node --test tests/js/test_database_viewer.mjs",
+      "result": "passed; 35 tests"
+    },
+    {
+      "command": "uv run ruff format --check . and ruff check .",
+      "result": "passed; 1220 files formatted"
+    },
+    {
+      "command": "repository-wide uv run ty check",
+      "result": "passed"
+    },
+    {
+      "command": "uv run python scripts/check_repository.py and scripts/check_citations.py",
+      "result": "passed"
+    },
+    {
+      "command": "MPLBACKEND=Agg uv run python examples/database/plot_data_center_catalogue.py",
+      "result": "passed; project scopes 434 facility, 127 campus and 3 phase"
+    },
+    {
+      "command": "two independent data_center_catalogue build commands plus cmp",
+      "result": "passed; byte-identical typed Zstandard snapshots"
+    },
+    {
+      "command": "uv run --group dev pytest -q",
+      "result": "blocked during collection by an unrelated environment-specific PV dask/psutil NoSuchProcess failure in tests/test_kgpv_worldwide_example.py"
+    },
+    {
+      "command": "uv run --group dev pytest -q --ignore=tests/test_kgpv_worldwide_example.py",
+      "result": "3230 passed, 5 optional skips, 1 unrelated environment-specific PV subprocess failure caused by psutil.NoSuchProcess in methods/tests/test_degradation_mapping.py"
+    },
+    {
+      "command": "uv run sphinx-build -W --keep-going -b html docs ...",
+      "result": "blocked locally by the documented Python 3.13-only Orbital PV imagery gallery dependency; remote Python 3.13 documentation CI required"
+    },
+    {
+      "command": "git diff --check",
+      "result": "passed"
+    }
+  ],
+  "snapshot_sha256": {
+    "input": "fb9601b79a3d3c4c02109fa51e696fb3504b1f659446019714ffcd4c7025e188",
+    "projects": "30cc3c3e782bee45e13a672924b5cb08347736e408273a1d7001e0e740c461a0",
+    "equipment": "661c1ade3e6095557e8924691747d85b1078ac13ec18dbbb36a66667940ee05b",
+    "manifest": "d80bed3b4f7d5f99dcab4fd1c7265b3c24c3116d48f70ddfc0a5c43f86b55b54",
+    "schema": "560593771c719e11e0a4cb0577f6a17330e22cfca840e627734b58be4fa9566b",
+    "sources": "2f1a97a654fb85519eb97ec89e8f5b4d0078de65568d3c2c998e27457baafa60",
+    "maincubes_canonical_jsonl": "35b16c9fb625aa96b3fdb448a3ea241936da7e3a768ce4a2aaaaa9e8000f7072"
+  },
+  "capacity_summaries": {
+    "it_capacity_mw": {
+      "excluded": 127,
+      "unknown": 377,
+      "by_basis": {
+        "ultimate_planned": {"reported_mw": 752.1, "records": 14},
+        "design_maximum": {"reported_mw": 637.675, "records": 41},
+        "operational": {"reported_mw": 146.0, "records": 5}
+      }
+    },
+    "grid_capacity_mw": {
+      "excluded": 127,
+      "unknown": 434,
+      "by_basis": {
+        "design_maximum": {"reported_mw": 207.5, "records": 3}
+      }
+    },
+    "facility_capacity_mw": {
+      "excluded": 127,
+      "unknown": 436,
+      "by_basis": {
+        "ultimate_planned": {"reported_mw": 75.0, "records": 1}
+      }
+    }
+  },
+  "remote_ci": {
+    "validated_data_head": "5ab607903488750c1fd620cdd078c79dc67bfe36",
+    "python_quality_and_tests": {
+      "run_id": 42169963840,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    "documentation": {
+      "run_id": 42169964059,
+      "status": "completed",
+      "conclusion": "success"
+    }
+  }
+}

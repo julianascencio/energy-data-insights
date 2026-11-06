@@ -26,6 +26,8 @@ from energy_data_retrieval.data_center_catalogue.portfolios import (
     parse_bulk_infrastructure_site_page,
     parse_carrier_19dv_table,
     parse_cummins_generator_table,
+    parse_datacenter_united_directory,
+    parse_datacenter_united_site_page,
     parse_digital_realty_nbo2_release,
     parse_ecodatacenter_portfolio,
     parse_ecodatacenter_site_page,
@@ -37,15 +39,21 @@ from energy_data_retrieval.data_center_catalogue.portfolios import (
     parse_green_mountain_portfolio,
     parse_icolo_facility_page,
     parse_icolo_home_portfolio,
+    parse_maincubes_directory,
+    parse_maincubes_site_page,
     parse_meta_locations,
     parse_penta_infra_directory,
     parse_penta_infra_site_page,
     parse_portfolio,
+    parse_rack_centre_campus,
+    parse_rack_centre_facility_page,
+    parse_rack_centre_lgs2_commissioning,
     parse_raxio_facility_page,
     parse_schneider_galaxy_vs_model_list,
     parse_stulz_cyberair_3pro_dx_modulating_table,
     parse_stulz_cyberair_3pro_dx_r134a_table,
     parse_stulz_cyberair_3pro_dx_table,
+    parse_uptime_rack_centre_story,
     parse_vertiv_powerups6000_table,
 )
 
@@ -534,6 +542,133 @@ def test_bulk_infrastructure_parsers_preserve_capacity_boundaries():
             b"",
             source_url="https://bulkinfrastructure.com/data-centers/n01/",
             expected_code="N01-42MW",
+        )
+
+
+def test_maincubes_parsers_preserve_directory_and_design_ranges():
+    directory = parse_maincubes_directory(
+        (FIXTURES / "maincubes-directory.html").read_bytes(),
+        source_url="https://www.maincubes.com/en/data-centers/",
+    )
+    assert [row["external_id"] for row in directory["candidates"]] == [
+        "FRA05",
+        "FRA04",
+        "FRA03",
+        "FRA02",
+        "FRA01",
+        "BER02",
+        "BER01",
+        "AMS01",
+    ]
+    assert directory["candidates"][0]["reported_capacity_min_mw"] == 75
+    assert directory["candidates"][5]["reported_capacity_max_mw"] == 186
+    fra03 = parse_maincubes_site_page(
+        (FIXTURES / "maincubes-fra03.html").read_bytes(),
+        source_url=("https://www.maincubes.com/en/data-centers/carrier-neutral-data-center-fra03/"),
+        expected_code="FRA03",
+    )["candidate"]
+    assert fra03["it_capacity_min_mw"] == fra03["it_capacity_max_mw"] == 16
+    assert fra03["technical_area_min_m2"] == 7680
+    ber02 = parse_maincubes_site_page(
+        (FIXTURES / "maincubes-ber02.html").read_bytes(),
+        source_url=(
+            "https://www.maincubes.com/en/data-centers/berlin-cloud-ai-provider-campus-ber02/"
+        ),
+        expected_code="BER02",
+    )["candidate"]
+    assert (ber02["it_capacity_min_mw"], ber02["it_capacity_max_mw"]) == (144, 186)
+    assert (ber02["technical_area_min_m2"], ber02["technical_area_max_m2"]) == (
+        12000,
+        41184,
+    )
+    with pytest.raises(ValueError, match="site code"):
+        parse_maincubes_site_page(
+            b"",
+            source_url="https://www.maincubes.com/en/data-centers/unknown/",
+            expected_code="FRA99",
+        )
+
+
+def test_datacenter_united_parsers_preserve_exact_facility_boundaries():
+    directory = parse_datacenter_united_directory(
+        (FIXTURES / "datacenter-united-directory.html").read_bytes(),
+        source_url="https://datacenterunited.com/en/our-datacenters/",
+    )
+    assert [row["external_id"] for row in directory["candidates"]] == [
+        "DC Antwerp 1",
+        "DC Antwerp 2",
+        "DC Antwerp 3",
+        "DC Burcht",
+        "DC Mechelen",
+        "DC Evere 1",
+        "DC Evere 2",
+        "DC Brussels",
+        "DC Machelen",
+        "DC Ghent",
+        "DC Ghent 2",
+        "DC Hasselt 1",
+        "DC Oostkamp",
+        "DC Mouscron",
+    ]
+    assert directory["candidates"][10]["status_label"] == "under_construction"
+    for group in ("antwerp", "flanders", "evere", "ghent", "mouscron"):
+        parsed = parse_datacenter_united_site_page(
+            (FIXTURES / f"datacenter-united-{group}.html").read_bytes(),
+            source_url=f"https://datacenterunited.com/en/{group}/",
+            expected_group=group,
+        )
+        assert parsed["candidate"]["group"] == group
+    with pytest.raises(ValueError, match="identity or lifecycle"):
+        parse_datacenter_united_site_page(
+            b"<h1>DC Ghent</h1>",
+            source_url="https://datacenterunited.com/en/our-datacenters/dc-ghent/",
+            expected_group="ghent",
+        )
+
+
+def test_rack_centre_parsers_keep_facilities_and_campus_separate():
+    campus = parse_rack_centre_campus(
+        (FIXTURES / "rack-centre-campus.html").read_bytes(),
+        source_url="https://rack-centre.com/lagos-data-centre-campus-expansion/",
+    )["candidate"]
+    assert campus["facility_codes"] == ["LGS1", "LGS2"]
+    assert campus["it_capacity_mw"] == 13.5
+    assert campus["lgs2_white_space_m2"] == 3240
+    lgs1 = parse_rack_centre_facility_page(
+        (FIXTURES / "rack-centre-lgs1.html").read_bytes(),
+        source_url=(
+            "https://rack-centre.com/lagos-data-centre-campus-expansion/data-centre-campus-lgs-1/"
+        ),
+        expected_code="LGS1",
+    )["candidate"]
+    assert lgs1["it_capacity_mw"] == 1.5
+    assert lgs1["technical_area_m2"] == 1094
+    lgs2 = parse_rack_centre_facility_page(
+        (FIXTURES / "rack-centre-lgs2.html").read_bytes(),
+        source_url=(
+            "https://rack-centre.com/lagos-data-centre-campus-expansion/"
+            "data-centre-campus-lgs-2-expansion/"
+        ),
+        expected_code="LGS2",
+    )["candidate"]
+    assert lgs2["it_capacity_mw"] == 12
+    assert lgs2["reported_white_space_m2"] == 7200
+    event = parse_rack_centre_lgs2_commissioning(
+        (FIXTURES / "rack-centre-lgs2-commissioning.html").read_bytes(),
+        source_url="https://rack-centre.com/rack-centres-lgs2-12mw-data-centre-commissioned/",
+    )["candidate"]
+    assert event["commissioning_date"] == "2025-04-10"
+    issuer = parse_uptime_rack_centre_story(
+        (FIXTURES / "rack-centre-uptime-story.html").read_bytes(),
+        source_url=(
+            "https://uptimeinstitute.com/clients/"
+            "rack-centre-tier-iii-certification-of-constructed-facility"
+        ),
+    )["candidate"]
+    assert issuer["awards"][1]["date"] == "2017-04"
+    with pytest.raises(ValueError, match="facility code"):
+        parse_rack_centre_facility_page(
+            b"", source_url="https://rack-centre.com/", expected_code="LGS3"
         )
 
 
