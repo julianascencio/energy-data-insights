@@ -793,3 +793,13 @@ Historical assertions never promote current operating MW or lifecycle. Kuluva's
 intra-report commissioning discrepancy remains unresolved. The report is already
 registered as `uganda_era_environment_2023`; replay uses
 `scripts/enrich_hydro_era_report.py`. Twenty-seven other Annex rows remain held.
+
+The ERA construction/licensed acceptance batch adds 21 historical project
+identities, for 7,222 records across 128 countries (59 in Uganda). Its 21 project
+MW observations and seven dated UECCC procurement kW observations remain distinct
+from installed/operational MW. The joint lifecycle group is not split or promoted
+to current status. Unknown locations are omitted from the map; counts include
+the identities, while unresolved physical capacities remain excluded from KPIs.
+The source `ueccc_orio_tender_2020` is listed in the formal references. Replay with
+`scripts/accept_hydro_era_planned.py`; optional `--text` verifies the full parsed
+Annex partition. Six older identity matches, Swam, Rushobe and Kisonko remain held.

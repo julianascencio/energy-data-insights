@@ -3,6 +3,7 @@
 import io
 import json
 import math
+from collections.abc import Callable
 from pathlib import Path
 from typing import Any
 
@@ -131,11 +132,17 @@ def new_record(entry: dict[str, Any], *, now: str) -> dict[str, Any]:
     return row
 
 
-def accept_new(root: Path, batch: dict[str, Any], output: Path) -> int:
+def accept_new(
+    root: Path,
+    batch: dict[str, Any],
+    output: Path,
+    *,
+    record_factory: Callable[..., dict[str, Any]] = new_record,
+) -> int:
     """Preflight all accessions and names/aliases before writing; exact replay is a no-op."""
     existing = load_records(root)
     lookup = {r["record_id"]: r for r in existing}
-    incoming = [new_record(e, now=batch["reviewed_at"]) for e in batch["accepted"]]
+    incoming = [record_factory(e, now=batch["reviewed_at"]) for e in batch["accepted"]]
     if len({r["record_id"] for r in incoming}) != len(incoming):
         raise ValueError("Duplicate incoming accession")
     new = []
@@ -147,7 +154,7 @@ def accept_new(root: Path, batch: dict[str, Any], output: Path) -> int:
         names = {name_key(n) for n in [row["name"], *row["aliases"]]}
         for prior in existing + new:
             if prior["country_code"] == "UGA" and names & {
-                name_key(n) for n in [prior["name"], *prior.get("aliases", [])]
+                name_key(n) for n in [prior["name"], *(prior.get("aliases") or [])]
             }:
                 raise ValueError("Name collision requires identity review")
         new.append(row)

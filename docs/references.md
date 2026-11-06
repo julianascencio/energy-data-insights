@@ -7903,3 +7903,11 @@ Electricity Regulatory Authority (Uganda) (2023). **The Electricity Supply Indus
 **Role:** data_source. Report year 2023; URL upload directory July 2025; exact publication date unverified. Public access; ERA site reserves rights. No open bulk-reuse licence identified. Limited factual station names and numeric observations transcribed with attribution; original workbook/PDF, prose and images are not redistributed.
 
 **Used by:** `catalogues/hydro/README.md`, `docs/hydro-catalogue.md`, `examples/database/plot_hydro_catalogue.py`, `data-retrieval/src/energy_data_retrieval/hydro_catalogue/era.py`.
+
+### ueccc_orio_tender_2020
+
+Uganda Energy Credit Capitalisation Company (2020). **Pre-Qualification of Bidders for Construction of Civil & Hydro-Mechanical Works of Nine Mini-Hydropower Plants**. [Source](https://www.ueccc.or.ug/pre-qualification-of-bidders-for-construction-of-civil-hydro-mechanical-works-of-nine-9-mini-hydropower-plants-under-plant-and-design-buildfidic-yellow-book/)
+
+**Role:** data_source. Published 29 September 2020; procurement-stage plant ratings are not installed/current capacities. Limited factual transcription; no open licence assumed.
+
+**Used by:** `catalogues/hydro/README.md`, `docs/hydro-catalogue.md`.

@@ -136,3 +136,19 @@ remain unresolved; no canonical commissioning date is overwritten. Replay with
 `scripts/enrich_hydro_era_report.py`. The parser covers 59 rows on printed
 pages 287–289; 27 other rows remain candidates, including 21 construction/licensed
 identities. The refreshed original PDF checksum is unchanged.
+
+The remaining 21 named projects in ERA Annex 3's 2023 construction/licensed
+partition are now accepted as stable identities, bringing coverage to **7,222
+records / 128 countries**, including 59 Ugandan records. Twenty-one reported
+project MW observations remain dated 2023; seven corroborating UECCC procurement
+ratings retain original kW and 29 September 2020 dates. Neither is current
+installed capacity. The combined lifecycle group remains unresolved, as do
+physical overlaps. No coordinates, official licence IDs or commissioning dates
+are invented. The ORIO programme aggregate is excluded.
+
+Source `ueccc_orio_tender_2020` corroborates seven names; differing ratings are
+retained separately. Rushobe/Kisonko are additional candidates, not automatic
+aliases of Warugo/Nyahuka. Six older ERA identity matches and Swam remain held.
+Replay: `scripts/accept_hydro_era_planned.py --text /path/to/report-layout.txt`.
+Omit `--text` for offline reviewed-evidence replay. See the new acceptance and
+validation ledgers. Next research partition rotates to Asian national inventories.

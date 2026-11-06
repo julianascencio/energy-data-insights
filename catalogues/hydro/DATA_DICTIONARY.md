@@ -142,3 +142,10 @@ capacity, grid and lifecycle columns with per-column locators and a 2023 basis.
 A decade remains a decade, missing commissioning remains null, and the combined
 construction/licensed group remains combined. Canonical current fields are not
 inferred from this historical table.
+
+ERA construction/licensed records use `observations_json` for historical
+`planned_capacity_mw` (2023) and, when corroborated, `planned_capacity_kw`
+(UECCC procurement, 2020-09-29). Original units and periods are retained, not
+summed. `extensions_json.era_planned_inventory` preserves the joint lifecycle
+group, unknown commissioning and report grid designation. `era_planned_review`
+retains the frozen catalogue accession and explicit identity decision.

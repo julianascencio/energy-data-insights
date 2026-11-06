@@ -124,3 +124,8 @@ print(
     "ERA 2023 assertion records:",
     sum("era_2023_assertions" in json.loads(r["extensions_json"]) for r in rows),
 )
+
+print(
+    "ERA historical project identities:",
+    sum("era_planned_inventory" in json.loads(r["extensions_json"]) for r in rows),
+)
