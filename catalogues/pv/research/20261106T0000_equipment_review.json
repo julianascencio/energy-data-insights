@@ -1,0 +1,946 @@
+{
+  "reviewed_columns": 11,
+  "accepted_new": 10,
+  "typed_values": 190,
+  "deferred_columns": [
+    {
+      "model": "STS-3.3KTL-S-P",
+      "reason": "India-onlyregionalrating; deferred ratherthan addingnear-identicalregionalclone withoutseparateregionalreview"
+    }
+  ],
+  "records": [
+    {
+      "model": "STS-1KTL-S-P",
+      "source_id": "sunways_sts_20261106T0000",
+      "typed_fields": {
+        "pac_rated_w": 1000,
+        "vdc_max_v": 500,
+        "vdc_rated_v": 360,
+        "mppt_min_v": 80,
+        "mppt_max_v": 450,
+        "mppt_count": 1,
+        "strings_per_mppt": 1,
+        "efficiency_max_pct": 97.3,
+        "efficiency_euro_pct": 96.4,
+        "output_current_max_a": 4.8,
+        "width_m": 0.327,
+        "height_m": 0.297,
+        "depth_m": 0.114,
+        "weight_kg": 6.5,
+        "ip_rating": "IP65",
+        "operating_temperature_min_c": -30,
+        "operating_temperature_max_c": 60,
+        "cooling_method": "Natural Convection",
+        "surge_protection": "Integrated;type/waveform/rating unstated"
+      },
+      "qualified_specs": {
+        "locator": "PDFpage2 literal STS-1KTL-S-P column; sharednamedrows and cells visually checked",
+        "startup_voltage_V": 60,
+        "maximum_output_active_power_W": 1100,
+        "maximum_output_apparent_power_VA": 1100,
+        "active_apparent_scope": "Explicit independent nativeW/VA rows, no conversionfromVA",
+        "rated_output_voltage_native": "220/230V",
+        "rated_frequency_Hz": [
+          50,
+          60
+        ],
+        "frequency_range_Hz": [
+          [
+            45,
+            55
+          ],
+          [
+            55,
+            65
+          ]
+        ],
+        "power_factor_native": "0.8leading to0.8lagging",
+        "THDI_native": "<3% at ratedpower",
+        "DCI_native": "<0.5%In",
+        "MPPT_efficiency_pct": 99.9,
+        "maximum_input_current_per_MPPT_A": [
+          16
+        ],
+        "maximum_short_circuit_current_per_MPPT_A": [
+          20
+        ],
+        "DC_inputs_per_MPPT": [
+          1
+        ],
+        "current_scope": "PerMPPTnativevalues; not summed or inferred perstring. Fault/protectioncurrent is not continuousoutputcurrent.",
+        "dimensions_basis": "W*H*D, mmconvertedtom only",
+        "DC_switch": "Optional, noinstalledscalar",
+        "communications_table": "RS485/WiFi/GPRS/LAN(Optional); groupqualifier preserved, no standardprotocolscalar",
+        "communications_cover": "STSalloptional; SEcomma beforewireless could implyRS485standard, tablegroup remainsambiguous",
+        "night_consumption_bound_W": "<1",
+        "topology": "Transformerless",
+        "relative_humidity_pct": [
+          0,
+          100
+        ],
+        "operating_altitude_m": 4000,
+        "altitude_qualifier": "STSderatingabove3000m; SE3000m nativevaluewith no extra ceilinginference",
+        "noise_bound_dB": "<25",
+        "display": "OLED & LED",
+        "warranty": "Unstated, unknown",
+        "certification": "No independentcertificate claim",
+        "regional_voltage_qualifier": "Footnote nationalvoltagevalues may cause minor ratedpower/voltagevariations; no artificialvoltagevariants",
+        "body_date": null,
+        "filename_version": "20240423",
+        "protection_integrated": [
+          "DCreversepolarity",
+          "insulationresistance",
+          "surge",
+          "overtemperature",
+          "residualcurrent",
+          "antiislanding",
+          "ACshortcircuit",
+          "ACovervoltage"
+        ],
+        "minimum_DC_voltage_V": 55,
+        "maximum_PV_input_configuration_W": 1600,
+        "PV_power_scope": "MaximumPVinputconfiguration, not ratedDCpower",
+        "single_phase": true
+      }
+    },
+    {
+      "model": "STS-1.5KTL-S-P",
+      "source_id": "sunways_sts_20261106T0000",
+      "typed_fields": {
+        "pac_rated_w": 1500,
+        "vdc_max_v": 500,
+        "vdc_rated_v": 360,
+        "mppt_min_v": 80,
+        "mppt_max_v": 450,
+        "mppt_count": 1,
+        "strings_per_mppt": 1,
+        "efficiency_max_pct": 97.3,
+        "efficiency_euro_pct": 96.4,
+        "output_current_max_a": 7.2,
+        "width_m": 0.327,
+        "height_m": 0.297,
+        "depth_m": 0.114,
+        "weight_kg": 6.5,
+        "ip_rating": "IP65",
+        "operating_temperature_min_c": -30,
+        "operating_temperature_max_c": 60,
+        "cooling_method": "Natural Convection",
+        "surge_protection": "Integrated;type/waveform/rating unstated"
+      },
+      "qualified_specs": {
+        "locator": "PDFpage2 literal STS-1.5KTL-S-P column; sharednamedrows and cells visually checked",
+        "startup_voltage_V": 60,
+        "maximum_output_active_power_W": 1650,
+        "maximum_output_apparent_power_VA": 1650,
+        "active_apparent_scope": "Explicit independent nativeW/VA rows, no conversionfromVA",
+        "rated_output_voltage_native": "220/230V",
+        "rated_frequency_Hz": [
+          50,
+          60
+        ],
+        "frequency_range_Hz": [
+          [
+            45,
+            55
+          ],
+          [
+            55,
+            65
+          ]
+        ],
+        "power_factor_native": "0.8leading to0.8lagging",
+        "THDI_native": "<3% at ratedpower",
+        "DCI_native": "<0.5%In",
+        "MPPT_efficiency_pct": 99.9,
+        "maximum_input_current_per_MPPT_A": [
+          16
+        ],
+        "maximum_short_circuit_current_per_MPPT_A": [
+          20
+        ],
+        "DC_inputs_per_MPPT": [
+          1
+        ],
+        "current_scope": "PerMPPTnativevalues; not summed or inferred perstring. Fault/protectioncurrent is not continuousoutputcurrent.",
+        "dimensions_basis": "W*H*D, mmconvertedtom only",
+        "DC_switch": "Optional, noinstalledscalar",
+        "communications_table": "RS485/WiFi/GPRS/LAN(Optional); groupqualifier preserved, no standardprotocolscalar",
+        "communications_cover": "STSalloptional; SEcomma beforewireless could implyRS485standard, tablegroup remainsambiguous",
+        "night_consumption_bound_W": "<1",
+        "topology": "Transformerless",
+        "relative_humidity_pct": [
+          0,
+          100
+        ],
+        "operating_altitude_m": 4000,
+        "altitude_qualifier": "STSderatingabove3000m; SE3000m nativevaluewith no extra ceilinginference",
+        "noise_bound_dB": "<25",
+        "display": "OLED & LED",
+        "warranty": "Unstated, unknown",
+        "certification": "No independentcertificate claim",
+        "regional_voltage_qualifier": "Footnote nationalvoltagevalues may cause minor ratedpower/voltagevariations; no artificialvoltagevariants",
+        "body_date": null,
+        "filename_version": "20240423",
+        "protection_integrated": [
+          "DCreversepolarity",
+          "insulationresistance",
+          "surge",
+          "overtemperature",
+          "residualcurrent",
+          "antiislanding",
+          "ACshortcircuit",
+          "ACovervoltage"
+        ],
+        "minimum_DC_voltage_V": 55,
+        "maximum_PV_input_configuration_W": 2400,
+        "PV_power_scope": "MaximumPVinputconfiguration, not ratedDCpower",
+        "single_phase": true
+      }
+    },
+    {
+      "model": "STS-2KTL-S-P",
+      "source_id": "sunways_sts_20261106T0000",
+      "typed_fields": {
+        "pac_rated_w": 2000,
+        "vdc_max_v": 500,
+        "vdc_rated_v": 360,
+        "mppt_min_v": 80,
+        "mppt_max_v": 450,
+        "mppt_count": 1,
+        "strings_per_mppt": 1,
+        "efficiency_max_pct": 97.5,
+        "efficiency_euro_pct": 97,
+        "output_current_max_a": 9.6,
+        "width_m": 0.327,
+        "height_m": 0.297,
+        "depth_m": 0.114,
+        "weight_kg": 6.5,
+        "ip_rating": "IP65",
+        "operating_temperature_min_c": -30,
+        "operating_temperature_max_c": 60,
+        "cooling_method": "Natural Convection",
+        "surge_protection": "Integrated;type/waveform/rating unstated"
+      },
+      "qualified_specs": {
+        "locator": "PDFpage2 literal STS-2KTL-S-P column; sharednamedrows and cells visually checked",
+        "startup_voltage_V": 60,
+        "maximum_output_active_power_W": 2200,
+        "maximum_output_apparent_power_VA": 2200,
+        "active_apparent_scope": "Explicit independent nativeW/VA rows, no conversionfromVA",
+        "rated_output_voltage_native": "220/230V",
+        "rated_frequency_Hz": [
+          50,
+          60
+        ],
+        "frequency_range_Hz": [
+          [
+            45,
+            55
+          ],
+          [
+            55,
+            65
+          ]
+        ],
+        "power_factor_native": "0.8leading to0.8lagging",
+        "THDI_native": "<3% at ratedpower",
+        "DCI_native": "<0.5%In",
+        "MPPT_efficiency_pct": 99.9,
+        "maximum_input_current_per_MPPT_A": [
+          16
+        ],
+        "maximum_short_circuit_current_per_MPPT_A": [
+          20
+        ],
+        "DC_inputs_per_MPPT": [
+          1
+        ],
+        "current_scope": "PerMPPTnativevalues; not summed or inferred perstring. Fault/protectioncurrent is not continuousoutputcurrent.",
+        "dimensions_basis": "W*H*D, mmconvertedtom only",
+        "DC_switch": "Optional, noinstalledscalar",
+        "communications_table": "RS485/WiFi/GPRS/LAN(Optional); groupqualifier preserved, no standardprotocolscalar",
+        "communications_cover": "STSalloptional; SEcomma beforewireless could implyRS485standard, tablegroup remainsambiguous",
+        "night_consumption_bound_W": "<1",
+        "topology": "Transformerless",
+        "relative_humidity_pct": [
+          0,
+          100
+        ],
+        "operating_altitude_m": 4000,
+        "altitude_qualifier": "STSderatingabove3000m; SE3000m nativevaluewith no extra ceilinginference",
+        "noise_bound_dB": "<25",
+        "display": "OLED & LED",
+        "warranty": "Unstated, unknown",
+        "certification": "No independentcertificate claim",
+        "regional_voltage_qualifier": "Footnote nationalvoltagevalues may cause minor ratedpower/voltagevariations; no artificialvoltagevariants",
+        "body_date": null,
+        "filename_version": "20240423",
+        "protection_integrated": [
+          "DCreversepolarity",
+          "insulationresistance",
+          "surge",
+          "overtemperature",
+          "residualcurrent",
+          "antiislanding",
+          "ACshortcircuit",
+          "ACovervoltage"
+        ],
+        "minimum_DC_voltage_V": 55,
+        "maximum_PV_input_configuration_W": 3200,
+        "PV_power_scope": "MaximumPVinputconfiguration, not ratedDCpower",
+        "single_phase": true
+      }
+    },
+    {
+      "model": "STS-2.5KTL-S-P",
+      "source_id": "sunways_sts_20261106T0000",
+      "typed_fields": {
+        "pac_rated_w": 2500,
+        "vdc_max_v": 500,
+        "vdc_rated_v": 360,
+        "mppt_min_v": 80,
+        "mppt_max_v": 450,
+        "mppt_count": 1,
+        "strings_per_mppt": 1,
+        "efficiency_max_pct": 97.5,
+        "efficiency_euro_pct": 97,
+        "output_current_max_a": 12,
+        "width_m": 0.327,
+        "height_m": 0.297,
+        "depth_m": 0.114,
+        "weight_kg": 6.5,
+        "ip_rating": "IP65",
+        "operating_temperature_min_c": -30,
+        "operating_temperature_max_c": 60,
+        "cooling_method": "Natural Convection",
+        "surge_protection": "Integrated;type/waveform/rating unstated"
+      },
+      "qualified_specs": {
+        "locator": "PDFpage2 literal STS-2.5KTL-S-P column; sharednamedrows and cells visually checked",
+        "startup_voltage_V": 60,
+        "maximum_output_active_power_W": 2750,
+        "maximum_output_apparent_power_VA": 2750,
+        "active_apparent_scope": "Explicit independent nativeW/VA rows, no conversionfromVA",
+        "rated_output_voltage_native": "220/230V",
+        "rated_frequency_Hz": [
+          50,
+          60
+        ],
+        "frequency_range_Hz": [
+          [
+            45,
+            55
+          ],
+          [
+            55,
+            65
+          ]
+        ],
+        "power_factor_native": "0.8leading to0.8lagging",
+        "THDI_native": "<3% at ratedpower",
+        "DCI_native": "<0.5%In",
+        "MPPT_efficiency_pct": 99.9,
+        "maximum_input_current_per_MPPT_A": [
+          16
+        ],
+        "maximum_short_circuit_current_per_MPPT_A": [
+          20
+        ],
+        "DC_inputs_per_MPPT": [
+          1
+        ],
+        "current_scope": "PerMPPTnativevalues; not summed or inferred perstring. Fault/protectioncurrent is not continuousoutputcurrent.",
+        "dimensions_basis": "W*H*D, mmconvertedtom only",
+        "DC_switch": "Optional, noinstalledscalar",
+        "communications_table": "RS485/WiFi/GPRS/LAN(Optional); groupqualifier preserved, no standardprotocolscalar",
+        "communications_cover": "STSalloptional; SEcomma beforewireless could implyRS485standard, tablegroup remainsambiguous",
+        "night_consumption_bound_W": "<1",
+        "topology": "Transformerless",
+        "relative_humidity_pct": [
+          0,
+          100
+        ],
+        "operating_altitude_m": 4000,
+        "altitude_qualifier": "STSderatingabove3000m; SE3000m nativevaluewith no extra ceilinginference",
+        "noise_bound_dB": "<25",
+        "display": "OLED & LED",
+        "warranty": "Unstated, unknown",
+        "certification": "No independentcertificate claim",
+        "regional_voltage_qualifier": "Footnote nationalvoltagevalues may cause minor ratedpower/voltagevariations; no artificialvoltagevariants",
+        "body_date": null,
+        "filename_version": "20240423",
+        "protection_integrated": [
+          "DCreversepolarity",
+          "insulationresistance",
+          "surge",
+          "overtemperature",
+          "residualcurrent",
+          "antiislanding",
+          "ACshortcircuit",
+          "ACovervoltage"
+        ],
+        "minimum_DC_voltage_V": 55,
+        "maximum_PV_input_configuration_W": 4000,
+        "PV_power_scope": "MaximumPVinputconfiguration, not ratedDCpower",
+        "single_phase": true
+      }
+    },
+    {
+      "model": "STS-3KTL-S-P",
+      "source_id": "sunways_sts_20261106T0000",
+      "typed_fields": {
+        "pac_rated_w": 3000,
+        "vdc_max_v": 500,
+        "vdc_rated_v": 360,
+        "mppt_min_v": 80,
+        "mppt_max_v": 450,
+        "mppt_count": 1,
+        "strings_per_mppt": 1,
+        "efficiency_max_pct": 97.5,
+        "efficiency_euro_pct": 97,
+        "output_current_max_a": 14.4,
+        "width_m": 0.327,
+        "height_m": 0.297,
+        "depth_m": 0.114,
+        "weight_kg": 6.5,
+        "ip_rating": "IP65",
+        "operating_temperature_min_c": -30,
+        "operating_temperature_max_c": 60,
+        "cooling_method": "Natural Convection",
+        "surge_protection": "Integrated;type/waveform/rating unstated"
+      },
+      "qualified_specs": {
+        "locator": "PDFpage2 literal STS-3KTL-S-P column; sharednamedrows and cells visually checked",
+        "startup_voltage_V": 60,
+        "maximum_output_active_power_W": 3300,
+        "maximum_output_apparent_power_VA": 3300,
+        "active_apparent_scope": "Explicit independent nativeW/VA rows, no conversionfromVA",
+        "rated_output_voltage_native": "220/230V",
+        "rated_frequency_Hz": [
+          50,
+          60
+        ],
+        "frequency_range_Hz": [
+          [
+            45,
+            55
+          ],
+          [
+            55,
+            65
+          ]
+        ],
+        "power_factor_native": "0.8leading to0.8lagging",
+        "THDI_native": "<3% at ratedpower",
+        "DCI_native": "<0.5%In",
+        "MPPT_efficiency_pct": 99.9,
+        "maximum_input_current_per_MPPT_A": [
+          16
+        ],
+        "maximum_short_circuit_current_per_MPPT_A": [
+          20
+        ],
+        "DC_inputs_per_MPPT": [
+          1
+        ],
+        "current_scope": "PerMPPTnativevalues; not summed or inferred perstring. Fault/protectioncurrent is not continuousoutputcurrent.",
+        "dimensions_basis": "W*H*D, mmconvertedtom only",
+        "DC_switch": "Optional, noinstalledscalar",
+        "communications_table": "RS485/WiFi/GPRS/LAN(Optional); groupqualifier preserved, no standardprotocolscalar",
+        "communications_cover": "STSalloptional; SEcomma beforewireless could implyRS485standard, tablegroup remainsambiguous",
+        "night_consumption_bound_W": "<1",
+        "topology": "Transformerless",
+        "relative_humidity_pct": [
+          0,
+          100
+        ],
+        "operating_altitude_m": 4000,
+        "altitude_qualifier": "STSderatingabove3000m; SE3000m nativevaluewith no extra ceilinginference",
+        "noise_bound_dB": "<25",
+        "display": "OLED & LED",
+        "warranty": "Unstated, unknown",
+        "certification": "No independentcertificate claim",
+        "regional_voltage_qualifier": "Footnote nationalvoltagevalues may cause minor ratedpower/voltagevariations; no artificialvoltagevariants",
+        "body_date": null,
+        "filename_version": "20240423",
+        "protection_integrated": [
+          "DCreversepolarity",
+          "insulationresistance",
+          "surge",
+          "overtemperature",
+          "residualcurrent",
+          "antiislanding",
+          "ACshortcircuit",
+          "ACovervoltage"
+        ],
+        "minimum_DC_voltage_V": 55,
+        "maximum_PV_input_configuration_W": 4800,
+        "PV_power_scope": "MaximumPVinputconfiguration, not ratedDCpower",
+        "single_phase": true
+      }
+    },
+    {
+      "model": "STT-15KTL-SE-S",
+      "source_id": "sunways_se_20261106T0000",
+      "typed_fields": {
+        "pac_rated_w": 15000,
+        "vdc_max_v": 1100,
+        "vdc_rated_v": 620,
+        "mppt_min_v": 200,
+        "mppt_max_v": 950,
+        "mppt_count": 1,
+        "strings_per_mppt": 2,
+        "efficiency_max_pct": 98.6,
+        "efficiency_euro_pct": 98.2,
+        "output_current_max_a": 23.8,
+        "width_m": 0.55,
+        "height_m": 0.41,
+        "depth_m": 0.199,
+        "weight_kg": 27.4,
+        "ip_rating": "IP66",
+        "operating_temperature_min_c": -30,
+        "operating_temperature_max_c": 60,
+        "cooling_method": "Fan Cooling",
+        "surge_protection": "Integrated;type/waveform/rating unstated"
+      },
+      "qualified_specs": {
+        "locator": "PDFpage2 literal STT-15KTL-SE-S column; sharednamedrows and cells visually checked",
+        "startup_voltage_V": 180,
+        "maximum_output_active_power_W": 16500,
+        "maximum_output_apparent_power_VA": 16500,
+        "active_apparent_scope": "Explicit independent nativeW/VA rows, no conversionfromVA",
+        "rated_output_voltage_native": "3/N/PE,230/400V",
+        "rated_frequency_Hz": [
+          50,
+          60
+        ],
+        "frequency_range_Hz": null,
+        "power_factor_native": "0.8leading to0.8lagging",
+        "THDI_native": "<3% at ratedpower",
+        "DCI_native": "<0.5%In",
+        "MPPT_efficiency_pct": 99.9,
+        "maximum_input_current_per_MPPT_A": [
+          40
+        ],
+        "maximum_short_circuit_current_per_MPPT_A": [
+          50
+        ],
+        "DC_inputs_per_MPPT": [
+          2
+        ],
+        "current_scope": "PerMPPTnativevalues; not summed or inferred perstring. Fault/protectioncurrent is not continuousoutputcurrent.",
+        "dimensions_basis": "W*H*D, mmconvertedtom only",
+        "DC_switch": "Optional, noinstalledscalar",
+        "communications_table": "RS485/WiFi/GPRS/LAN(Optional); groupqualifier preserved, no standardprotocolscalar",
+        "communications_cover": "STSalloptional; SEcomma beforewireless could implyRS485standard, tablegroup remainsambiguous",
+        "night_consumption_bound_W": "<1",
+        "topology": "Transformerless",
+        "relative_humidity_pct": [
+          0,
+          100
+        ],
+        "operating_altitude_m": 3000,
+        "altitude_qualifier": "STSderatingabove3000m; SE3000m nativevaluewith no extra ceilinginference",
+        "noise_bound_dB": "<40",
+        "display": "OLED & LED",
+        "warranty": "Unstated, unknown",
+        "certification": "No independentcertificate claim",
+        "regional_voltage_qualifier": "Footnote nationalvoltagevalues may cause minor ratedpower/voltagevariations; no artificialvoltagevariants",
+        "body_date": null,
+        "filename_version": "20241031",
+        "protection_integrated": [
+          "DCreversepolarity",
+          "insulationresistance",
+          "surge",
+          "overtemperature",
+          "residualcurrent",
+          "antiislanding",
+          "ACshortcircuit",
+          "ACovervoltage"
+        ],
+        "rated_AC_current_A": 21.6,
+        "rated_apparent_power_VA": 15000,
+        "backfeed_current_to_array_A": 0,
+        "maximum_output_fault_current_A": 118,
+        "maximum_output_overcurrent_protection_A": 118,
+        "AFCI_conflict": "CoverIntegrated functionality versus exacttableOptional; noinstalledAFCIscalar selected",
+        "PV_oversizing_claim": "Cover150%attachedPVarrayratio, no inferredDCnameplate",
+        "three_phase": true,
+        "hardware_identity": "SE-S has1MPPT/2inputs;SEhas2MPPT/2inputsperMPPT, not just voltage/firmwarevariant"
+      }
+    },
+    {
+      "model": "STT-15KTL-SE",
+      "source_id": "sunways_se_20261106T0000",
+      "typed_fields": {
+        "pac_rated_w": 15000,
+        "vdc_max_v": 1100,
+        "vdc_rated_v": 620,
+        "mppt_min_v": 200,
+        "mppt_max_v": 950,
+        "mppt_count": 2,
+        "strings_per_mppt": 2,
+        "efficiency_max_pct": 98.6,
+        "efficiency_euro_pct": 98.2,
+        "output_current_max_a": 23.8,
+        "width_m": 0.55,
+        "height_m": 0.41,
+        "depth_m": 0.199,
+        "weight_kg": 27.4,
+        "ip_rating": "IP66",
+        "operating_temperature_min_c": -30,
+        "operating_temperature_max_c": 60,
+        "cooling_method": "Fan Cooling",
+        "surge_protection": "Integrated;type/waveform/rating unstated"
+      },
+      "qualified_specs": {
+        "locator": "PDFpage2 literal STT-15KTL-SE column; sharednamedrows and cells visually checked",
+        "startup_voltage_V": 180,
+        "maximum_output_active_power_W": 16500,
+        "maximum_output_apparent_power_VA": 16500,
+        "active_apparent_scope": "Explicit independent nativeW/VA rows, no conversionfromVA",
+        "rated_output_voltage_native": "3/N/PE,230/400V",
+        "rated_frequency_Hz": [
+          50,
+          60
+        ],
+        "frequency_range_Hz": null,
+        "power_factor_native": "0.8leading to0.8lagging",
+        "THDI_native": "<3% at ratedpower",
+        "DCI_native": "<0.5%In",
+        "MPPT_efficiency_pct": 99.9,
+        "maximum_input_current_per_MPPT_A": [
+          40,
+          40
+        ],
+        "maximum_short_circuit_current_per_MPPT_A": [
+          50,
+          50
+        ],
+        "DC_inputs_per_MPPT": [
+          2,
+          2
+        ],
+        "current_scope": "PerMPPTnativevalues; not summed or inferred perstring. Fault/protectioncurrent is not continuousoutputcurrent.",
+        "dimensions_basis": "W*H*D, mmconvertedtom only",
+        "DC_switch": "Optional, noinstalledscalar",
+        "communications_table": "RS485/WiFi/GPRS/LAN(Optional); groupqualifier preserved, no standardprotocolscalar",
+        "communications_cover": "STSalloptional; SEcomma beforewireless could implyRS485standard, tablegroup remainsambiguous",
+        "night_consumption_bound_W": "<1",
+        "topology": "Transformerless",
+        "relative_humidity_pct": [
+          0,
+          100
+        ],
+        "operating_altitude_m": 3000,
+        "altitude_qualifier": "STSderatingabove3000m; SE3000m nativevaluewith no extra ceilinginference",
+        "noise_bound_dB": "<40",
+        "display": "OLED & LED",
+        "warranty": "Unstated, unknown",
+        "certification": "No independentcertificate claim",
+        "regional_voltage_qualifier": "Footnote nationalvoltagevalues may cause minor ratedpower/voltagevariations; no artificialvoltagevariants",
+        "body_date": null,
+        "filename_version": "20241031",
+        "protection_integrated": [
+          "DCreversepolarity",
+          "insulationresistance",
+          "surge",
+          "overtemperature",
+          "residualcurrent",
+          "antiislanding",
+          "ACshortcircuit",
+          "ACovervoltage"
+        ],
+        "rated_AC_current_A": 21.6,
+        "rated_apparent_power_VA": 15000,
+        "backfeed_current_to_array_A": 0,
+        "maximum_output_fault_current_A": 118,
+        "maximum_output_overcurrent_protection_A": 118,
+        "AFCI_conflict": "CoverIntegrated functionality versus exacttableOptional; noinstalledAFCIscalar selected",
+        "PV_oversizing_claim": "Cover150%attachedPVarrayratio, no inferredDCnameplate",
+        "three_phase": true,
+        "hardware_identity": "SE-S has1MPPT/2inputs;SEhas2MPPT/2inputsperMPPT, not just voltage/firmwarevariant"
+      }
+    },
+    {
+      "model": "STT-20KTL-SE",
+      "source_id": "sunways_se_20261106T0000",
+      "typed_fields": {
+        "pac_rated_w": 20000,
+        "vdc_max_v": 1100,
+        "vdc_rated_v": 620,
+        "mppt_min_v": 200,
+        "mppt_max_v": 950,
+        "mppt_count": 2,
+        "strings_per_mppt": 2,
+        "efficiency_max_pct": 98.6,
+        "efficiency_euro_pct": 98.2,
+        "output_current_max_a": 31.9,
+        "width_m": 0.55,
+        "height_m": 0.41,
+        "depth_m": 0.199,
+        "weight_kg": 27.4,
+        "ip_rating": "IP66",
+        "operating_temperature_min_c": -30,
+        "operating_temperature_max_c": 60,
+        "cooling_method": "Fan Cooling",
+        "surge_protection": "Integrated;type/waveform/rating unstated"
+      },
+      "qualified_specs": {
+        "locator": "PDFpage2 literal STT-20KTL-SE column; sharednamedrows and cells visually checked",
+        "startup_voltage_V": 180,
+        "maximum_output_active_power_W": 22000,
+        "maximum_output_apparent_power_VA": 22000,
+        "active_apparent_scope": "Explicit independent nativeW/VA rows, no conversionfromVA",
+        "rated_output_voltage_native": "3/N/PE,230/400V",
+        "rated_frequency_Hz": [
+          50,
+          60
+        ],
+        "frequency_range_Hz": null,
+        "power_factor_native": "0.8leading to0.8lagging",
+        "THDI_native": "<3% at ratedpower",
+        "DCI_native": "<0.5%In",
+        "MPPT_efficiency_pct": 99.9,
+        "maximum_input_current_per_MPPT_A": [
+          40,
+          40
+        ],
+        "maximum_short_circuit_current_per_MPPT_A": [
+          50,
+          50
+        ],
+        "DC_inputs_per_MPPT": [
+          2,
+          2
+        ],
+        "current_scope": "PerMPPTnativevalues; not summed or inferred perstring. Fault/protectioncurrent is not continuousoutputcurrent.",
+        "dimensions_basis": "W*H*D, mmconvertedtom only",
+        "DC_switch": "Optional, noinstalledscalar",
+        "communications_table": "RS485/WiFi/GPRS/LAN(Optional); groupqualifier preserved, no standardprotocolscalar",
+        "communications_cover": "STSalloptional; SEcomma beforewireless could implyRS485standard, tablegroup remainsambiguous",
+        "night_consumption_bound_W": "<1",
+        "topology": "Transformerless",
+        "relative_humidity_pct": [
+          0,
+          100
+        ],
+        "operating_altitude_m": 3000,
+        "altitude_qualifier": "STSderatingabove3000m; SE3000m nativevaluewith no extra ceilinginference",
+        "noise_bound_dB": "<40",
+        "display": "OLED & LED",
+        "warranty": "Unstated, unknown",
+        "certification": "No independentcertificate claim",
+        "regional_voltage_qualifier": "Footnote nationalvoltagevalues may cause minor ratedpower/voltagevariations; no artificialvoltagevariants",
+        "body_date": null,
+        "filename_version": "20241031",
+        "protection_integrated": [
+          "DCreversepolarity",
+          "insulationresistance",
+          "surge",
+          "overtemperature",
+          "residualcurrent",
+          "antiislanding",
+          "ACshortcircuit",
+          "ACovervoltage"
+        ],
+        "rated_AC_current_A": 29,
+        "rated_apparent_power_VA": 20000,
+        "backfeed_current_to_array_A": 0,
+        "maximum_output_fault_current_A": 118,
+        "maximum_output_overcurrent_protection_A": 118,
+        "AFCI_conflict": "CoverIntegrated functionality versus exacttableOptional; noinstalledAFCIscalar selected",
+        "PV_oversizing_claim": "Cover150%attachedPVarrayratio, no inferredDCnameplate",
+        "three_phase": true,
+        "hardware_identity": "SE-S has1MPPT/2inputs;SEhas2MPPT/2inputsperMPPT, not just voltage/firmwarevariant"
+      }
+    },
+    {
+      "model": "STT-25KTL-SE",
+      "source_id": "sunways_se_20261106T0000",
+      "typed_fields": {
+        "pac_rated_w": 25000,
+        "vdc_max_v": 1100,
+        "vdc_rated_v": 620,
+        "mppt_min_v": 200,
+        "mppt_max_v": 950,
+        "mppt_count": 2,
+        "strings_per_mppt": 2,
+        "efficiency_max_pct": 98.6,
+        "efficiency_euro_pct": 98.2,
+        "output_current_max_a": 39.8,
+        "width_m": 0.55,
+        "height_m": 0.41,
+        "depth_m": 0.199,
+        "weight_kg": 27.4,
+        "ip_rating": "IP66",
+        "operating_temperature_min_c": -30,
+        "operating_temperature_max_c": 60,
+        "cooling_method": "Fan Cooling",
+        "surge_protection": "Integrated;type/waveform/rating unstated"
+      },
+      "qualified_specs": {
+        "locator": "PDFpage2 literal STT-25KTL-SE column; sharednamedrows and cells visually checked",
+        "startup_voltage_V": 180,
+        "maximum_output_active_power_W": 27500,
+        "maximum_output_apparent_power_VA": 27500,
+        "active_apparent_scope": "Explicit independent nativeW/VA rows, no conversionfromVA",
+        "rated_output_voltage_native": "3/N/PE,230/400V",
+        "rated_frequency_Hz": [
+          50,
+          60
+        ],
+        "frequency_range_Hz": null,
+        "power_factor_native": "0.8leading to0.8lagging",
+        "THDI_native": "<3% at ratedpower",
+        "DCI_native": "<0.5%In",
+        "MPPT_efficiency_pct": 99.9,
+        "maximum_input_current_per_MPPT_A": [
+          40,
+          40
+        ],
+        "maximum_short_circuit_current_per_MPPT_A": [
+          50,
+          50
+        ],
+        "DC_inputs_per_MPPT": [
+          2,
+          2
+        ],
+        "current_scope": "PerMPPTnativevalues; not summed or inferred perstring. Fault/protectioncurrent is not continuousoutputcurrent.",
+        "dimensions_basis": "W*H*D, mmconvertedtom only",
+        "DC_switch": "Optional, noinstalledscalar",
+        "communications_table": "RS485/WiFi/GPRS/LAN(Optional); groupqualifier preserved, no standardprotocolscalar",
+        "communications_cover": "STSalloptional; SEcomma beforewireless could implyRS485standard, tablegroup remainsambiguous",
+        "night_consumption_bound_W": "<1",
+        "topology": "Transformerless",
+        "relative_humidity_pct": [
+          0,
+          100
+        ],
+        "operating_altitude_m": 3000,
+        "altitude_qualifier": "STSderatingabove3000m; SE3000m nativevaluewith no extra ceilinginference",
+        "noise_bound_dB": "<40",
+        "display": "OLED & LED",
+        "warranty": "Unstated, unknown",
+        "certification": "No independentcertificate claim",
+        "regional_voltage_qualifier": "Footnote nationalvoltagevalues may cause minor ratedpower/voltagevariations; no artificialvoltagevariants",
+        "body_date": null,
+        "filename_version": "20241031",
+        "protection_integrated": [
+          "DCreversepolarity",
+          "insulationresistance",
+          "surge",
+          "overtemperature",
+          "residualcurrent",
+          "antiislanding",
+          "ACshortcircuit",
+          "ACovervoltage"
+        ],
+        "rated_AC_current_A": 36.2,
+        "rated_apparent_power_VA": 25000,
+        "backfeed_current_to_array_A": 0,
+        "maximum_output_fault_current_A": 118,
+        "maximum_output_overcurrent_protection_A": 118,
+        "AFCI_conflict": "CoverIntegrated functionality versus exacttableOptional; noinstalledAFCIscalar selected",
+        "PV_oversizing_claim": "Cover150%attachedPVarrayratio, no inferredDCnameplate",
+        "three_phase": true,
+        "hardware_identity": "SE-S has1MPPT/2inputs;SEhas2MPPT/2inputsperMPPT, not just voltage/firmwarevariant"
+      }
+    },
+    {
+      "model": "STT-30KTL-SE",
+      "source_id": "sunways_se_20261106T0000",
+      "typed_fields": {
+        "pac_rated_w": 30000,
+        "vdc_max_v": 1100,
+        "vdc_rated_v": 620,
+        "mppt_min_v": 200,
+        "mppt_max_v": 950,
+        "mppt_count": 2,
+        "strings_per_mppt": 2,
+        "efficiency_max_pct": 98.6,
+        "efficiency_euro_pct": 98.2,
+        "output_current_max_a": 47.8,
+        "width_m": 0.55,
+        "height_m": 0.41,
+        "depth_m": 0.199,
+        "weight_kg": 27.4,
+        "ip_rating": "IP66",
+        "operating_temperature_min_c": -30,
+        "operating_temperature_max_c": 60,
+        "cooling_method": "Fan Cooling",
+        "surge_protection": "Integrated;type/waveform/rating unstated"
+      },
+      "qualified_specs": {
+        "locator": "PDFpage2 literal STT-30KTL-SE column; sharednamedrows and cells visually checked",
+        "startup_voltage_V": 180,
+        "maximum_output_active_power_W": 33000,
+        "maximum_output_apparent_power_VA": 33000,
+        "active_apparent_scope": "Explicit independent nativeW/VA rows, no conversionfromVA",
+        "rated_output_voltage_native": "3/N/PE,230/400V",
+        "rated_frequency_Hz": [
+          50,
+          60
+        ],
+        "frequency_range_Hz": null,
+        "power_factor_native": "0.8leading to0.8lagging",
+        "THDI_native": "<3% at ratedpower",
+        "DCI_native": "<0.5%In",
+        "MPPT_efficiency_pct": 99.9,
+        "maximum_input_current_per_MPPT_A": [
+          40,
+          40
+        ],
+        "maximum_short_circuit_current_per_MPPT_A": [
+          50,
+          50
+        ],
+        "DC_inputs_per_MPPT": [
+          2,
+          2
+        ],
+        "current_scope": "PerMPPTnativevalues; not summed or inferred perstring. Fault/protectioncurrent is not continuousoutputcurrent.",
+        "dimensions_basis": "W*H*D, mmconvertedtom only",
+        "DC_switch": "Optional, noinstalledscalar",
+        "communications_table": "RS485/WiFi/GPRS/LAN(Optional); groupqualifier preserved, no standardprotocolscalar",
+        "communications_cover": "STSalloptional; SEcomma beforewireless could implyRS485standard, tablegroup remainsambiguous",
+        "night_consumption_bound_W": "<1",
+        "topology": "Transformerless",
+        "relative_humidity_pct": [
+          0,
+          100
+        ],
+        "operating_altitude_m": 3000,
+        "altitude_qualifier": "STSderatingabove3000m; SE3000m nativevaluewith no extra ceilinginference",
+        "noise_bound_dB": "<40",
+        "display": "OLED & LED",
+        "warranty": "Unstated, unknown",
+        "certification": "No independentcertificate claim",
+        "regional_voltage_qualifier": "Footnote nationalvoltagevalues may cause minor ratedpower/voltagevariations; no artificialvoltagevariants",
+        "body_date": null,
+        "filename_version": "20241031",
+        "protection_integrated": [
+          "DCreversepolarity",
+          "insulationresistance",
+          "surge",
+          "overtemperature",
+          "residualcurrent",
+          "antiislanding",
+          "ACshortcircuit",
+          "ACovervoltage"
+        ],
+        "rated_AC_current_A": 43.5,
+        "rated_apparent_power_VA": 30000,
+        "backfeed_current_to_array_A": 0,
+        "maximum_output_fault_current_A": 118,
+        "maximum_output_overcurrent_protection_A": 118,
+        "AFCI_conflict": "CoverIntegrated functionality versus exacttableOptional; noinstalledAFCIscalar selected",
+        "PV_oversizing_claim": "Cover150%attachedPVarrayratio, no inferredDCnameplate",
+        "three_phase": true,
+        "hardware_identity": "SE-S has1MPPT/2inputs;SEhas2MPPT/2inputsperMPPT, not just voltage/firmwarevariant"
+      }
+    }
+  ],
+  "field_mapping": "PDFp2 namedrows RatedOutputPower,MaxDCInputVoltage,RatedDCInputVoltage,MPPTVoltageRange,MPPtrackers,DCinputsperMPPT,MaxEfficiency,EuroEfficiency,MaxOutputCurrent,DimensionsWHD,Weight,ProtectionDegree,OperatingTemperatureRange,Cooling,SurgeProtection. Conditions inqualifiedspecs."
+}
