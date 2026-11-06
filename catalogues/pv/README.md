@@ -621,3 +621,14 @@ planning capacities, storage, statuses and regional location labels remain quali
 historical context, with no nameplate, operating-status or coordinate inference.
 Existing non-null contexts are held rather than overwritten. Source attribution is
 in `licenses/NSW_DPHI_CC_BY4_NOTICE.md`; third-party reports/submissions are excluded.
+
+The offline `pv_catalogue.nrcan.read_nrcan_mpi` reader checks checksum-pinned
+NRCan Major Projects Inventory workbooks before staging. It rejects an embedded
+publication restriction even when portal metadata advertises an open licence.
+The 2025 workbook retrieved on 5 November 2026 has this conflict: no rows are
+staged or accepted. A corrected release still needs independent reuse review.
+Synthetic boundary tests cover headers, four-digit identifiers, duplicate IDs,
+classification, cost types and inference/privacy limits. Generic `Solar` does
+not prove PV; proponents are not owners, historical status is not current
+operation, and approximate native CAD-million estimates are not verified capex.
+Hidden vendor sheets, geometry and coordinates are excluded from staged output.
