@@ -1,7 +1,7 @@
 # Worldwide BESS projects
 
-The BESS section contains **2,207 project and plant records across
-48 countries**, supported by **413 registered sources**. It combines curated
+The BESS section contains **2,208 project and plant records across
+48 countries**, supported by **414 registered sources**. It combines curated
 commercial projects with reviewed U.S., UK, Australian, Chilean and French inventory subsets, not an
 exhaustive global inventory. It includes electrochemical
 batteries (including vanadium flow), not pumped hydro, compressed air or thermal
@@ -272,7 +272,7 @@ Latest research: [Philippines service and project reconciliation; EFFEKTA and Py
 
 Latest evidence review: [EFFEKTA charging conditions and physical-edition reconciliation](research/2026-11-04_effekta_charge.md).
 
-Latest continuation: [Scatec portfolio and exact OPzS editions](research/2026-11-04_opzs_scatec.md).
+Previous continuation: [Scatec portfolio and exact OPzS editions](research/2026-11-04_opzs_scatec.md).
 
 Latest iteration: [Malaysia, Ingeteam and Omburu](research/2026-11-04_malaysia_ingeteam.md), with named project/SPV identities, source holds and exact converter configurations.
 
@@ -304,3 +304,5 @@ Latest continuation: [Fullriver and Rarotonga review](research/2026-11-05_fullri
 Latest continuation: [Community batteries and Fullriver review](research/2026-11-06_community_fullriver.md).
 
 Latest continuation: [15 Philippine project enrichments and19 exact Pylontech configurations](research/2026-11-06_philippines_pylontech.md), with historical site/operator/owner-IPPA observations, source-access decisions and preserved phase/hybrid holds.
+
+Latest continuation: [South African project milestones and15 exact Pylontech/Solar MD models](research/2026-11-06_south_africa_pylontech_hv.md), including Komati tender scope, three construction-progress observations, exact modules and Logger V2.

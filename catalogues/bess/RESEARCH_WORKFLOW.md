@@ -358,3 +358,20 @@ standard/normal/peak current classes and the unstated L1 discharge-peak duration
 The L2 filename says v2.3 but its cover says v2.2. System kWh is printed/rounded,
 not a multiplication of module kWh. Separate module records must not inherit
 system IP/current/efficiency. Review the mechanical and module tables separately.
+
+## Force-H1-V2 offline table staging
+
+After independently checking source rights, printed identity and revision, export
+PDF pages11–12 using `pdfplumber`: combine `pdf.pages[10].extract_tables()[0]`
+and `pdf.pages[11].extract_tables()[0]` into a two-table JSON array outside Git.
+The optional PDF extraction dependency is not needed by the package parser.
+
+```bash
+uv run python scripts/stage_bess_pylontech_hv.py tables.json --revision '22P1FH1018 / 5PMPA08-00135' --output staged.json
+```
+
+The adapter validates model/component identities, units, single-string column order,
+voltage bounds and numeric scope. It does not expand optional parallel arrangements,
+fetch URLs, assign project components or mutate canonical records. Mechanical and
+module tables, chemistry/compliance claims and printed revision still need visual
+review. Use the existing upsert API after reviewed natural-identity reconciliation.

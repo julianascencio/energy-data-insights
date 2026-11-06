@@ -1,7 +1,7 @@
 # Global BESS OEM product database
 
-The 6 November 2026 expanded research snapshot contains **1,239 records from 56 product
-suppliers, backed by 544 registered sources**: 1,226 documented configurations and 13
+The 6 November 2026 expanded research snapshot contains **1,254 records from 57 product
+suppliers, backed by 550 registered sources**: 1,241 documented configurations and 13
 explicitly configurable families. It covers utility-scale systems, C&I cabinets,
 a small residential sample, standalone battery inverters and inverter/chargers, EMS controllers, and non-lithium
 storage technologies. This is a
@@ -276,7 +276,7 @@ uv run python scripts/stage_bess_leoch.py --text /outside-git/4OPzV200.txt --mod
 
 The parser fails on changed identity, nominal rating basis, current units or reviewed conditions. It stages only; exact revision, source rights, table anomalies and identity must be reviewed before the existing upsert API. C-rate and short-circuit current never become amperes or peak operating power.
 
-Latest continuation: [OPzS exact editions and Scatec portfolio](../bess/research/2026-11-04_opzs_scatec.md).
+Previous continuation: [OPzS exact editions and Scatec portfolio](../bess/research/2026-11-04_opzs_scatec.md).
 
 Latest iteration: [Malaysia, Ingeteam and Omburu](../bess/research/2026-11-04_malaysia_ingeteam.md), with source access decisions, exact converter configurations and preserved rating conflicts.
 
@@ -306,3 +306,5 @@ Latest continuation: [Fullriver and Rarotonga review](../bess/research/2026-11-0
 Latest continuation: [Community batteries and Fullriver review](../bess/research/2026-11-06_community_fullriver.md).
 
 Latest continuation: [Philippine site/role enrichment and19 exact Pylontech configurations](../bess/research/2026-11-06_philippines_pylontech.md). Printed manual revisions, nominal/usable energy, timed current limits and stack/module scope remain explicit.
+
+Latest continuation: [15 exact Pylontech and Solar MD records](../bess/research/2026-11-06_south_africa_pylontech_hv.md). Eight system/module relationships, qualified current/efficiency boundaries and an SS4083 power-condition quarantine are explicit.

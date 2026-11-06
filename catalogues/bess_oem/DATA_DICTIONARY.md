@@ -89,3 +89,17 @@ discharge temperature ranges, strict altitude bounds and qualified life claims.
 `module_record_id` links a stack to its exact module; named controllers do not
 imply separately accepted controller records. Native dimension order is retained
 when table axes are not explicit. Short-circuit A/ms is never operating current.
+
+## November6 high-voltage and regional OEM observations
+
+`extensions_json.pylontech_hv` retains the exact single-string/rack boundary,
+module record ID/count, native energy rounding, charge/discharge current classes
+and time limits, voltage bounds and qualified lifetime/efficiency claims.
+PowerCube current rows lack an explicit unit; they remain native observations,
+not normalized amperes or active power. Module-only facts do not inherit system IP.
+
+`extensions_json.solarmd_specification` distinguishes cell supplier from module
+manufacturer and records current/voltage limits, exact controller supply/contact
+ratings, cycle conditions and charging-only efficiency. Logger supply/relay ratings
+are never battery capacity. SS4083's power/C-rate inconsistency is quarantined in
+`conflicts_json`; normalized power is null, other verified fields remain usable.

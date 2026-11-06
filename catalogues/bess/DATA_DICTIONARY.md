@@ -78,3 +78,8 @@ remain inside the extension. Do not also count the same constituent batteries.
 combined owner/IPPA column, registry unit count and native contract code. These
 are dated observations, not current legal ownership or physical operation. Unit
 counts do not establish a battery-module/container count.
+
+`extensions_json.sa_minister_20260919` records dated project-completion percentages,
+procurement forecasts and FY27 commissioning expectations from the signed ministerial
+reply. These observations do not erase earlier ratings or turn a tender into an award,
+construction completion or operation. Komati's battery scope excludes co-located PV.
