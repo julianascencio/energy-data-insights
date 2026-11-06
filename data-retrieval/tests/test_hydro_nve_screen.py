@@ -98,6 +98,8 @@ def test_stable_cursor_survives_earlier_identity_acceptance(tmp_path, monkeypatc
     runpy.run_path(str(SCRIPT), run_name="__main__")
     original = output.read_bytes()
     assert json.loads(original)["decisions"][0]["wri_id"] == "WRI3"
+    assert json.loads(original)["partition"]["next_offset"] is None
+    assert json.loads(original)["partition"]["next_after_wri_id"] == "WRI3"
     records[0]["external_ids_json"] = '{"wri_gppd":"WRI1", "nve":"1"}'
     path.write_text("\n".join(map(json.dumps, records)) + "\n")
     runpy.run_path(str(SCRIPT), run_name="__main__")

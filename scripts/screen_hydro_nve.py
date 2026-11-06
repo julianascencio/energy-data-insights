@@ -74,7 +74,8 @@ def main() -> None:
             after_wri_id=args.after_wri_id,
             limit=args.limit,
             last_wri_id=decisions[-1]["wri_id"] if decisions else None,
-            next_offset=args.offset + len(decisions),
+            next_offset=None if args.after_wri_id else args.offset + len(decisions),
+            next_after_wri_id=decisions[-1]["wri_id"] if decisions else args.after_wri_id,
         ),
         source_sha256={
             p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in (args.api, args.gis)
