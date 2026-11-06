@@ -235,3 +235,50 @@ def test_registry_guard_also_catches_collisions_within_a_multi_project_notice():
     rows, decisions = stage(r)
     assert len(rows) == 1
     assert decisions[-1]["decision"] == "existing_registry_review"
+
+
+def test_repowering_authorization_never_promotes_replacement_operation():
+    for status in ["operational", "retired", "cancelled"]:
+        with pytest.raises(ValueError, match="Repowering authorization"):
+            stage(review(effect="repowering_authorization", status=status))
+    rows, _ = stage(review(effect="repowering_authorization", status="permitted"))
+    assert rows[0]["aggregation_role"] == "unresolved"
+    assert rows[0].get("installed_capacity_mw") is None
+
+
+def test_daily_scan_requires_empty_extra_issue_and_deduplicates_aliases():
+    from energy_data_retrieval.wind_catalogue.boe import review_daily_indexes
+
+    url = "https://www.boe.es/boe/dias/2026/09/02/"
+    empty = b'<html>sumario<li class="dispo"><p>Other</p></li></html>'
+    default = empty + b'<a href="index.php?d=216">Ordinary issue</a>'
+    with pytest.raises(ValueError, match="issue URLs"):
+        review_daily_indexes(url, {url: default})
+    result = review_daily_indexes(url, {url: default, url + "index.php?d=216": empty})
+    assert result["notices"] == []
+    assert len(result["captures"]) == 2
+    wind = FIXTURE.read_bytes()
+    result = review_daily_indexes(url, {url: wind + default, url + "index.php?d=216": wind})
+    assert len(result["notices"]) == 4
+    with pytest.raises(ValueError, match="Conflicting notice"):
+        review_daily_indexes(
+            url,
+            {url: wind + default, url + "index.php?d=216": wind.replace(b"72,6", b"73,6")},
+        )
+
+
+def test_application_refusal_is_not_operation_or_retirement():
+    for status in ["operational", "retired", "permitted"]:
+        with pytest.raises(ValueError, match="Application refusal"):
+            stage(review(effect="application_refusal", status=status))
+    rows, _ = stage(review(effect="application_refusal", status="cancelled"))
+    assert rows[0]["aggregation_role"] == "unresolved"
+
+
+@pytest.mark.parametrize("status", ["operational", "retired", "cancelled", "announced"])
+def test_construction_authorization_does_not_prove_operation(status):
+    with pytest.raises(ValueError, match="does not establish"):
+        stage(review(effect="construction_authorization", status=status))
+    row = stage(review(effect="construction_authorization", status="permitted"))[0][0]
+    assert row["aggregation_role"] == "unresolved"
+    assert row.get("installed_capacity_mw") is None

@@ -1,0 +1,150 @@
+{
+  "batch": "2026-11-06-0335",
+  "retrieved_at": "2026-11-06T03:37:32Z",
+  "indices": [
+    {
+      "daily_url": "https://www.boe.es/boe/dias/2026/08/27/",
+      "scope": "Complete discovered Series A/B wind-title scan",
+      "captures": [
+        {
+          "url": "https://www.boe.es/boe/dias/2026/08/27/",
+          "sha256": "fda0106f5f442ad913d0158922b7d7af092ee8f4af909c28b44b5160be3fe7a8"
+        }
+      ],
+      "notices": [
+        {
+          "notice_id": "BOE-B-2026-27922",
+          "title": "Anuncio del Área de Industria y Energía de la Subdelegación del Gobierno en Palencia , por el que se somete a información pública la solicitud de declaración de impacto ambiental, autorización administrativa previa y autorización administrativa de construcción de instalación fotovoltaica Híbrida PFVH Valdepero, de 24,9 MW de potencia instalada, para su hibridación con el parque eólico existente PE Valdepero, de 30 MW, y para una parte de su infraestructura de evacuación, sito en los términos municipales de Palencia, Fuentes de Valdepero y Husillos, en la provincia de Palencia."
+        }
+      ]
+    },
+    {
+      "daily_url": "https://www.boe.es/boe/dias/2026/08/28/",
+      "scope": "Complete discovered Series A/B wind-title scan",
+      "captures": [
+        {
+          "url": "https://www.boe.es/boe/dias/2026/08/28/",
+          "sha256": "d8cb63891c24492c18804abaa5fda85c7b177fcc30fd5570d9d2566ce0d0165f"
+        }
+      ],
+      "notices": [
+        {
+          "notice_id": "BOE-A-2026-18277",
+          "title": "Resolución de 19 de junio de 2026, de la Dirección General de Política Energética y Minas, por la que se desestima la solicitud de Maracaibo Solar, SL, de autorización administrativa previa del parque eólico «Satrebares», de 125 MW de potencia instalada, y de su infraestructura de evacuación, en las provincias de Lugo y A Coruña."
+        }
+      ]
+    },
+    {
+      "daily_url": "https://www.boe.es/boe/dias/2026/08/29/",
+      "scope": "Complete discovered Series A/B wind-title scan",
+      "captures": [
+        {
+          "url": "https://www.boe.es/boe/dias/2026/08/29/",
+          "sha256": "237eaa0142703149349104236cb7523b65c517e3366e541de8fdd749b4faee90"
+        }
+      ],
+      "notices": []
+    },
+    {
+      "daily_url": "https://www.boe.es/boe/dias/2026/08/31/",
+      "scope": "Complete discovered Series A/B wind-title scan",
+      "captures": [
+        {
+          "url": "https://www.boe.es/boe/dias/2026/08/31/",
+          "sha256": "10e3ea4527a5d48201d7adda4f3361d3a4b70aa559424df0edafc4bc08bcd38a"
+        }
+      ],
+      "notices": [
+        {
+          "notice_id": "BOE-B-2026-28211",
+          "title": "Anuncio de la Dependencia de Industria y Energía de la Subdelegación del Gobierno en Albacete, por el que se somete al trámite de Información Pública la Solicitud de Autorización Administrativa Previa y la Solicitud de Autorización Administrativa de Construcción de la planta de almacenamiento Frontones Fase II, de 20 MW de potencia instalada, y infraestructura de evacuación, para su hibridación con el parque eólico, fotovoltaico y de almacenamiento Frontones, compuesto por el parque eólico Frontones, de 50 MW de potencia instalada, la Planta Solar Fotovoltaica Frontones Híbrida, de 26,25 MW de potencia instalada, y la Planta de Almacenamiento Frontones, de 4 MW de potencia instalada, en la provincia de Albacete, conformando una instalación híbrida de 60 MW de potencia instalada."
+        }
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "notice_id": "BOE-A-2026-18277",
+      "decision": "enriched",
+      "record_id": "900bd292-b22a-5818-8b4a-1f9f5fb81cef",
+      "observation": {
+        "source_id": "BOE-A-2026-18277",
+        "publication_date": "2026-08-28",
+        "locator": "I.Hechos Primero,Cuarto,Quinto,Sexto; operative decision",
+        "application_date": "2023-06-23",
+        "application_updated": "2024-05-30",
+        "adverse_environmental_decision": "2026-03-31",
+        "access_expiry_notification_received": "2025-12-19",
+        "first_hearing": "2026-01-30",
+        "second_hearing": "2026-04-15",
+        "procedure_id": "SGIISE/PEol-910",
+        "electrical_proposal": {
+          "collection_kv": 30,
+          "substations": [
+            "SE Satrebares1 30/220kV",
+            "SE Satrebares2 30/220kV"
+          ],
+          "export_kv": 220,
+          "compensation_substation": "SEC Satrebares220kV",
+          "grid_endpoint": "Abegondo220kV (REE)"
+        },
+        "scope": "Refused proposal infrastructure only, not installed assets. Later geography correction retained unchanged."
+      }
+    },
+    {
+      "notice_id": "BOE-B-2026-27922",
+      "decision": "deferred_wind_identity",
+      "reason": "Solar application; existing wind name not sufficient to reconcile historical WRI farm scope. PV24.9MW not wind capacity."
+    },
+    {
+      "notice_id": "BOE-B-2026-28211",
+      "decision": "excluded_non_wind_application",
+      "reason": "20MW battery application; hybrid60MW not wind capacity. No cross-sector writes."
+    }
+  ],
+  "captures": [
+    {
+      "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-27922",
+      "sha256": "1ea2b81deeb5a6f7f59badffd39622f1a2dae20311b82c95930b9945bb1eeb96"
+    },
+    {
+      "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-28211",
+      "sha256": "45ec807a5e9578cf27c1e99774c556d88ed53beb833dc330ec5a0f72fcf8ef3b"
+    },
+    {
+      "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-18277",
+      "sha256": "797206c870a80272c343f226b2213f757e808e6efa2edf45890b2d3912474243"
+    }
+  ],
+  "wimmera": {
+    "decision": "three_survey_id_crosswalks_still_held",
+    "permit": "PA2000877-2",
+    "sha256": "beeffed5bba73ff920463f396bc7067e647b1122ca3282cd7b3dd2a297e437ef",
+    "url": "https://sftpbspomppprod01.blob.core.windows.net/applicationfiles/329feebe-4053-f111-bec6-7ced8d34258d_PA2000877-3-Wimmera%20Plains%20Wind%20Farm-PA2000877-2%20Amended%20Permit-190526.pdf",
+    "locator": "Condition1(a),(c); condition3; page25 amendment table",
+    "amendment_date": "2026-05-14",
+    "filename_date": "2026-05-19",
+    "envelopes": {
+      "max_turbines": 52,
+      "max_tip_height_m": 247,
+      "min_tip_clearance_m": 44,
+      "max_rotor_m": 180
+    },
+    "scope": "Permit maxima/minima, not exact OEM models or as-built measurements; staged development allowed without AEMO IDs. No private landholder schedules retained."
+  },
+  "new_projects": 0,
+  "enriched_projects": 1,
+  "new_equipment": 0,
+  "new_quarantines": 0,
+  "oem_followup": {
+    "queries": [
+      "site:ul.com WD230-11500",
+      "site:iecre.org WD230-11500",
+      "WE4500S-01 specifications gearbox manufacturer"
+    ],
+    "outcome": "No original certificate or manufacturer technical table located. Existing Windey announcement and secondary listing results not reimported.",
+    "new_records": 0,
+    "sha256": null,
+    "checksum_status": "Search discovery only; no new original bytes"
+  }
+}

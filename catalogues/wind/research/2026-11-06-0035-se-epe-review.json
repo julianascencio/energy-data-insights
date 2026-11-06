@@ -1,0 +1,104 @@
+{
+  "batch": "2026-11-06-0035",
+  "source_id": "epe-siga-sergipe-20260113",
+  "complete_selected_partition": true,
+  "reviewed": 1,
+  "enriched": 1,
+  "deferred": 0,
+  "new_projects": 0,
+  "new_turbines": 0,
+  "observation_date": "2026-01-13",
+  "retrieved_at": "2026-11-06T00:36:28Z",
+  "decisions": [
+    {
+      "ceg": "EOL.CV.SE.030296-1.1",
+      "wri_gppd": "BRA0030296",
+      "object_id": 79,
+      "name": "Barra dos Coqueiros",
+      "decision": "enriched",
+      "reason": null,
+      "record_id": "279ddb4b-127d-517a-8fe5-8bbdbd570485"
+    }
+  ],
+  "all_reviewed_candidates": [
+    {
+      "ceg": "EOL.CV.SE.030296-1.1",
+      "wri_gppd": "BRA0030296",
+      "name": "Barra dos Coqueiros",
+      "object_id": 79,
+      "original": {
+        "datentradaoperacao": "2012-09-01",
+        "numcoordeempreendimento": -36.92926012,
+        "dscmuninicpios": "Barra dos Coqueiros - SE",
+        "mdagarantiafisicakw": 10500,
+        "dscorigemcombustivel": "Eólica",
+        "sigufprincipal": "SE",
+        "idenucleoceg": -2208977784000,
+        "datfimvigencia": "2045-07-08",
+        "dscfaseusina": "Operação",
+        "atualizacao_epe": null,
+        "nomempreendimento": "Barra dos Coqueiros",
+        "sigtipogeracao": "EOL",
+        "nomfontecombustivel": "Cinética do vento",
+        "idcgeracaoqualificada": "Não",
+        "dscsubbacia": null,
+        "numcoordnempreendimento": -10.80996755,
+        "datgeracaoconjuntodados": "2026-01-13",
+        "dscfontecombustivel": "Cinética do vento",
+        "datiniciovigencia": "2010-07-08",
+        "dsctipooutorga": "Autorização",
+        "mdapotenciaoutorgadakw": 34500,
+        "mdapotenciafiscalizadakw": 34500,
+        "codceg": "EOL.CV.SE.030296-1.1",
+        "objectid": 79,
+        "dscpropriregimepariticipacao": "100% para ENERGEN ENERGIAS RENOVAVEIS S/A (PIE)"
+      },
+      "normalized_power": {
+        "authorized_mw": 34.5,
+        "inspected_mw": 34.5,
+        "physical_guarantee_mw": 10.5
+      },
+      "normalization": "Original kW / 1000 to MW; separate reported categories; gross/net unspecified",
+      "geometry": {
+        "x": -36.929260119999974,
+        "y": -10.809967549651878
+      },
+      "coordinate_reference": "EPSG:4326 returned by service; native layer EPSG:4674",
+      "positional_accuracy_m": null,
+      "coordinate_semantics": "Registry point, not boundary or turbine location; decimal precision is not accuracy",
+      "observation_date": "2026-01-13",
+      "retrieved_at": "2026-11-06T00:36:28Z",
+      "source_sha256": "e726c17ce48c3e32c421119a11290c43c9273b020305a0d47c8ba06ccd8f8ae8",
+      "locator": "Layer0 objectid=79; codceg=EOL.CV.SE.030296-1.1; original field names retained",
+      "scope": "Dated SIGA registry observation; no current operating-census, turbine completeness or aggregation eligibility inference"
+    }
+  ],
+  "downloads": [
+    {
+      "name": "epe-se-0",
+      "url": "https://gisepeprd2.epe.gov.br/arcgis/rest/services/Hosted/SIGA_Eolica_Solar/FeatureServer/0/query?objectIds=79&outFields=%2A&returnGeometry=true&outSR=4326&f=json",
+      "ids": [
+        79
+      ]
+    }
+  ],
+  "checksums": {
+    "epe-se-0.json": "e726c17ce48c3e32c421119a11290c43c9273b020305a0d47c8ba06ccd8f8ae8",
+    "epe-meta.json": "10422c9d9f33335889ee0bb7af9ac011151068841b589579365dc3f341741e5b",
+    "epe-se-ids.json": "d2e4d9ab46803558aaa2d66c919e344023b3178b6f577477cbb70f6dc80bfa10",
+    "epe-se-ids-after.json": "d2e4d9ab46803558aaa2d66c919e344023b3178b6f577477cbb70f6dc80bfa10"
+  },
+  "id_queries_agree": true,
+  "normalization": "Full native CEG preserved; .1/.01 suffix numeric comparison only, no checkdigit or nucleus rewriting; idenucleoceg ArcGIS date-typed field not treated as ID",
+  "exclusions": [],
+  "conflicts": [],
+  "quarantines": [],
+  "next_partition": null,
+  "access": "All original requests HTTP200; public ArcGIS EPE host is independent of previously HTTP503 ANEEL CSV; no authentication inferred",
+  "limitations": [
+    "No whole-farm lifecycle reconciliation; all six capacity summaries unchanged",
+    "Unmatched identities need historical WRI/phase crosswalk before additions",
+    "All 1 source EPE update fields null; use 2026-01-13 dataset date, not retrieval date"
+  ],
+  "continuation": "Captured all-state roster audit: 2026-11-06-0035-epe-coverage.json"
+}

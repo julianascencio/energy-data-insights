@@ -765,3 +765,37 @@ if oem_columns:
         fontsize=8,
     )
     fig.tight_layout()
+
+
+# Review completeness is separate from the number of successfully linked farms.
+epe_reviews = []
+for ledger in sorted((ROOT / "catalogues/wind/research").glob("*-epe-review.json")):
+    report = json.loads(ledger.read_text())
+    if report.get("complete_selected_partition") and report.get("all_reviewed_candidates"):
+        state = report["all_reviewed_candidates"][0]["original"]["sigufprincipal"]
+        epe_reviews.append(
+            {"State": state, "Linked": report["enriched"], "Identity held": report["deferred"]}
+        )
+if epe_reviews:
+    review_counts = pd.DataFrame(epe_reviews).set_index("State").sort_index()
+    fig, ax = plt.subplots(figsize=(9, 6))
+    review_counts.plot.barh(stacked=True, ax=ax, color=["#3d718e", "#9a9a9a"])
+    ax.set(
+        title="Complete selected SIGA partitions: identity review outcomes",
+        xlabel="Registry entries; not MW",
+    )
+    fig.tight_layout()
+
+# A complete empty ID query is distinct from an unqueried state or missing data.
+coverage_audits = sorted((ROOT / "catalogues/wind/research").glob("*-epe-coverage.json"))
+if epe_reviews and coverage_audits:
+    audit = json.loads(coverage_audits[-1].read_text())
+    empty_states = ", ".join(audit["result"]["empty_states"])
+    fig.text(
+        0.02,
+        0.01,
+        f"Explicit empty layer partitions: {empty_states}.\n"
+        "Empty registry query is not zero wind capacity. Held identities remain excluded.",
+        fontsize=8,
+    )
+    fig.tight_layout(rect=(0, 0.08, 1, 1))

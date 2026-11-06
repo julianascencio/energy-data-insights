@@ -7567,3 +7567,147 @@ Empresa de Pesquisa Energética; Agência Nacional de Energia Elétrica (2026). 
 **Role:** data_source. Rio Grande do Sul full wind partition80IDs; native dated categories retained; source access is independent of failed ANEEL daily CSV endpoint.
 
 **Used by:** `data-retrieval/src/energy_data_retrieval/wind_catalogue/epe.py`, `docs/wind-catalogue.md`.
+
+### epe_siga_piaui_20260113
+
+Empresa de Pesquisa Energética; Agência Nacional de Energia Elétrica (2026). **EPE-hosted SIGA EOL Piauí: complete126-entry layer partition dated2026-01-13**. [Source](https://gisepeprd2.epe.gov.br/arcgis/rest/services/Hosted/SIGA_Eolica_Solar/FeatureServer/0)
+
+**Role:** data_source. Piauí full wind partition126IDs; native dated categories retained; source access is independent of failed ANEEL daily CSV endpoint.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/wind_catalogue/epe.py`, `docs/wind-catalogue.md`.
+
+### epe_siga_pernambuco_20260113
+
+Empresa de Pesquisa Energética; Agência Nacional de Energia Elétrica (2026). **EPE-hosted SIGA EOL Pernambuco: complete46-entry layer partition dated2026-01-13**. [Source](https://gisepeprd2.epe.gov.br/arcgis/rest/services/Hosted/SIGA_Eolica_Solar/FeatureServer/0)
+
+**Role:** data_source. Pernambuco full wind partition46IDs; native dated categories retained; source access is independent of failed ANEEL daily CSV endpoint.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/wind_catalogue/epe.py`, `docs/wind-catalogue.md`.
+
+### epe_siga_paraiba_20260113
+
+Empresa de Pesquisa Energética; Agência Nacional de Energia Elétrica (2026). **EPE-hosted SIGA EOL Paraíba: complete42-entry layer partition dated2026-01-13**. [Source](https://gisepeprd2.epe.gov.br/arcgis/rest/services/Hosted/SIGA_Eolica_Solar/FeatureServer/0)
+
+**Role:** data_source. Paraíba full wind partition42IDs; native dated categories retained; source access is independent of failed ANEEL daily CSV endpoint.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/wind_catalogue/epe.py`, `docs/wind-catalogue.md`.
+
+### epe_siga_santa_catarina_20260113
+
+Empresa de Pesquisa Energética; Agência Nacional de Energia Elétrica (2026). **EPE-hosted SIGA EOL Santa Catarina: complete18-entry layer partition dated2026-01-13**. [Source](https://gisepeprd2.epe.gov.br/arcgis/rest/services/Hosted/SIGA_Eolica_Solar/FeatureServer/0)
+
+**Role:** data_source. Santa Catarina full wind partition18IDs; native dated categories retained; source access is independent of failed ANEEL daily CSV endpoint.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/wind_catalogue/epe.py`, `docs/wind-catalogue.md`.
+
+### ifc_aysha_esrs_49251
+
+International Finance Corporation (2026). **Aysha Wind: Environmental and Social Review Summary**. [Source](https://disclosures.ifc.org/project-detail/ESRS/49251/aysha-wind)
+
+**Role:** data_source. Bounded primary-source identity/revision review; conflicting capacities retained in research ledger; no canonical rating or equipment inference.
+
+**Used by:** `docs/wind-catalogue.md`.
+
+### ifc_aysha_sii_49251
+
+International Finance Corporation (2026). **Aysha I Wind: Summary of Investment Information**. [Source](https://disclosures.ifc.org/project-detail/SII/49251/aysha-i-wind)
+
+**Role:** data_source. Bounded primary-source identity/revision review; conflicting capacities retained in research ledger; no canonical rating or equipment inference.
+
+**Used by:** `docs/wind-catalogue.md`.
+
+### miga_amea_portfolio
+
+Multilateral Investment Guarantee Agency (2026). **AMEA Power Portfolio: environmental and social review**. [Source](https://www.miga.org/project/amea-power-portfolio-0)
+
+**Role:** data_source. Bounded primary-source identity/revision review; conflicting capacities retained in research ledger; no canonical rating or equipment inference.
+
+**Used by:** `docs/wind-catalogue.md`.
+
+### epe_siga_maranhao_20260113
+
+Empresa de Pesquisa Energética; Agência Nacional de Energia Elétrica (2026). **EPE-hosted SIGA EOL MA: complete 16-entry layer partition dated 2026-01-13**. [Source](https://gisepeprd2.epe.gov.br/arcgis/rest/services/Hosted/SIGA_Eolica_Solar/FeatureServer/0)
+
+**Role:** data_source. Maranhão full wind partition16IDs; native dated categories retained; source access is independent of failed ANEEL daily CSV endpoint.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/wind_catalogue/epe.py`, `docs/wind-catalogue.md`.
+
+### epe_siga_minas_gerais_20260113
+
+Empresa de Pesquisa Energética; Agência Nacional de Energia Elétrica (2026). **EPE-hosted SIGA EOL MG: complete 1-entry layer partition dated 2026-01-13**. [Source](https://gisepeprd2.epe.gov.br/arcgis/rest/services/Hosted/SIGA_Eolica_Solar/FeatureServer/0)
+
+**Role:** data_source. Minas Gerais full wind partition1IDs; native dated categories retained; source access is independent of failed ANEEL daily CSV endpoint.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/wind_catalogue/epe.py`, `docs/wind-catalogue.md`.
+
+### epe_siga_parana_20260113
+
+Empresa de Pesquisa Energética; Agência Nacional de Energia Elétrica (2026). **EPE-hosted SIGA EOL PR: complete 1-entry layer partition dated 2026-01-13**. [Source](https://gisepeprd2.epe.gov.br/arcgis/rest/services/Hosted/SIGA_Eolica_Solar/FeatureServer/0)
+
+**Role:** data_source. Parana full wind partition1IDs; native dated categories retained; source access is independent of failed ANEEL daily CSV endpoint.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/wind_catalogue/epe.py`, `docs/wind-catalogue.md`.
+
+### epe_siga_rio_de_janeiro_20260113
+
+Empresa de Pesquisa Energética; Agência Nacional de Energia Elétrica (2026). **EPE-hosted SIGA EOL RJ: complete 1-entry layer partition dated 2026-01-13**. [Source](https://gisepeprd2.epe.gov.br/arcgis/rest/services/Hosted/SIGA_Eolica_Solar/FeatureServer/0)
+
+**Role:** data_source. Rio De Janeiro full wind partition1IDs; native dated categories retained; source access is independent of failed ANEEL daily CSV endpoint.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/wind_catalogue/epe.py`, `docs/wind-catalogue.md`.
+
+### epe_siga_sergipe_20260113
+
+Empresa de Pesquisa Energética; Agência Nacional de Energia Elétrica (2026). **EPE-hosted SIGA EOL SE: complete 1-entry layer partition dated 2026-01-13**. [Source](https://gisepeprd2.epe.gov.br/arcgis/rest/services/Hosted/SIGA_Eolica_Solar/FeatureServer/0)
+
+**Role:** data_source. Sergipe full wind partition1IDs; native dated categories retained; source access is independent of failed ANEEL daily CSV endpoint.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/wind_catalogue/epe.py`, `docs/wind-catalogue.md`.
+
+### epe_siga_sao_paulo_20260113
+
+Empresa de Pesquisa Energética; Agência Nacional de Energia Elétrica (2026). **EPE-hosted SIGA EOL SP: complete 1-entry layer partition dated 2026-01-13**. [Source](https://gisepeprd2.epe.gov.br/arcgis/rest/services/Hosted/SIGA_Eolica_Solar/FeatureServer/0)
+
+**Role:** data_source. Sao Paulo full wind partition1IDs; native dated categories retained; source access is independent of failed ANEEL daily CSV endpoint.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/wind_catalogue/epe.py`, `docs/wind-catalogue.md`.
+
+### boe_a_2026_18635
+
+Agencia Estatal Boletín Oficial del Estado (2026). **Alcocero de Mola dated environmental/authorization decision**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-18635)
+
+**Role:** data_source. Proposed/authorized capacity, not commissioned MW; repowering generations not additive.
+
+**Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
+
+### boe_a_2026_18694
+
+Agencia Estatal Boletín Oficial del Estado (2026). **Boyal I repowering dated environmental/authorization decision**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-18694)
+
+**Role:** data_source. Proposed/authorized capacity, not commissioned MW; repowering generations not additive.
+
+**Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
+
+### boe_a_2026_18695
+
+Agencia Estatal Boletín Oficial del Estado (2026). **Boyal II repowering dated environmental/authorization decision**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-18695)
+
+**Role:** data_source. Proposed/authorized capacity, not commissioned MW; repowering generations not additive.
+
+**Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
+
+### boe_a_2026_18277
+
+Agencia Estatal Boletín Oficial del Estado (2026). **Satrebares original application refusal and procedural history**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-18277)
+
+**Role:** data_source. Rejected proposal history; later correction retained; no commissioned capacity.
+
+**Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
+
+### boe_b_2026_27717
+
+Agencia Estatal Boletín Oficial del Estado (2026). **Somaloma-Las Quemadas prior and construction authorization**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-27717)
+
+**Role:** data_source. Authorized proposal, not commissioned capacity; grid access separate.
+
+**Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.

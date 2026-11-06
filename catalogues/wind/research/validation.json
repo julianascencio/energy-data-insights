@@ -1,57 +1,65 @@
 {
-  "batch": "2026-11-05-2135",
-  "iteration_parent": "d612ab10c31b6a8234dfada1af988734a78c79a4",
+  "batch": "2026-11-06-0435",
+  "base": "2641e3fabeb59c8e3fd50c2616c0198c623d3572",
+  "main": "4ef42de474f69b5cdca5824410c06db0d851b434",
   "local": {
-    "python": "418 focused Wind/Hydropower/reference tests passed, including15 OEM table boundary tests",
-    "viewer": "34 Node viewer/Hydro tests passed",
-    "quality": "Ruff check; format1138files; full repository ty with workspace interpreter; hygiene; citations; diff check passed",
-    "catalogue": "67projects enriched;35exact OEM models added.22406prior records and409prior sources unchanged;1source added. All prior IDs,creationtimestamps andscalarfields preserved; all non-Wind catalogue paths unchanged.",
-    "aggregation": "All6 capacity summaries including eligibleMW,unknown andexcluded counts unchanged",
-    "replay": "EPE67identical records on replay; OEM35existing identities held on replay, no duplicates",
-    "snapshots": "Two7file builds byte-identical; allParquetcolumns ZSTD",
-    "docs": "Strict Wind-gallery Sphinx passed; Documentation check passed: 692 HTML pages; local links and assets resolve.",
-    "visual": "OriginalPDFpages9,10,11 visually reviewed;67column hub-option figure rendered and inspected"
+    "python": "435 focused Python tests passed; initial message-compatibility failure fixed and full focused suite rerun",
+    "viewer": "36 Node tests passed",
+    "quality": "Ruff lint/format1166files, explicit-interpreter ty, hygiene5803files, citations and diff checks passed",
+    "docs": "Strict Wind-gallery Sphinx build passed; local links/assets resolve across707HTMLpages",
+    "replay": "BOE stage validates original checksum and field locators;5issue captures cover all discovered A/B indexes",
+    "preservation": "All22511prior records byte-identical;424prior sources unchanged; authorized addition excluded from all six capacity summaries",
+    "snapshots": "Two seven-file builds byte-identical; all Parquet columns ZSTD"
   },
   "snapshot_sha256": {
     "schema.json": "72634e7e496e7c5fec890171466e7b9b94008506c47028d4423633b257ace579",
-    "manifest.json": "88ebee6acc15f3735b6272109dc43e3bc7a5a8e18aea39af31e7ecfa69428a7f",
-    "projects.parquet": "d897996318f29d5d4d290ec851eb58170a12247b7980e3e6bdf2c6e7d226e1e0",
+    "manifest.json": "803c06424f961b9ea6ac7447f6b72c7c23ad417058715aa2db36e157b4412a7c",
+    "projects.parquet": "bd81f158f426e7adb0975a8c6396333b967346f3eef353aaa0b8efd3161c1417",
     "turbines.parquet": "8b394a9f05d5d383ef4af844cc949a3285c499f91bc9f2aebf1e30befd7cbd23",
-    "sources.json": "b4bda341db602c217e92b0baf0394da0c1b0edb0410084a4d94fed89c1405c3a",
+    "sources.json": "90c15b5d97351b663aa961ba2f58bae911a215918e79d84c5e0fc988bf713d70",
     "curves.parquet": "e52e110f94ff420eb6b1ee57f93492939aeba64b8b3bbf50af9c18a1b3b6b735",
     "equipment.parquet": "377e735ed4f03671439d1e1b7b30ccc2aca7749e413156d61300bb94db7d97d0"
   },
   "main_comparison": {
     "main": {
       "curves": 2,
-      "equipment": 486,
+      "equipment": 555,
       "projects": 8294,
       "turbines": 13657
     },
     "branch": {
-      "projects": 8294,
+      "projects": 8298,
       "turbines": 13657,
       "equipment": 555,
       "curves": 2
     },
     "added": {
-      "equipment": 69
+      "projects": 4
     },
     "enriched": {
-      "projects": 227
+      "projects": 92
     },
-    "main_manufacturers": 63,
+    "main_manufacturers": 64,
     "branch_manufacturers": 64
   },
-  "remote_ci": {
-    "previous_head": "d612ab10c31b6a8234dfada1af988734a78c79a4",
-    "previous_result": "Python3.12/3.13 and Documentation passed",
-    "current_result": "Pending publication; final result reported on PR"
-  },
+  "remote_ci": "Pending publication; final result reported separately on PR",
   "not_executed": [
-    "Full localPython suite",
-    "Full localgallery",
-    "Browser interaction",
-    "Package builds"
-  ]
+    "full local pytest",
+    "full local gallery",
+    "package builds",
+    "browser interaction"
+  ],
+  "concurrency": {
+    "main": "4ef42de474f69b5cdca5824410c06db0d851b434",
+    "wind_expected_head": "2641e3fabeb59c8e3fd50c2616c0198c623d3572",
+    "reviewed_open_prs": [
+      183,
+      184,
+      185,
+      186,
+      187
+    ],
+    "overlapping_wind_paths": []
+  },
+  "previous_head_remote_ci": "2641e3f Python and Documentation passed"
 }

@@ -1,0 +1,67 @@
+{
+  "batch": "2026-11-05-2335",
+  "retrieved_at": "2026-11-05T23:37:30Z",
+  "new_equipment": 0,
+  "new_projects": 0,
+  "decisions": [
+    {
+      "source": "IFC ESRS 49251",
+      "url": "https://disclosures.ifc.org/project-detail/ESRS/49251/aysha-wind",
+      "published_at": "2026-06-08",
+      "updated_at": "2026-08-01",
+      "locator": "Project description; PS1 identification of risks; client documentation table",
+      "result": "300 MW; up to39 turbines; EPC unselected;3–5km230kV connection to existing AyshaII substation. Text identifies May2026ESIA, attachment named June2026. Exact revision comparison held; rendered table exposed no attachment URL.",
+      "sha256": null,
+      "checksum_status": "Direct original HTML HTTP403; web reader text available. Neither authentication nor reuse restriction inferred."
+    },
+    {
+      "source": "IFC SII 49251",
+      "url": "https://disclosures.ifc.org/project-detail/SII/49251/aysha-i-wind",
+      "published_at": "2026-06-08",
+      "updated_at": "2026-10-08",
+      "locator": "Project description; Total Project Cost; development results",
+      "result": "300.3MW project, up toUSD510million estimated project cost, up toUSD65million IFC senior debt; pending approval with projected board date2026-11-30. Historical generation2022–2024 unavailable, not zero. Capacity differs from ESRS300MW; no canonical override.",
+      "sha256": null,
+      "checksum_status": "Direct original HTML HTTP403; web reader text reviewed; checksum unavailable"
+    },
+    {
+      "source": "MIGA AMEA portfolio",
+      "url": "https://www.miga.org/project/amea-power-portfolio-0",
+      "published_at": null,
+      "observation_period": "December2025 portfolio disclosure described in source",
+      "locator": "PhaseII projects item2",
+      "result": "306MW Aysha1 greenfield project. Portfolio phaseII is a financing portfolio stage, not AyshaII wind farm. Retain as dated conflicting capacity; no guarantee issuance or project phase relationship inferred.",
+      "sha256": null,
+      "checksum_status": "Search-index text reviewed; direct original HTML and web reader HTTP403; checksum unavailable"
+    }
+  ],
+  "conflicts": [
+    {
+      "subject": "AyshaI planned capacity",
+      "observations": [
+        {
+          "value": 300,
+          "unit": "MW",
+          "source": "IFC ESRS49251",
+          "date": "2026-08-01"
+        },
+        {
+          "value": 300.3,
+          "unit": "MW",
+          "source": "IFC SII49251",
+          "date": "2026-10-08"
+        },
+        {
+          "value": 306,
+          "unit": "MW",
+          "source": "MIGA portfolio",
+          "date": null
+        }
+      ],
+      "decision": "Retain dates/source boundaries; no scalar selected. Original39x9.5MW=370.5MW remains arithmetic check only."
+    }
+  ],
+  "exclusions": [],
+  "quarantines": [],
+  "next_task": "Acquire actual IFC attachment ESIA - Aysha Wind Power Project-June 2026.pdf; reconcile May narrative/June filename/February operator V5 and300/300.3/306MW; explicit AyshaI/AyshaII boundary and original OEM configuration. WD230-11500 original certificate still pending."
+}

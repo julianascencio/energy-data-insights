@@ -9,3 +9,9 @@ quantities. They do not call the live service.
 from the first RN response page. This bounded excerpt preserves the suspicious
 1900-01-03 source date for Macau; it is never promoted to a commissioning date.
 Original full-page checksum and URL: `2026-11-05-1935-epe-review.json`.
+
+`empty_ids.json` is the complete original AC wind ID-query response acquired
+2026-11-06. SHA-256 and exact query URL are retained in
+`2026-11-06-0035-epe-coverage.json`. It establishes an empty selected partition
+in this EPE-hosted layer, not zero wind capacity in Acre. Error, missing, null,
+truncated and checksum-mismatched response mutations must fail.

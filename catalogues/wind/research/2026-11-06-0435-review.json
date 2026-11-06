@@ -1,0 +1,196 @@
+{
+  "batch": "2026-11-06-0435",
+  "retrieved_at": "2026-11-06T04:34:30.724971+00:00",
+  "indices": [
+    {
+      "daily_url": "https://www.boe.es/boe/dias/2026/08/24/",
+      "scope": "Complete discovered Series A/B wind-title scan",
+      "captures": [
+        {
+          "url": "https://www.boe.es/boe/dias/2026/08/24/",
+          "sha256": "dc4dd5b26030a8e1cb27f045d87cfecbdac0d1e4e150a83a736e84ca2e165dc2"
+        }
+      ],
+      "notices": [
+        {
+          "notice_id": "BOE-B-2026-27714",
+          "title": "Anuncio del Área de Industria y Energía de la Subdelegación del Gobierno en Valladolid, por el que se somete a información pública la solicitud de declaración de impacto ambiental, autorización administrativa previa, autorización administrativa de construcción y reconocimiento, en concreto, de utilidad pública de las instalaciones hibridas fotovoltaicas FV Hibridación Corralnuevo de 26,88 MW de potencia instalada y 31,2417 MW de potencia pico y FV Hibridación Navillas de 26,88 MW de potencia instalada y 30,81078 MW de potencia pico, para su hibridación con los parques eólicos existentes Corralnuevo, de 41,58 MW de potencia instalada y Navillas, de 41,58 MW de potencia instalada, respectivamente, y sus infraestructuras de evacuación, en el término municipal de Valladolid, en la provincia de Valladolid."
+        },
+        {
+          "notice_id": "BOE-B-2026-27717",
+          "title": "Resolución de la Dirección General de Industria, Energía y Minas relativa a la autorización administrativa previa, autorización administrativa de construcción y declaración, en concreto, de utilidad pública del parque eólico Somaloma-Las Quemadas, de 43,2 MW, y su infraestructura de evacuación, situado en los términos municipales de Campoo de Enmedio, Valdeprado del Río y Valdeolea. Expediente número: EOL-72-2025 P.E. Somaloma-Las Quemadas."
+        }
+      ]
+    },
+    {
+      "daily_url": "https://www.boe.es/boe/dias/2026/08/25/",
+      "scope": "Complete discovered Series A/B wind-title scan",
+      "captures": [
+        {
+          "url": "https://www.boe.es/boe/dias/2026/08/25/",
+          "sha256": "a3faccc3485cbb4cec0d89cd7b6150e85543d805af3f27ad8988e05dc427d4f3"
+        }
+      ],
+      "notices": []
+    },
+    {
+      "daily_url": "https://www.boe.es/boe/dias/2026/08/26/",
+      "scope": "Complete discovered Series A/B wind-title scan",
+      "captures": [
+        {
+          "url": "https://www.boe.es/boe/dias/2026/08/26/",
+          "sha256": "1d8aa9b05660f1ac0fb2b94bcdbc234fa2e7db7bb557e39f2436e3a7424582d1"
+        },
+        {
+          "url": "https://www.boe.es/boe/dias/2026/08/26/index.php?d=209",
+          "sha256": "f466ddc1d00a4714be8eb2c8e9e346a4162586984a5b96da8824325e63701ab7"
+        },
+        {
+          "url": "https://www.boe.es/boe/dias/2026/08/26/index.php?d=210",
+          "sha256": "1d8aa9b05660f1ac0fb2b94bcdbc234fa2e7db7bb557e39f2436e3a7424582d1"
+        }
+      ],
+      "notices": []
+    }
+  ],
+  "accepted": [
+    {
+      "notice_id": "BOE-B-2026-27717",
+      "sha256": "2d225303ac199c761c8c0b02abd02fce04f08ceb4454c21e352a680444ee6abf",
+      "identity": "Cantabria:EOL-72-2025:wind",
+      "decision_target": "wind",
+      "decision_effect": "construction_authorization",
+      "published_at": "2026-08-24",
+      "locator": "PRIMERO and conditions 1–17",
+      "values": {
+        "name": "Somaloma-Las Quemadas",
+        "country_code": "ESP",
+        "region": "Cantabria",
+        "locality": "Campoo de Enmedio; Valdeprado del Río",
+        "technology": "onshore",
+        "status": "permitted",
+        "status_as_of": "2026-06-17",
+        "status_date_basis": "Prior and construction authorization; commissioning not established",
+        "planned_capacity_mw": 43.2,
+        "turbine_count": 9,
+        "rotor_diameter_m": 133.0,
+        "hub_height_m": 110.0,
+        "developer_names": [
+          "EDP Renovables España, S.L.U."
+        ],
+        "external_ids_json": "{\"boe_notice\":\"BOE-B-2026-27717\",\"cantabria_expediente\":\"EOL-72-2025\"}",
+        "fleet_completeness": "complete",
+        "fleet_json": "[{\"count\":9,\"inventory_basis\":\"Proposed fleet; exact OEM revision unknown\",\"manufacturer\":\"Nordex\",\"model\":\"N133\",\"source_id\":\"BOE-B-2026-27717\",\"unit_rating_mw\":4.8}]",
+        "capacity_scope": "Authorized proposal only; 45MW grid access separate; excluded pending boundary reconciliation",
+        "official_url": "https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-27717",
+        "quality_status": "needs_review",
+        "extensions_json": "{\"arithmetic_check\":{\"calculated_mw\":43.2,\"count\":9,\"label\":\"Count times rating check, never substitute for reported MW\",\"rating_mw\":4.8,\"reported_authorized_mw\":43.2},\"electrical\":{\"collection_circuits\":3,\"collection_conductor\":\"AL-RHZ1 18/30kV\",\"collection_cross_sections_mm2\":[95,240,500],\"collection_voltage_kv\":30,\"endpoint\":\"Mataporquera\",\"endpoint_owner\":\"Viesgo Distribución Eléctrica, S.L.\",\"export_overhead_m\":7110,\"export_overhead_supports\":23,\"export_underground_segments_m\":[1154,365],\"export_voltage_kv\":132,\"substation_ratio_kv\":[30,132],\"transformer_mva\":50},\"equipment_configuration_crosswalk\":null,\"grid_access\":{\"capacity_mw\":45,\"operator\":\"Viesgo Distribución Eléctrica, S.L.\"},\"inventory_completeness\":\"Complete proposed model/count; individual turbine positions not fully enumerated in this notice\",\"procedure\":{\"construction_deadline\":\"2028 first half; extensions possible; not actual commissioning\",\"decision_date\":\"2026-06-17\",\"environmental_decision_date\":\"2026-05-06\",\"id\":\"EOL-72-2025\"}}",
+        "notes": "Planning specification is not installed or independently validated performance. No exact OEM configuration or individual turbine inventory inferred."
+      },
+      "locators": {
+        "name": "PRIMERO: project characteristics and authorization conditions",
+        "country_code": "PRIMERO: project characteristics and authorization conditions",
+        "region": "PRIMERO: project characteristics and authorization conditions",
+        "locality": "PRIMERO: project characteristics and authorization conditions",
+        "technology": "PRIMERO: project characteristics and authorization conditions",
+        "status": "PRIMERO: project characteristics and authorization conditions",
+        "status_as_of": "PRIMERO: project characteristics and authorization conditions",
+        "status_date_basis": "PRIMERO: project characteristics and authorization conditions",
+        "planned_capacity_mw": "PRIMERO: project characteristics and authorization conditions",
+        "turbine_count": "PRIMERO: project characteristics and authorization conditions",
+        "rotor_diameter_m": "PRIMERO: project characteristics and authorization conditions",
+        "hub_height_m": "PRIMERO: project characteristics and authorization conditions",
+        "developer_names": "PRIMERO: project characteristics and authorization conditions",
+        "external_ids_json": "PRIMERO: project characteristics and authorization conditions",
+        "fleet_completeness": "PRIMERO: project characteristics and authorization conditions",
+        "fleet_json": "PRIMERO: project characteristics and authorization conditions",
+        "capacity_scope": "PRIMERO: project characteristics and authorization conditions",
+        "official_url": "PRIMERO: project characteristics and authorization conditions",
+        "quality_status": "PRIMERO: project characteristics and authorization conditions",
+        "extensions_json": "PRIMERO: project characteristics and authorization conditions",
+        "notes": "PRIMERO: project characteristics and authorization conditions"
+      }
+    }
+  ],
+  "decisions": [
+    {
+      "notice_id": "BOE-B-2026-27717",
+      "decision": "new_project",
+      "scope": "Authorized proposal; excludes grid-access45MW and actual installed capacity"
+    },
+    {
+      "notice_id": "BOE-B-2026-27714",
+      "decision": "deferred",
+      "sha256": "5ed7c55d204d79a1f05107f521566e1c126eeadbcef8307e92ee761f2aeaabf1",
+      "reason": "Solar hybrid application; two existing wind farms reported41.58MW each. Historical identities not reconciled. Source also mistakenly calls existing parks solar in one history paragraph; no wind lifecycle/capacity imported."
+    }
+  ],
+  "independent_captures": [
+    {
+      "url": "https://www.planningportal.nsw.gov.au/major-projects/projects/lake-victoria-wind-farm",
+      "http_status": 403,
+      "retrieved_at": "2026-11-06T04:34:30.724971+00:00",
+      "bytes": 4554,
+      "response_sha256": "dcfb3984b7e776db5ecfe00c0a58afb7a1f742b25cf3b2bcea0e18565a8ccb40",
+      "sha256": null,
+      "original_availability": "Original bytes unavailable via direct HTTP403; search/web-reader text available; not an authentication or explicit reuse restriction."
+    },
+    {
+      "url": "https://epbcpublicportal.environment.gov.au/all-referrals/project-referral-summary/?id=851310c7-c359-ef11-bfe3-000d3a6af0c4",
+      "http_status": 200,
+      "retrieved_at": "2026-11-06T04:34:30.724971+00:00",
+      "sha256": "0aac38e72bde96a247b8436c8336d7ac34168db2f2fd25e08b07361b54280abd",
+      "bytes": 231958
+    },
+    {
+      "url": "https://w-wind.com.au/project/lake-victoria-wind-farm/",
+      "http_status": 403,
+      "retrieved_at": "2026-11-06T04:34:30.724971+00:00",
+      "bytes": 52,
+      "response_sha256": "889403e5cfbb7981f7a26aced0d7492524e5397d6996f7fccd67562d2a4a71a3",
+      "sha256": null,
+      "original_availability": "Original bytes unavailable via direct HTTP403; search/web-reader text available; not an authentication or explicit reuse restriction."
+    },
+    {
+      "url": "https://www.nordex-online.com/en/product/n133-4-8/",
+      "http_status": 200,
+      "retrieved_at": "2026-11-06T04:34:30.724971+00:00",
+      "sha256": "9e275b22764de0506bdbcf9361961b82f6586b0da19e5908474d76577a961883",
+      "bytes": 198577
+    }
+  ],
+  "followups": [
+    {
+      "topic": "Lake Victoria",
+      "ids": [
+        2764,
+        3330
+      ],
+      "decision": "held",
+      "observations": [
+        "EPBC2024/09965 under assessment:203turbines up to1.5GW",
+        "NSW SSD-71630724 response to submissions:up to147turbines",
+        "WestWind current planning summary:147turbines approx1000MW,280m tip,200m rotor; annual3400GWh is proposed estimate, not measured"
+      ],
+      "reason": "AEMO KCI energy-park identity versus WestWind wind-farm identity not established. No automatic name merge or revision overwrite."
+    },
+    {
+      "topic": "Nordex N133/4.8",
+      "decision": "existing_model_revision_held",
+      "reason": "Official page133.2m rotor versus permit133m; exact revision not established; no inferred hub-height variants, no new equipment. OEM marketing AEP/acoustic claims not independent validation."
+    }
+  ],
+  "new_projects": 1,
+  "new_equipment": 0,
+  "new_turbines": 0,
+  "new_curves": 0,
+  "conflicts": [
+    "BOE solar/wind wording in history",
+    "Permit133m versus OEM133.2m diameter; preserve scoped observations"
+  ],
+  "next_dates": [
+    "2026-08-20",
+    "2026-08-21",
+    "2026-08-22"
+  ]
+}

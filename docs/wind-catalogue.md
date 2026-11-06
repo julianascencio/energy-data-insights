@@ -1136,3 +1136,145 @@ ones, rejects malformed hub ranges, and explicitly separates component quantitie
 from turbine ratings. The gallery dynamically displays the reviewed model count.
 The next complete EPE partition is **PI**; the next OEM/project work is the
 AfDB Aysha I original ESIA and exact phase crosswalk recorded in the backlog.
+
+### Piauí registry continuation
+
+The November 5 22:35 batch reviews the complete 126-entry EPE Piauí wind
+partition, with stable before/after object IDs and original response checksums.
+Thirty-six existing identities receive dated registry observations; ninety
+remain held. No current operating status, new farm or capacity eligibility is
+inferred. The existing state-coverage gallery and viewer now include Piauí.
+
+Replay the reviewed ledger without changing the catalogue:
+
+```bash
+uv run python scripts/replay_wind_epe.py catalogues/wind/research/2026-11-05-2235-epe-review.json
+```
+
+The command rejects changed observations or changed identity decisions. Next is
+the complete Pernambuco (PE) partition. Independent Aysha I follow-up located
+IFC project 49251 and obtained the operator-hosted ESIA original; detailed phase
+and equipment reconciliation remains pending. No equipment is added from model
+names or marketing claims, and no completed Windey table is rescanned.
+
+### Pernambuco, Paraíba and Santa Catarina continuation
+
+The November 5 23:35 iteration reviews three complete EPE-hosted SIGA wind
+partitions dated January 13, 2026: Pernambuco 46 entries (31 linked, 15 held),
+Paraíba 42 (12 linked, 30 held), and Santa Catarina 18 (10 linked, eight held).
+It enriches 53 existing projects with separately qualified registry observations.
+No project, turbine, equipment or curve is added. All capacity summaries and
+historical baseline exclusions remain unchanged. The 50-project objective is
+met; the 20-equipment objective is not met.
+
+The shared viewer now counts unresolved scope and unknown lifecycle among
+projects with SIGA evidence. The deterministic gallery compares linked versus
+held identities for complete selected state partitions. Neither chart represents
+a current national operating inventory. Completed states are not rescanned.
+
+Original response verification is optional and read-only:
+
+```bash
+uv run python scripts/replay_wind_epe.py catalogues/wind/research/2026-11-05-2335-epe-review.json --originals /path/to/original-responses
+```
+
+This verifies SHA-256 for every retained response, reparses both ID queries and
+all pages, and compares the complete candidate transcription before replaying
+accepted records and decisions. Missing files, changed bytes, drifting IDs and
+changed transcriptions fail. Original bytes stay outside Git; URLs, hashes and
+review decisions are committed.
+
+Independent Aysha I research found unresolved dated capacity observations:
+IFC's August ESRS reports 300 MW; its October investment disclosure reports
+300.3 MW; MIGA's portfolio identifies 306 MW. MIGA portfolio Phase II is not the
+Aysha II wind farm. IFC describes a May ESIA but lists a June attachment; that
+original attachment remains unavailable for revision comparison. These are
+research holds, not canonical capacity replacements or exact equipment links.
+IFC HTML HTTP 403 and missing attachment links are access limitations, not
+assertions of authentication or reuse restrictions. Next: Maranhão's complete
+EPE partition and the exact IFC June ESIA attachment/phase crosswalk.
+
+### Completing the captured EPE roster
+
+The November 6 00:35 batch reviews MA (16 entries) and MG, PR, RJ, SE and SP
+(one each). Two existing projects gain dated registry evidence (RJ and SE);
+19 identities remain held. Thirteen remaining states return explicit empty ID
+lists. A separate null/unknown-state query is empty. Two national ID queries
+agree on 1,134 entries, exactly matching the disjoint union of all 27 reviewed
+state partitions. Across this captured layer, 386 entries are linked and 748
+are held. This establishes source membership coverage, not a current Brazilian
+operating census or completeness of all Brazilian wind assets. No capacity
+eligibility changes; the 50-project and 20-equipment objectives are not met.
+
+```bash
+uv run python scripts/replay_wind_epe_coverage.py catalogues/wind/research/2026-11-06-0035-epe-coverage.json --originals /path/to/original-responses
+```
+
+The coverage check verifies reviewed candidate IDs, original query checksums,
+explicit empty states, disjoint partitions and matching national rosters.
+Missing/null/error/truncated responses are unknown, never zero. The offline
+fixture preserves an actual empty AC response. The gallery lists these empty
+partitions separately; the viewer distinguishes valid source registry points
+from absent coordinates, without borrowing historical WRI points or treating
+coordinate precision as positional accuracy.
+
+BOE September 7–9, all discovered Series A/B issues, yields two held notices:
+[Viento de Sellía parcel correction](https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-29194)
+and [Colladillo/Cabeza de Mesá solar hybridization](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-18893).
+Neither supplies an accepted wind identity crosswalk or complete turbine inventory.
+Original notice and index checksums are retained. Exact IFC June ESIA and
+WD230-11500 certificate searches did not locate the requested originals; prior
+announcements are not counted again. Next: BOE September 4–6 and the saved MA
+Delta 3 identity/phase crosswalks. Completed EPE partitions stay closed.
+
+### September 4–5 BOE modification and repowering decisions
+
+The November 6 01:35 continuation adds Alcocero de Mola's revised 78 MW
+proposal and the separately authorized 5 MW Boyal I and Boyal II replacement
+generations. All three remain excluded from capacity totals. Environmental
+clearance alone does not establish construction permission; repowering
+permission does not establish replacement operation. Boyal's historical 4.5 MW
+units, proposed 5 MW units, 4.5 MW grid access and reported 15 MW transformer
+active-power limit remain distinct. No anonymous turbine children or exact
+installed OEM configurations are inferred.
+
+The original Alcocero notice reports 197.92 m tip height versus 197.5 m from
+hub plus radius, and 1,371 m of line versus 1,370 m of listed segments. Both
+observations are preserved. Boyal II repeats a Boyal I AESA reference; no permit
+identity is silently corrected. September 6 returned HTTP 404 and is not a
+completed empty issue. Next daily partition: September 1–3. The saved Delta 3
+crosswalk remains held after the original ANEEL notice returned HTTP 403;
+this is not evidence of authentication or a reuse restriction.
+
+### Complete daily issue replay
+
+`review_daily_indexes` verifies all discovered ordinary and extraordinary issue
+URLs before returning Series A/B wind-title candidates. Missing issues fail even
+when the default page has no candidates; identical notice aliases are deduplicated
+and conflicting titles are rejected. This is title-scan completeness, not a wind
+project census. The September 1–3, 2026 scan includes both September 2 issues and
+returns no candidates. See `2026-11-06-0235-review.json` for source hashes and the
+separate, unresolved Wimmera survey/permit phase review.
+
+### Original refusal history and permit envelopes
+
+The August 27–29 and 31, 2026 BOE batch enriches Satrebares from its original
+refusal notice (BOE-A-2026-18277), preserving the later geography correction.
+Application/hearing dates, the received grid-access expiry notice and electrical
+proposal observations do not describe installed assets. The adapter rejects
+operational, permitted or retired status inferred from an application refusal.
+The Valdepero solar and Frontones battery notices are not new wind capacity.
+Wimmera's acquired PA2000877-2 permit provides upper/lower dimensional limits,
+not exact turbine configurations or AEMO phase allocations. Its amendment date
+is May 14, 2026; May 19 is the attachment filename date. See the 0335 review ledger.
+
+
+### Construction authorization and proposed equipment
+
+The 6 November continuation adds Somaloma–Las Quemadas from
+BOE-B-2026-27717: authorized capacity remains planned capacity, separately from
+grid access and commissioning. The offline adapter rejects operating status
+inferred solely from construction authorization. The proposed fleet is complete
+as a model/count observation, not an individual-turbine or as-built inventory.
+Permit rotor diameter and OEM product geometry remain separately scoped pending
+an exact revision crosswalk; no synthetic hub-height configurations are created.

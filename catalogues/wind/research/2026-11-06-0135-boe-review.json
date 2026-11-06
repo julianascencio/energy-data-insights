@@ -1,0 +1,252 @@
+{
+  "batch": "2026-11-06-0135",
+  "retrieved_at": "2026-11-06T01:37:12Z",
+  "indices": [
+    {
+      "url": "https://www.boe.es/boe/dias/2026/09/04/",
+      "sha256": "8babc2b4c9340fe5edb00e41a5a59d3621547b3f9d9498aafeca0d5308c1d29b",
+      "notices": [
+        {
+          "notice_id": "BOE-A-2026-18635",
+          "title": "Resolución de 24 de agosto de 2026, de la Dirección General de Calidad y Evaluación Ambiental, por la que se formula informe de impacto ambiental del proyecto «Modificación del proyecto del parque eólico Alcocero de Mola, de 78 MW de potencia instalada, y sus infraestructuras de evacuación, en la provincia de Burgos»."
+        }
+      ]
+    },
+    {
+      "url": "https://www.boe.es/boe/dias/2026/09/05/",
+      "sha256": "02571bf7be1ac6385b9c44234f1e1811ea8dff514501e6ba146915c0184f4664",
+      "notices": [
+        {
+          "notice_id": "BOE-A-2026-18694",
+          "title": "Resolución de 3 de agosto de 2026, de la Dirección General de Política Energética y Minas, por la que se otorga a Sistemas Energéticos Boyal, SL, autorización administrativa previa y autorización administrativa de construcción para el proyecto de parque eólico «Boyal I», de 5 MW de potencia instalada, y para su infraestructura de evacuación, en Borja y Mallén (Zaragoza) y Cortes (Navarra), y se declara, en concreto, su utilidad pública."
+        },
+        {
+          "notice_id": "BOE-A-2026-18695",
+          "title": "Resolución de 3 de agosto de 2026, de la Dirección General de Política Energética y Minas, por la que se otorga a Sistemas Energéticos Boyal, SL, autorización administrativa previa y autorización administrativa de construcción para el proyecto de parque eólico «Boyal II», de 5 MW de potencia instalada, y para su infraestructura de evacuación, en Borja y Mallén (Zaragoza) y Cortes (Navarra), y se declara, en concreto, su utilidad pública."
+        }
+      ]
+    }
+  ],
+  "reviewed": 3,
+  "new_projects": 3,
+  "new_equipment": 0,
+  "new_turbines": 0,
+  "decisions": [
+    {
+      "notice_id": "BOE-A-2026-18635",
+      "decision": "added",
+      "record_id": "768d0820-0011-5dae-ad63-6c7b74508cfc"
+    },
+    {
+      "notice_id": "BOE-A-2026-18694",
+      "decision": "added",
+      "record_id": "85116006-22b2-59c7-80ff-9264bfe33764"
+    },
+    {
+      "notice_id": "BOE-A-2026-18695",
+      "decision": "added",
+      "record_id": "96f39d8c-2070-5673-8b1a-db55829a40bb"
+    }
+  ],
+  "reviewed_fields": [
+    {
+      "notice_id": "BOE-A-2026-18635",
+      "sha256": "49ee1a5db233b2fc4f64fbc0691c7d392b8fd5e1db36526007b7b58b8bc96397",
+      "identity": "BOE-A-2026-18635:wind-proposal",
+      "decision_target": "wind",
+      "decision_effect": "environmental_conditions",
+      "published_at": "2026-09-04",
+      "locator": "Project characteristics; operative decision; original proposal history",
+      "values": {
+        "name": "Alcocero de Mola",
+        "country_code": "ESP",
+        "region": "Castilla y León / Burgos",
+        "locality": "Alcocero de Mola; Carrias; Cerratón de Juarros; Valle de Oca; Prádanos de Bureba; Villafranca Montes de Oca",
+        "technology": "onshore",
+        "status": "announced",
+        "status_as_of": "2026-08-24",
+        "status_date_basis": "Simplified environmental decision; construction permission not established",
+        "external_ids_json": "{\"boe_notice\":\"BOE-A-2026-18635\"}",
+        "planned_capacity_mw": 78.0,
+        "turbine_count": 13,
+        "rotor_diameter_m": 165.0,
+        "hub_height_m": 115.0,
+        "developer_names": [
+          "Iberenova Promociones, SAU"
+        ],
+        "fleet_completeness": "complete",
+        "fleet_json": "[{\"count\":13,\"hub_height_m\":115,\"inventory_basis\":\"Complete proposed model/count; not as-built inventory\",\"manufacturer\":\"Goldwind\",\"model\":\"Goldwind GW-165\",\"rotor_diameter_m\":165,\"source_id\":\"BOE-A-2026-18635\",\"unit_rating_mw\":6}]",
+        "capacity_scope": "Proposed modification only; prior102MW alternative not additive",
+        "official_url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-18635",
+        "quality_status": "needs_review",
+        "extensions_json": "{\"arithmetic_check\":{\"calculated_mw\":78,\"count\":13,\"label\":\"Count times rating; not substitute reported capacity\",\"reported_mw\":78,\"unit_rating_mw\":6},\"electrical\":{\"collection_circuits\":5,\"collection_kv\":30,\"collection_length_km\":20.2,\"component_sum_m\":1370,\"export_voltage_kv\":220,\"final_link_m\":426.47,\"final_link_segments_m\":[173.07,223.1,30.3],\"first_link_component_lengths_m\":[1044,30,32,264],\"park_substation_area_m2\":4980.18,\"park_substation_ratio_kv\":[220,30],\"promoters_substation_ratio_kv\":[220,33],\"reported_first_link_m\":1371,\"shared_span_excluded\":\"AP18 to AP4 shared with FV Belorado I\"},\"elevation_range_m\":[929,1026.5],\"equipment_configuration_crosswalk\":null,\"inventory_completeness\":\"Only seven relocated identifiers enumerated here; no synthetic complete13turbine inventory\",\"positions_relocated\":[\"A.09\",\"A.11\",\"A.12\",\"A.13\",\"A.14\",\"A.15\",\"A.16\"],\"prior_environmental_decision\":\"2023-01-18\",\"prior_proposal_mw\":102,\"procedure\":{\"decision_date\":\"2026-08-24\",\"effect\":\"Simplified environmental decision; construction permission not established\",\"publication_date\":\"2026-09-04\"},\"selected_alternative\":3,\"tip_height\":{\"hub_plus_radius_m\":197.5,\"reported_m\":197.92,\"unresolved_difference_m\":0.42}}",
+        "notes": "No exact OEM revision inferred; planning specification is not installed equipment. No private landholder details or guessed coordinates."
+      },
+      "locators": {
+        "name": "Project characteristics; operative decision; proposal history",
+        "country_code": "Project characteristics; operative decision; proposal history",
+        "region": "Project characteristics; operative decision; proposal history",
+        "locality": "Project characteristics; operative decision; proposal history",
+        "technology": "Project characteristics; operative decision; proposal history",
+        "status": "Project characteristics; operative decision; proposal history",
+        "status_as_of": "Project characteristics; operative decision; proposal history",
+        "status_date_basis": "Project characteristics; operative decision; proposal history",
+        "external_ids_json": "Project characteristics; operative decision; proposal history",
+        "planned_capacity_mw": "Project characteristics; operative decision; proposal history",
+        "turbine_count": "Project characteristics; operative decision; proposal history",
+        "rotor_diameter_m": "Project characteristics; operative decision; proposal history",
+        "hub_height_m": "Project characteristics; operative decision; proposal history",
+        "developer_names": "Project characteristics; operative decision; proposal history",
+        "fleet_completeness": "Project characteristics; operative decision; proposal history",
+        "fleet_json": "Project characteristics; operative decision; proposal history",
+        "capacity_scope": "Project characteristics; operative decision; proposal history",
+        "official_url": "Project characteristics; operative decision; proposal history",
+        "quality_status": "Project characteristics; operative decision; proposal history",
+        "extensions_json": "Project characteristics; operative decision; proposal history",
+        "notes": "Project characteristics; operative decision; proposal history"
+      }
+    },
+    {
+      "notice_id": "BOE-A-2026-18694",
+      "sha256": "4938c3691235616196cd9fb5f5d99b69dfcb7a6227bd00b41cfa095bda2a3db2",
+      "identity": "BOE-A-2026-18694:wind-proposal",
+      "decision_target": "wind",
+      "decision_effect": "repowering_authorization",
+      "published_at": "2026-09-05",
+      "locator": "Project characteristics; operative decision; original proposal history",
+      "values": {
+        "name": "Boyal I repowering",
+        "country_code": "ESP",
+        "region": "Aragón / Zaragoza",
+        "locality": "Borja",
+        "technology": "onshore",
+        "status": "permitted",
+        "status_as_of": "2026-08-03",
+        "status_date_basis": "Prior and construction authorization; commissioning not established",
+        "external_ids_json": "{\"boe_notice\":\"BOE-A-2026-18694\"}",
+        "planned_capacity_mw": 5.0,
+        "turbine_count": 1,
+        "rotor_diameter_m": 145.0,
+        "hub_height_m": 127.5,
+        "developer_names": [
+          "Sistemas Energéticos Boyal, SL"
+        ],
+        "fleet_completeness": "complete",
+        "fleet_json": "[{\"count\":1,\"hub_height_m\":127.5,\"inventory_basis\":\"Complete proposed model/count; not as-built inventory\",\"manufacturer\":\"Siemens Gamesa\",\"model\":\"Siemens Gamesa SG 5-145\",\"rotor_diameter_m\":145,\"source_id\":\"BOE-A-2026-18694\",\"unit_rating_mw\":5}]",
+        "capacity_scope": "Authorized5MW replacement generation only; former4.5MW and gridaccess4.5MW separate; excluded pending boundary reconciliation",
+        "official_url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-18694",
+        "quality_status": "needs_review",
+        "extensions_json": "{\"arithmetic_check\":{\"calculated_mw\":5,\"count\":1,\"label\":\"Count times rating; not substitute reported capacity\",\"reported_mw\":5,\"unit_rating_mw\":5},\"electrical\":{\"collection_kv\":20,\"collection_length_m\":400,\"conductor\":\"RHZ1 12/20kV\",\"cross_section_mm2\":95,\"endpoint\":\"CS Boyal20kV\",\"excluded_existing_route\":\"CS Boyal to SE Tudela66kV\",\"material\":\"Al\"},\"equipment_configuration_crosswalk\":null,\"grid_access\":{\"operator\":\"i-DE Redes Inteligentes, SAU\",\"reported_mw\":4.5},\"procedure\":{\"decision_date\":\"2026-08-03\",\"effect\":\"Prior and construction authorization; commissioning not established\",\"publication_date\":\"2026-09-05\"},\"repowering\":{\"new_authorized_unit_mw\":5,\"predecessor_record_id\":null,\"prior_unit_mw\":4.5,\"relationship\":\"Replacement of existing turbine; historical unit may remain operating through foundations/road work, then dismantled. No overlapping generations summed.\"},\"source_conflict\":null,\"transformer\":{\"model\":null,\"not_mva\":true,\"reported_max_active_power_mw\":15}}",
+        "notes": "No exact OEM revision inferred; planning specification is not installed equipment. No private landholder details or guessed coordinates."
+      },
+      "locators": {
+        "name": "Project characteristics; operative decision; proposal history",
+        "country_code": "Project characteristics; operative decision; proposal history",
+        "region": "Project characteristics; operative decision; proposal history",
+        "locality": "Project characteristics; operative decision; proposal history",
+        "technology": "Project characteristics; operative decision; proposal history",
+        "status": "Project characteristics; operative decision; proposal history",
+        "status_as_of": "Project characteristics; operative decision; proposal history",
+        "status_date_basis": "Project characteristics; operative decision; proposal history",
+        "external_ids_json": "Project characteristics; operative decision; proposal history",
+        "planned_capacity_mw": "Project characteristics; operative decision; proposal history",
+        "turbine_count": "Project characteristics; operative decision; proposal history",
+        "rotor_diameter_m": "Project characteristics; operative decision; proposal history",
+        "hub_height_m": "Project characteristics; operative decision; proposal history",
+        "developer_names": "Project characteristics; operative decision; proposal history",
+        "fleet_completeness": "Project characteristics; operative decision; proposal history",
+        "fleet_json": "Project characteristics; operative decision; proposal history",
+        "capacity_scope": "Project characteristics; operative decision; proposal history",
+        "official_url": "Project characteristics; operative decision; proposal history",
+        "quality_status": "Project characteristics; operative decision; proposal history",
+        "extensions_json": "Project characteristics; operative decision; proposal history",
+        "notes": "Project characteristics; operative decision; proposal history"
+      }
+    },
+    {
+      "notice_id": "BOE-A-2026-18695",
+      "sha256": "37ece7312b119226797460bf2ebc565906c3b1987c208c40ab7461621d9ad9a0",
+      "identity": "BOE-A-2026-18695:wind-proposal",
+      "decision_target": "wind",
+      "decision_effect": "repowering_authorization",
+      "published_at": "2026-09-05",
+      "locator": "Project characteristics; operative decision; original proposal history",
+      "values": {
+        "name": "Boyal II repowering",
+        "country_code": "ESP",
+        "region": "Aragón / Zaragoza",
+        "locality": "Borja",
+        "technology": "onshore",
+        "status": "permitted",
+        "status_as_of": "2026-08-03",
+        "status_date_basis": "Prior and construction authorization; commissioning not established",
+        "external_ids_json": "{\"boe_notice\":\"BOE-A-2026-18695\"}",
+        "planned_capacity_mw": 5.0,
+        "turbine_count": 1,
+        "rotor_diameter_m": 145.0,
+        "hub_height_m": 127.5,
+        "developer_names": [
+          "Sistemas Energéticos Boyal, SL"
+        ],
+        "fleet_completeness": "complete",
+        "fleet_json": "[{\"count\":1,\"hub_height_m\":127.5,\"inventory_basis\":\"Complete proposed model/count; not as-built inventory\",\"manufacturer\":\"Siemens Gamesa\",\"model\":\"Siemens Gamesa SG 5-145\",\"rotor_diameter_m\":145,\"source_id\":\"BOE-A-2026-18695\",\"unit_rating_mw\":5}]",
+        "capacity_scope": "Authorized5MW replacement generation only; former4.5MW and gridaccess4.5MW separate; excluded pending boundary reconciliation",
+        "official_url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-18695",
+        "quality_status": "needs_review",
+        "extensions_json": "{\"arithmetic_check\":{\"calculated_mw\":5,\"count\":1,\"label\":\"Count times rating; not substitute reported capacity\",\"reported_mw\":5,\"unit_rating_mw\":5},\"electrical\":{\"collection_kv\":20,\"collection_length_m\":925,\"conductor\":\"RHZ1 12/20kV\",\"cross_section_mm2\":95,\"endpoint\":\"CS Boyal20kV\",\"excluded_existing_route\":\"CS Boyal to SE Tudela66kV\",\"material\":\"Al\"},\"equipment_configuration_crosswalk\":null,\"grid_access\":{\"operator\":\"i-DE Redes Inteligentes, SAU\",\"reported_mw\":4.5},\"procedure\":{\"decision_date\":\"2026-08-03\",\"effect\":\"Prior and construction authorization; commissioning not established\",\"publication_date\":\"2026-09-05\"},\"repowering\":{\"new_authorized_unit_mw\":5,\"predecessor_record_id\":null,\"prior_unit_mw\":4.5,\"relationship\":\"Replacement of existing turbine; historical unit may remain operating through foundations/road work, then dismantled. No overlapping generations summed.\"},\"source_conflict\":\"BoyalII text repeats BoyalI AESA permit P24-0252; no AESA permit assigned\",\"transformer\":{\"model\":null,\"not_mva\":true,\"reported_max_active_power_mw\":15}}",
+        "notes": "No exact OEM revision inferred; planning specification is not installed equipment. No private landholder details or guessed coordinates."
+      },
+      "locators": {
+        "name": "Project characteristics; operative decision; proposal history",
+        "country_code": "Project characteristics; operative decision; proposal history",
+        "region": "Project characteristics; operative decision; proposal history",
+        "locality": "Project characteristics; operative decision; proposal history",
+        "technology": "Project characteristics; operative decision; proposal history",
+        "status": "Project characteristics; operative decision; proposal history",
+        "status_as_of": "Project characteristics; operative decision; proposal history",
+        "status_date_basis": "Project characteristics; operative decision; proposal history",
+        "external_ids_json": "Project characteristics; operative decision; proposal history",
+        "planned_capacity_mw": "Project characteristics; operative decision; proposal history",
+        "turbine_count": "Project characteristics; operative decision; proposal history",
+        "rotor_diameter_m": "Project characteristics; operative decision; proposal history",
+        "hub_height_m": "Project characteristics; operative decision; proposal history",
+        "developer_names": "Project characteristics; operative decision; proposal history",
+        "fleet_completeness": "Project characteristics; operative decision; proposal history",
+        "fleet_json": "Project characteristics; operative decision; proposal history",
+        "capacity_scope": "Project characteristics; operative decision; proposal history",
+        "official_url": "Project characteristics; operative decision; proposal history",
+        "quality_status": "Project characteristics; operative decision; proposal history",
+        "extensions_json": "Project characteristics; operative decision; proposal history",
+        "notes": "Project characteristics; operative decision; proposal history"
+      }
+    }
+  ],
+  "unavailable_dates": [
+    {
+      "date": "2026-09-06",
+      "http_status": 404,
+      "decision": "Not marked complete or empty; web reader also inaccessible"
+    }
+  ],
+  "conflicts": [
+    "Alcocero197.92m tip versus197.5m hub+radius",
+    "Alcocero1371m link versus1370m segment sum",
+    "BoyalII repeats BoyalI AESA permit"
+  ],
+  "deferrals": [
+    "Exact installed OEM revisions",
+    "Old/new Boyal unit boundary and commissioning",
+    "Delta3 original ANEEL retdsp20171911.pdf HTTP403; no authentication or reuse restriction inferred"
+  ],
+  "next_dates": [
+    "2026-09-01",
+    "2026-09-02",
+    "2026-09-03"
+  ],
+  "oem_followup": {
+    "url": "https://www.siemensgamesa.com/global/en/home/products-and-services/onshore/wind-turbine-sg-5-0-145.html",
+    "result": "Official indexed table identifies SG5.0-145(2.0),127.5m option; BOE says SG5-145 without revision. Exact revision crosswalk remains held; no duplicate model or inferred installed configuration.",
+    "sha256": null,
+    "checksum_status": "Search-reader text only; original bytes unavailable"
+  }
+}
