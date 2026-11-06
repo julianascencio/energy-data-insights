@@ -1,5 +1,5 @@
 {
-  "retrieved_at": "2026-11-06T03:30:00Z",
+  "retrieved_at": "2026-11-06T04:20:00Z",
   "accepted": [
     {
       "inventory": "Green Mountain complete current site portfolio",
@@ -32,6 +32,14 @@
       "enriched_records": 0,
       "reuse": "Public copyrighted operator pages; bounded factual extraction only. No open licence is asserted, source HTML is not redistributed and addresses, security and access details are excluded.",
       "originals": "Thirteen factual official HTML originals total 2,807,973 bytes and have individual SHA-256 checksums in sources.json. Separate disclaimer and privacy captures total 181,123 bytes and supported rights review but are not factual sources."
+    },
+    {
+      "inventory": "Bulk Infrastructure complete current data center portfolio",
+      "processed_offset": 3,
+      "accepted_records": 3,
+      "enriched_records": 0,
+      "reuse": "Public copyrighted operator pages; bounded factual extraction only. No open licence is asserted, source HTML is not redistributed and addresses, security and access details are excluded.",
+      "originals": "Six factual official HTML originals total 255,824 bytes and have individual SHA-256 checksums in sources.json. A separate 37,277-byte privacy-policy capture supported rights review but is not a factual source."
     }
   ],
   "deferred": [
@@ -58,6 +66,10 @@
     {
       "candidate": "Penta Infra DUS02, LEJ02, CPH02 and CPH03 child facilities",
       "reason": "Current pages describe future campus expansion but do not establish exact current child lifecycle and rating evidence."
+    },
+    {
+      "candidate": "Bulk N01 exact child facilities and current completion evidence",
+      "reason": "The January 2024 release reports unnamed 12 MW and 42 MW facilities but provides no stable child identities. Its 2024 completion target is stale and is not actual commissioning evidence."
     }
   ],
   "quarantined": [
@@ -106,6 +118,15 @@
         "campus_area_m2"
       ],
       "reason": "Falun's 1.2 PUE omits a measurement period; Borlänge's 200,000 m2 is plot/available land and Smedjebacken's 52 hectares is a land-purchase area. These remain observations without scalar normalization."
+    },
+    {
+      "candidate": "Bulk Infrastructure site power boundaries",
+      "fields": [
+        "it_capacity_mw",
+        "grid_capacity_mw",
+        "facility_capacity_mw"
+      ],
+      "reason": "OS-IX 14 MW 2N redundant power, DK01 30 MW secured power and N01 up-to 1 GW power potential do not identify IT, grid or total facility demand. All remain observations and normalized capacity scalars remain null."
     }
   ],
   "normalization_notes": [
@@ -131,6 +152,10 @@
     "AMS01 remains under construction because the current page still describes development; the stale H1 2026 target is not treated as actual commissioning evidence.",
     "Exact IT capacity is normalized independently from exact IT space, which is stored as technical area. Design-maximum and ultimate-planned capacity bases remain distinct.",
     "DUS01 and CPH01 current facility ratings remain separate from future campus totals; LEJ02 and the unbound Copenhagen child facilities are not synthesized. PAR01's exact 15 MW planned card remains separate from its 15+ MW potential narrative.",
-    "Munich and the unreconciled 15-facility portfolio tail remain deferred. This run introduced no new reuse hold and preserves every prior hold and quarantine."
+    "Munich and the unreconciled 15-facility portfolio tail remain deferred. This run introduced no new reuse hold and preserves every prior hold and quarantine.",
+    "Bulk Infrastructure's complete current directory is processed at offset three: OS-IX is independent, while N01 and DK01 are campus aggregates excluded from every capacity sum.",
+    "No Bulk MW statement is normalized because 2N power, secured power and campus power potential do not establish IT, grid or total facility demand boundaries.",
+    "N01's unnamed 12 MW and 42 MW facilities remain dated observations pending exact identities and current lifecycle evidence; the stale 2024 target is not commissioning.",
+    "DK01's exact 2,300 m2 white space is technical area and is not used to infer capacity. This run introduces no new reuse hold and preserves every prior hold and quarantine."
   ]
 }

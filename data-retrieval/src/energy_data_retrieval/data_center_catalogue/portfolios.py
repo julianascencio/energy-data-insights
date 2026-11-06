@@ -1396,6 +1396,161 @@ def parse_penta_infra_site_page(
     }
 
 
+def parse_bulk_infrastructure_directory(content: bytes, *, source_url: str) -> dict[str, Any]:
+    """Stage the exact three sites displayed in Bulk's current directory."""
+    if urlsplit(source_url).hostname not in {
+        "bulkinfrastructure.com",
+        "www.bulkinfrastructure.com",
+    }:
+        raise ValueError("Expected official Bulk Infrastructure URL")
+    parser = _VisibleText()
+    parser.feed(content.decode("utf-8-sig"))
+    text = " ".join(" ".join(parser.parts).split())
+    expected = (
+        ("OS-IX", "Oslo Internet Exchange - OS-IX", "14 MW colocation"),
+        ("N01", "Norway Data Center Campus - N01", "scaling to 1GW"),
+        ("DK01", "Denmark Data Center Campus - DK01", "30 MW power secured"),
+    )
+    positions: list[int] = []
+    candidates: list[dict[str, str]] = []
+    for code, name, metric in expected:
+        position = text.find(name)
+        if position < 0 or metric not in text[position : position + 500]:
+            raise ValueError(f"Changed Bulk Infrastructure directory card for {code}")
+        positions.append(position)
+        candidates.append(
+            {
+                "external_id": code,
+                "name": name,
+                "reported_power_text": metric,
+                "locator": f"current data-center directory card / {code}",
+            }
+        )
+    if positions != sorted(positions) or len(set(positions)) != 3:
+        raise ValueError("Changed Bulk Infrastructure directory order or identities")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidates": candidates,
+        "review_required": True,
+    }
+
+
+def parse_bulk_infrastructure_site_page(
+    content: bytes, *, source_url: str, expected_code: str
+) -> dict[str, Any]:
+    """Stage bounded public site facts without classifying generic power claims."""
+    if urlsplit(source_url).hostname not in {
+        "bulkinfrastructure.com",
+        "www.bulkinfrastructure.com",
+    }:
+        raise ValueError("Expected official Bulk Infrastructure URL")
+    if expected_code not in {"OS-IX", "N01", "DK01"}:
+        raise ValueError("Expected an exact Bulk Infrastructure site code")
+    parser = _VisibleText()
+    parser.feed(content.decode("utf-8-sig"))
+    text = " ".join(" ".join(parser.parts).split())
+    markers = {
+        "OS-IX": (
+            "Opened in 2014",
+            "14MW of 2N redundant predominately renewable power",
+        ),
+        "N01": (
+            "300-hectare (3km²) site",
+            "up to 1GW power",
+            "125MVA high-voltage primary substations",
+        ),
+        "DK01": (
+            "Located in Esbjerg",
+            "up to 2,300m² of white space",
+        ),
+    }
+    if not all(marker in text for marker in markers[expected_code]):
+        raise ValueError(f"Changed Bulk Infrastructure {expected_code} page shape")
+    candidate: dict[str, Any] = {
+        "external_id": expected_code,
+        "locator": f"current {expected_code} public site page",
+    }
+    if expected_code == "OS-IX":
+        candidate.update(opened_year=2014, reported_unclassified_power_mw=14.0)
+    elif expected_code == "N01":
+        candidate.update(
+            campus_land_hectares=300.0,
+            reported_unclassified_power_mw=1000.0,
+            substation_apparent_power_mva=125.0,
+        )
+    else:
+        candidate["technical_area_m2"] = 2300.0
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidate": candidate,
+        "review_required": True,
+    }
+
+
+def parse_bulk_infrastructure_n01_expansion(content: bytes, *, source_url: str) -> dict[str, Any]:
+    """Stage the dated N01 facility-expansion claims as observations only."""
+    if urlsplit(source_url).hostname not in {
+        "bulkinfrastructure.com",
+        "www.bulkinfrastructure.com",
+    }:
+        raise ValueError("Expected official Bulk Infrastructure URL")
+    parser = _VisibleText()
+    parser.feed(content.decode("utf-8-sig"))
+    text = " ".join(" ".join(parser.parts).split())
+    markers = (
+        "23rd January, 2024",
+        "new 42MW data center facility",
+        "42MW of IT space",
+        "12MW data center facility",
+        "ready for service in 2023",
+        "300MW of additional, redundant power capacity",
+        "grow beyond 1000MW",
+    )
+    if not all(marker in text for marker in markers):
+        raise ValueError("Changed Bulk Infrastructure N01 expansion release shape")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidate": {
+            "publication_date": "2024-01-23",
+            "existing_facility_mw": 12.0,
+            "existing_facility_ready_year": 2023,
+            "expansion_it_space_mw": 42.0,
+            "expansion_target_year": 2024,
+            "future_power_mw": 300.0,
+            "campus_power_potential_mw": 1000.0,
+            "locator": "dated 2024 N01 expansion announcement",
+        },
+        "review_required": True,
+    }
+
+
+def parse_bulk_infrastructure_operations(content: bytes, *, source_url: str) -> dict[str, Any]:
+    """Verify the operator's current three-campus operating statement."""
+    if urlsplit(source_url).hostname not in {
+        "bulkinfrastructure.com",
+        "www.bulkinfrastructure.com",
+    }:
+        raise ValueError("Expected official Bulk Infrastructure URL")
+    parser = _VisibleText()
+    parser.feed(content.decode("utf-8-sig"))
+    text = " ".join(" ".join(parser.parts).split())
+    marker = (
+        "Operating three campuses across the Norway and Denmark \N{EN DASH} N01 data center "
+        "campus in Kristiansand, DK01 data center campus in Esbjerg and OS-IX in Oslo"
+    )
+    if marker not in text:
+        raise ValueError("Changed Bulk Infrastructure operating-portfolio statement")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "operating_codes": ["N01", "DK01", "OS-IX"],
+        "review_required": True,
+    }
+
+
 def parse_green_mountain_facility_page(
     content: bytes, *, source_url: str, expected_code: str | None = None
 ) -> dict[str, Any]:

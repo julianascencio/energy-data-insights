@@ -20,6 +20,10 @@ from energy_data_retrieval.data_center_catalogue.catalogue import validate_recor
 from energy_data_retrieval.data_center_catalogue.portfolios import (
     parse_africa_data_centres_footprint,
     parse_airtrunk_locations,
+    parse_bulk_infrastructure_directory,
+    parse_bulk_infrastructure_n01_expansion,
+    parse_bulk_infrastructure_operations,
+    parse_bulk_infrastructure_site_page,
     parse_carrier_19dv_table,
     parse_cummins_generator_table,
     parse_digital_realty_nbo2_release,
@@ -489,6 +493,47 @@ def test_penta_infra_parsers_preserve_exact_facility_boundaries():
             (FIXTURES / "penta-infra-duesseldorf.html").read_bytes(),
             source_url="https://penta-infra.com/data-centers/duesseldorf/",
             expected_code="DUS01-DUS02",
+        )
+
+
+def test_bulk_infrastructure_parsers_preserve_capacity_boundaries():
+    directory = parse_bulk_infrastructure_directory(
+        (FIXTURES / "bulk-infrastructure-directory.html").read_bytes(),
+        source_url="https://bulkinfrastructure.com/data-centers/",
+    )
+    assert [row["external_id"] for row in directory["candidates"]] == [
+        "OS-IX",
+        "N01",
+        "DK01",
+    ]
+    n01 = parse_bulk_infrastructure_site_page(
+        (FIXTURES / "bulk-infrastructure-n01.html").read_bytes(),
+        source_url="https://bulkinfrastructure.com/data-centers/n01/",
+        expected_code="N01",
+    )["candidate"]
+    assert n01["campus_land_hectares"] == 300
+    assert n01["reported_unclassified_power_mw"] == 1000
+    assert n01["substation_apparent_power_mva"] == 125
+    expansion = parse_bulk_infrastructure_n01_expansion(
+        (FIXTURES / "bulk-infrastructure-n01-expansion.html").read_bytes(),
+        source_url=(
+            "https://bulkinfrastructure.com/newsroom/"
+            "bulk-data-centers-expands-n01-campus-with-42mw-facility/"
+        ),
+    )["candidate"]
+    assert expansion["publication_date"] == "2024-01-23"
+    assert expansion["existing_facility_mw"] == 12
+    assert expansion["expansion_it_space_mw"] == 42
+    operations = parse_bulk_infrastructure_operations(
+        (FIXTURES / "bulk-infrastructure-operations.html").read_bytes(),
+        source_url="https://bulkinfrastructure.com/data-centers/services/",
+    )
+    assert operations["operating_codes"] == ["N01", "DK01", "OS-IX"]
+    with pytest.raises(ValueError, match="site code"):
+        parse_bulk_infrastructure_site_page(
+            b"",
+            source_url="https://bulkinfrastructure.com/data-centers/n01/",
+            expected_code="N01-42MW",
         )
 
 
