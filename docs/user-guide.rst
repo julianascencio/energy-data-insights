@@ -64,6 +64,8 @@ Data access and scientific methods
    _generated/guides/aemet-era5-canary
    _generated/guides/pvdeg-canary
    _generated/guides/pvdeg-chile
+   _generated/guides/la-palma-outage-resilience
+   _generated/guides/open-meteo-ground-calibration
 
 Applied studies
 ---------------
