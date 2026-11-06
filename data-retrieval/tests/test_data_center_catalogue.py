@@ -39,6 +39,7 @@ from energy_data_retrieval.data_center_catalogue.portfolios import (
     parse_green_mountain_portfolio,
     parse_icolo_facility_page,
     parse_icolo_home_portfolio,
+    parse_jrc_code_of_conduct_participants,
     parse_maincubes_directory,
     parse_maincubes_site_page,
     parse_meta_locations,
@@ -669,6 +670,34 @@ def test_rack_centre_parsers_keep_facilities_and_campus_separate():
     with pytest.raises(ValueError, match="facility code"):
         parse_rack_centre_facility_page(
             b"", source_url="https://rack-centre.com/", expected_code="LGS3"
+        )
+
+
+def test_jrc_participant_parser_preserves_registry_boundaries():
+    source_url = (
+        "https://e3p.jrc.ec.europa.eu/en/groups/data-centres-code-conduct/"
+        "participants?order=field_adhesion_date&page=3&sort=asc"
+    )
+    parsed = parse_jrc_code_of_conduct_participants(
+        (FIXTURES / "jrc-code-of-conduct-digital-realty.html").read_bytes(),
+        source_url=source_url,
+    )
+    assert len(parsed["candidates"]) == 10
+    assert [row["external_id"] for row in parsed["candidates"][:4]] == [
+        "ESP1",
+        "ESP2",
+        "ESP3",
+        "ESP4",
+    ]
+    assert parsed["candidates"][-1]["external_id"] == "STO6"
+    assert {row["adhesion_year"] for row in parsed["candidates"]} == {2024}
+    assert {row["country_code"] for row in parsed["candidates"]} == {"ESP", "SWE"}
+    with pytest.raises(ValueError, match="facility identity set"):
+        parse_jrc_code_of_conduct_participants(
+            (FIXTURES / "jrc-code-of-conduct-digital-realty.html")
+            .read_bytes()
+            .replace(b"STO6", b"STO7"),
+            source_url=source_url,
         )
 
 

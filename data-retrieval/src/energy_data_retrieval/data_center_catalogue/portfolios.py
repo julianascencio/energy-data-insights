@@ -1919,6 +1919,74 @@ def parse_datacenter_united_site_page(
     }
 
 
+def parse_jrc_code_of_conduct_participants(content: bytes, *, source_url: str) -> dict[str, Any]:
+    """Stage the exact 2024 Digital Realty Spain and Sweden participant rows.
+
+    The JRC registry establishes only the participant name, the named data-centre
+    identities, the country-level participant geography and the adhesion year.
+    It does not establish current facility lifecycle, ownership, capacity,
+    locality or certification, so callers must leave those fields unfilled.
+    """
+    if urlsplit(source_url).hostname != "e3p.jrc.ec.europa.eu":
+        raise ValueError("Expected official European Commission JRC URL")
+    parser = _HtmlTables()
+    parser.feed(content.decode("utf-8-sig"))
+    rows = [row for table in parser.tables for row in table if len(row) >= 5]
+    expected = {
+        "Digital Realty Spain": {
+            "country_code": "ESP",
+            "adhesion_year": 2024,
+            "facilities": [f"Digital Realty Spain ESP{i}" for i in range(1, 5)],
+        },
+        "Digital Realty Sweden": {
+            "country_code": "SWE",
+            "adhesion_year": 2024,
+            "facilities": [f"Digital Realty Sweden STO{i}" for i in range(1, 7)],
+        },
+    }
+    candidates: list[dict[str, Any]] = []
+    found: set[str] = set()
+    for row in rows:
+        partner = row[0]
+        if partner not in expected:
+            continue
+        spec = expected[partner]
+        facilities = [part.strip() for part in row[2].split("|") if part.strip()]
+        try:
+            count = int(row[1])
+            year = int(row[3])
+        except ValueError as exc:
+            raise ValueError("Changed JRC participant count or adhesion year") from exc
+        expected_facilities = spec["facilities"]
+        expected_year = spec["adhesion_year"]
+        if not isinstance(expected_facilities, list) or not isinstance(expected_year, int):
+            raise TypeError("Invalid static JRC participant specification")
+        if count != len(expected_facilities) or year != expected_year:
+            raise ValueError("Changed JRC participant count or adhesion year")
+        if facilities != expected_facilities:
+            raise ValueError("Changed JRC Digital Realty facility identity set")
+        found.add(partner)
+        for facility in facilities:
+            candidates.append(
+                {
+                    "adhesion_year": year,
+                    "country_code": spec["country_code"],
+                    "external_id": facility.rsplit(" ", 1)[-1],
+                    "name": facility,
+                    "participant": partner,
+                    "locator": f"Participants table / {partner} / {facility}",
+                }
+            )
+    if found != set(expected) or len(candidates) != 10:
+        raise ValueError("Changed JRC Digital Realty participant partition")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidates": candidates,
+        "review_required": True,
+    }
+
+
 def parse_rack_centre_campus(content: bytes, *, source_url: str) -> dict[str, Any]:
     """Stage Rack Centre's explicit two-building Lagos campus boundary.
 
