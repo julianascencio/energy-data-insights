@@ -16,7 +16,13 @@ or a live availability feed. Do not interpret record counts as installed capacit
    local languages when useful. Check recent status updates as well as technical
    sources. Register exact URLs, access method, retrieval/publication dates,
    source terms and downloaded inventory checksums. Raw downloads stay outside Git.
-4. For TAB TOPzS PDF pages 10–11, `scripts/stage_bess_tab_topzs.py` stages
+4. For the reviewed ATESS BC55NPB and VoltStack battery sheets,
+   `scripts/stage_bess_atess_battery.py` stages only explicit rack columns from
+   local layout text. Keep module and rack boundaries separate. The nine-module
+   VoltStack energy/nominal-voltage inconsistency requires review; the adapter
+   preserves observations and never substitutes arithmetic estimates. Compare
+   exact configurations and module identities before upsert.
+   For TAB TOPzS PDF pages 10–11, `scripts/stage_bess_tab_topzs.py` stages
    eight exact cell models. Preserve the printed `6 TOPzS750` identity and reviewed
    web spacing alias; C10 uses 20°C, C100 uses 25°C, and C20 temperature is unstated.
    Fault current is in A, not kA or operating current. Live-table wet/dry mass

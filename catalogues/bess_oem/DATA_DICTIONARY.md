@@ -143,3 +143,16 @@ observations, not warranty or normalized tested cycle life. Optional features do
 not create models. IP66 battery-compartment protection does not replace system
 IP55. IC418-800's printed AC range excludes its nominal voltage and remains a
 conflict. Module/cluster mechanical and environmental boundaries remain separate.
+
+`atess_battery` retains product level, explicit module/BPU counts, C-rates,
+module/rack Ah, BMS and exact table locator. `module_record_id` connects only
+VoltStack assemblies to their named module. BC55NPB has an unnamed, physically
+different module; no link is inferred. Rack limits and protection are not module
+limits. Published rounded ratings remain unchanged; arithmetic checks in
+`conflicts_json` never become replacement specifications.
+
+`intilion_scalepac` preserves exact enclosure counts, separately published usable
+energy at 90% DoD, apparent-power upper bounds, approximate/strict mass qualifiers,
+and time-versus-throughput warranty limits. The scalepac5 throughput `>` qualifier
+is retained verbatim. Supplier role is system integrator, not cell manufacturer.
+System-level RTE is not transferred to each tabulated enclosure configuration.
