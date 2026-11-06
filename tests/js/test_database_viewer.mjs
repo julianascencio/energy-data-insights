@@ -417,3 +417,19 @@ test("SIGA source coordinates distinguish zero from missing and invalid points",
   assert.equal(r.unknownLocationObservations,5);
   assert.equal(r.snapshots,6);
 });
+
+
+test("wind design envelopes preserve unknown scalars and require source/revision/range evidence", async () => {
+  const {windDesignSummary} = await import("../../docs/_static/database-core.mjs");
+  const envelope = {source_id:"primary", revision:"v3", locator:"Table2", quantity_basis:"design_envelope", rotor_diameter_range_m:[182,210], hub_height_range_m:[120,130]};
+  const row = {entity_type:"projects", sources:["primary"], rotor_diameter_m:null, hub_height_m:0, extensions_json:JSON.stringify({design_envelopes:[envelope,envelope]})};
+  const original = structuredClone(row);
+  assert.deepEqual(windDesignSummary([row]), {projects:1,envelopes:1,withoutEnvelope:0,unknownRotor:1,unknownHub:0,zeroRotor:0,zeroHub:1});
+  assert.deepEqual(row, original);
+  for (const change of [{source_id:"unlinked"},{revision:null},{locator:null},{quantity_basis:"measured"},{rotor_diameter_range_m:[210,182]},{hub_height_range_m:[0,130]},{hub_height_range_m:["120",130]}]) {
+    const bad = {...row,extensions_json:JSON.stringify({design_envelopes:[{...envelope,...change}]})};
+    assert.equal(windDesignSummary([bad]).envelopes,0);
+  }
+  assert.equal(windDesignSummary([{...row,extensions_json:"{"}]).withoutEnvelope,1);
+  assert.equal(windDesignSummary([{...row,entity_type:"equipment"}]).projects,0);
+});

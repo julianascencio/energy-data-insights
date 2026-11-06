@@ -799,3 +799,18 @@ if epe_reviews and coverage_audits:
         fontsize=8,
     )
     fig.tight_layout(rect=(0, 0.08, 1, 1))
+
+
+# Lender design envelopes stay out of scalar geometry and fleet distributions.
+print("Source/revision-qualified design envelopes; not selected or installed turbines:")
+for row in rows:
+    envelopes = json.loads(row.get("extensions_json") or "{}").get("design_envelopes", [])
+    for envelope in envelopes:
+        print(row["name"], envelope["revision"], envelope["locator"])
+        print(
+            "Proposed rotor/hub ranges (m):",
+            envelope["rotor_diameter_range_m"],
+            envelope["hub_height_range_m"],
+        )
+        print("Scalar rotor/hub remain:", row.get("rotor_diameter_m"), row.get("hub_height_m"))
+        print(envelope["conditions"])

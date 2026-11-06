@@ -1284,3 +1284,19 @@ The Peñaflor consultation records only the wind proposal's 49.5 MW. Its solar
 partner's 113.42 MW and shared grid permission are separate observations; the
 works estimate has an unknown price year. Unknown lifecycle status cannot bypass
 the adapter's prohibition on treating consultation MW as installed capacity.
+
+
+Assessment design envelopes are source/revision-qualified observations, separate
+from scalar rotor diameter, hub height and selected turbine count. The shared
+viewer reports envelope coverage alongside unknown and reported-zero scalar
+geometry. The gallery shows the original ranges and conditions. Aysha I's June
+2026 lender envelope does not establish an OEM configuration; conflicting ESIA
+ratings and financing-capacity observations remain unresolved. No range endpoints
+are multiplied into synthetic variants.
+
+A BOE environmental decision can require turbine removals. The reviewed adapter
+rejects original or arithmetically reduced scalar fleet/capacity values when the
+notice imposes removals; the revised design needs separate review. Maira Delta
+and Gamma retain their original proposals, explicit removal lists and labelled
+arithmetic checks, with final capacity/count null. Final environmental curtailment
+conditions are project constraints, not OEM cut-in speed specifications.

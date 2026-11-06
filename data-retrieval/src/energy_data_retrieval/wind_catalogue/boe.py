@@ -244,6 +244,14 @@ def stage_boe_notices(
         if values.get("country_code") != "ESP" or not values.get("technology"):
             raise ValueError("Reviewed country and turbine technology required")
         target, effect = review["decision_target"], review["decision_effect"]
+        if review.get("required_turbine_removals") and any(
+            values.get(field) is not None
+            for field in ("planned_capacity_mw", "installed_capacity_mw", "turbine_count")
+        ):
+            raise ValueError(
+                "Required turbine removals need a separately reviewed revised design; "
+                "retain original proposal and arithmetic in observations"
+            )
         if target not in {"wind", "solar", "auxiliary"}:
             raise ValueError("Explicit decision technology boundary required")
         if target != "wind" and values["status"] == "cancelled":
@@ -271,7 +279,13 @@ def stage_boe_notices(
             target == "wind"
             and (
                 values["status"] in {"announced", "permitted", "cancelled"}
-                or effect == "public_consultation"
+                or effect
+                in {
+                    "public_consultation",
+                    "construction_authorization",
+                    "repowering_authorization",
+                    "environmental_conditions",
+                }
             )
             and values.get("installed_capacity_mw") is not None
         ):
