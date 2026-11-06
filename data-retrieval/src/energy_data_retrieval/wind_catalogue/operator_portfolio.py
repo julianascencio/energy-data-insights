@@ -48,6 +48,9 @@ def stage_operator_portfolio(
             )
             continue
         facts = copy.deepcopy(entry["facts"])
+        status = facts.get("status")
+        if status not in {"operational", "under_construction"}:
+            raise ValueError("Explicit observed lifecycle required; forecasts are not operation")
         count, rating = facts["turbine_count"], facts["turbine_rating_mw"]
         if (
             type(count) is not int
@@ -111,7 +114,7 @@ def stage_operator_portfolio(
                     name=name,
                     country_code=entry["country_code"],
                     technology=entry["technology"],
-                    status="operational",
+                    status=status,
                     status_as_of=document["as_of"],
                     status_date_basis="Operator disclosure at stated historical date only",
                     aggregation_role="unresolved",

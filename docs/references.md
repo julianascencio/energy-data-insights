@@ -7935,3 +7935,11 @@ Agencia Estatal Boletín Oficial del Estado (2026). **Revilla-Vallejera Hib wind
 **Role:** data_source. Printed pp40115–40118; application chronology and Características generales
 
 **Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
+
+### boe_a_2026_15830
+
+Agencia Estatal Boletín Oficial del Estado (2026). **Escuderos I/IV unfavourable environmental declaration**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-15830)
+
+**Role:** data_source. Sections1 project description and final unfavourable environmental declaration,3July2026
+
+**Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.

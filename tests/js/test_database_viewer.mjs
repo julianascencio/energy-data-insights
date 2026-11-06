@@ -476,3 +476,9 @@ test("operator evidence retains unknown/zero, dates and capacity boundaries with
   assert.deepEqual(result.capacity.gross_reported, {known: 0, unknown: 1, zero: 0});
   assert.equal(result.total_mw, undefined);
 });
+
+
+test("operator construction status remains a dated observation", () => {
+  const row = {entity_type: "projects", sources: ["owner"], aggregation_role: "unresolved", extensions_json: JSON.stringify({operator_portfolio_observations: [{source_id: "owner", as_of: "2024-03-31", locator: "p166", facts: {status: "under_construction", capacity_basis: "gross_reported", capacity_mw: 500}}]})};
+  assert.deepEqual(windOperatorPortfolioSummary([row]).statuses, {under_construction: 1});
+});

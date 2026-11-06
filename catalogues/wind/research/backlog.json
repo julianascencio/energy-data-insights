@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-06T11:40:52.255296+00:00",
+  "updated_at": "2026-11-06T12:40:40.496811+00:00",
   "branch": "research/wind-20261106-0835",
   "run_lock": {
     "path": "/tmp/energy-data-insights-wind-20261106-0835.lock",
@@ -239,40 +239,40 @@
       "rank": 3,
       "source": "UK Renewable Energy Planning Database",
       "url": "https://www.gov.uk/government/publications/renewable-energy-planning-database-quarterly-extract",
-      "partition": "Unlinked saved candidates offsets1600:1800 next",
-      "next_offset": 1600,
+      "partition": "Unlinked saved candidates offsets1800:2000 next",
+      "next_offset": 1800,
       "status": "crosswalk_partition_completed_remaining_applications_pending",
       "tasks": [
         "Do not rerun 642 completed crosswalk enrichments as new work",
         "Resolve explicit replacement application links and primary permit scopes; match WRI renamed identities before new additions",
         "Reconcile scope of 642 enriched records against permits before enabling any capacity totals",
-        "Offsets0:1600 structurally reviewed; all held pending original permits. Next1600:1800."
+        "Offsets0:1800 structurally reviewed; all held pending permits. Next1800:2000."
       ],
       "release_url": "https://assets.publishing.service.gov.uk/media/6a6cbdc00c36759b5ccaa305/REPD_Publication_Q2_2026.csv",
       "sha256": "84c1b5f958a934d8b4b86ec88f50bdcf43830ded7ff2efc27bffca0c98695035",
       "next_ids": [
-        "8921",
-        "8999",
-        "9017",
-        "9018",
-        "9031",
-        "9048",
-        "9146",
-        "9161",
-        "9252",
-        "9300",
-        "9309",
-        "9313",
-        "9317",
-        "9417",
-        "9459",
-        "9468",
-        "9499",
-        "9595",
-        "9599",
-        "9640"
+        "13764",
+        "13771",
+        "13805",
+        "13824",
+        "13991",
+        "13993",
+        "13994",
+        "13995",
+        "13996",
+        "14032",
+        "14057",
+        "14110",
+        "14112",
+        "14113",
+        "14114",
+        "14115",
+        "14127",
+        "14128",
+        "14129",
+        "14130"
       ],
-      "structural_review": "2026-11-06-1135-repd-review.json"
+      "structural_review": "2026-11-06-1235-repd-review.json"
     },
     {
       "rank": 4,
@@ -573,11 +573,13 @@
           "Loeriesfontein 2 Wind",
           "Khobab Wind"
         ],
-        "construction_followup": [
-          "Zarafshan Wind",
-          "Baltic Eagle Offshore Wind"
-        ],
-        "construction_source_locator": "SameJuly2024circular pp148 and166; historical construction only, no2026operation inferred"
+        "construction_followup": [],
+        "construction_source_locator": "SameJuly2024circular pp148 and166; historical construction only, no2026operation inferred",
+        "construction_completed": {
+          "review": "2026-11-06-1235-operator-review.json",
+          "new_projects": 2,
+          "next_task": "Zarafshan14Dec2024 operational inauguration versus formalCOD; Baltic Eagle later commissioning and9.5/9.53MW revision. Do not repeat2024tables. Eight operational identity holds unchanged."
+        }
       }
     },
     {
@@ -610,6 +612,9 @@
       "source": "BOE complete daily Series A wind-mentioned decisions",
       "status": "bounded_daily_partitions_complete",
       "completed_dates": [
+        "2026-07-20",
+        "2026-07-21",
+        "2026-07-22",
         "2026-07-23",
         "2026-07-24",
         "2026-07-25",
@@ -701,15 +706,18 @@
         "2026-11-04"
       ],
       "next_dates": [
-        "2026-07-20",
-        "2026-07-21",
-        "2026-07-22"
+        "2026-07-16",
+        "2026-07-17",
+        "2026-07-18"
       ],
       "adapter": "energy_data_retrieval.wind_catalogue.boe",
       "next_offset": 0,
-      "next_task": "July20–22 allA/Bissues; Revilla-Vallejera wind application added, Monclues solar-only notice held",
+      "next_task": "July16–18 allA/Bissues. Escuderos negativeDIA is not administrative cancellation; final wind authorization decision next.",
       "decision_ledger": "2026-11-05-1807-boe-review.json",
       "series_b_completed_dates": [
+        "2026-07-20",
+        "2026-07-21",
+        "2026-07-22",
         "2026-07-23",
         "2026-07-24",
         "2026-07-25",
@@ -800,7 +808,7 @@
         "2026-11-03",
         "2026-11-04"
       ],
-      "latest_review": "2026-11-06-1135-review.json",
+      "latest_review": "2026-11-06-1235-review.json",
       "unavailable_dates": [
         {
           "date": "2026-09-06",
@@ -917,7 +925,7 @@
   "publication_continuation": {
     "branch": "research/wind-20261106-0835",
     "main": "64dcf52278bb942591d16571252e4090963f67a1",
-    "expected_head": "3f9c0a6db436880f1f5913526fd4efc6005ce28b",
+    "expected_head": "15b4ce5778d8c89f5d36a3e0a99dee902801f536",
     "pr": 198,
     "leave_open_unmerged": true
   }

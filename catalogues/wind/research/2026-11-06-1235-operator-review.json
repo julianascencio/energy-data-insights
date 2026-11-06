@@ -1,0 +1,120 @@
+{
+  "source_id": "masdar-offering-circular-20240715",
+  "url": "https://masdar.ae/-/media/corporate-revamp/downloads/investors/project-jade---base-offering-circular.pdf",
+  "operator": "Masdar",
+  "published_at": "2024-07-15",
+  "as_of": "2024-03-31",
+  "sha256": "40c16a442d0fa45b8500b72c3a6dc4210e16642824a0d9bd60a332b7fa2e9978",
+  "expected_names": [
+    "Zarafshan Wind",
+    "Baltic Eagle Offshore Wind"
+  ],
+  "entries": [
+    {
+      "source_name": "Zarafshan Wind",
+      "country_code": "UZB",
+      "technology": "onshore",
+      "locator": "Printed pp148,166–167,169 construction table and project narrative",
+      "identity_basis": "Named source project and country screened against complete canonical names; no collision; registry/phase reconciliation still unresolved",
+      "facts": {
+        "status": "under_construction",
+        "turbine_count": 111,
+        "turbine_rating_mw": 4.5,
+        "rating_basis": "reported_per_turbine",
+        "capacity_mw": 500,
+        "capacity_basis": "gross_reported",
+        "oem_as_printed": "Goldwind",
+        "masdar_share_percent": 100,
+        "ownership_basis": "Dated project-company share",
+        "cod": null,
+        "cod_precision": null,
+        "locality": "Navoi Region",
+        "exact_model": null,
+        "scheduled_cod_years": [
+          {
+            "value": 2025,
+            "locator": "p166 table"
+          },
+          {
+            "value": 2026,
+            "locator": "p167 narrative"
+          }
+        ],
+        "scheduled_cod_year": null,
+        "forecast_conflict_unresolved": true,
+        "offtaker": "JSC NEGU",
+        "ppa_term_years": 25,
+        "ppa_start": "COD",
+        "om_boundary": "EPC contractor covers two-year defects period; MSTS thereafter"
+      }
+    },
+    {
+      "source_name": "Baltic Eagle Offshore Wind",
+      "country_code": "DEU",
+      "technology": "fixed_bottom_offshore",
+      "locator": "Printed pp148,166–167,169 construction table and project narrative",
+      "identity_basis": "Named source project and country screened against complete canonical names; no collision; registry/phase reconciliation still unresolved",
+      "facts": {
+        "status": "under_construction",
+        "turbine_count": 50,
+        "turbine_rating_mw": 9.5,
+        "rating_basis": "reported_per_turbine",
+        "capacity_mw": 476,
+        "capacity_basis": "gross_reported",
+        "oem_as_printed": "Vestas",
+        "masdar_share_percent": 49,
+        "ownership_basis": "Dated project-company share",
+        "cod": null,
+        "cod_precision": null,
+        "locality": "Near Rügen Island, Baltic Sea",
+        "exact_model": null,
+        "scheduled_cod": "late2024",
+        "forecast_not_actual_cod": true,
+        "iberdrola_share_percent": 51,
+        "foundation": "monopile",
+        "grid_connection": "Ostwind2",
+        "tariff": {
+          "value": 64.6,
+          "unit": "EUR/MWh",
+          "basis": "Minimum regulated tariff reported for first20years; not realized revenue"
+        },
+        "finance": {
+          "amount": 488,
+          "currency": "EUR",
+          "scale": "million",
+          "date": "2024-03",
+          "boundary": "Non-recourse financing of Masdar minority stake; not total project investment"
+        }
+      }
+    }
+  ],
+  "partition": "Complete two wind rows in construction table p166; operational table already completed",
+  "decisions": [
+    {
+      "source_name": "Zarafshan Wind",
+      "record_id": "e941ace9-5cb7-5c52-a057-c18a838a4987",
+      "decision": "addition",
+      "identity_basis": "Named source project and country screened against complete canonical names; no collision; registry/phase reconciliation still unresolved"
+    },
+    {
+      "source_name": "Baltic Eagle Offshore Wind",
+      "record_id": "8e71000b-17f7-5328-ad53-7d8f5a11d893",
+      "decision": "addition",
+      "identity_basis": "Named source project and country screened against complete canonical names; no collision; registry/phase reconciliation still unresolved"
+    }
+  ],
+  "followup": {
+    "zarafshan_url": "https://masdar.ae/en/news/newsroom/president-of-uzbekistan-inaugurates-500mw-zarafshan-wind-farm",
+    "published_at": "2024-12-14",
+    "claim": "Operational inauguration; formal COD not stated",
+    "decision": "Deferred later milestone reconciliation; not promoted over historical snapshot",
+    "baltic_url": "https://www.iberdrola.com/about-us/power/offshore-wind-energy/baltic-eagle-offshore-wind-farm",
+    "baltic_claim": "Current page9.53MW per turbine versus2024circular9.5MW; model/revision and commissioning followup required",
+    "zarafshan_http_status": 200,
+    "zarafshan_original_sha256": "9be8b40c0d84f02e2da5da4240508990c6c4c77727a1b5dae855dcf277e29e86",
+    "zarafshan_original_bytes": 67861,
+    "baltic_original_sha256": null,
+    "baltic_retrieval": "Official indexed page read; original bytes not acquired",
+    "normalization": "Follow-up observations only; not accepted canonical lifecycle or rating updates"
+  }
+}

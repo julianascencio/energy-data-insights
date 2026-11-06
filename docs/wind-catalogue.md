@@ -1,12 +1,12 @@
 # Global Wind Database
 
 The Wind catalogue connects projects, exact equipment configurations, turbines and
-numerical curves. At batch `2026-11-06-1135`, the continuation contains
-**8,319 projects, 566 equipment records, 13,657 linked turbines and two original
-numerical curves**, across **63 countries and 66 equipment manufacturer labels**.
+numerical curves. At batch `2026-11-06-1235`, the continuation contains
+**8,323 projects, 566 equipment records, 13,657 linked turbines and two original
+numerical curves**, across **64 countries and 66 equipment manufacturer labels**.
 Labels are not a reconciled corporate-entity count. Merged main at `64dcf522`
 contains 8,306 projects, 555 equipment records, 13,657 turbines and two curves.
-This run adds ten projects and enriches three; it adds no equipment records; it does not count
+This run adds four projects, with no enrichments or equipment additions; it does not count
 previous batches again. These are catalogue counts, not a current operating
 census. Exact continuation queues are in `catalogues/wind/research/latest.json`.
 
@@ -1411,3 +1411,25 @@ Continuation: BOE July20–22; REPD1600:1800; eight named Masdar registry crossw
 in the review ledger. The same circular’s Zarafshan/Baltic Eagle construction rows
 are a separate unprocessed partition. Full original documents are not redistributed;
 SHA-256 and page locators are recorded in the source registry and review ledger.
+
+
+## Construction and environmental decisions (6 November,12:35 UTC)
+
+Masdar’s two construction-table wind rows from its July2024 circular are now
+represented: Zarafshan and Baltic Eagle. They describe March2024 construction,
+not present operation. Zarafshan’s2025 table forecast conflicts with its2026
+narrative forecast; both remain dated observations and no COD scalar is assigned.
+Baltic Eagle’s minority-stake financing is not total project investment.
+
+BOE July20–22 yields one negative environmental decision for two wind proposals,
+Escuderos I andIV. Their21.6/28.8MW and V172 geometry are original proposed designs.
+The negative DIA is neither construction permission nor an inferred final
+administrative cancellation. PV hosts and shared grid infrastructure are excluded.
+All four records remain excluded from additive capacity totals. No equipment
+variant is manufactured from project ratings or optional hub configurations.
+
+The operator adapter now requires a reported lifecycle before staging a row.
+A regression fixture checks that construction and conflicting forecasts cannot
+become operation or commissioning. REPD1600:1800 was structurally reviewed only;
+all200 original-permit identity holds remain. Next: BOE July16–18, REPD1800:2000,
+and later Zarafshan/Baltic Eagle milestone and rating-revision reconciliation.

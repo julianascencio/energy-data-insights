@@ -879,6 +879,7 @@ for row in rows:
         print(
             row["name"],
             observation["as_of"],
+            facts.get("status", "unknown"),
             facts["capacity_basis"],
             facts["capacity_mw"],
             facts["cod"],

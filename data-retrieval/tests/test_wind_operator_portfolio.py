@@ -29,6 +29,7 @@ def document():
                 identity_basis="Reviewed source project, no catalogue collision",
                 locator="p1 table1",
                 facts=dict(
+                    status="operational",
                     turbine_count=3,
                     turbine_rating_mw=2.1,
                     rating_basis="reported_fleet_average",
@@ -106,3 +107,15 @@ def test_identity_hold_is_logged_without_project(document):
     records, ledger = stage(document)
     assert records == []
     assert ledger[0]["decision"] == "deferred_identity"
+
+
+def test_construction_and_forecasts_do_not_become_operation(document):
+    facts = document["entries"][0]["facts"]
+    facts.update(status="under_construction", scheduled_cod_years=[2025, 2026], cod=None)
+    row = stage(document)[0][0]
+    assert row["status"] == "under_construction"
+    assert row.get("commissioning_date") is None
+    assert row.get("installed_capacity_mw") is None
+    facts.pop("status")
+    with pytest.raises(ValueError, match="lifecycle"):
+        stage(document)

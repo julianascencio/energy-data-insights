@@ -526,7 +526,7 @@ export function windNumericTableSummary(rows) {
 
 // Operator snapshots describe dated evidence, never an additive current fleet.
 export function windOperatorPortfolioSummary(rows) {
-  const result = {projects: 0, observations: 0, withoutEvidence: 0, excludedProjects: 0, unknownModels: 0, averageRatings: 0, dates: [], capacity: {contracted: {known: 0, unknown: 0, zero: 0}, gross_reported: {known: 0, unknown: 0, zero: 0}}};
+  const result = {projects: 0, observations: 0, withoutEvidence: 0, excludedProjects: 0, unknownModels: 0, averageRatings: 0, dates: [], statuses: {}, capacity: {contracted: {known: 0, unknown: 0, zero: 0}, gross_reported: {known: 0, unknown: 0, zero: 0}}};
   const dates = new Set();
   for (const row of rows.filter(r => r.entity_type === "projects")) {
     let observations;
@@ -535,6 +535,8 @@ export function windOperatorPortfolioSummary(rows) {
     for (const o of Array.isArray(observations) ? observations : []) {
       if (!o?.locator || !row.sources?.includes(o.source_id) || !/^\d{4}-\d{2}-\d{2}$/.test(o.as_of || "") || !o.facts || seen.has(`${o.source_id}:${o.as_of}`)) continue;
       seen.add(`${o.source_id}:${o.as_of}`); dates.add(o.as_of); result.observations++;
+      const lifecycle = o.facts.status || "unknown";
+      result.statuses[lifecycle] = (result.statuses[lifecycle] || 0) + 1;
       if (!o.facts.exact_model) result.unknownModels++;
       if (o.facts.rating_basis === "reported_fleet_average") result.averageRatings++;
       const category = result.capacity[o.facts.capacity_basis];
