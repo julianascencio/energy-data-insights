@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-06T10:16:56.629950+00:00",
-  "ranking_file": "20261106T1000_top10_gaps.json",
+  "updated_at": "2026-11-06T11:22:55.511864+00:00",
+  "ranking_file": "20261106T1100_top10_gaps.json",
   "selection_note": "197projects/401fieldscontexts,13newFoxESSinverters/247typedvalues.2acceptedbatches;3ownerholds. Nepal/BPDBnewdiscovery only;Taipowerunchanged/alreadyprocessed,no adaptercompletion.",
-  "next_highest_value_source": "Greece339strictownershipcandidatesaftercursor; Ganesh exact units/dimension/model-scope questions; Kalyon normal PDF access nextdue7Nov; SpainREPRO CAPTCHA distinct from existing Electra75 hold.",
+  "next_highest_value_source": "Greece139 strict ownership candidates after saved cursor; Rayzon31 differing fields held; Torino normal access/licence/explicitPV review next due7Nov; Noark current route identified but old identity gate retained.",
   "sources": [
     {
       "id": "uk_repd",
@@ -28489,6 +28489,441 @@
       "retry_condition": "Changed access/revision or independent rights/identity/specification evidence; no retry bursts",
       "next_action": "Do not repeat Electra75 rows or treat REPRO as a whole-PV inventory. Seek a normally downloadable official PV/phase dataset and explicit AC/DC definitions; prior Electra/Navarra identity/power holds unchanged.",
       "next_due_check": "2026-11-13T10:00:00Z"
+    },
+    {
+      "id": "gem_GRC_owners_1100",
+      "country": "GRC",
+      "entity": "projects",
+      "source_url": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+      "endpoint": "https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx",
+      "format": "PinnedFebruary2026XLSX complete phase IDs and Owner cells",
+      "licence_assessment": "CC BY 4.0; exclude entire locations containing TransitionZero (TZ) or Wiki-Solar (WKSL) identifiers",
+      "publication_cadence": "Release based, official metadata stillFebruary2026; no hourly workbook download",
+      "last_release": "February2026",
+      "last_retrieval": "2026-11-05T11:57:14.680485+00:00",
+      "last_attempt": "2026-11-06T11:22:55.511864+00:00",
+      "sha256": "99f44fd162faff436cbc7c1edf7a8a486c4e32746a9786778362ca4688d39959",
+      "etag": "\"55284d2ad4671fedab2be1fc9091f87166ae68b925a377da180a8a95c2ce8acc\"",
+      "reviewed": 200,
+      "accepted": 198,
+      "held": 2,
+      "rejected": 0,
+      "estimated_useful_yield": {
+        "remaining_strict_Greece": 139
+      },
+      "mapping": "198historical owners +198complete-phase contexts; no currentownership/operation or power/date inference",
+      "processed_cursor": {
+        "GRC": "L100000822452"
+      },
+      "result": "Two native spelling/mixed-script identity holds. Geographic words in corporate labels preserved literally, not treated as errors or renamed entities. One separate operator-role prospect remains held.",
+      "retry_condition": "Refresh source/head before next saved partition",
+      "next_action": "Greece139 after this200-location cursor; keep prior held IDs separate",
+      "next_due_check": "2026-11-13T11:00:00Z"
+    },
+    {
+      "id": "rayzon_three_tables_1100",
+      "country": "IND",
+      "entity": "modules",
+      "source_url": "https://rayzonsolar.com/img/datasheet/export/TOPCON-2025-580-600-Export.pdf",
+      "endpoint": [
+        "https://rayzonsolar.com/img/datasheet/export/TOPCON-2025-580-600-Export.pdf",
+        "https://rayzonsolar.com/img/datasheet/export/TOPCON-2025-210R-Export.pdf",
+        "https://rayzonsolar.com/img/datasheet/export/BLACK-TOPCON-2025-425-440-(108)-Export.pdf",
+        "https://rayzonsolar.com/img/product-datasheet/RAYZON-SOLAR-%20Warranty-certificate.pdf",
+        "https://rayzonsolar.com/download",
+        "https://rayzonsolar.com/"
+      ],
+      "format": "Three two-page OEM Export2025 sheets plus current linked warranty certificate effective1February2025",
+      "licence_assessment": "OEM copyright retained; bounded individually reviewed facts only. Public home/download/footer and sheet disclaimers inspected; no open bulk/document grant asserted, protected documents/prose/artwork redistributed or Emmvee veto bypassed.",
+      "access_assessment": "Ordinary public GET/search; no login, contact/form submission, payment or bypass",
+      "publication_cadence": "Revision based or unstated; metadata first, skip unchanged full files",
+      "last_release": "Content dates explicitly qualified below; HTTP/PDF metadata not product effective date",
+      "last_retrieval": "2026-11-06T11:07:15.724660+00:00",
+      "last_attempt": "2026-11-06T11:22:55.511864+00:00",
+      "sha256": "60bbfc9d73ee559b9eebfb3051a55b8114a1e9c2233354f9e62ac951a07788ea",
+      "etag": "\"2caff6-64b180165cf16\"",
+      "captures": [
+        {
+          "name": "rayzon144.pdf",
+          "url": "https://rayzonsolar.com/img/datasheet/export/TOPCON-2025-580-600-Export.pdf",
+          "status": 200,
+          "final_url": "https://rayzonsolar.com/img/datasheet/export/TOPCON-2025-580-600-Export.pdf",
+          "retrieved_at": "2026-11-06T11:07:15.724660+00:00",
+          "sha256": "60bbfc9d73ee559b9eebfb3051a55b8114a1e9c2233354f9e62ac951a07788ea",
+          "bytes": 2928630,
+          "etag": "\"2caff6-64b180165cf16\"",
+          "last_modified": "Wed, 18 Feb 2026 12:05:35 GMT"
+        },
+        {
+          "name": "rayzon132.pdf",
+          "url": "https://rayzonsolar.com/img/datasheet/export/TOPCON-2025-210R-Export.pdf",
+          "status": 200,
+          "final_url": "https://rayzonsolar.com/img/datasheet/export/TOPCON-2025-210R-Export.pdf",
+          "retrieved_at": "2026-11-06T11:07:16.227271+00:00",
+          "sha256": "3c8a9e8f98c0f2fb187a68993ada353a5b99692933d682a281d150d348cb64f6",
+          "bytes": 2715897,
+          "etag": "\"2970f9-64b18015eca34\"",
+          "last_modified": "Wed, 18 Feb 2026 12:05:34 GMT"
+        },
+        {
+          "name": "rayzon108.pdf",
+          "url": "https://rayzonsolar.com/img/datasheet/export/BLACK-TOPCON-2025-425-440-(108)-Export.pdf",
+          "status": 200,
+          "final_url": "https://rayzonsolar.com/img/datasheet/export/BLACK-TOPCON-2025-425-440-(108)-Export.pdf",
+          "retrieved_at": "2026-11-06T11:07:15.622856+00:00",
+          "sha256": "697f02ccdae27b80fc6287831adde613bcb5a628636f7abf4d7852b366113b15",
+          "bytes": 2404587,
+          "etag": "\"24b0eb-64b1801705e39\"",
+          "last_modified": "Wed, 18 Feb 2026 12:05:35 GMT"
+        },
+        {
+          "name": "rayzon-warranty.pdf",
+          "url": "https://rayzonsolar.com/img/product-datasheet/RAYZON-SOLAR-%20Warranty-certificate.pdf",
+          "status": 200,
+          "final_url": "https://rayzonsolar.com/img/product-datasheet/RAYZON-SOLAR-%20Warranty-certificate.pdf",
+          "retrieved_at": "2026-11-06T11:07:28.543460+00:00",
+          "sha256": "5f2965857f2b95a8b1bfb94ad45bd380423111a3b9eeddace3d5d50f3cbf4864",
+          "bytes": 202539,
+          "etag": "\"3172b-64c57f8c2771a\"",
+          "last_modified": "Fri, 06 Mar 2026 09:49:39 GMT"
+        },
+        {
+          "name": "rayzon-download.html",
+          "url": "https://rayzonsolar.com/download",
+          "status": 200,
+          "final_url": "https://rayzonsolar.com/download",
+          "retrieved_at": "2026-11-06T11:06:17.255297+00:00",
+          "sha256": "1f4e0a664c5ff8a31754e20e50f8ee1c39ba6304ef966af8a484e226af2b1110",
+          "bytes": 51347,
+          "etag": null,
+          "last_modified": null
+        },
+        {
+          "name": "rayzon.html",
+          "url": "https://rayzonsolar.com/",
+          "status": 200,
+          "final_url": "https://rayzonsolar.com/",
+          "retrieved_at": "2026-11-06T11:05:55.509913+00:00",
+          "sha256": "cc563f31dae41c54b1037f159b7bd30ccbfa40a78fb04652f9d6eef78ff0d0f9",
+          "bytes": 88236,
+          "etag": null,
+          "last_modified": null
+        }
+      ],
+      "mapping": "Dated1100 exact model/phase/role/rights reviews; no new adapter or feed",
+      "estimated_useful_yield": {
+        "reviewed": 13,
+        "accepted": 13,
+        "additional_verified": null
+      },
+      "reviewed": 13,
+      "accepted": 13,
+      "held": 0,
+      "rejected": 0,
+      "processed_cursor": {
+        "new": 6,
+        "enriched": 7,
+        "typed_values_accepted": 261,
+        "differing_populated_fields": 31,
+        "complete": true,
+        "cross_unit_coefficient_holds": 14
+      },
+      "result": "6new exact modules +7existing CEC/SAM models enriched.261 accepted typed values:156new-record and105nullable existing-model values;338OEM typed assertions reviewed,31different populated fields plus14relative/absolute coefficient basis questions retained in review,32same values not recounted. One manufacturer label reused, no new OEM. 13contexts,7new canonical datasheet links.",
+      "retry_condition": "Changed normal access/rights/revision or independent identity/field evidence; no repeated unchanged downloads",
+      "next_action": "Selected13columns complete. Resolve31differences without preferring undated OEM sheet to CEC2026.7.3. Keep cell architectures, NOCT/front-STC and backside scenarios distinct.",
+      "next_due_check": "2026-11-13T11:00:00Z"
+    },
+    {
+      "id": "emmvee_rights_1100",
+      "country": "IND",
+      "entity": "modules",
+      "source_url": "https://emmvee.com/terms-conditions/",
+      "endpoint": [
+        "https://emmvee.com/terms-conditions/",
+        "https://emmvee.com/",
+        "https://emmvee.com/downloads/"
+      ],
+      "format": "Public official website terms/index",
+      "licence_assessment": "Terms grant viewing only and expressly prohibit data mining/harvesting/extraction and publishing material. No technical PDF download or model extraction; technical index cache discarded, access metadata retained.",
+      "access_assessment": "Ordinary public GET/search; no login, contact/form submission, payment or bypass",
+      "publication_cadence": "Revision based or unstated; metadata first, skip unchanged full files",
+      "last_release": "Content dates explicitly qualified below; HTTP/PDF metadata not product effective date",
+      "last_retrieval": "2026-11-06T11:04:45.625191+00:00",
+      "last_attempt": "2026-11-06T11:22:55.511864+00:00",
+      "sha256": "2323d5b8aa566a1dbd039823f54ef8c0626c081d0d4f3ab44e5122bfb2461e53",
+      "etag": null,
+      "captures": [
+        {
+          "name": "emmvee-terms.html",
+          "url": "https://emmvee.com/terms-conditions/",
+          "status": 200,
+          "final_url": "https://emmvee.com/terms-conditions/",
+          "retrieved_at": "2026-11-06T11:04:45.625191+00:00",
+          "sha256": "2323d5b8aa566a1dbd039823f54ef8c0626c081d0d4f3ab44e5122bfb2461e53",
+          "bytes": 120289,
+          "etag": null,
+          "last_modified": null
+        },
+        {
+          "name": "emmvee.html",
+          "url": "https://emmvee.com/",
+          "status": 200,
+          "final_url": "https://emmvee.com/",
+          "retrieved_at": "2026-11-06T11:04:04.748275+00:00",
+          "sha256": "661fafa94ad91404398ac8784b0e57c9cdcbd6541b902539f348f7a8e500fd9f",
+          "bytes": 189506,
+          "etag": null,
+          "last_modified": null
+        },
+        {
+          "name": "emmvee-downloads.html",
+          "url": "https://emmvee.com/downloads/",
+          "status": 200,
+          "final_url": "https://emmvee.com/downloads/",
+          "retrieved_at": "2026-11-06T11:04:45.313600+00:00",
+          "sha256": "b79bb1cf19d86aee334d8bba24cc66475d31cc596d382d66999e063130509a7c",
+          "bytes": 141783,
+          "etag": null,
+          "last_modified": null
+        }
+      ],
+      "mapping": "Dated1100 exact model/phase/role/rights reviews; no new adapter or feed",
+      "estimated_useful_yield": {
+        "reviewed": 0,
+        "accepted": 0,
+        "additional_verified": null
+      },
+      "reviewed": 0,
+      "accepted": 0,
+      "held": 0,
+      "rejected": 0,
+      "processed_cursor": {
+        "accepted": 0
+      },
+      "result": "Promising multi-model public download index discovered, but explicit extraction prohibition stops ingestion. No alternate host or contact route used. Switched to independent Rayzon.",
+      "retry_condition": "Changed normal access/rights/revision or independent identity/field evidence; no repeated unchanged downloads",
+      "next_action": "Only resume on documented applicable rights; do not infer public viewing permits extraction.",
+      "next_due_check": "2026-11-13T11:00:00Z"
+    },
+    {
+      "id": "torino_renewable_permits_1100",
+      "country": "ITA",
+      "entity": "projects",
+      "source_url": "https://geodati.gov.it/geoportale/visualizzazione-metadati/scheda-metadati?metadataid=cmto%3A403766ce-7b5c-4347-ba70-2235e37d2447",
+      "endpoint": [
+        "https://geodati.gov.it/geoportale/visualizzazione-metadati/scheda-metadati?metadataid=cmto%3A403766ce-7b5c-4347-ba70-2235e37d2447",
+        "https://eds.cittametropolitana.torino.it/geoportale/SHP_INT_ENER.php"
+      ],
+      "format": "Official RNDT metadata and linked ESRI Shapefile endpoint",
+      "licence_assessment": "RNDT other access/use constraints are blank/unspecified: no dataset reuse grant established. General open-data or another municipality licence not substituted.",
+      "access_assessment": "Ordinary public GET/search; no login, contact/form submission, payment or bypass",
+      "publication_cadence": "Revision based or unstated; metadata first, skip unchanged full files",
+      "last_release": "Content dates explicitly qualified below; HTTP/PDF metadata not product effective date",
+      "last_retrieval": "2026-11-06T11:04:50.172752+00:00",
+      "last_attempt": "2026-11-06T11:22:55.511864+00:00",
+      "sha256": "a40176c2248d9b7fcdb13bc6b85a0adf7f8a95933e296ebce0726bfa606455aa",
+      "etag": null,
+      "captures": [
+        {
+          "name": "torino-metadata.html",
+          "url": "https://geodati.gov.it/geoportale/visualizzazione-metadati/scheda-metadati?metadataid=cmto%3A403766ce-7b5c-4347-ba70-2235e37d2447",
+          "status": 200,
+          "final_url": "https://geodati.gov.it/geoportale/visualizzazione-metadati/scheda-metadati?metadataid=cmto%3A403766ce-7b5c-4347-ba70-2235e37d2447",
+          "retrieved_at": "2026-11-06T11:04:50.172752+00:00",
+          "sha256": "a40176c2248d9b7fcdb13bc6b85a0adf7f8a95933e296ebce0726bfa606455aa",
+          "bytes": 43043,
+          "etag": null,
+          "last_modified": "Fri, 06 Nov 2026 11:04:49 GMT"
+        },
+        {
+          "name": "torino-download.html",
+          "url": "https://eds.cittametropolitana.torino.it/geoportale/SHP_INT_ENER.php",
+          "status": 503,
+          "final_url": "https://eds.cittametropolitana.torino.it/geoportale/SHP_INT_ENER.php",
+          "retrieved_at": "2026-11-06T11:06:00.179476+00:00",
+          "sha256": "2f85832e31ca57711e6107af6b142363351ae516adb71c69afc643fac26be7f6",
+          "bytes": 91,
+          "etag": null,
+          "last_modified": null
+        }
+      ],
+      "mapping": "Dated1100 exact model/phase/role/rights reviews; no new adapter or feed",
+      "estimated_useful_yield": {
+        "reviewed": 0,
+        "accepted": 0,
+        "additional_verified": null
+      },
+      "reviewed": 0,
+      "accepted": 0,
+      "held": 0,
+      "rejected": 0,
+      "processed_cursor": {
+        "feature_rows_reviewed": 0,
+        "current_ITA_projects": 1179,
+        "access_status": 503
+      },
+      "result": "New official multi-record inventory: Citta metropolitana di Torino renewable permits underD.Lgs387/2003. Metadata dated24September2025, dataset revision2May2024, creation2005 and temporal extent ending2008 all retained as distinct metadata, not operating proof. WGS84/UTM32N, scale1:10000 and10m positional claim. Download endpoint503; no feature schema, positivePV, privacy, whole-plant/phase or AC/DC review possible. Zero plants/adapter accepted.",
+      "retry_condition": "Changed normal access/rights/revision or independent identity/field evidence; no repeated unchanged downloads",
+      "next_action": "On normal download recovery, inspect reuse/feature schema and bounded explicitPV sample; reconcile permit IDs/locations against existing1179Italian project records, retaining historical authorization rather than current operation.",
+      "next_due_check": "2026-11-07T11:00:00Z"
+    },
+    {
+      "id": "noark_current_download_route_1100",
+      "country": "AUS",
+      "entity": "combiner_boxes",
+      "source_url": "https://noark.au/support/downloads",
+      "endpoint": [
+        "https://noark.au/support/downloads",
+        "https://noark.au/index.php/products/equipment?id=2",
+        "https://noark.au/privacy-policy"
+      ],
+      "format": "Current official download index; legacy product URL404",
+      "licence_assessment": "Prior source-specific bounded facts/identity holds retained; current privacy notice is not a technical reuse grant. No new manual download/extraction.",
+      "access_assessment": "Ordinary public GET/search; no login, contact/form submission, payment or bypass",
+      "publication_cadence": "Revision based or unstated; metadata first, skip unchanged full files",
+      "last_release": "Content dates explicitly qualified below; HTTP/PDF metadata not product effective date",
+      "last_retrieval": "2026-11-06T11:04:44.336481+00:00",
+      "last_attempt": "2026-11-06T11:22:55.511864+00:00",
+      "sha256": "803528ac046d0ef50e421fa5e2b61fbc1a456a6d6098f58fc8ccf853e75ab72c",
+      "etag": null,
+      "captures": [
+        {
+          "name": "noark-downloads.html",
+          "url": "https://noark.au/support/downloads",
+          "status": 200,
+          "final_url": "https://noark.au/support/downloads",
+          "retrieved_at": "2026-11-06T11:04:44.336481+00:00",
+          "sha256": "803528ac046d0ef50e421fa5e2b61fbc1a456a6d6098f58fc8ccf853e75ab72c",
+          "bytes": 261175,
+          "etag": null,
+          "last_modified": null
+        },
+        {
+          "name": "noark.html",
+          "url": "https://noark.au/index.php/products/equipment?id=2",
+          "status": 404,
+          "final_url": "https://noark.au/index.php/products/equipment?id=2",
+          "retrieved_at": "2026-11-06T11:04:05.723695+00:00",
+          "sha256": "e39104feae35c54e2ba72bb010734e064f9899253f409d2d8d083e5d2d534897",
+          "bytes": 24919,
+          "etag": null,
+          "last_modified": null
+        },
+        {
+          "name": "noark-privacy.html",
+          "url": "https://noark.au/privacy-policy",
+          "status": 200,
+          "final_url": "https://noark.au/privacy-policy",
+          "retrieved_at": "2026-11-06T11:05:54.687487+00:00",
+          "sha256": "5a5cf2be4674532d4144631688821e1dad37f5838f74b5fa80a49da2e6ba7fe9",
+          "bytes": 37393,
+          "etag": null,
+          "last_modified": null
+        }
+      ],
+      "mapping": "Dated1100 exact model/phase/role/rights reviews; no new adapter or feed",
+      "estimated_useful_yield": {
+        "reviewed": 0,
+        "accepted": 0,
+        "additional_verified": null
+      },
+      "reviewed": 0,
+      "accepted": 0,
+      "held": 0,
+      "rejected": 0,
+      "processed_cursor": {
+        "current_index_verified": true,
+        "technical_rows_accepted": 0
+      },
+      "result": "Legacy requested product route still404, but current /support/downloads is200 and publicly links String Combiner Box BrochureV2.0 via /shop/attachment/64/preview (43.51MB label). This resolves current index discovery, not PDF revision/adapter acceptance. Prior two canonical models and Chint/Noark exact-identity/field holds are not repeated or silently resolved.",
+      "retry_condition": "Changed normal access/rights/revision or independent identity/field evidence; no repeated unchanged downloads",
+      "next_action": "Use current normal public route after saved identity/reuse gate review, compare registered revision/checksum before any full43MB retrieval. No hourly manual download.",
+      "next_due_check": "2026-11-12T08:00:00Z"
+    },
+    {
+      "id": "kozani_rights_role_review_1100",
+      "country": "GRC",
+      "entity": "projects",
+      "source_url": "https://www.juwi.com/imprint",
+      "endpoint": [
+        "https://www.juwi.com/imprint",
+        "https://www.helleniqenergy.com/en/terms-use",
+        "https://www.juwi.gr/services/operation-maintenance",
+        "https://www.helleniqenergy.com/en/media/press-releases/landmark-energy-transformation"
+      ],
+      "format": "Public O&M/owner press pages and express publisher terms",
+      "licence_assessment": "JUWI requires approval for reproduction/distribution even extracts; HELLENiQ restricts reuse/download to consent/personal use. No restricted technical values copied to Git or source registry; technical caches discarded, no contacts.",
+      "access_assessment": "Ordinary public GET/search; no login, contact/form submission, payment or bypass",
+      "publication_cadence": "Revision based or unstated; metadata first, skip unchanged full files",
+      "last_release": "Content dates explicitly qualified below; HTTP/PDF metadata not product effective date",
+      "last_retrieval": "2026-11-06T11:19:18.346894+00:00",
+      "last_attempt": "2026-11-06T11:22:55.511864+00:00",
+      "sha256": "db4244eb62a7abf5167b6f16f4d817ca3b77b022f56916d2c7b2bedcd8221e5f",
+      "etag": "W/\"d175749b381a689da20ee3e47db367c5\"",
+      "captures": [
+        {
+          "name": "juwi-imprint.html",
+          "url": "https://www.juwi.com/imprint",
+          "status": 200,
+          "final_url": "https://www.juwi.com/imprint",
+          "retrieved_at": "2026-11-06T11:19:18.346894+00:00",
+          "sha256": "db4244eb62a7abf5167b6f16f4d817ca3b77b022f56916d2c7b2bedcd8221e5f",
+          "bytes": 36923,
+          "etag": "W/\"d175749b381a689da20ee3e47db367c5\"",
+          "last_modified": null
+        },
+        {
+          "name": "helleniq-terms.html",
+          "url": "https://www.helleniqenergy.com/en/terms-use",
+          "status": 200,
+          "final_url": "https://www.helleniqenergy.com/en/terms-use",
+          "retrieved_at": "2026-11-06T11:19:16.187423+00:00",
+          "sha256": "bf853a1f66b9f0fbde9ab5e6eb8dfed5cf4cecb86954f6443c43b4cfb4067229",
+          "bytes": 95383,
+          "etag": null,
+          "last_modified": "Fri, 06 Nov 2026 11:04:33 GMT"
+        },
+        {
+          "name": "juwi-om.html",
+          "url": "https://www.juwi.gr/services/operation-maintenance",
+          "status": 200,
+          "final_url": "https://www.juwi.gr/services/operation-maintenance",
+          "retrieved_at": "2026-11-06T11:17:57.187514+00:00",
+          "sha256": "99bd23d37358752068a847075b605c55c72447f4bb2e49d860086c37336e1c23",
+          "bytes": 56219,
+          "etag": "W/\"fbf5e507ea51b9b4016875f0881470ab\"",
+          "last_modified": null
+        },
+        {
+          "name": "helleniq-kozani.html",
+          "url": "https://www.helleniqenergy.com/en/media/press-releases/landmark-energy-transformation",
+          "status": 200,
+          "final_url": "https://www.helleniqenergy.com/en/media/press-releases/landmark-energy-transformation",
+          "retrieved_at": "2026-11-06T11:17:56.239722+00:00",
+          "sha256": "153100908e54eb7a526037f16cf22c0abb82f15c1315449026692fb8b804e9f4",
+          "bytes": 77650,
+          "etag": null,
+          "last_modified": "Fri, 06 Nov 2026 11:17:46 GMT"
+        }
+      ],
+      "mapping": "Dated1100 exact model/phase/role/rights reviews; no new adapter or feed",
+      "estimated_useful_yield": {
+        "reviewed": 1,
+        "accepted": 0,
+        "additional_verified": null
+      },
+      "reviewed": 1,
+      "accepted": 0,
+      "held": 1,
+      "rejected": 0,
+      "processed_cursor": {
+        "canonical_record": "517133de-de6a-5d66-9811-17aec64a6e08",
+        "accepted_additional_fields": 0
+      },
+      "result": "One native GEM operator prospect independently investigated for technical-O&M versus legal-operator/whole-project role. Additional project enrichment remains rights-held; no operator, counts, power, lifecycle, cost or generation fields accepted from these publishers. Existing GEM-derived owner/context remain separately permitted.",
+      "retry_condition": "Changed normal access/rights/revision or independent identity/field evidence; no repeated unchanged downloads",
+      "next_action": "Resolve operator role and independent permitted project evidence; do not circumvent publisher restrictions or convert inauguration to COD or generic installed MW to AC/DC.",
+      "next_due_check": "2026-11-13T11:00:00Z"
     }
   ],
   "source_refresh_queue": [
