@@ -56,10 +56,7 @@ def infer_incremental_month_share(
         raise ValueError("Every input must be finite")
     if preceding_demand_twh <= 0 or new_month_demand_twh <= 0:
         raise ValueError("Demand must be positive")
-    if (
-        preceding_demand_rounding_twh < 0
-        or preceding_demand_rounding_twh >= preceding_demand_twh
-    ):
+    if preceding_demand_rounding_twh < 0 or preceding_demand_rounding_twh >= preceding_demand_twh:
         raise ValueError("Invalid preceding demand uncertainty")
     if share_rounding_pp < 0:
         raise ValueError("Rounding width cannot be negative")
