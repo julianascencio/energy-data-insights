@@ -1,7 +1,7 @@
 # Global BESS OEM product database
 
-The 6 November 2026 expanded research snapshot contains **1,274 records from 57 product
-suppliers, backed by 554 registered sources**: 1,261 documented configurations and 13
+The 6 November 2026 expanded research snapshot contains **1,285 records from 57 product
+suppliers, backed by 555 registered sources**: 1,272 documented configurations and 13
 explicitly configurable families. It covers utility-scale systems, C&I cabinets,
 a small residential sample, standalone battery inverters and inverter/chargers, EMS controllers, and non-lithium
 storage technologies. This is a
@@ -310,3 +310,5 @@ Latest continuation: [Philippine site/role enrichment and19 exact Pylontech conf
 Latest continuation: [15 exact Pylontech and Solar MD records](../bess/research/2026-11-06_south_africa_pylontech_hv.md). Eight system/module relationships, qualified current/efficiency boundaries and an SS4083 power-condition quarantine are explicit.
 
 Latest continuation: [20 exact Solar MD stacks, modules, controllers and outdoor bundles](../bess/research/2026-11-06_solarmd_kosovo.md), with exact warranty limits, component relationships and qualified efficiency/PCS boundaries.
+
+Latest continuation: [11 legacy Solar MD configurations and two Kosovo enrichments](../bess/research/2026-11-06_solarmd_legacy.md). Exact generations, warranty limits and historical project design remain distinct.

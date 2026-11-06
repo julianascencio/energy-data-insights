@@ -110,3 +110,8 @@ separate. Charging efficiency, battery-only RTE and PCS conversion efficiency
 have separate boundaries. Outdoor bundle cabinet weights are fully-loaded
 observations, not exact configured-unit weights. Controller relay ratings are
 not dielectric withstand ratings; BMU fuse/current limits are not PCS power.
+
+`extensions_json.solarmd_legacy` preserves the unsuffixed SS7000 generation's
+SS6143 module relationships, unspecified-class current rating, module-only usable
+energy at0.3C, and exact-model warranty limits. Printed Rev1.0 is dated26April2024;
+the April2025 URL path is not the revision. Charging efficiency is not RTE.

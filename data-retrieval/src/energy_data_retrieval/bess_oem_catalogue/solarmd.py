@@ -91,3 +91,53 @@ def parse_ss70xx(table: list[list[str | None]], *, edition: str) -> list[dict]:
             )
         )
     return result
+
+
+LEGACY_MODELS = tuple(
+    "SS" + c
+    for c in ("7011", "7013", "7014", "7016", "7017", "7019", "7020", "7021", "7023", "7024")
+)
+
+
+def parse_legacy_ss7000(table: list[list[str]], *, revision: str) -> list[dict]:
+    """Stage the unsuffixed H17/SS6143 table, without inferring power or warranty."""
+    headings = [
+        "Battery Name",
+        "Module Quantity",
+        "Voltage Range (V)",
+        "Nominal Voltage (V)",
+        "Nominal Capacity (kWh)",
+        "Current Rating (A)",
+    ]
+    if revision != "1.0 / 2024-04-26" or len(table) != 11:
+        raise ValueError("Unreviewed revision or row count")
+    if any(len(row) != 6 or any(not isinstance(c, str) for c in row) for row in table):
+        raise ValueError("Missing or shifted cells")
+    table = [[" ".join(c.split()) for c in row] for row in table]
+    if table[0] != headings or tuple(r[0] for r in table[1:]) != LEGACY_MODELS:
+        raise ValueError("Changed headings or exact identities")
+    result = []
+    for i, row in enumerate(table[1:], 8):
+        model, quantity, envelope, nominal, capacity, current = row
+        match = re.fullmatch(NUMBER + r"V - " + NUMBER, envelope)
+        if not match or not quantity.isdigit():
+            raise ValueError("Changed voltage units or module count")
+        if any(not re.fullmatch(NUMBER, v) for v in [nominal, capacity, current]):
+            raise ValueError("Invalid number or unit")
+        low, high = map(float, match.groups())
+        voltage, energy, amps = map(float, [nominal, capacity, current])
+        if int(quantity) != i or not 0 < low < voltage < high or min(energy, amps) <= 0:
+            raise ValueError("Invalid bounds or configuration")
+        result.append(
+            dict(
+                model=model,
+                module_count=i,
+                module_model="SS6143",
+                voltage_min_v=low,
+                voltage_max_v=high,
+                nominal_voltage_v=voltage,
+                energy_kwh=energy,
+                current_rating_a=amps,
+            )
+        )
+    return result

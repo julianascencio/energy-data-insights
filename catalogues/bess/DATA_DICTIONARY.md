@@ -91,3 +91,8 @@ an official ISO assignment. The two named sites are counted separately; the
 
 `besipppp_required_services` describes procurement requirements, not actual service
 delivery. Reserve applications do not promote a preferred bidder to operation.
+
+`extensions_json.kosovo_land_entity_observation` stores dated land transfers,
+land hectares, village and planned-operator corporate facts. Corporate formation,
+land transfer and a historical completion target do not establish project permits,
+construction, commissioning or operation. Compact funding is not site capex.

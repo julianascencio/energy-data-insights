@@ -1,6 +1,6 @@
 # Global BESS OEM product database
 
-The expanded research database contains **1,274 records from 57 suppliers and 554 registered
+The expanded research database contains **1,285 records from 57 suppliers and 555 registered
 sources**, with 73 typed metadata fields. This extends the PV equipment database
 pattern to complete BESS products, cabinets and explicitly labelled product families.
 
@@ -8,7 +8,7 @@ Open the [interactive OEM viewer](https://julianascencio.github.io/energy-data-i
 [Database gallery](https://julianascencio.github.io/energy-data-insights/auto_examples/database/index.html),
 [catalogue guide](../catalogues/bess_oem/README.md),
 [data dictionary](../catalogues/bess_oem/DATA_DICTIONARY.md) and
-[research report](../catalogues/bess/research/2026-11-06_solarmd_kosovo.md).
+[research report](../catalogues/bess/research/2026-11-06_solarmd_legacy.md).
 
 ## Download and reproduce
 

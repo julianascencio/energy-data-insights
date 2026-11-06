@@ -384,3 +384,11 @@ complete model suffix, retain earlier-of-time-or-throughput conditions and
 separate controller supply limits, battery ratings and PCS conversion ratings.
 Outdoor bundles are explicit table configurations; optional ranges do not
 authorize Cartesian variants or source-independent PCS model assignments.
+
+For the distinct unsuffixed Solar MD SS7000 generation, use
+`scripts/stage_bess_solarmd_legacy.py table.json --revision '1.0 / 2024-04-26' --output staged.json`
+with the first table from manual PDF page9. The parser requires exact model/order,
+units, eight-to-seventeen SS6143 modules and valid voltage envelopes. It never
+computes stack power from volts/amps or module power. Current classification is
+unspecified. Match warranties by exact unsuffixed model AND nominal energy;
+never transfer -05 terms or module-only life/efficiency to a complete stack.
