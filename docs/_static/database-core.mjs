@@ -505,3 +505,21 @@ export function windSupplyAwardSummary(rows) {
   }
   return result;
 }
+
+// Printed OEM cells remain visible even when consistency checks withhold scalars.
+export function windNumericTableSummary(rows) {
+  const result = {models: 0, unavailableOriginals: 0, areaHeld: 0, cutOutHeld: 0, unknownRevision: 0};
+  for (const row of rows.filter(r => r.entity_type === "equipment" && r.equipment_category === "wind_turbine")) {
+    let ext, conflicts;
+    try { ext = JSON.parse(row.extensions_json || "{}"); conflicts = JSON.parse(row.conflicts_json || "{}"); } catch { continue; }
+    const table = ext?.oem_numeric_table;
+    if (!table?.locator || !row.sources?.includes(table.source_id)) continue;
+    result.models++;
+    if (table.original_bytes_available === false) result.unavailableOriginals++;
+    if (table.revision == null) result.unknownRevision++;
+    for (const [field, key] of [["swept_area_m2", "areaHeld"], ["cut_out_m_s", "cutOutHeld"]]) {
+      if (row[field] == null && Array.isArray(conflicts?.[field]) && conflicts[field].some(o => o?.sources?.includes(table.source_id))) result[key]++;
+    }
+  }
+  return result;
+}

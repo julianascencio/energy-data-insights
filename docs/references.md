@@ -7807,3 +7807,107 @@ Agencia Estatal Boletín Oficial del Estado (2026). **Cerro de Magaña wind auth
 **Role:** data_source. Hechos Primero–Séptimo; Resuelve Único; withdrawn proposal, not operating capacity
 
 **Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
+
+### boe_a_2025_14439
+
+Agencia Estatal Boletín Oficial del Estado (2025). **WHEEL PLOCAN prototype environmental impact decision**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-14439)
+
+**Role:** data_source. a. Características del proyecto; b. Ubicación del proyecto
+
+**Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
+
+### boe_a_2026_16634
+
+Agencia Estatal Boletín Oficial del Estado (2026). **San Jorge (Mudéjar wind hybrid module) administrative decision**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-16634)
+
+**Role:** data_source. Antecedents and Resuelve, wind-only decision and principal characteristics
+
+**Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
+
+### boe_a_2026_16637
+
+Agencia Estatal Boletín Oficial del Estado (2026). **WHEEL PLOCAN prototype administrative decision**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-16637)
+
+**Role:** data_source. Antecedents and Resuelve, wind-only decision and principal characteristics
+
+**Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
+
+### sany_global_si_16050_20261106
+
+SANY Renewable Energy Co., Ltd. (2026). **SI-16050 global technical specifications**. [Source](https://en.sanyre.com.cn/html/en//Product/SmartWindTurbine/3x4x/SI16050/index.html)
+
+**Role:** data_source. Technical Specifications / Basic Parameters, Rotor System, Generator, Converter, Brake System, Yaw System and Lightning Protection and Tower Type; undated OEM tables use retrieval year, not a claimed publication year
+
+**Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
+
+### sany_global_si_16850_20261106
+
+SANY Renewable Energy Co., Ltd. (2026). **SI-16850 global technical specifications**. [Source](https://en.sanyre.com.cn/html/en//Product/SmartWindTurbine/3x4x/SI16850/index.html)
+
+**Role:** data_source. Technical Specifications / Basic Parameters, Rotor System, Generator, Converter, Brake System, Yaw System and Lightning Protection and Tower Type; undated OEM tables use retrieval year, not a claimed publication year
+
+**Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
+
+### sany_global_si_172625_20261106
+
+SANY Renewable Energy Co., Ltd. (2026). **SI-172625 global technical specifications**. [Source](https://en.sanyre.com.cn/html/en/Product/SmartWindTurbine/3x4x/SI172625/index.html)
+
+**Role:** data_source. Technical Specifications / Basic Parameters, Rotor System, Generator, Converter, Brake System, Yaw System and Lightning Protection and Tower Type; undated OEM tables use retrieval year, not a claimed publication year
+
+**Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
+
+### sany_global_si_18342_20261106
+
+SANY Renewable Energy Co., Ltd. (2026). **SI-18342 global technical specifications**. [Source](https://en.sanyre.com.cn/html/en/Product/SmartWindTurbine/4x6x/SI18342/index.html)
+
+**Role:** data_source. Technical Specifications / Basic Parameters, Rotor System, Generator, Converter, Brake System, Yaw System and Lightning Protection and Tower Type; undated OEM tables use retrieval year, not a claimed publication year
+
+**Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
+
+### sany_global_si_18572_20261106
+
+SANY Renewable Energy Co., Ltd. (2026). **SI-18572 global technical specifications**. [Source](https://en.sanyre.com.cn/html/en/Product/SmartWindTurbine/7XMW8XmW/SI18572/index.html)
+
+**Role:** data_source. Technical Specifications / Basic Parameters, Rotor System, Generator, Converter, Brake System, Yaw System and Lightning Protection and Tower Type; undated OEM tables use retrieval year, not a claimed publication year
+
+**Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
+
+### sany_global_si_19342_20261106
+
+SANY Renewable Energy Co., Ltd. (2026). **SI-19342 global technical specifications**. [Source](https://en.sanyre.com.cn/html/en//Product/SmartWindTurbine/4x6x/SI19342/index.html)
+
+**Role:** data_source. Technical Specifications / Basic Parameters, Rotor System, Generator, Converter, Brake System, Yaw System and Lightning Protection and Tower Type; undated OEM tables use retrieval year, not a claimed publication year
+
+**Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
+
+### sany_global_si_19350_20261106
+
+SANY Renewable Energy Co., Ltd. (2026). **SI-19350 global technical specifications**. [Source](https://en.sanyre.com.cn/html/en/Product/SmartWindTurbine/3x4x/SI19350/index.html)
+
+**Role:** data_source. Technical Specifications / Basic Parameters, Rotor System, Generator, Converter, Brake System, Yaw System and Lightning Protection and Tower Type; undated OEM tables use retrieval year, not a claimed publication year
+
+**Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
+
+### sany_global_si_19580_20261106
+
+SANY Renewable Energy Co., Ltd. (2026). **SI-19580 global technical specifications**. [Source](https://en.sanyre.com.cn/html/en//Product/SmartWindTurbine/7XMW8XmW/SI19580/index.html)
+
+**Role:** data_source. Technical Specifications / Basic Parameters, Rotor System, Generator, Converter, Brake System, Yaw System and Lightning Protection and Tower Type; undated OEM tables use retrieval year, not a claimed publication year
+
+**Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
+
+### sany_global_si_20480_20261106
+
+SANY Renewable Energy Co., Ltd. (2026). **SI-20480 global technical specifications**. [Source](https://en.sanyre.com.cn/html/en/Product/SmartWindTurbine/7XMW8XmW/SI20480/index.html)
+
+**Role:** data_source. Technical Specifications / Basic Parameters, Rotor System, Generator, Converter, Brake System, Yaw System and Lightning Protection and Tower Type; undated OEM tables use retrieval year, not a claimed publication year
+
+**Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
+
+### sany_global_si_230100_20261106
+
+SANY Renewable Energy Co., Ltd. (2026). **SI-230100 global technical specifications**. [Source](https://en.sanyre.com.cn/html/en/Product/SmartWindTurbine/8X11X/SI230100/index.html)
+
+**Role:** data_source. Technical Specifications / Basic Parameters, Rotor System, Generator, Converter, Brake System, Yaw System and Lightning Protection and Tower Type; undated OEM tables use retrieval year, not a claimed publication year
+
+**Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.

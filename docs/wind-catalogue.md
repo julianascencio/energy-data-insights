@@ -1,15 +1,14 @@
 # Global Wind Database
 
 The Wind catalogue connects projects, exact equipment configurations, turbines and
-numerical curves. At batch `2026-11-05-0910`, the continuation contains
-**8,238 projects, 405 equipment records, 13,633 linked turbines and two original
-numerical curves**, across **59 countries and 57 equipment manufacturer labels**.
-Labels are not a reconciled corporate-entity count. Merged main at `d92d1b82`
-contains 8,174 projects, 372 equipment records, 13,633 turbines and two curves.
-This run adds 56 registry sites and enriches 31 existing equipment records;
-previous batches are not counted again. These are catalogue counts, not a current
-operating census. Live totals and exact continuation queues are recorded in
-`catalogues/wind/research/latest.json`.
+numerical curves. At batch `2026-11-06-0935`, the continuation contains
+**8,309 projects, 566 equipment records, 13,657 linked turbines and two original
+numerical curves**, across **59 countries and 66 equipment manufacturer labels**.
+Labels are not a reconciled corporate-entity count. Merged main at `64dcf522`
+contains 8,306 projects, 555 equipment records, 13,657 turbines and two curves.
+This run adds two projects and eleven equipment records; it does not count
+previous batches again. These are catalogue counts, not a current operating
+census. Exact continuation queues are in `catalogues/wind/research/latest.json`.
 
 The complete 5,344-row Wind partition of WRI Global Power Plant Database v1.3.0
 provides a historical discovery baseline. WRI stopped maintenance in early 2022.
@@ -1327,3 +1326,40 @@ explicit; no coordinates or OEM equipment are inferred.
 The pinned REPD Q2 2026 candidate partition 800–999 has been structurally reviewed.
 All 200 identities remain held pending original permit and physical-site
 crosswalks. These are application observations, not 200 additional farms.
+
+
+## Floating prototype and OEM numeric tables (6 November, 09:35 UTC)
+
+The complete discovered BOE July 30–31/August 1 A/B partition yields WHEEL's
+preliminary authorization and San Jorge's refused wind application. Neither is
+installed capacity. Two solar decisions remain held for wind identity crosswalks.
+WHEEL is linked to its exact PLOCAN pilot substructure configuration, supported
+by the original 2025 environmental decision and 2026 authorization. Floater
+seabed elevation (−90 m, Port of Las Palmas datum), approximate 100 m anchor
+depth and 70 m minimum selection criterion remain different quantities.
+Construction authorization is expressly conditional; port fabrication is not
+proof of installed offshore operation. The shared PLOCAN 15 MW grid access is
+not added to the prototype's 6 MW design. ELICAN is a shared terminal, not an
+inferred parent or phase. No exact turbine model was supplied in these notices.
+
+All eleven exact types in SANY's global English navigation were reviewed.
+Ten models are added; SI-16840 is held against the existing India configuration
+pending a revision and legal-entity crosswalk. The numerical table adapter
+requires a complete explicit model list, units, source and locator, and preserves
+missing cells. Three inconsistent cells remain null: SI-16850 cut-out speed,
+and SI-18572/SI-19580 swept area. Circular-area arithmetic is a labelled check,
+never a replacement specification. Generator voltage is not grid voltage;
+operating and survival temperatures are separate. IEC claims are not verified
+certificates; specifications are not independently validated performance.
+
+The OEM's original endpoints returned HTTP 508 with empty bodies. Public indexed
+OEM tables supplied the evidence; original-byte checksums, publication dates and
+revisions remain unavailable. No authentication or reuse restriction is inferred
+from the failure. Unnamed blade and generator platform ranges are held. The
+independent South African IPP inventory returned HTTP 404 after a login redirect;
+no login was attempted and no inventory was imported. REPD saved candidates
+1000:1200 were structurally reviewed: all 200 remain held for original permits.
+
+The shared viewer exposes OEM table completeness and withheld fields. The offline
+gallery distinguishes floating design depth boundaries and prints the retained
+OEM conflicts. Next: BOE July 27–29, REPD 1200:1400, and exact SANY corrections.

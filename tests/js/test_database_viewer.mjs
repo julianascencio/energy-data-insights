@@ -451,3 +451,11 @@ test("supply awards require identity/provenance and never mutate installed field
   assert.equal(windSupplyAwardSummary([{...row,extensions_json:"{"}]).withoutAward,1);
   assert.equal(windSupplyAwardSummary([{...row,entity_type:"equipment"}]).awards,0);
 });
+
+
+import {windNumericTableSummary} from "../../docs/_static/database-core.mjs";
+test("OEM inconsistent cells are counted without treating unknown as zero or granting provenance", () => {
+  const row = {entity_type: "equipment", equipment_category: "wind_turbine", sources: ["OEM"], extensions_json: JSON.stringify({oem_numeric_table: {source_id: "OEM", locator: "Synthetic table", original_bytes_available: false, revision: null}}), conflicts_json: JSON.stringify({swept_area_m2: [{sources: ["OEM"]}], cut_out_m_s: [{sources: ["OTHER"]}]})};
+  assert.deepEqual(windNumericTableSummary([row, {...row, entity_type: "projects"}, {...row, sources: []}, {...row, extensions_json: "bad"}]), {models: 1, unavailableOriginals: 1, areaHeld: 1, cutOutHeld: 0, unknownRevision: 1});
+  assert.equal(windNumericTableSummary([{...row, swept_area_m2: 0}]).areaHeld, 0);
+});

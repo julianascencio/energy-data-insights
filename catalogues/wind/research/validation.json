@@ -1,50 +1,52 @@
 {
-  "batch": "2026-11-06-0835",
-  "base": "64dcf52278bb942591d16571252e4090963f67a1",
+  "batch": "2026-11-06-0935",
+  "base": "73b96b356d683e5fa9f67be22252befa7f7ec694",
   "main": "64dcf52278bb942591d16571252e4090963f67a1",
   "local": {
-    "python": "474focused Wind/Hydro/reference tests passed",
-    "viewer": "38Node tests passed",
-    "quality": "Ruff lint/format1236files, ty, hygiene6175candidate files, citations and diff checks passed",
-    "docs": "Strict Wind-gallery Sphinx succeeded; final gallery fingerprint matches snapshot; link check result in publication report; Documentation check passed: 727 HTML pages; local links and assets resolve.",
-    "replay": "Original BOE bytes replay exactly; linked Pasama ID checked;200REPD candidates verified against pinned original checksum",
-    "preservation": "22520prior records and436sources unchanged; all6capacity summaries unchanged; unrelated catalogues preserved",
-    "snapshots": "Two seven-file snapshots byte-identical; all Parquet columnsZSTD"
+    "python": "488 focused Wind/Hydro/reference tests passed",
+    "viewer": "39 Node tests passed",
+    "quality": "Ruff lint/format1238files, ty, hygiene6182files, citations and diff checks passed",
+    "docs": "Strict Wind-gallery Sphinx passed; Documentation check passed: 729 HTML pages; local links and assets resolve. Final gallery fingerprint matches snapshot.",
+    "replay": "Original BOE replay, exact WHEEL platform link and all eleven reviewed OEM numeric tables checked",
+    "preservation": "22521 prior records and437sources unchanged; all6capacity summaries unchanged; unrelated catalogues unchanged",
+    "snapshots": "Two seven-file snapshots byte-identical; every Parquet column ZSTD"
   },
   "snapshot_sha256": {
     "schema.json": "72634e7e496e7c5fec890171466e7b9b94008506c47028d4423633b257ace579",
-    "manifest.json": "431c3273d0c66d172ed0056de369d2b4b57eab0cf6ccfad546a3f0c333273c82",
-    "projects.parquet": "fd40a0db6b17b211fd0f8f77646a9e67ccb99ce04db025f966014b2ab8320297",
+    "manifest.json": "260b4d35bed01c065d534a8c86b4848ff6495fabd2ca92ff7d4d1b54ab17151d",
+    "projects.parquet": "fa19adccca19dfa0d1897002e83b491b679e920a7fca4303f00536394be422fd",
     "turbines.parquet": "8b394a9f05d5d383ef4af844cc949a3285c499f91bc9f2aebf1e30befd7cbd23",
-    "sources.json": "9894c8a31dd8b561d8f876ffb5c4784e7ce4d4274b15f7e182c5949c66e7a19d",
+    "sources.json": "bcfb63d5eb231ccfe21c90280fb0339db278ccbb8ac1172bb8d12a4a8365500c",
     "curves.parquet": "e52e110f94ff420eb6b1ee57f93492939aeba64b8b3bbf50af9c18a1b3b6b735",
-    "equipment.parquet": "377e735ed4f03671439d1e1b7b30ccc2aca7749e413156d61300bb94db7d97d0"
+    "equipment.parquet": "1ee8fa2f8e744e91d412abf6578c1b1c64f5ddebe7264f73b7836f08ed5cd071"
   },
   "main_comparison": {
     "main": {
       "projects": 8306,
       "equipment": 555,
       "turbines": 13657,
-      "curves": 2
+      "curves": 2,
+      "sources": 436
     },
     "branch": {
-      "projects": 8307,
-      "equipment": 555,
+      "projects": 8309,
+      "equipment": 566,
       "turbines": 13657,
-      "curves": 2
+      "curves": 2,
+      "sources": 450
     },
     "this_run_added": {
-      "projects": 1,
-      "equipment": 0
+      "projects": 2,
+      "equipment": 11
     },
     "this_run_enriched": {
       "projects": 0,
       "equipment": 0
     },
     "countries": 59,
-    "manufacturer_labels": 64
+    "manufacturer_labels": 66
   },
-  "remote_ci": "Pending final publication; current-head results reported separately",
+  "remote_ci": "New head pending publication; prior head73b96b3 Python and Documentation success verified separately",
   "not_executed": [
     "full local pytest",
     "full local gallery",
@@ -53,15 +55,24 @@
   ],
   "concurrency": {
     "branch": "research/wind-20261106-0835",
+    "pr": 198,
     "nonblocking_lock_acquired": true,
-    "expected_head": "64dcf52278bb942591d16571252e4090963f67a1",
-    "previous_pr": 191,
-    "previous_pr_merged_externally": true,
+    "expected_head": "73b96b356d683e5fa9f67be22252befa7f7ec694",
     "reviewed_open_prs": [
       192,
       193,
-      194
-    ]
+      194,
+      195,
+      196,
+      197,
+      198
+    ],
+    "other_pr_shared_paths": "Hydro PR192 bibliography edits remain on that PR; no competing Wind/shared viewer writer observed"
   },
-  "local_storage": "Reproducible prior snapshot/checkpoint copies removed to free space; original research captures retained"
+  "resolved_local_failures": [
+    "Citation exports regenerated after data application",
+    "Long adapter message wrapped for Ruff",
+    "Gallery now selects only environmental designs with an explicit floater-depth field"
+  ],
+  "local_storage": "Removed reproducible prior build/checkpoint copies to resolve disk exhaustion; original source captures retained"
 }
