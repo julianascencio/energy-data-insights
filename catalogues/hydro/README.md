@@ -80,3 +80,12 @@ The optional text input rechecks the complete parsed table before any writes.
 Changed table shape, year order, duplicate rows or changed accepted evidence
 fail for review. Original PDF SHA-256 and access/reuse assessment are retained
 in `sources.json`; downloaded source bytes stay outside Git.
+
+Five KenGen owner-identified stations are now accepted: Sang’oro, Sagana, Mesco,
+Wanjii and Gogo. They add 60 fiscal statistical entries (58 numeric, two missing),
+bringing coverage to 7,169 records / 128 countries, including 13 Kenyan records.
+Frozen catalogue accessions identify these records; they are not national licence
+IDs. EPRA's PDF returned HTTP 503. The owner report and named portfolio sections
+support identity independently of that unavailable registry. Current status,
+coordinates and additive capacity remain unresolved. No old/replacement unit
+ratings are summed. Replay with `scripts/accept_hydro_kengen_new.py`.

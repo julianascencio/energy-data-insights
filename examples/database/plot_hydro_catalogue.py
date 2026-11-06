@@ -14,7 +14,7 @@ NVE lifecycle and technical enrichment; 1175 US records carry dated 2025 EIA inv
 Three New Zealand records retain reviewed dispatch connection evidence.
 Eight Brazilian records are new CEG identities, including two small hydro plants.
 Their coordinates and current lifecycle remain unknown.
-Eight Kenyan identities carry owner-reported fiscal 2021-2025 statistics.
+Thirteen Kenyan identities carry owner-reported fiscal 2021-2025 statistics.
 Effective MW and sold GWh are separate from installed MW and generation.
 Pumped storage is not inferred from names.
 See the :doc:`interactive hydro viewer </hydro-database-viewer>` for source evidence.
@@ -103,7 +103,7 @@ for name, group in energy.groupby("name"):
 ax.set(
     xlabel="Fiscal year ended June 30",
     ylabel="Reported generated energy [GWh]",
-    title="KenGen eight reviewed stations · historical owner statistics",
+    title="KenGen thirteen reviewed stations · historical owner statistics",
 )
 ax.legend(ncol=2, fontsize=8)
 ax.grid(alpha=0.2)

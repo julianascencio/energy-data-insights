@@ -112,3 +112,8 @@ nested fields. `period` names the fiscal year ending June 30, not a calendar
 year. Values are owner-reported, with original tokens and unquantified source
 uncertainty. A dash maps to null; zero remains zero. These dated observations do
 not fill current operational capacity or status and are not added to map KPIs.
+
+Owner-reviewed accessions use the `reviewed-accession` UUID namespace. The frozen
+accession is retained in `extensions_json`; `external_ids_json` stays empty until
+an official registry identifier is verified. A later rename or capacity change
+must preserve this accession. Name normalization only detects insertion conflicts.

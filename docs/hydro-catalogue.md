@@ -755,3 +755,8 @@ versus sold GWh remain separate, with fiscal periods and cell-level provenance.
 Five additional named stations await registry identity review. The catalogue
 contains 7,164 records in 128 countries; these observations do not establish
 current operation or change additive capacity KPIs.
+
+The five retained KenGen identity candidates are now accepted from owner-report
+and portfolio corroboration. Total coverage is 7,169 records in 128 countries.
+Their 60 dated entries include two missing Wanjii 2021 energy cells; missing is
+not zero. EPRA licence IDs remain unknown following a blocked download.
