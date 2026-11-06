@@ -80,7 +80,8 @@ def calculate_cable_exposure(
             raise ValueError("wind power must be finite and nonnegative")
         baseline_mw = min(available_mw, export_capacity_mw)
         transfer_mw = (
-            outage_export_capacity_mw if outage_start_interval <= index < stop
+            outage_export_capacity_mw
+            if outage_start_interval <= index < stop
             else export_capacity_mw
         )
         delivered_mw = min(available_mw, transfer_mw)
