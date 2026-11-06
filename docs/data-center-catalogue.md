@@ -2,8 +2,8 @@
 
 ## Data Center Projects
 
-The current continuation branch has 625 project records across 45 countries:
-494 facilities, three phases and 128 explicitly scoped campus aggregates, from 22 operators.
+The current continuation branch has 644 project records across 45 countries:
+513 facilities, three phases and 128 explicitly scoped campus aggregates, from 22 operators.
 Coverage spans North America, Latin America, Europe, Africa, the Middle East and
 Asia-Pacific. This is a research catalogue, not an operating-capacity census.
 
@@ -71,6 +71,16 @@ supports each site code, city and 2013 adhesion year, but it does not establish
 current lifecycle, ownership, operation, physical aggregation, capacity or
 certification. All 34 records therefore remain lifecycle-unknown and
 aggregation-unresolved and are excluded from every capacity total.
+
+The 2018 JRC continuation adds the complete displayed DxC Technology and
+`Digital Reality` participant partitions: 11 UK identities and eight German,
+Dutch and UK identities, respectively. The latter spelling is preserved exactly
+as printed by the registry and is not silently normalized to a different owner
+or operator. Apparent source spellings such as `Doxfrod Park` and `Winyard` also
+remain reviewable rather than being corrected by inference. Adhesion year is an
+observation, not commissioning, certification or deployment evidence. All 19
+records remain lifecycle-unknown and aggregation-unresolved, with ownership,
+operation and capacity quarantined; they are excluded from every capacity total.
 
 The current U.S. facility continuation includes all 133 entries whose most recent
 label year is 2026, all 50 from 2025, all 23 from 2024, all 31 from 2023, and
@@ -615,5 +625,5 @@ port, module, power-supply and PoE quantities are certification test facts, not
 deployed inventory. The official 96-row, 223-column v3 CSV is 72,103 bytes with
 SHA-256 `e769eedcef814b652ad6594b6cadb43b239e57e9250071a90cc133b07907e533`.
 
-See the [continuation report](../catalogues/data_centers/research/2026-11-05-report.md)
-and [executed validation](../catalogues/data_centers/research/2026-11-05T1720-validation.json).
+See the [continuation report](../catalogues/data_centers/research/2026-11-06-report.md)
+and [executed validation](../catalogues/data_centers/research/2026-11-06T0958-validation.json).

@@ -2080,6 +2080,117 @@ def parse_jrc_equinix_participants(content: bytes, *, source_url: str) -> dict[s
     }
 
 
+def parse_jrc_2018_participants(content: bytes, *, source_url: str) -> dict[str, Any]:
+    """Stage the complete JRC DxC and ``Digital Reality`` 2018 partitions.
+
+    ``Digital Reality`` is the participant spelling printed by the registry. It
+    is retained verbatim and is not silently normalized to an owner or operator.
+    The registry establishes participant identities and adhesion year only; it
+    does not establish current lifecycle, ownership, operation or capacity.
+    """
+    if urlsplit(source_url).hostname != "e3p.jrc.ec.europa.eu":
+        raise ValueError("Expected official European Commission JRC URL")
+    parser = _HtmlTables()
+    parser.feed(content.decode("utf-8-sig"))
+    rows = [row for table in parser.tables for row in table if len(row) >= 5]
+    expected: dict[str, dict[str, Any]] = {
+        "DxC Technology": {
+            "adhesion_year": 2018,
+            "country_codes": ["GBR"] * 11,
+            "facilities": [
+                "Aylesford",
+                "Maidstone",
+                "Royal Tunbridge Wells",
+                "Northern Data Centre",
+                "Sevenoaks Data Centre",
+                "Doxfrod Park",
+                "Mitcheldean",
+                "Swindon",
+                "Winyard",
+                "Watford",
+                "Norwich",
+            ],
+            "localities": [None] * 11,
+        },
+        "Digital Reality": {
+            "adhesion_year": 2018,
+            "country_codes": ["DEU", "NLD", "NLD", "GBR", "GBR", "GBR", "GBR", "GBR"],
+            "facilities": [
+                "Germany: FRA11, Frankfurt",
+                "The Netherlands: AMS17, Amsterdam",
+                "The Netherlands: AMS18, Amsterdam",
+                "United Kingdom: LHR17, London",
+                "United Kingdom: LHR18, London",
+                "United Kingdom: LHR19, London",
+                "United Kingdom: LHR20, London",
+                "United Kingdom: LHR21, London",
+            ],
+            "localities": [
+                "Frankfurt",
+                "Amsterdam",
+                "Amsterdam",
+                "London",
+                "London",
+                "London",
+                "London",
+                "London",
+            ],
+        },
+    }
+    candidates: list[dict[str, Any]] = []
+    found: set[str] = set()
+    for row in rows:
+        participant = row[0]
+        if participant not in expected:
+            continue
+        spec = expected[participant]
+        facilities = [part.strip() for part in row[2].split("|") if part.strip()]
+        try:
+            count = int(row[1])
+            adhesion_year = int(row[3])
+        except ValueError as exc:
+            raise ValueError("Changed JRC 2018 participant count or adhesion year") from exc
+        expected_facilities = spec["facilities"]
+        country_codes = spec["country_codes"]
+        localities = spec["localities"]
+        if (
+            count != len(expected_facilities)
+            or adhesion_year != spec["adhesion_year"]
+            or facilities != expected_facilities
+        ):
+            raise ValueError("Changed JRC 2018 facility identity set")
+        found.add(participant)
+        for label, country_code, locality in zip(
+            facilities, country_codes, localities, strict=True
+        ):
+            code = label.split(": ", 1)[-1].split(",", 1)[0]
+            name = (
+                f"{participant} {code}"
+                if participant == "Digital Reality"
+                else f"{participant} {label}"
+            )
+            candidates.append(
+                {
+                    "adhesion_year": adhesion_year,
+                    "country_code": country_code,
+                    "external_id": code,
+                    "locality": locality,
+                    "name": name,
+                    "participant": participant,
+                    "registry_label": label,
+                    "locator": f"Participants table / {participant} / {label}",
+                }
+            )
+    if found != set(expected) or len(candidates) != 19:
+        raise ValueError("Changed JRC 2018 participant partition")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidates": candidates,
+        "review_required": True,
+    }
+
+
 def parse_rack_centre_campus(content: bytes, *, source_url: str) -> dict[str, Any]:
     """Stage Rack Centre's explicit two-building Lagos campus boundary.
 
