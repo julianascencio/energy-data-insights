@@ -1,6 +1,6 @@
 """
 Offshore wind transmission: quantify hypothetical cable outage exposure
-======================================================================
+========================================================================
 
 **News (4 November 2026):** Damage during installation of two Norderney export
 cables for Germany's DolWin4 and BorWin4 links was reported. Amprion expects
