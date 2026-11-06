@@ -49,6 +49,12 @@ Combine inputs and methods into maps, forecasts, inspections and uncertainty stu
 
       Stress-test investment costs, financing and capacity-factor assumptions.
 
+   .. grid-item-card:: Grid resilience and critical loads
+      :link: topic_grid_resilience
+      :link-type: doc
+
+      Screen battery energy adequacy for islanded critical loads during outages.
+
    .. grid-item-card:: Hybrid renewable dispatch
       :link: topic_hybrid_dispatch
       :link-type: doc
@@ -68,3 +74,4 @@ Combine inputs and methods into maps, forecasts, inspections and uncertainty stu
    topic_thermal_control
    topic_offshore_wind
    topic_hybrid_dispatch
+   topic_grid_resilience
