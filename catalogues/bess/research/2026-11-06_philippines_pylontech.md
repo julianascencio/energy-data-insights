@@ -121,3 +121,9 @@ Research/extraction/reconciliation and overlapping local validation used about
 publication and wider CI follow. Final elapsed effort belongs to the PR's final
 verification entry rather than an estimated completion time. Prior launch and
 research reports are unchanged.
+
+Publication checkpoint: the accepted data/code were published at `008f3c2b` at
+01:40 Atlantic/Canary after **about19minutes** elapsed. All24blob SHAs and the
+full tree matched the reviewed checkout. Landing-page counts/links are updated
+in a follow-up documentation commit; published-head wider CI is still pending
+at this checkpoint. No additional records or timestamp-only data edits.

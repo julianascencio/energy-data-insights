@@ -302,3 +302,5 @@ Latest continuation: [Pacific project reconciliation and exact Fullriver conditi
 Latest continuation: [Fullriver and Rarotonga review](research/2026-11-05_fullriver_rarotonga.md).
 
 Latest continuation: [Community batteries and Fullriver review](research/2026-11-06_community_fullriver.md).
+
+Latest continuation: [15 Philippine project enrichments and19 exact Pylontech configurations](research/2026-11-06_philippines_pylontech.md), with historical site/operator/owner-IPPA observations, source-access decisions and preserved phase/hybrid holds.
