@@ -1278,3 +1278,42 @@ inferred solely from construction authorization. The proposed fleet is complete
 as a model/count observation, not an individual-turbine or as-built inventory.
 Permit rotor diameter and OEM product geometry remain separately scoped pending
 an exact revision crosswalk; no synthetic hub-height configurations are created.
+
+
+The Peñaflor consultation records only the wind proposal's 49.5 MW. Its solar
+partner's 113.42 MW and shared grid permission are separate observations; the
+works estimate has an unknown price year. Unknown lifecycle status cannot bypass
+the adapter's prohibition on treating consultation MW as installed capacity.
+
+
+Assessment design envelopes are source/revision-qualified observations, separate
+from scalar rotor diameter, hub height and selected turbine count. The shared
+viewer reports envelope coverage alongside unknown and reported-zero scalar
+geometry. The gallery shows the original ranges and conditions. Aysha I's June
+2026 lender envelope does not establish an OEM configuration; conflicting ESIA
+ratings and financing-capacity observations remain unresolved. No range endpoints
+are multiplied into synthetic variants.
+
+A BOE environmental decision can require turbine removals. The reviewed adapter
+rejects original or arithmetically reduced scalar fleet/capacity values when the
+notice imposes removals; the revised design needs separate review. Maira Delta
+and Gamma retain their original proposals, explicit removal lists and labelled
+arithmetic checks, with final capacity/count null. Final environmental curtailment
+conditions are project constraints, not OEM cut-in speed specifications.
+
+The November 6 07:35 batch completes BOE August 6–8 discovery across all
+available daily issues. Pasama and Aquarii are withdrawn wind applications;
+Taraguilla is an unchanged previously recorded project. The three solar-hybrid
+refusals remain wind-identity review candidates, without cancelling their wind
+plants or transferring solar MW. Pasama’s former joint procedure with Cerro de
+Magaña does not establish a parent/phase relationship.
+
+Aysha I now retains Windey’s August 19 supply-award announcement alongside the
+June lender design envelopes. The WD200-7700 mention does not select the Saudi
+60 Hz equipment configuration already in the catalogue. The shared viewer and
+executable gallery display dated awards separately from installed fleets.
+The OEM’s prospective 1,189 GWh/year is a modeled project observation with
+unspecified gross/net boundary and calendar period; no capacity factor is
+computed. Exact configuration, turbine count and conflicting project MW remain
+unresolved. Specifications and announcements are not independently validated
+performance.

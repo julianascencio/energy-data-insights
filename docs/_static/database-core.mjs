@@ -460,3 +460,48 @@ export function windOemTableSummary(rows) {
   }
   return result;
 }
+
+// Assessment envelopes are not selected turbines or scalar fleet geometry.
+export function windDesignSummary(rows) {
+  const result = {projects: 0, envelopes: 0, withoutEnvelope: 0, unknownRotor: 0, unknownHub: 0, zeroRotor: 0, zeroHub: 0};
+  for (const row of rows.filter(r => r.entity_type === "projects")) {
+    for (const [field, unknown, zero] of [["rotor_diameter_m", "unknownRotor", "zeroRotor"], ["hub_height_m", "unknownHub", "zeroHub"]]) {
+      if (typeof row[field] !== "number" || !Number.isFinite(row[field])) result[unknown]++;
+      else if (row[field] === 0) result[zero]++;
+    }
+    let ext; try { ext = JSON.parse(row.extensions_json || "{}"); } catch { ext = {}; }
+    const seen = new Set();
+    for (const o of Array.isArray(ext?.design_envelopes) ? ext.design_envelopes : []) {
+      if (o?.quantity_basis !== "design_envelope" || !o.revision || !o.locator || !row.sources?.includes(o.source_id)) continue;
+      const ranges = [o.rotor_diameter_range_m, o.hub_height_range_m];
+      if (!ranges.every(r => Array.isArray(r) && r.length === 2 && r.every(v => typeof v === "number" && Number.isFinite(v) && v > 0) && r[0] <= r[1])) continue;
+      seen.add(JSON.stringify([o.source_id, o.revision, o.locator]));
+    }
+    result.envelopes += seen.size;
+    if (seen.size) result.projects++;
+    else result.withoutEnvelope++;
+  }
+  return result;
+}
+
+// Supply awards are dated nominations, not installed model distributions.
+export function windSupplyAwardSummary(rows) {
+  const result = {projects: 0, awards: 0, modelMentions: 0, unknownModels: 0, withoutAward: 0};
+  for (const row of rows.filter(r => r.entity_type === "projects")) {
+    let ext; try { ext = JSON.parse(row.extensions_json || "{}"); } catch { ext = {}; }
+    const seen = new Set();
+    for (const award of Array.isArray(ext?.supply_awards) ? ext.supply_awards : []) {
+      if (award?.event !== "turbine_supply_award" || award.configuration_status !== "unresolved" || !award.manufacturer || !award.locator || !award.identity_basis || !row.sources?.includes(award.source_id)) continue;
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(award.published_at || "") || !Number.isFinite(Date.parse(award.published_at)) || new Date(award.published_at).toISOString().slice(0,10) !== award.published_at) continue;
+      const key = JSON.stringify([award.source_id, award.published_at, award.locator]);
+      if (seen.has(key)) continue;
+      seen.add(key);
+      if (typeof award.model_mentioned === "string" && award.model_mentioned.trim()) result.modelMentions++;
+      else result.unknownModels++;
+    }
+    result.awards += seen.size;
+    if (seen.size) result.projects++;
+    else result.withoutAward++;
+  }
+  return result;
+}

@@ -282,3 +282,59 @@ def test_construction_authorization_does_not_prove_operation(status):
     row = stage(review(effect="construction_authorization", status="permitted"))[0][0]
     assert row["aggregation_role"] == "unresolved"
     assert row.get("installed_capacity_mw") is None
+
+
+@pytest.mark.parametrize(
+    "effect",
+    [
+        "public_consultation",
+        "construction_authorization",
+        "repowering_authorization",
+        "environmental_conditions",
+    ],
+)
+def test_unknown_status_cannot_bypass_proposed_capacity_boundary(effect):
+    r = review(effect=effect, status="unknown")
+    r["values"]["installed_capacity_mw"] = 33
+    r["locators"]["installed_capacity_mw"] = "Synthetic proposal wording"
+    with pytest.raises(ValueError, match="not installed capacity"):
+        stage(r)
+
+
+@pytest.mark.parametrize("field", ["planned_capacity_mw", "installed_capacity_mw", "turbine_count"])
+def test_required_removals_do_not_publish_original_or_calculated_final_fleet(field):
+    r = review()
+    r["required_turbine_removals"] = ["Synthetic-2", "Synthetic-3"]
+    r["values"].pop("planned_capacity_mw")
+    r["locators"].pop("planned_capacity_mw")
+    r["values"][field] = 21
+    r["locators"][field] = "Superseded proposal or arithmetic"
+    with pytest.raises(ValueError, match="separately reviewed revised design"):
+        stage(r)
+    r["values"].pop(field)
+    r["locators"].pop(field)
+    row = stage(r)[0][0]
+    assert row.get(field) is None
+    assert row["aggregation_role"] == "unresolved"
+
+
+@pytest.mark.parametrize("status", ["operational", "permitted", "retired", "announced"])
+def test_withdrawal_cannot_promote_or_retire_a_plant(status):
+    with pytest.raises(ValueError, match="withdrawal"):
+        stage(review(effect="withdrawn", status=status))
+
+
+def test_withdrawal_preserves_proposal_scope_and_unknown_installed_capacity():
+    row = stage(review(effect="withdrawn", status="cancelled"))[0][0]
+    assert row["planned_capacity_mw"] == 33
+    assert row.get("installed_capacity_mw") is None
+    assert row["aggregation_role"] == "unresolved"
+
+
+@pytest.mark.parametrize("effect", ["withdrawn", "application_refusal"])
+def test_failed_application_cannot_fill_installed_mw_even_with_unknown_lifecycle(effect):
+    r = review(effect=effect, status="unknown")
+    r["values"]["installed_capacity_mw"] = 33
+    r["locators"]["installed_capacity_mw"] = "Application description"
+    with pytest.raises(ValueError, match="not installed"):
+        stage(r)

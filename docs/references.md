@@ -7711,3 +7711,91 @@ Agencia Estatal Boletín Oficial del Estado (2026). **Somaloma-Las Quemadas prio
 **Role:** data_source. Authorized proposal, not commissioned capacity; grid access separate.
 
 **Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
+
+### boe_b_2026_27431
+
+Agencia Estatal Boletín Oficial del Estado (2026). **Peñaflor wind hybrid public consultation**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-27431)
+
+**Role:** data_source. Consultation proposal, not permission or commissioning; PV and grid scope separate.
+
+**Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
+
+### boe_b_2026_27230
+
+Agencia Estatal Boletín Oficial del Estado (2026). **Tivissa III public utility declaration and prior construction authorization**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-27230)
+
+**Role:** data_source. Hechos 2–4; Acuerda 1; bounded design/procedure observations, not operating performance.
+
+**Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
+
+### boe_b_2026_27231
+
+Agencia Estatal Boletín Oficial del Estado (2026). **Tivissa IV public utility declaration and prior construction authorization**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-27231)
+
+**Role:** data_source. Hechos 2–4; Acuerda 1; bounded design/procedure observations, not operating performance.
+
+**Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
+
+### boe_a_2026_17822
+
+Agencia Estatal Boletín Oficial del Estado (2026). **Maira Delta and Gamma wind environmental conditions**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-17822)
+
+**Role:** data_source. Project description; final condition1.i.3; condition23; bounded design/procedure observations, not operating performance.
+
+**Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
+
+### ifc_49251_esrs_20260801
+
+IFC / AMEA Power Aysha Wind One PLC (2026). **Aysha I IFC environmental review**. [Source](https://disclosures.ifc.org/project-detail/ESRS/49251/aysha-wind)
+
+**Role:** data_source. Project description; updated2026-08-01; bounded design/procedure observations, not operating performance.
+
+**Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
+
+### ifc_49251_sii_20261008
+
+IFC / AMEA Power Aysha Wind One PLC (2026). **Aysha I IFC investment information**. [Source](https://disclosures.ifc.org/project-detail/SII/49251/aysha-i-wind)
+
+**Role:** data_source. Project description; updated2026-10-08; bounded design/procedure observations, not operating performance.
+
+**Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
+
+### aysha_i_esia_202606
+
+IFC / AMEA Power Aysha Wind One PLC (2026). **Aysha I June2026 ESIA**. [Source](https://disclosuresservice.ifc.org/api/File/downloadfile?id=%5C49251_ESRS%5CESIA+-+Aysha+Wind+Power+Project-June+2026.pdf)
+
+**Role:** data_source. Printed pp23–29; Table2-1, PDFp45; bounded design/procedure observations, not operating performance.
+
+**Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
+
+### aysha_i_slip_202606
+
+IFC / AMEA Power Aysha Wind One PLC (2026). **Aysha I supplementary lenders information**. [Source](https://disclosuresservice.ifc.org/api/File/downloadfile?id=%5C49251_ESRS%5CSLIP-Aysha+Wind+Power+Project-June+2026.pdf)
+
+**Role:** data_source. Revision history; Table2-2 printed pp4–5, PDFpp42–43; bounded design/procedure observations, not operating performance.
+
+**Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
+
+### boe_a_2026_17170
+
+Agencia Estatal Boletín Oficial del Estado (2026). **Pasama wind authorization application withdrawal**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-17170)
+
+**Role:** data_source. Hechos Primero–Séptimo; final Resuelve Único; procedure/award evidence, not installed fleet or independently validated performance.
+
+**Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
+
+### boe_a_2026_17175
+
+Agencia Estatal Boletín Oficial del Estado (2026). **Aquarii wind wind authorization application withdrawal**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-17175)
+
+**Role:** data_source. Hechos Primero–Séptimo; final Resuelve Único; procedure/award evidence, not installed fleet or independently validated performance.
+
+**Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
+
+### windey_aysha_award_20260819
+
+Windey Energy Technology Group Co., Ltd. (2026). **Windey and AMEA Power Aysha I turbine supply award announcement**. [Source](https://www.windeyenergy.com/en/news_show?id=224)
+
+**Role:** data_source. Award announcement opening paragraphs; WD200-7700 model paragraph; projected generation paragraph; procedure/award evidence, not installed fleet or independently validated performance.
+
+**Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.

@@ -244,15 +244,25 @@ def stage_boe_notices(
         if values.get("country_code") != "ESP" or not values.get("technology"):
             raise ValueError("Reviewed country and turbine technology required")
         target, effect = review["decision_target"], review["decision_effect"]
+        if review.get("required_turbine_removals") and any(
+            values.get(field) is not None
+            for field in ("planned_capacity_mw", "installed_capacity_mw", "turbine_count")
+        ):
+            raise ValueError(
+                "Required turbine removals need a separately reviewed revised design; "
+                "retain original proposal and arithmetic in observations"
+            )
         if target not in {"wind", "solar", "auxiliary"}:
             raise ValueError("Explicit decision technology boundary required")
         if target != "wind" and values["status"] == "cancelled":
             raise ValueError("Non-wind decision cannot cancel the wind farm")
-        if effect == "application_refusal" and values["status"] not in {
+        if effect in {"application_refusal", "withdrawn"} and values["status"] not in {
             "cancelled",
             "unknown",
         }:
-            raise ValueError("Application refusal cannot establish operation or retirement")
+            raise ValueError(
+                "Application refusal or withdrawal cannot establish operation or retirement"
+            )
         if effect == "public_consultation" and values["status"] not in {"announced", "unknown"}:
             raise ValueError("Public consultation does not establish permission or operation")
         if effect in {"repowering_authorization", "construction_authorization"} and values[
@@ -269,7 +279,18 @@ def stage_boe_notices(
             raise ValueError("Environmental decision alone is not construction authorization")
         if (
             target == "wind"
-            and values["status"] in {"announced", "permitted", "cancelled"}
+            and (
+                values["status"] in {"announced", "permitted", "cancelled"}
+                or effect
+                in {
+                    "withdrawn",
+                    "application_refusal",
+                    "public_consultation",
+                    "construction_authorization",
+                    "repowering_authorization",
+                    "environmental_conditions",
+                }
+            )
             and values.get("installed_capacity_mw") is not None
         ):
             raise ValueError("Proposed authorization MW is not installed capacity")
