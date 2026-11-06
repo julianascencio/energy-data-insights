@@ -71,7 +71,7 @@ def evaluate_station_holdout(
             records.append(
                 {
                     "variable": variable,
-                    "month": int(month),
+                    "month": int(sample["month"].iloc[0]),
                     "paired_days": int(valid.sum()),
                     "validation_year": validation_year,
                     "raw_rmse": float(np.sqrt(np.mean((raw - observed) ** 2))),
