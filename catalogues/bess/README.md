@@ -1,7 +1,7 @@
 # Worldwide BESS projects
 
-The BESS section contains **2,218 project and plant records across
-50 countries and territories**, supported by **430 registered sources**. It combines curated
+The BESS section contains **2,226 project and plant records across
+50 countries and territories**, supported by **442 registered sources**. It combines curated
 commercial projects with reviewed U.S., UK, Australian, Chilean and French inventory subsets, not an
 exhaustive global inventory. It includes electrochemical
 batteries (including vanadium flow), not pumped hydro, compressed air or thermal
@@ -312,3 +312,5 @@ Latest continuation: [Two Kosovo sites, five South African service enrichments a
 Latest continuation: [11 legacy Solar MD configurations and two Kosovo enrichments](research/2026-11-06_solarmd_legacy.md). Exact generations, warranty limits and historical project design remain distinct.
 
 Latest continuation: [Eight Danish/Baltic projects, four exact Hubble Cube configurations and18 warranty enrichments](research/2026-11-06_denmark_hubble.md). Model-specific conditions and disputed claims remain explicit.
+
+Latest continuation: [Finnish/Polish/Danish projects and24 exact ATESS configurations](research/2026-11-06_merus_atess.md), including three product levels, explicit current/power boundaries and unresolved rating conflicts.

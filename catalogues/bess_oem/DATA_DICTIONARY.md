@@ -130,3 +130,16 @@ module/cell configuration, optional PV configurations and qualified mechanical,
 efficiency and compliance observations. Unlabelled dimension axes and unresolved
 IP54/IP55 or kW/kVA claims are not assigned normalized scalars. Marketing ten-year
 battery claims do not establish applicability of the separate Cube V2 warranty.
+
+### ATESS reviewed extensions
+
+`extensions_json.atess` preserves product level, source section/column, distinct
+AC/DC/rectifier ratings, current limits, conditional overloads, PV constraints,
+conversion-efficiency boundary and OEM assertions with their qualifiers.
+`native_formula_observations` records exact energy code/module count and explicit
+source formula calculations; `module_record_id` links only the specifically named
+component. Cluster cycle claims without test conditions remain qualified extension
+observations, not warranty or normalized tested cycle life. Optional features do
+not create models. IP66 battery-compartment protection does not replace system
+IP55. IC418-800's printed AC range excludes its nominal voltage and remains a
+conflict. Module/cluster mechanical and environmental boundaries remain separate.

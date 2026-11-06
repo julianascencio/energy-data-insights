@@ -105,3 +105,14 @@ historical capacity options and hybrid boundaries. A signed stake-sale agreement
 does not establish closing/current ownership. Solar MW/MWp disagreements remain
 in `conflicts_json`; they never alter battery energy or power. Kragerup's earlier
 planned power is retained as historical evidence, not the later operating rating.
+
+### Merus and GreenLab evidence boundaries
+
+`extensions_json.merus_reference` and `.greenlab` retain site-specific O&M,
+supply roles, explicit capability claims, planned delivery windows, source locators
+and linked-generation context. Building/lot area is not battery footprint;
+transformer MVA is not battery MW; test-facility operation is not assumed commercial
+COD. Source disagreement can leave canonical energy null while preserving other
+verified fields. Project product-family mentions do not assign an exact equipment
+configuration. Existing ownership, site locality and rating conflicts survive
+additive enrichment.

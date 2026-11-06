@@ -1,7 +1,7 @@
 # Global BESS OEM product database
 
-The 6 November 2026 expanded research snapshot contains **1,289 records from 57 product
-suppliers, backed by 565 registered sources**: 1,276 documented configurations and 13
+The 6 November 2026 expanded research snapshot contains **1,313 records from 58 product
+suppliers, backed by 571 registered sources**: 1,300 documented configurations and 13
 explicitly configurable families. It covers utility-scale systems, C&I cabinets,
 a small residential sample, standalone battery inverters and inverter/chargers, EMS controllers, and non-lithium
 storage technologies. This is a
@@ -314,3 +314,5 @@ Latest continuation: [20 exact Solar MD stacks, modules, controllers and outdoor
 Latest continuation: [11 legacy Solar MD configurations and two Kosovo enrichments](../bess/research/2026-11-06_solarmd_legacy.md). Exact generations, warranty limits and historical project design remain distinct.
 
 Latest continuation: [Eight Danish/Baltic projects, four exact Hubble Cube configurations and18 warranty enrichments](../bess/research/2026-11-06_denmark_hubble.md). Model-specific conditions and disputed claims remain explicit.
+
+Latest continuation: [Finnish/Polish/Danish projects and24 exact ATESS configurations](../bess/research/2026-11-06_merus_atess.md), with offline converter/cluster staging and model-specific voltage conflicts.
