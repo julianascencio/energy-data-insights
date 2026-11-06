@@ -125,3 +125,14 @@ files remain outside Git; only selected factual evidence is retained. No open
 bulk-reuse licence was identified, so neither the workbook nor report is
 redistributed. See `research/era-202609-reviewed.json` for decisions and
 `research/era-202609-validation.json` for snapshot hashes and completeness.
+
+ERA Annex 3 now enriches those 32 Ugandan identities with 128 dated entries:
+commissioning (including the literal decade `1950s` and two unknowns), capacity,
+grid connection and lifecycle group. The joint construction/licensed category
+is not split into an invented status. All entries describe the 2023 report,
+not current operation. Karuma's 400 MW report value and subsequent 600 MW remain
+separate vintages. Kuluva's 1995 main-text and 2023 Annex commissioning statements
+remain unresolved; no canonical commissioning date is overwritten. Replay with
+`scripts/enrich_hydro_era_report.py`. The parser covers 59 rows on printed
+pages 287–289; 27 other rows remain candidates, including 21 construction/licensed
+identities. The refreshed original PDF checksum is unchanged.

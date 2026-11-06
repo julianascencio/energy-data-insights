@@ -784,3 +784,12 @@ replay; add `--workbook PATH` to verify the downloaded workbook against every
 retained source cell before acceptance. The offline gallery
 `examples/database/plot_hydro_catalogue.py` rebuilds the typed Zstandard snapshot,
 shows reported locations and country counts, and reports the Uganda partition.
+
+ERA Annex 3 enrichment retains 128 historical entries for 32 Ugandan stations
+in `extensions_json.era_2023_assertions`: commissioning precision, capacity MW,
+grid connection and lifecycle group. The report's partial commissioning caveat
+is retained, and two construction/licensed records have unknown commissioning.
+Historical assertions never promote current operating MW or lifecycle. Kuluva's
+intra-report commissioning discrepancy remains unresolved. The report is already
+registered as `uganda_era_environment_2023`; replay uses
+`scripts/enrich_hydro_era_report.py`. Twenty-seven other Annex rows remain held.

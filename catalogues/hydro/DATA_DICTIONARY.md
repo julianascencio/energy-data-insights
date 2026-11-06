@@ -136,3 +136,9 @@ retains the source station label and grid/mini-hydro section;
 `era_identity_review` holds the frozen catalogue accession, reviewed aliases and
 Annex 3 identity locator. Accessions are not national licence identifiers.
 `aggregation_role=unresolved` excludes these records from additive capacity KPIs.
+
+`extensions_json.era_2023_assertions.facts` preserves the ERA Annex 3 commissioning,
+capacity, grid and lifecycle columns with per-column locators and a 2023 basis.
+A decade remains a decade, missing commissioning remains null, and the combined
+construction/licensed group remains combined. Canonical current fields are not
+inferred from this historical table.

@@ -1,5 +1,5 @@
 {
-  "reviewed_at": "2026-11-06T10:49:09.827018+00:00",
+  "reviewed_at": "2026-11-06T11:37:43.966923+00:00",
   "completed": [
     {
       "source": "wri-gppd-1.3.0",
@@ -444,6 +444,14 @@
       "enriched": 0,
       "held": 7,
       "cursor": "All 39 hydro rows processed; 32 accepted and 7 held in era-202609-reviewed.json; unchanged workbook replay must not reinsert."
+    },
+    {
+      "source": "uganda-era-environment-2023",
+      "partition": "Annex 3 pp287–289: all 59 rows parsed; 32 previously reviewed UUIDs enriched",
+      "enriched": 32,
+      "new": 0,
+      "held": 27,
+      "cursor": "era-report-20261106.json; remaining 21 construction/licensed names and six existing-record matches"
     }
   ],
   "next_sources": [
@@ -519,5 +527,5 @@
     "Oceania"
   ],
   "kengen_next_partition": "Resume African Hydropower Atlas Existing candidate screening after Excel row 242; EPRA registry remains blocked",
-  "era_next_partition": "Resolve six held ERA-to-existing Uganda identities using regulator licence/phase evidence; then resume AHA Existing rows after 242. Swam remains a separate identity hold."
+  "era_next_partition": "Review 21 ERA Annex 3 construction/licensed identities not in the September 2026 workbook; six old-record matches and Swam remain held. Then rotate to Asia."
 }
