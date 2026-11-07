@@ -63,6 +63,7 @@ def test_grid_ready_is_critical_path() -> None:
         workable_days=[True] * 8,
         workable_days_per_turbine=2,
     )
+
     def energy(schedule: InstallationSchedule, grid_day: int = 0) -> float:
         return commissioning_opportunity_mwh(
             schedule,
