@@ -13,8 +13,8 @@ How could a second turbine installation vessel shorten the construction critical
 `energy_methods.wind_installation.commissioning_opportunity_mwh` then computes a conditional **gross potential-energy envelope** under progressive per-turbine commissioning, assuming equal-rated turbines. With project capacity P (MW), net capacity factor CF, N installed turbines, common export-ready day g, commissioning lag L, installation completion day t_i, and fixed horizon T (days):
 
 $$
-E_{\\mathrm{opportunity}} = 24 P CF \\frac{1}{N}
-\\sum_{i=1}^{N} \\max(0,T-\\max(g, t_i+1+L)).
+E_{\mathrm{opportunity}} = 24 P CF \frac{1}{N}
+\sum_{i=1}^{N} \max(0,T-\max(g, t_i+1+L)).
 $$
 
 Units are MWh. This is **not actual generation, energy loss, expected revenue, or energy-not-served**.
