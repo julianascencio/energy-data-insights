@@ -18,6 +18,8 @@ Thirteen Kenyan identities carry owner-reported fiscal 2021-2025 statistics.
 Effective MW and sold GWh are separate from installed MW and generation.
 Thirty-two new Ugandan identities retain ERA annual MW statistics through September 2026.
 Missing cells and explicit zeros remain distinct; unknown locations are not mapped.
+Nepal DoED licences retain reported MW separately from installed/operating capacity.
+Source bounds are not mapped as plant points; page-date and retrieval-date bases stay distinct.
 Pumped storage is not inferred from names.
 See the :doc:`interactive hydro viewer </hydro-database-viewer>` for source evidence.
 """
@@ -133,4 +135,19 @@ print(
 print(
     "Nepal DoED reviewed licence identities:",
     sum("doed_inventory" in json.loads(r["extensions_json"]) for r in rows),
+)
+
+
+# %%
+# Report evidence availability, not the sum of overlapping licence ratings.
+doed_observations = [
+    observation
+    for row in rows
+    for observation in json.loads(row.get("observations_json") or "[]")
+    if observation["field"] == "licensed_capacity_mw"
+]
+print("DoED licensed-MW observations (not installed MW):", len(doed_observations))
+print(
+    "DoED observation periods (page update or retrieval basis; see uncertainty):",
+    pd.Series([o["period"] for o in doed_observations]).value_counts().sort_index().to_dict(),
 )

@@ -157,3 +157,13 @@ four bounding coordinates and district labels. No calendar conversion or
 bounding-box midpoint is inferred. The source promoter populates developer names
 with that explicit role qualification; it is not verified ownership. The full
 licence string defines identity; duplicate names are held for review.
+
+
+For the 7 November DoED capture, `observations_json.period = "2026-10-15"`
+identifies the explicit page update date; individual licence measurement vintage
+remains unknown. Earlier observations retain their original retrieval-date basis.
+`source_id` distinguishes captures independently of the stable licence-based UUID.
+`extensions_json.doed_identity_review.related_name_review` records compared source
+row numbers and the reviewed distinction; it is not a physical parent/child link.
+The batch ledger contains `source_as_of`, original HTML `source_sha256`, the
+exhaustive accepted/held partition and the continuation cursor.
