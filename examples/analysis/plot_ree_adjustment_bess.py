@@ -36,12 +36,25 @@ from energy_methods.grid_adjustment_bess import (
 
 # %%
 # Published aggregate growth, not an observed hourly timeseries.
-source_file = Path(__file__).resolve().parent / "ree_adjustment_20261103.json"
-if not source_file.exists():
-    # Sphinx-Gallery runs a generated copy while the source stays in examples/.
-    source_file = (
-        Path(__file__).resolve().parents[3] / "examples/analysis/ree_adjustment_20261103.json"
-    )
+# Sphinx-Gallery executes examples without setting __file__. Discover the
+# source-tree fixture from the invocation path or any ancestor, offline.
+script_path = Path(
+    globals().get("__file__", Path.cwd() / "plot_ree_adjustment_bess.py")
+).resolve()
+source_file = next(
+    (
+        candidate
+        for ancestor in (script_path.parent, *script_path.parents)
+        for candidate in (
+            ancestor / "ree_adjustment_20261103.json",
+            ancestor / "examples/analysis/ree_adjustment_20261103.json",
+        )
+        if candidate.is_file()
+    ),
+    None,
+)
+if source_file is None:
+    raise FileNotFoundError("Missing attributed REE adjustment source snapshot")
 snapshot = json.loads(source_file.read_text(encoding="utf-8"))
 reported = snapshot["reported"]
 growth = infer_aggregate_unit_cost_growth(
