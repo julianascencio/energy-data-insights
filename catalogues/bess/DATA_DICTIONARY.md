@@ -149,3 +149,11 @@ that candidate capacity to the canonical record or assert a confirmed phase link
 `mastr_p5_p8_reconciliation` retains an unresolved same-SEL sibling observation
 for Hybridspeicher AU. Existing exclusive-unit ratings remain unchanged and
 the candidate is excluded from new-project and summed-capacity counts.
+
+`ntpc_procurement` stores tender/package identity, row locator, procurer,
+internal 33 kV pooling equipment, CAMC scope and financing intention. These are
+requirements, not installed hardware or secured finance. `solarworld_award`
+records named EPC awards without asserting construction. `mouda_later_procurement`
+reconciles a retender and its design requirements into the existing site scope.
+`host_station_geography` transfers only the matched host station state; thermal
+MW, thermal ownership and corporate-office addresses are excluded.

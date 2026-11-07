@@ -452,3 +452,11 @@ certification scope and equipment relationships require manual review before
 existing-API upsert. Module specifications do not inherit complete-cluster limits.
 
 6 November 13:54 continuation: MaStR partition 9 returned HTTP 503 twice; cursor remains 9. Renon Xtreme LV A14 pages 34–35 are exhausted (14 base configurations). Preserve the printed R-XL037071/R-XL046081 names and R-XL035071 energy discrepancy; do not multiply optional -H suffixes. Philippine IEMOP reuse requires permission; do not bulk import its participant list. See research/2026-11-06_xtreme_lv.md.
+
+For the reviewed NTPC 2025 Lot-1/2 notices, `scripts/stage_bess_ntpc.py` stages
+local `pdftotext -layout` bytes with `--lot 1` or `--lot 2`. It checks notice/date,
+units, all seven/nine rows, unique within-lot names and energy control totals.
+It never infers MW or operation, merges sites across lots, or writes canonical data.
+Solapur lots are separate EPC packages confirmed by Solarworld; Mouda
+2026 retender belongs to the same site record. Exact package IDs include the
+source row because a tender number alone is shared by multiple projects.

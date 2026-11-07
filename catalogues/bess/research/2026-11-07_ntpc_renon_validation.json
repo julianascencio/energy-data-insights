@@ -1,0 +1,69 @@
+{
+  "checked_at": "2026-11-07T08:27:40.704618+00:00",
+  "effort": {
+    "started_approximately_utc": "2026-11-07T08:00:00+00:00",
+    "local_validation_complete_utc": "2026-11-07T08:27:40.704618+00:00",
+    "elapsed_minutes_through_local_validation": 27.7,
+    "timezone_for_prose": "Atlantic/Canary",
+    "phase_note": "Approximately17minutes discovery/extraction/reconciliation,10minutes validation/docs/publication preparation. Remote publication/CI follows; final observed checks recorded in PR metadata.",
+    "why_finish_before45": "Selected defensible NTPC and Renon table batches exhausted; CEA access and existing Eskom reuse blocks documented. No count padding or idle duration."
+  },
+  "checks": {
+    "bess_validator": {
+      "projects": 2409,
+      "countries": 51
+    },
+    "oem_validator": {
+      "records": 1388,
+      "supplier_labels": 60
+    },
+    "ntpc_parser_tests": 12,
+    "bess_focused_tests": 664,
+    "full_pytest_python313": {
+      "passed": 3499,
+      "failed": 0,
+      "seconds": 113.27
+    },
+    "viewer_node_tests": 40,
+    "ruff_lint": "passed repository-wide",
+    "ruff_format": "passed repository-wide",
+    "ty": "passed repository-wide using uv run --no-sync ty check",
+    "hygiene": "passed",
+    "citation_consistency": "passed; shared citation additions deferred due concurrent PR205/207",
+    "offline_examples": [
+      "plot_bess_projects.py passed",
+      "plot_bess_oem_catalogue.py passed"
+    ],
+    "package_build": "three wheels and three sdists built; twine check --strict passed",
+    "sphinx": "full Python3.13 docs/gallery -W --keep-going build passed on sequential retry",
+    "docs_links": {
+      "html_pages": 776,
+      "result": "passed"
+    },
+    "snapshots": "two independent builds identical; documentation-published Parquet bytes match both snapshots",
+    "preservation": "all2393 prior projects unchanged;1372 OEM records unchanged;7 reviewed enrichments preserve created_at and prior facts",
+    "component_references": "two exact OUT-to-R-EB005161 links validated",
+    "diff_check": "passed"
+  },
+  "initial_environment_failures": [
+    {
+      "check": "Python3.12 full pytest",
+      "result": "3494passed,4optional skips,1failure from joblib physical-core detection warning treated as error",
+      "resolution": "Python3.13 full rerun with LOKY_MAX_CPU_COUNT=1 and bounded BLAS/OpenMP passed3499tests"
+    },
+    {
+      "check": "first local docs",
+      "result": "Python3.12 lacks optional Orbital PV imagery dependency",
+      "resolution": "Installed locked separate Python3.13 imagery/docs environment"
+    },
+    {
+      "check": "first Python3.13 docs",
+      "result": "exit137 while concurrent full suite was running",
+      "resolution": "Sequential full rerun passed"
+    }
+  ],
+  "not_run_locally": [
+    "installed-wheel smoke script; covered by requested hosted CI when available"
+  ],
+  "remote_ci": "Pending creation of the scoped PR; do not treat pending as passed."
+}

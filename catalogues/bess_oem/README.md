@@ -1,7 +1,7 @@
 # Global BESS OEM product database
 
-The 6 November 2026 expanded research snapshot contains **1,379 records from 60 product
-suppliers, backed by 596 registered sources**: 1,366 documented configurations and 13
+The 7 November 2026 expanded research snapshot contains **1,388 records from 60 product
+suppliers, backed by 599 registered sources**: 1,375 documented configurations and 13
 explicitly configurable families. It covers utility-scale systems, C&I cabinets,
 a small residential sample, standalone battery inverters and inverter/chargers, EMS controllers, and non-lithium
 storage technologies. This is a
@@ -322,3 +322,8 @@ Latest continuation: [ECube agreement and warranty applicability](../bess/resear
 Latest continuation: [Exact Renon residential modules and component links](../bess/research/2026-11-06_p5_p8.md).
 
 Latest continuation: [Fourteen exact Xtreme LV configurations](../bess/research/2026-11-06_xtreme_lv.md).
+
+7 November continuation: nine exact Renon XPro/EBrick OUT/Xtreme HV configurations
+and seven Xtreme LV enrichments; one HV identity held. Regional options are not
+multiplied, and specification conflicts remain visible. See
+[the joint research review](../bess/research/2026-11-07_ntpc_renon.md).
