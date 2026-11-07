@@ -47,7 +47,13 @@
     "countries": 64,
     "manufacturer_labels": 66
   },
-  "remote_ci": "Pending publication",
+  "remote_ci": {
+    "observed_commit": "1113a79b2b092f3728b3d8378104ee18d197b8ee",
+    "python": "in_progress",
+    "documentation": "in_progress",
+    "license_packaging": "in_progress",
+    "note": "Final-head results reported on PR207; not claimed as local checks"
+  },
   "not_executed": [
     "full repository pytest",
     "full local gallery execution",
@@ -70,5 +76,16 @@
     "Staging finance JSON list rejected by schema before writing; corrected to object.",
     "REPD expected216ordinary tail assertion exposed2137ordinary+79exception partition distinction; now separately reviewed.",
     "First internal-link check started before build-finished asset publishing; rerun after successful Sphinx completion."
-  ]
+  ],
+  "publication": {
+    "commit": "1113a79b2b092f3728b3d8378104ee18d197b8ee",
+    "tree": "7fb508f3fafdc198ca58b978a5d3868a8d3751ff",
+    "pr": 207,
+    "open": true,
+    "merged": false,
+    "blob_sha_verified": 26,
+    "complete_tree_verified": true,
+    "update_expected_sha": "dbd83f047b8d86f7940446c39b9ffe7fd78e7723",
+    "method": "Connected GitHub blob/tree/commit plus expected-head fast-forward; CLI push unavailable because no credentials"
+  }
 }
