@@ -42,6 +42,7 @@ Data access and scientific methods
    _generated/guides/forecast-benchmark
    _generated/guides/offshore-wind-economics
    _generated/guides/offshore-cable-exposure
+   _generated/guides/offshore-installation-vessels
    _generated/guides/kazakhstan-hybrid-dispatch
    _generated/guides/india-storage-peak-shift
    _generated/guides/ree-adjustment-bess
