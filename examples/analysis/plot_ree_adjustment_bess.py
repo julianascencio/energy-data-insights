@@ -4,7 +4,7 @@ Spain system-adjustment costs and battery revenue-screening boundaries
 
 Red Eléctrica reported a **26.4%** year-on-year increase in energy used
 for technical restrictions and a **43.4%** increase in their cost to demand
-for January–October 2026 (press note **3 November 2026**). The reported
+for January-October 2026 (press note **3 November 2026**). The reported
 figures are *system aggregates*, not battery revenues.
 
 **Business question:** Which part of the apparent cost increase reflects
