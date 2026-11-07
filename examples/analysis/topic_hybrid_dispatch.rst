@@ -1,8 +1,8 @@
 Hybrid renewable dispatch
 =========================
 
-Explore two complementary, clearly synthetic case studies: hybrid wind–solar
-demand coverage and utility BESS evening-peak procurement screening.
+Compare hybrid demand coverage, BESS peak-shifting, and a Spain system-adjustment
+case that separates official aggregates from hypothetical battery economics.
 
 .. container:: gallery-topic
 
@@ -10,6 +10,7 @@ demand coverage and utility BESS evening-peak procurement screening.
 
       ../examples/analysis/plot_kazakhstan_hybrid_dispatch.py
       ../examples/analysis/plot_india_storage_mandate.py
+      ../examples/analysis/plot_ree_adjustment_bess.py
 
 .. toctree::
    :hidden:
@@ -17,3 +18,4 @@ demand coverage and utility BESS evening-peak procurement screening.
 
    plot_kazakhstan_hybrid_dispatch
    plot_india_storage_mandate
+   plot_ree_adjustment_bess
