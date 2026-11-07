@@ -1,6 +1,6 @@
 """
 Court Barton PV news: audit homes-powered and CO2-savings claims
-===============================================================
+================================================================
 
 **News, 5 November 2026:** Recurrent Energy announced commercial operation
 of Court Barton, a 20 MWp solar plant in South Devon. Its announcement
