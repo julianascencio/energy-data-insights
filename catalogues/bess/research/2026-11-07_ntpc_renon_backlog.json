@@ -1,0 +1,142 @@
+[
+  {
+    "rank": 1,
+    "entity_country": "India / CEA",
+    "url": "https://www.cea.nic.in/divisionPage/509",
+    "version_date": "Current site and 30 September 2026 report endpoint",
+    "reviewed_at": "2026-11-07T08:18:05.842741+00:00",
+    "access_licence_assessment": "Legacy route404; new route/API503, web dashboard502. No current downloadable inventory bytes or specific reuse grant established.",
+    "estimated_useful_yield": "Potential national project/status enrichment; exact named-row yield unknown",
+    "offered_fields": [
+      "site",
+      "status",
+      "MW",
+      "MWh",
+      "developer"
+    ],
+    "attempt_result": "Tried legacy landing, new division route, dashboard and indexed API. Search-visible aggregate report is not project ingestion.",
+    "processed_partition_cursor": "No accepted rows; new API URL retained in captures",
+    "retry_condition": "Original report accessible with technology classification and reusable named-site rows",
+    "next_action": "Inspect https://www.cea.nic.in/api/dashboardReports/view-pdf/en/ec18933c-d01c-43c5-94a2-ad9840d3edbf and current release, then sample before extraction."
+  },
+  {
+    "rank": 2,
+    "entity_country": "Germany / MaStR",
+    "url": "https://www.marktstammdatenregister.de/MaStR/Datendownload",
+    "version_date": "Previous 6 November 2026 revision26.2; not refreshed this pass",
+    "reviewed_at": "2026-11-07T08:18:05.842741+00:00",
+    "access_licence_assessment": "Prior DL-DE/BY2.0; last pass partition9 failed503.",
+    "estimated_useful_yield": "Potential tens of eligible units per reviewed partition",
+    "offered_fields": [
+      "registry IDs",
+      "power",
+      "usable energy",
+      "status",
+      "location"
+    ],
+    "attempt_result": "Carried forward, not retried in this India-focused pass.",
+    "processed_partition_cursor": "Partitions1–8 processed; next9",
+    "retry_condition": "Refresh release before another download; preserve every prior identity hold",
+    "next_action": "Retry partition9 with matching installation/catalogue members and original-member hashes."
+  },
+  {
+    "rank": 3,
+    "entity_country": "India / NTPC later awards",
+    "url": "https://ntpctender.ntpc.co.in/",
+    "version_date": "Lot1 30Sep2025; Lot2 6Nov2025; Mouda26Sep2026",
+    "reviewed_at": "2026-11-07T08:18:05.842741+00:00",
+    "access_licence_assessment": "Bounded factual extraction of public IFBs; no open licence asserted. Copyright policy reviewed; original documents outsideGit.",
+    "estimated_useful_yield": "16 accepted packages; later awards/technical ratings may enrich remaining12",
+    "offered_fields": [
+      "MWh",
+      "package IDs",
+      "procurement",
+      "CAMC",
+      "internal voltage",
+      "design requirements"
+    ],
+    "attempt_result": "All7+9 site rows accepted; Solapur two packages confirmed; Mouda retender reconciled. No portfolio totals accepted.",
+    "processed_partition_cursor": "Both complete tables exhausted; Solarworld named3awards exhausted",
+    "retry_condition": "New dated owner/EPC/official procurement evidence",
+    "next_action": "Find later awards and battery MW for remaining packages; do not infer operation from award."
+  },
+  {
+    "rank": 4,
+    "entity_country": "Renon Power / HV corrections",
+    "url": "https://www.renonpower.com/Download-Center/English/Residential%20Series/",
+    "version_date": "HV manual A04; brochure filename V4.9; publication dates unknown",
+    "reviewed_at": "2026-11-07T08:18:05.842741+00:00",
+    "access_licence_assessment": "Copyright reserved; bounded technical facts only.",
+    "estimated_useful_yield": "1 held exact identity plus2 accepted rows with field conflicts",
+    "offered_fields": [
+      "exact model",
+      "charge current",
+      "IP",
+      "dimensions",
+      "mass"
+    ],
+    "attempt_result": "Manualp45 and brochurep17 visually compared. 9.6kWh code conflict R-XH096021/R-XH009021 held.",
+    "processed_partition_cursor": "3HVcolumns reviewed;2accepted1held",
+    "retry_condition": "OEM corrected/explicitly distinguished edition or configuration",
+    "next_action": "Resolve identity and physical/charge discrepancies without creating cosmetic duplicates."
+  },
+  {
+    "rank": 5,
+    "entity_country": "Renon Power / residential technical depth",
+    "url": "https://www.renonpower.com/uploadfile/2026/0403/RN-Residential-US%20V4.9_compressed.pdf",
+    "version_date": "Filename V4.9; undated printed tables",
+    "reviewed_at": "2026-11-07T08:18:05.842741+00:00",
+    "access_licence_assessment": "No open licence; manual factual transcription, source bytes outsideGit.",
+    "estimated_useful_yield": "7 LV enrichments and2OUT new accepted; future warranty/controller evidence may enrich",
+    "offered_fields": [
+      "output kW",
+      "peak A/time",
+      "cooling",
+      "storage",
+      "module count",
+      "cycle conditions"
+    ],
+    "attempt_result": "Seven16S LV columns and twoOUTcolumns exhausted; inconsistentOUTAh retained. XPro separate5-column sheet exhausted.",
+    "processed_partition_cursor": "PDF7/15/17 processed; prior15S LV untouched",
+    "retry_condition": "Exact applicable warranty or corrected model sheet available",
+    "next_action": "Seek warranty conditions and current/voltage scope corrections; do not reuse unsupported family assumptions."
+  },
+  {
+    "rank": 6,
+    "entity_country": "South Africa / Eskom",
+    "url": "https://www.eskom.co.za/distribution/battery-energy-storage-system/",
+    "version_date": "Live page sampled7Nov2026; previous rights hold remains",
+    "reviewed_at": "2026-11-07T08:18:05.842741+00:00",
+    "access_licence_assessment": "Existing terms sections2.1–2.2 and2.10 restrict automated collection/reuse; no further collection or ingestion after recognizing prior hold.",
+    "estimated_useful_yield": "4 previously held phase2sites, subject to independent sources",
+    "offered_fields": [
+      "site",
+      "capacity",
+      "phase"
+    ],
+    "attempt_result": "Representative page checked before prior hold recognized; zero accepted facts from this source.",
+    "processed_partition_cursor": "Prior Witzenberg/Ashton/Cuprum/Kiwano holds unchanged; Rietfontein already independently handled",
+    "retry_condition": "Independent reusable owner/lender/regulator evidence",
+    "next_action": "Use independent sources; do not repeat prohibited bulk collection or contact people."
+  },
+  {
+    "rank": 7,
+    "entity_country": "Philippines / DOE",
+    "url": "https://www.doe.gov.ph/",
+    "version_date": "Current regional existing-plants edition needed",
+    "reviewed_at": "2026-11-07T08:18:05.842741+00:00",
+    "access_licence_assessment": "Earlier DOE shell/access failure and IEMOP prior-consent restriction; not retried this pass.",
+    "estimated_useful_yield": "Potential country-wide battery enrichment, exact yield unknown",
+    "offered_fields": [
+      "plant IDs",
+      "operator",
+      "location",
+      "ratings",
+      "status"
+    ],
+    "attempt_result": "Carried forward from6November; no claim of fresh verification.",
+    "processed_partition_cursor": "No new partition",
+    "retry_condition": "Accessible official regional export and reviewed terms",
+    "next_action": "Locate original DOE PDF rather than importing IEMOP membership as COD."
+  }
+]

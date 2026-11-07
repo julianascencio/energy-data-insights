@@ -1,7 +1,7 @@
 # Worldwide BESS projects
 
-The BESS section contains **2,393 project and plant records across
-51 countries and territories**, supported by **468 registered sources**. It combines curated
+The BESS section contains **2,409 project and plant records across
+51 countries and territories**, supported by **474 registered sources**. It combines curated
 commercial projects with reviewed U.S., UK, Australian, Chilean, French and German inventory subsets, not an
 exhaustive global inventory. It includes electrochemical
 batteries (including vanadium flow), not pumped hydro, compressed air or thermal
@@ -318,3 +318,8 @@ Latest continuation: [Finnish/Polish/Danish projects and24 exact ATESS configura
 Latest continuation: [MaStR partitions 3–4 and ECube technical agreement](research/2026-11-06_p3_ecube.md): 55 new registry-defined projects, two existing project reconciliations and two exact-model technical enrichments; unresolved scope and specification claims remain held.
 
 Latest continuation: [MaStR partitions 5–8 and Renon battery modules](research/2026-11-06_p5_p8.md).
+
+7 November continuation: 16 NTPC battery EPC packages across nine Indian states,
+including separately awarded Solapur lots and later Mouda procurement.
+See [the research review](research/2026-11-07_ntpc_renon.md). Tender/award stages
+are not operating capacity; all prior holds remain.
