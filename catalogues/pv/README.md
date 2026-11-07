@@ -56,6 +56,14 @@ separate from measured generation, and generic total kW remains unspecified AC/D
 The September workbook download contains theme parts but no worksheets and is
 held independently. See [İzmir attribution](licenses/IZMIR_CC_BY4_NOTICE.md).
 
+The offline `pv_catalogue.cne.read_cne_csv` reader stages checksum-pinned Chilean
+CNE capacity observations. It requires the explicit final PV classification,
+separates gross from net MW and flags repeated site keys or conflicting source
+labels for review. It omits owner, tax and coordinate fields, and never sums
+units or accepts identities. The March 2026 snapshot stages 729 observations;
+63 reviewed matches add dated capacity and lifecycle evidence to existing plants.
+See the [CNE attribution notice](licenses/CNE_CAPACIDAD_INSTALADA_ATTRIBUTION.md).
+
 The source of truth is sorted, hash-sharded JSONL in `records/`. Five typed Parquet
 snapshots are generated for efficient Python, Arrow, DuckDB and other analytical
 workflows. Binary datasets are not committed to Git. Source records are sparse;

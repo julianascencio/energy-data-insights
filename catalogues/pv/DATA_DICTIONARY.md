@@ -645,3 +645,20 @@ allocated inverter power remains native, with no plant AC scalar or aggregation.
 ### Research update — 6 November 2026, 08:00 UTC
 
 Polycab maximum apparent VA and active W at PF1 remain separate; MPPT current/string vectors are not summed or flattened. The350K models have conflicting350kW Rating and352kW Nominal Output Power cells: rated active scalars are withheld. The320K models retain explicit320kW nominal active output distinct from352kW maximum. UT five-year standard warranty is separate from a paid ten-year total extension; other selected tables state eight years. TypeIII protection is preserved literally where printed. DGEG licensing processes, native generator kW, installed/connection kVA and licence states remain contextual observations; a storage feature with a PV subtype is excluded, and no AC/DC conversion or operating-status inference is made.
+
+
+## Chile CNE Capacidad Instalada de Gx (7 November 2026)
+
+| Source evidence | Mapping and interpretation |
+| --- | --- |
+| `tipo_final` | Exact `Solar Fotovoltaica` only; generic solar and CSP are excluded. Contradictory source labels stay in review. |
+| `central`, `sistema`, `subsistema`, `region_nombre`, `comuna_nombre` | Native site observations; repeated site rows are flagged. No plant ID is manufactured from a unit label. |
+| `potencia_bruta_mw`, `potencia_neta_mw` | Separate `gross_mw` / `net_mw` in `extensions_json.cne_installed_capacity_observation`; no change to AC/DC scalars. |
+| `estado`, `fecha_act`, `fecha_puesta_servicio_central` | Dated registry observation and reported plant service date; neither a current status update nor an inferred commercial operation date. |
+| `rut`, owner and coordinate columns | Omitted from staged/accepted observations. |
+
+The `20261107T0800_cne_review.json` crosswalk records physical CSV row numbers,
+verified canonical IDs, decisions and the next partition. Only unique name-core,
+commune and region matches with reported capacity corroboration and an
+unambiguous phase scope were accepted. Source attribution is retained in
+[the CNE notice](licenses/CNE_CAPACIDAD_INSTALADA_ATTRIBUTION.md).
