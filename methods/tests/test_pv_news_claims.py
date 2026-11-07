@@ -4,7 +4,6 @@ import pytest
 
 from energy_methods.pv_news_claims import audit_pv_news_claims
 
-
 BASE = {
     "capacity_mwp": 20,
     "homes_equivalent": 8500,
