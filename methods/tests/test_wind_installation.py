@@ -22,11 +22,15 @@ def test_single_vessel_manual_count() -> None:
 
 def test_second_vessel_shortens_campaign() -> None:
     one = simulate_installation(
-        4, vessel_start_days=(0,), workable_days=[True] * 20,
+        4,
+        vessel_start_days=(0,),
+        workable_days=[True] * 20,
         workable_days_per_turbine=2,
     )
     two = simulate_installation(
-        4, vessel_start_days=(0, 2), workable_days=[True] * 20,
+        4,
+        vessel_start_days=(0, 2),
+        workable_days=[True] * 20,
         workable_days_per_turbine=2,
     )
     assert one.duration_days == 8
@@ -37,7 +41,9 @@ def test_second_vessel_shortens_campaign() -> None:
 
 def test_bad_weather_halts_both_vessels() -> None:
     schedule = simulate_installation(
-        2, vessel_start_days=(0, 0), workable_days=[False, True],
+        2,
+        vessel_start_days=(0, 0),
+        workable_days=[False, True],
         workable_days_per_turbine=1,
     )
     assert schedule.completion_days == (1, 1)
@@ -45,11 +51,15 @@ def test_bad_weather_halts_both_vessels() -> None:
 
 def test_grid_ready_is_critical_path() -> None:
     early = simulate_installation(
-        2, vessel_start_days=(0,), workable_days=[True] * 8,
+        2,
+        vessel_start_days=(0,),
+        workable_days=[True] * 8,
         workable_days_per_turbine=2,
     )
     late = simulate_installation(
-        2, vessel_start_days=(0, 0), workable_days=[True] * 8,
+        2,
+        vessel_start_days=(0, 0),
+        workable_days=[True] * 8,
         workable_days_per_turbine=2,
     )
     common = dict(project_capacity_mw=20, net_capacity_factor=0.5, horizon_days=10)
@@ -61,11 +71,16 @@ def test_grid_ready_is_critical_path() -> None:
 
 def test_zero_incremental_value_beyond_horizon() -> None:
     schedule = simulate_installation(
-        1, vessel_start_days=(0,), workable_days=(True,), workable_days_per_turbine=1
+        1,
+        vessel_start_days=(0,),
+        workable_days=(True,), workable_days_per_turbine=1
     )
     result = commissioning_opportunity_mwh(
-        schedule, project_capacity_mw=10, net_capacity_factor=0.4,
-        horizon_days=10, grid_ready_day=20,
+        schedule,
+        project_capacity_mw=10,
+        net_capacity_factor=0.4,
+        horizon_days=10,
+        grid_ready_day=20,
     )
     assert result == pytest.approx(0)
 
@@ -97,7 +112,9 @@ def test_invalid_installation_inputs(changes: dict[str, object]) -> None:
 def test_insufficient_horizon_rejected() -> None:
     with pytest.raises(ValueError, match="weather horizon"):
         simulate_installation(
-            2, vessel_start_days=(0,), workable_days=(False, True),
+            2,
+            vessel_start_days=(0,),
+            workable_days=(False, True),
             workable_days_per_turbine=1,
         )
 
@@ -113,6 +130,8 @@ def test_invalid_energy_inputs(capacity: float, cf: float, days: int) -> None:
     )
     with pytest.raises(ValueError):
         commissioning_opportunity_mwh(
-            schedule, project_capacity_mw=capacity, net_capacity_factor=cf,
+            schedule,
+            project_capacity_mw=capacity,
+            net_capacity_factor=cf,
             horizon_days=days,
         )
