@@ -1,5 +1,5 @@
 PV project claims and due diligence
-==================================
+===================================
 
 Audit reported project benefits against independent official reference inputs
 without converting press-release claims into fabricated plant measurements.
