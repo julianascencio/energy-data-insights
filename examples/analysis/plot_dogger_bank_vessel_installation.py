@@ -1,6 +1,6 @@
 """
 Dogger Bank C: offshore installation-vessel capacity and grid readiness
-======================================================================
+=========================================================================
 
 **Dated primary evidence:** Dogger Bank Wind Farm, 4 November 2026, announced
 that Wind Apex is expected to join Seaway Ventus for Dogger Bank C in Q3 2027.
@@ -36,7 +36,7 @@ from energy_methods.wind_installation import (
 
 # %%
 # 1. Separate dated source facts from uncalibrated scenario inputs
-# ---------------------------------------------------------------
+# -------------------------------------------------------------------
 # News-reported project scope, NOT a dataset of operational measurements:
 PHASE_TURBINES = 87
 PHASE_CAPACITY_MW = 1200.0
@@ -68,7 +68,7 @@ def weather_scenario(seed: int) -> list[bool]:
 
 # %%
 # 2. Compare paired schedules with identical illustrative weather
-# ---------------------------------------------------------------
+# ------------------------------------------------------------------
 # Common random weather is used in both alternatives to isolate vessel count.
 # Uncertainty bands represent variation under this invented weather law,
 # NOT probabilities about actual Dogger Bank construction.
@@ -113,7 +113,7 @@ plt.show()
 
 # %%
 # 3. Grid-connection sensitivity: what if completion is not the critical path?
-# --------------------------------------------------------------------------
+# -------------------------------------------------------------------------------
 # Potential generation assumes each equal-rated turbine can export no earlier
 # than the day after installation plus a common grid-ready date; constant net
 # capacity factor is illustrative. Grid readiness at day 350 can erase much
