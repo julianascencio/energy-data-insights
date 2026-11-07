@@ -133,10 +133,10 @@ Exact equipment links require a disclosed deployment; none are asserted in this
 batch. Existing stationary battery and BESS equipment records are referenced by
 validated BESS IDs, not copied into a competing battery catalogue.
 
-Read [the latest research report](research/2026-11-06-report.md),
+Read [the latest research report](research/2026-11-07-report.md),
 [ranked continuation backlog](research/backlog.json),
-[latest decision ledger](research/2026-11-06-decisions.jsonl),
-[executed validation](research/2026-11-06T1330-validation.json), and
+[latest decision ledger](research/2026-11-07-decisions.jsonl),
+[executed validation](research/2026-11-07T0807-validation.json), and
 [usage and simulator guide](../../docs/data-center-catalogue.md).
 The [project viewer](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=projects)
 and [equipment viewer](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=equipment)
