@@ -61,8 +61,17 @@ CNE capacity observations. It requires the explicit final PV classification,
 separates gross from net MW and flags repeated site keys or conflicting source
 labels for review. It omits owner, tax and coordinate fields, and never sums
 units or accepts identities. The March 2026 snapshot stages 729 observations;
-63 reviewed matches add dated capacity and lifecycle evidence to existing plants.
+239 reviewed matches add dated capacity and lifecycle evidence to existing plants;
+eight strict matches remain held for capacity or plant/phase review.
 See the [CNE attribution notice](licenses/CNE_CAPACIDAD_INSTALADA_ATTRIBUTION.md).
+
+The offline `pv_catalogue.nve.read_nve_solar_cases` reader stages checksum-pinned
+ArcGIS layer-2 observations from Norway's NVE solar concession map. It retains
+the native plant and case numbers, separates proposed and in-service MW, and
+flags repeated identifiers. No geometries or personal details are staged.
+A concession decision or map timestamp does not establish operation. Candidate
+records require an exact, reviewed PV plant/phase crosswalk before upsert.
+See the [NVE attribution notice](licenses/NVE_SOLKRAFT_ATTRIBUTION.md).
 
 The source of truth is sorted, hash-sharded JSONL in `records/`. Five typed Parquet
 snapshots are generated for efficient Python, Arrow, DuckDB and other analytical
