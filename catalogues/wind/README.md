@@ -3,14 +3,14 @@
 Canonical JSONL lives in `records/`; projects, exact equipment configurations,
 individual turbines and numerical curves share stable linked identities.
 
-At batch `2026-11-05-0910`, the proposed branch contains **8,238 projects**
-(8,237 non-group records), **405 equipment configurations**, **13,633 linked
-registry turbines** and **two original numerical curves**, across **59 countries**
-and **57 manufacturer labels**. Labels are not a reconciled corporate-entity count.
-Merged main at `d92d1b82` contains 8,174 projects, 372 equipment records,
-13,633 turbines and two curves. This run adds 56 projects and enriches 31 existing equipment records. The cumulative PR adds 64 projects and 33 exact
-OEM types and enriches two pre-existing projects and four equipment records from main. These are catalogue counts, not an
-operating census. PR #158 remains open for review.
+At batch `2026-11-07-0800`, the branch contains **8,328 projects** (8,327
+non-group records), **566 equipment records**, **13,657 linked registry turbines**
+and **two original numerical curves**, across **64 countries** and **66 equipment
+manufacturer labels**. Merged main at `dbd83f04` has 8,323 projects and the same
+other entity counts. This run adds five Spanish proposals/withdrawn applications,
+with no equipment additions or existing-record enrichments. All new scopes remain
+excluded from capacity totals. Earlier PRs were merged externally; this batch
+starts a new review branch. See `research/latest.json` for publication context.
 
 The initial 5,344-row WRI import is historical. REPD lifecycle enrichment does
 not resolve capacity scope; 2,216 other applications remain deferred. Swedish

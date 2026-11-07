@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-06T13:39:52.822339+00:00",
-  "branch": "research/wind-20261106-0835",
+  "updated_at": "2026-11-07T08:00:00Z",
+  "branch": "research/wind-20261107",
   "run_lock": {
-    "path": "/tmp/energy-data-insights-wind-20261106-0835.lock",
+    "path": "/tmp/energy-data-insights-research-wind-20261107.lock",
     "nonblocking": true,
-    "branch": "research/wind-20261106-0835"
+    "branch": "research/wind-20261107"
   },
   "queue": [
     {
@@ -239,40 +239,33 @@
       "rank": 3,
       "source": "UK Renewable Energy Planning Database",
       "url": "https://www.gov.uk/government/publications/renewable-energy-planning-database-quarterly-extract",
-      "partition": "Unlinked saved candidates offsets2000:2200 next",
-      "next_offset": 2000,
-      "status": "crosswalk_partition_completed_remaining_applications_pending",
+      "partition": "All2137ordinary candidates and79exceptions structurally reviewed;2216physical identities unresolved",
+      "next_offset": null,
+      "status": "structural_scan_complete_permit_reconciliation_pending",
       "tasks": [
         "Do not rerun 642 completed crosswalk enrichments as new work",
         "Resolve explicit replacement application links and primary permit scopes; match WRI renamed identities before new additions",
         "Reconcile scope of 642 enriched records against permits before enabling any capacity totals",
-        "Offsets0:2000 structurally reviewed, all held pending permits; next2000:2200."
+        "Offsets0:2137 complete;79exception rows also complete. Structural completeness is not identity resolution."
       ],
       "release_url": "https://assets.publishing.service.gov.uk/media/6a6cbdc00c36759b5ccaa305/REPD_Publication_Q2_2026.csv",
       "sha256": "84c1b5f958a934d8b4b86ec88f50bdcf43830ded7ff2efc27bffca0c98695035",
       "next_ids": [
-        "17841",
-        "17944",
-        "17980",
-        "18043",
-        "18071",
-        "18076",
-        "18147",
-        "18149",
-        "18321",
-        "18325",
-        "18368",
-        "18379",
-        "18380",
-        "18394",
-        "18442",
-        "18443",
-        "18444",
-        "18445",
-        "18456",
-        "18494"
+        "2564",
+        "3301",
+        "3647",
+        "3659",
+        "3752",
+        "3981",
+        "4253"
       ],
-      "structural_review": "2026-11-06-1335-repd-review.json"
+      "structural_review": "2026-11-07-0800-repd-review.json",
+      "exception_review": "2026-11-07-0800-repd-exceptions.json",
+      "structural_reason_counts": {
+        "ordinary": 2137,
+        "exceptions": 79
+      },
+      "next_task": "Primary permits for saved REPD IDs 2564,3301,3647,3659,3752,3981,4253; reconcile replacement and second-application physical scopes. All structural rows complete; do not repeat them."
     },
     {
       "rank": 4,
@@ -520,12 +513,13 @@
       "vestas_new_review": "2026-11-05-1235-fgw-review.json",
       "knrec_review": "2026-11-05-1435-knrec-review.json",
       "original_certificate_followup": "2026-11-05-1510-oem-review.json",
-      "latest_oem_review": "2026-11-06-0735-review.json",
+      "latest_oem_review": "2026-11-07-0800-independent-review.json",
       "next_exact_oem_batches": [
         "AyshaI Ethiopian WD200-7700 specification frequency/revision/count; no Saudi60Hz transfer. June2026 originals and August19award completed.",
         "Xiangshan No.1 PhaseII official project/phase identity; 2022WD225-9000 brochure observation does not establish installed revision",
         "Saudi project official identity and WD200-7700 60Hz exact datasheet",
-        "WD230-11500 original certificate/model table with explicit rating and geometry"
+        "WD230-11500 original certificate/model table with explicit rating and geometry",
+        "Al Ghat AXIA/WSP NTS documents_01.pdf page4 acquired:600MW table versus616MW narrative,80x7.7MW,131mhub197.3mrotor. Confirm issuer project identity/date before project addition or Saudi equipment link; do not reacquire same original."
       ],
       "independent_sany_partition": {
         "status": "All eleven global English turbine tables reviewed; ten added, SI-16840 held",
@@ -612,6 +606,15 @@
       "source": "BOE complete daily Series A wind-mentioned decisions",
       "status": "bounded_daily_partitions_complete",
       "completed_dates": [
+        "2026-07-06",
+        "2026-07-07",
+        "2026-07-08",
+        "2026-07-09",
+        "2026-07-10",
+        "2026-07-11",
+        "2026-07-13",
+        "2026-07-14",
+        "2026-07-15",
         "2026-07-16",
         "2026-07-17",
         "2026-07-18",
@@ -709,15 +712,25 @@
         "2026-11-04"
       ],
       "next_dates": [
-        "2026-07-13",
-        "2026-07-14",
-        "2026-07-15"
+        "2026-07-01",
+        "2026-07-02",
+        "2026-07-03",
+        "2026-07-04"
       ],
       "adapter": "energy_data_retrieval.wind_catalogue.boe",
       "next_offset": 0,
-      "next_task": "July13–15 all A/B issues; La Herrada and Torozos wind permit identities held, solar capacities excluded",
+      "next_task": "July1–4all discoveredA/Bissues; Desma6May2025wind permit andPEol280AC revision/farm identity reconciliation. Do not re-scan completedJuly6–15.",
       "decision_ledger": "2026-11-05-1807-boe-review.json",
       "series_b_completed_dates": [
+        "2026-07-06",
+        "2026-07-07",
+        "2026-07-08",
+        "2026-07-09",
+        "2026-07-10",
+        "2026-07-11",
+        "2026-07-13",
+        "2026-07-14",
+        "2026-07-15",
         "2026-07-16",
         "2026-07-17",
         "2026-07-18",
@@ -814,7 +827,7 @@
         "2026-11-03",
         "2026-11-04"
       ],
-      "latest_review": "2026-11-06-1335-review.json",
+      "latest_review": "2026-11-07-0800-review.json",
       "unavailable_dates": [
         {
           "date": "2026-09-06",

@@ -482,3 +482,13 @@ test("operator construction status remains a dated observation", () => {
   const row = {entity_type: "projects", sources: ["owner"], aggregation_role: "unresolved", extensions_json: JSON.stringify({operator_portfolio_observations: [{source_id: "owner", as_of: "2024-03-31", locator: "p166", facts: {status: "under_construction", capacity_basis: "gross_reported", capacity_mw: 500}}]})};
   assert.deepEqual(windOperatorPortfolioSummary([row]).statuses, {under_construction: 1});
 });
+
+import {windFleetRatingSummary} from "../../docs/_static/database-core.mjs";
+test("fleet arithmetic preserves reported MW, unknowns and evidence boundaries", () => {
+  const project = (reported, calculated, source = "BOE") => ({entity_type: "projects", planned_capacity_mw: reported, sources: ["BOE"], extensions_json: JSON.stringify({fleet_rating_check: {reported_mw: reported, calculated_mw: calculated, source_id: source, locator: "Design table", method: "count times rating"}})});
+  const data = [project(110.9, 110.925), project(63, 63), project(0, 0), project(null, 10), project(10, 10, "unregistered"), {entity_type: "projects", extensions_json: "malformed"}, {entity_type: "equipment"}];
+  const before = JSON.stringify(data);
+  assert.deepEqual(windFleetRatingSummary(data), {projects: 3, differences: 1, matching: 2, withoutCheck: 3, reportedZero: 1});
+  assert.equal(JSON.stringify(data), before);
+  assert.equal(windFleetRatingSummary(data.slice(0, 1)).differences, 1);
+});

@@ -35,6 +35,13 @@ print(projects.groupby(["status", "aggregation_role"]).size().unstack(fill_value
 print("Equipment categories (components are not turbines):")
 print(equipment.groupby(["manufacturer", "equipment_category"]).size())
 
+# Reported proposal MW stays independent of count times unit rating.
+print("Fleet rating arithmetic checks; no installed MW or aggregation eligibility inferred")
+for row in rows:
+    check = json.loads(row.get("extensions_json") or "{}").get("fleet_rating_check")
+    if check:
+        print(row["name"], check, row["aggregation_role"])
+
 # The NEM survey keeps mixed states and shared hybrid limits out of scalar totals.
 print("AEMO wind-only survey sites: unknown geometry and excluded capacity scopes")
 for row in rows:
