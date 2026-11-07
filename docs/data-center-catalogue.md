@@ -2,8 +2,8 @@
 
 ## Data Center Projects
 
-The current continuation branch has 702 project records across 46 countries:
-571 facilities, three phases and 128 explicitly scoped campus aggregates, from 22 operators.
+The current continuation branch has 712 project records across 47 countries:
+581 facilities, three phases and 128 explicitly scoped campus aggregates, from 22 operators.
 Coverage spans North America, Latin America, Europe, Africa, the Middle East and
 Asia-Pacific. This is a research catalogue, not an operating-capacity census.
 
@@ -112,6 +112,15 @@ not a commissioning date, participant registry inclusion is not deployment or
 certification evidence, and company addresses are not site locations. Lifecycle,
 ownership, operation, physical aggregation and every capacity boundary remain
 unresolved; all 35 records are excluded from capacity totals under every filter.
+
+The complete 2022 JRC cohort adds ten exact facility identities across seven
+participant sets: KDDI France, Nantes Université, LCL Belgium NV, Interxion
+Denmark, Qarnot computing, ATOS Netherlands B.V. and Ikoula NET. The exact
+registry case is retained, including lowercase `paris`. Company addresses are
+not promoted to facility locations, and participation does not establish current
+ownership, operation, certification, deployment or commissioning. Physical
+aggregation and all capacity boundaries remain unresolved; all ten records are
+excluded from every capacity total.
 
 The current U.S. facility continuation includes all 133 entries whose most recent
 label year is 2026, all 50 from 2025, all 23 from 2024, all 31 from 2023, and

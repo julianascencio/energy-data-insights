@@ -28,11 +28,14 @@ def review_unlinked_applications(
     sha256: str,
     offset: int,
     limit: int,
+    reasons: tuple[str, ...] = (REASON,),
 ) -> list[dict[str, Any]]:
     """Return review facts in saved ledger order, retaining all identity holds.
 
     The checksum pins the Windows-1252 release. Offsets apply only to the exact
-    unresolved-crosswalk reason, not all decisions. Empty cells are unknown;
+    selected reasons (the unresolved-crosswalk reason by default), not all
+    decisions. Explicit exception partitions must list their saved reasons.
+    Empty cells are unknown;
     application IDs and replacement references do not establish physical farms.
     No lifecycle, capacity, coordinate or equipment scalar is assigned.
     """
@@ -40,7 +43,14 @@ def review_unlinked_applications(
         raise ValueError("REPD checksum mismatch")
     if type(offset) is not int or type(limit) is not int or offset < 0 or limit <= 0:
         raise ValueError("Invalid partition bounds")
-    candidates = [d for d in decisions if d.get("reason") == REASON]
+    if not reasons or any(not isinstance(reason, str) or not reason.strip() for reason in reasons):
+        raise ValueError("Explicit nonempty saved reasons required")
+    if len(reasons) != len(set(reasons)):
+        raise ValueError("Duplicate selected reason")
+    known_reasons = {d.get("reason") for d in decisions}
+    if reasons != (REASON,) and not set(reasons) <= known_reasons:
+        raise ValueError("Selected reason absent from saved decisions")
+    candidates = [d for d in decisions if d.get("reason") in reasons]
     if offset > len(candidates):
         raise ValueError("Partition offset exceeds saved candidates")
     ids = [d["repd_id"] for d in candidates]
@@ -74,7 +84,7 @@ def review_unlinked_applications(
                 locator=f"CSV record {line}; Ref ID={ref}",
                 source_id=decision["source_id"],
                 decision="deferred_identity",
-                reason=REASON,
+                reason=decision["reason"],
                 facts={field: raw[field].strip() or None for field in FIELDS},
                 scope="Planning application only; no farm identity or current-status inference",
             )

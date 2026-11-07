@@ -44,3 +44,10 @@ def test_invalid_wind() -> None:
     for value in (-1, np.nan, np.inf):
         with pytest.raises(ValueError):
             wind_capacity_factor(np.array([value]))
+
+
+@pytest.mark.parametrize("unit", ["s", "ms", "us", "ns"])
+def test_hourly_timestamps_are_resolution_independent(unit: str) -> None:
+    timestamps = pd.date_range("2026-11-07", periods=3, freq="h", tz="UTC").as_unit(unit)
+    frame = pd.DataFrame(dict(timestamp=timestamps, ghi_wm2=500, clear_ghi_wm2=1000, wind_ms=12))
+    assert storm_energy(frame).pv_mwh_per_mw.sum() == pytest.approx(1.2)

@@ -41,6 +41,7 @@ from energy_data_retrieval.data_center_catalogue.portfolios import (
     parse_icolo_home_portfolio,
     parse_jrc_2015_2018_participants,
     parse_jrc_2018_participants,
+    parse_jrc_2022_participants,
     parse_jrc_2023_participants,
     parse_jrc_2024_new_participants,
     parse_jrc_code_of_conduct_participants,
@@ -872,6 +873,34 @@ def test_jrc_2023_parser_preserves_exact_spellings_and_duplicate_row():
     with pytest.raises(ValueError, match="facility identity set"):
         parse_jrc_2023_participants(
             fixture.replace(b"Frankfurt FRA15", b"Frankfurt FRA16"),
+            source_url=source_url,
+        )
+
+
+def test_jrc_2022_parser_is_complete_and_fail_closed():
+    source_url = (
+        "https://e3p.jrc.ec.europa.eu/ga/groups/data-centres-code-conduct/"
+        "participants?order=field_adhesion_date&page=0&partner_search=&sort=desc"
+    )
+    fixture = (FIXTURES / "jrc-code-of-conduct-2022.html").read_bytes()
+    parsed = parse_jrc_2022_participants(fixture, source_url=source_url)
+    assert parsed["displayed_rows"] == 10
+    assert len(parsed["candidates"]) == 10
+    assert {row["adhesion_year"] for row in parsed["candidates"]} == {2022}
+    assert {row["participant"] for row in parsed["candidates"]} == {
+        "KDDI France",
+        "Nantes Université",
+        "LCL Belgium NV",
+        "Interxion Denmark",
+        "Qarnot computing",
+        "ATOS Netherlands B.V.",
+        "Ikoula NET",
+    }
+    assert parsed["candidates"][0]["registry_label"] == "paris"
+    assert parsed["candidates"][-1]["registry_label"] == "Eppes"
+    with pytest.raises(ValueError, match="facility identity set"):
+        parse_jrc_2022_participants(
+            fixture.replace(b"Eindhoven The Hurk", b"Eindhoven Hurk"),
             source_url=source_url,
         )
 

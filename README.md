@@ -536,3 +536,13 @@ for commands, research attribution and model/data assumptions.
 ### Global Hydropower Database
 
 [Hydropower catalogue](catalogues/hydro/README.md): 7,156 historical WRI plant records across 128 countries, with dated provenance, typed Parquet snapshots and a [runnable coverage example](examples/database/plot_hydro_catalogue.py). The shared viewer includes a world map and separates generating/pumping capacity; unresolved historical rows are not current operating capacity.
+
+## License
+
+Copyright (c) 2026 **ASVA Consulting TFE SL**. The original software is
+source-available under the [ASVA Noncommercial Software License 1.0](LICENSE).
+**Commercial use is prohibited**, including internal business use, paid client
+work, commercial products, and paid hosted services. Noncommercial use,
+modification, and sharing are allowed subject to the license.
+
+Third-party materials retain their own terms. See [licensing scope](LICENSING.md).

@@ -37,7 +37,8 @@ from matplotlib.patches import Polygon, Rectangle
 
 from energy_methods.storm_energy import storm_energy
 
-root = Path(__file__).resolve().parent / "data" / "bruna"
+example_dir = Path(__file__).resolve().parent if "__file__" in globals() else Path.cwd()
+root = example_dir / "data" / "bruna"
 meta = json.loads((root / "bruna_map_provenance.json").read_text())
 geometry = (root / "bruna_islands.geojson").read_bytes()
 assert hashlib.sha256(geometry).hexdigest() == meta["subset_sha256"]

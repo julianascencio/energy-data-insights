@@ -207,3 +207,13 @@ to its canonical record; it does not propagate module ratings to the parent
 stack or resolve pre-existing stack capacity/parallel conflicts.
 
 `renon_xtreme_lv` retains A14 page/column provenance, system Ah, exact component codes, module quantities, maximum charge/discharge current, control voltage thresholds, temperature bounds, approximate mass, parallel limits and nonnumeric charging derating. Base models exclude the optional -H heating configuration. Model codes are not decoded into ratings.
+
+`renon_xpro` retains explicit battery module-count configurations, usable energy,
+timed battery peaks and separate regional inverter/PV alternatives. Optional
+V2G creates no installed component assignment. `renon_ebrick_out` links only
+the explicitly named module; ambiguous Ah and cell/output voltage boundaries
+stay flagged. `renon_xtreme_hv` preserves manual/brochure current, enclosure
+and mechanical conflicts without choosing a version winner. `renon_lv_brochure`
+adds output power, timed peaks and storage conditions to existing stacks; earlier
+ratings and their conflicts remain. Unconditioned cycle claims and warranty
+letter pointers are not normalized warranty/test-life fields.

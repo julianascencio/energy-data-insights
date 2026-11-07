@@ -158,7 +158,7 @@ Anderson, Kevin S.; Hansen, Clifford W.; Holmgren, William F.; Jensen, Adam R.; 
 
 **Role:** software. Current project-level citation recommended by pvlib. Exact installed software versions are recorded in analysis manifests and the workspace lockfile.
 
-**Used by:** `examples/analysis/plot_bruna_tenerife.py`, `methods/src/energy_methods/poa.py`, `scripts/prepare_bruna_forecast.py`.
+**Used by:** `methods/src/energy_methods/poa.py`.
 
 ### pvlib_interval_transposition
 
@@ -286,7 +286,7 @@ Open-Meteo (n.d.). **Weather Forecast API: hourly variable definitions**. [Sourc
 
 **Role:** data. Provider definitions for preceding-hour radiation/gust variables and instantaneous temperature/wind. Archive-specific variable definitions take priority where products differ.
 
-**Used by:** `data-retrieval/README.md`, `data-retrieval/src/energy_data_retrieval/grid_discovery.py`, `data-retrieval/src/energy_data_retrieval/sources/open_meteo`, `docs/location-discovery.md`, `examples/analysis/plot_bruna_impact_maps.py`, `examples/analysis/plot_bruna_tenerife.py`, `scripts/prepare_bruna_forecast.py`.
+**Used by:** `data-retrieval/README.md`, `data-retrieval/src/energy_data_retrieval/grid_discovery.py`, `data-retrieval/src/energy_data_retrieval/sources/open_meteo`, `docs/location-discovery.md`.
 
 ### eyring_2016_cmip6
 
@@ -814,7 +814,7 @@ Natural Earth contributors (n.d.). **Natural Earth: Admin 0 - Countries**. [Sour
 
 **Role:** data. Public-domain country polygons at 1:10, 1:50 and 1:110 million map scales; default de facto boundaries. Country membership follows the source administrative units. The checked-in country example preserves unsimplified Austria/Slovenia contours from version 5.1.1, with the archive and subset checksums recorded. The worldwide connector coverage fixture retains 176 unchanged 1:110 million country geometries from the same version; Antarctica is explicitly excluded because its original unsplit world-spanning ring fails the country-map antimeridian contract. Its provenance records the source archive, derived GeoJSON checksum and exclusion. Country shapes supply geographic context rather than electrical service territories or evidence of observation availability. Map scale is not metre accuracy; no scientific climate resolution is inferred from boundary detail.
 
-**Used by:** `analysis/src/energy_analysis/chile_kgpv/pipeline.py`, `analysis/src/energy_analysis/pvdeg_chile.py`, `data-retrieval/src/energy_data_retrieval/sources/natural_earth`, `docs/country-mapping.md`, `docs/kgpv-chile.md`, `docs/pvdeg-chile.md`, `docs/worldwide-generation.md`, `examples/analysis/plot_bruna_impact_maps.py`, `examples/analysis/plot_country_risk.py`, `examples/analysis/plot_kgpv_chile.py`, `examples/analysis/plot_pvdeg_chile.py`, `examples/connectors/data/candelaria_site.json`, `examples/connectors/data/generation_coverage_catalogue.json`, `examples/connectors/data/generation_coverage_provenance.json`, `examples/connectors/data/generation_coverage_world.geojson`, `examples/connectors/plot_candelaria_solar_farm.py`, `examples/connectors/plot_generation_coverage.py`, `methods/src/energy_methods/country_boundaries.py`, `methods/src/energy_methods/country_mapping.py`, `scripts/prepare_candelaria_imagery.py`, `scripts/prepare_connector_coverage.py`, `scripts/prepare_pvdeg_chile.py`, `scripts/prepare_weather_risk_example.py`.
+**Used by:** `analysis/src/energy_analysis/chile_kgpv/pipeline.py`, `data-retrieval/src/energy_data_retrieval/sources/natural_earth`, `docs/country-mapping.md`, `docs/kgpv-chile.md`, `docs/worldwide-generation.md`, `examples/analysis/plot_country_risk.py`, `examples/analysis/plot_kgpv_chile.py`, `examples/connectors/data/candelaria_site.json`, `examples/connectors/data/generation_coverage_catalogue.json`, `examples/connectors/data/generation_coverage_provenance.json`, `examples/connectors/data/generation_coverage_world.geojson`, `examples/connectors/plot_candelaria_solar_farm.py`, `examples/connectors/plot_generation_coverage.py`, `methods/src/energy_methods/country_boundaries.py`, `methods/src/energy_methods/country_mapping.py`, `scripts/prepare_candelaria_imagery.py`, `scripts/prepare_connector_coverage.py`, `scripts/prepare_weather_risk_example.py`, `analysis/src/energy_analysis/pvdeg_chile.py`, `scripts/prepare_pvdeg_chile.py`, `examples/analysis/plot_pvdeg_chile.py`, `docs/pvdeg-chile.md`.
 
 ### shapely_documentation
 
@@ -7919,6 +7919,30 @@ Department of Electricity Development, Government of Nepal (2026). **Constructio
 **Role:** data_source. Public official factual licence inventory; no explicit open bulk-reuse licence identified. Selected factual rows with attribution; original HTML, layout and prose not redistributed. Retrieval year, not asserted publication year.
 
 **Used by:** `catalogues/hydro/README.md`, `docs/hydro-catalogue.md`, `examples/database/plot_hydro_catalogue.py`.
+
+### boe_a_2026_15109
+
+Agencia Estatal Boletín Oficial del Estado (2026). **Resolución de 15 de junio de 2026, de la Dirección General de Política Energética y Minas, por la que se acepta el desistimiento formulado por Statkraft Iberia Dos, SLU, de autorización administrativa previa para el parque eólico «Arrebol», de 58,1 MW, y su infraestructura de evacuación, en la provincia de Cádiz.**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-15109)
+
+**Role:** data_source. Official administrative act; factual observations only. Procedural and physical boundaries retained.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### boe_a_2026_15110
+
+Agencia Estatal Boletín Oficial del Estado (2026). **Resolución de 15 de junio de 2026, de la Dirección General de Política Energética y Minas, por la que se acepta el desistimiento formulado por Statkraft Iberia Tres, SLU, de autorización administrativa previa del parque eólico «Lagunillas», de 65,7 MW, y su infraestructura de evacuación, en la provincia de Málaga.**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-15110)
+
+**Role:** data_source. Official administrative act; factual observations only. Procedural and physical boundaries retained.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### boe_b_2026_23315
+
+Agencia Estatal Boletín Oficial del Estado (2026). **Anuncio del Área de Industria y Energía de la Subdelegación del Gobierno en Zaragoza, Dependencia de Industria y Energía de la Subdelegación del Gobierno en Teruel y la Dependencia de Industria y Energía de la Subdelegación del Gobierno en Tarragona por el que se somete a información pública la solicitud de Declaración de Impacto Ambiental y Autorización Administrativa Previa del proyecto PEol-280 AC parques eólicos Paucali de 63 MW, Arlo de 65,25 MW y Céfiro de 110,9 MW y su infraestructura de evacuación, en los términos municipales de Maella, provincia de Zaragoza; Mazaleón, Valdealgorfa, Valjunquera y Calaceite, provincia de Teruel; y Caseres, Batea, Vilalba dels Arcs, La Pobla de Massaluca, La Fatarella, Flix y Ascó, en la provincia de Tarragona.**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-23315)
+
+**Role:** data_source. Official administrative act; factual observations only. Procedural and physical boundaries retained.
+
+**Used by:** `catalogues/wind/sources.json`.
 
 ### aemet_bruna_20261106
 

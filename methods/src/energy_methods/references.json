@@ -249,9 +249,7 @@
     "kind": "article",
     "role": "software",
     "used_by": [
-      "examples/analysis/plot_bruna_tenerife.py",
-      "methods/src/energy_methods/poa.py",
-      "scripts/prepare_bruna_forecast.py"
+      "methods/src/energy_methods/poa.py"
     ],
     "note": "Current project-level citation recommended by pvlib. Exact installed software versions are recorded in analysis manifests and the workspace lockfile.",
     "verified_at": "2026-10-29",
@@ -761,10 +759,7 @@
       "data-retrieval/README.md",
       "data-retrieval/src/energy_data_retrieval/grid_discovery.py",
       "data-retrieval/src/energy_data_retrieval/sources/open_meteo",
-      "docs/location-discovery.md",
-      "examples/analysis/plot_bruna_impact_maps.py",
-      "examples/analysis/plot_bruna_tenerife.py",
-      "scripts/prepare_bruna_forecast.py"
+      "docs/location-discovery.md"
     ],
     "note": "Provider definitions for preceding-hour radiation/gust variables and instantaneous temperature/wind. Archive-specific variable definitions take priority where products differ.",
     "verified_at": "2026-10-29"
@@ -2362,16 +2357,12 @@
     "role": "data",
     "used_by": [
       "analysis/src/energy_analysis/chile_kgpv/pipeline.py",
-      "analysis/src/energy_analysis/pvdeg_chile.py",
       "data-retrieval/src/energy_data_retrieval/sources/natural_earth",
       "docs/country-mapping.md",
       "docs/kgpv-chile.md",
-      "docs/pvdeg-chile.md",
       "docs/worldwide-generation.md",
-      "examples/analysis/plot_bruna_impact_maps.py",
       "examples/analysis/plot_country_risk.py",
       "examples/analysis/plot_kgpv_chile.py",
-      "examples/analysis/plot_pvdeg_chile.py",
       "examples/connectors/data/candelaria_site.json",
       "examples/connectors/data/generation_coverage_catalogue.json",
       "examples/connectors/data/generation_coverage_provenance.json",
@@ -2382,8 +2373,11 @@
       "methods/src/energy_methods/country_mapping.py",
       "scripts/prepare_candelaria_imagery.py",
       "scripts/prepare_connector_coverage.py",
+      "scripts/prepare_weather_risk_example.py",
+      "analysis/src/energy_analysis/pvdeg_chile.py",
       "scripts/prepare_pvdeg_chile.py",
-      "scripts/prepare_weather_risk_example.py"
+      "examples/analysis/plot_pvdeg_chile.py",
+      "docs/pvdeg-chile.md"
     ],
     "note": "Public-domain country polygons at 1:10, 1:50 and 1:110 million map scales; default de facto boundaries. Country membership follows the source administrative units. The checked-in country example preserves unsimplified Austria/Slovenia contours from version 5.1.1, with the archive and subset checksums recorded. The worldwide connector coverage fixture retains 176 unchanged 1:110 million country geometries from the same version; Antarctica is explicitly excluded because its original unsplit world-spanning ring fails the country-map antimeridian contract. Its provenance records the source archive, derived GeoJSON checksum and exclusion. Country shapes supply geographic context rather than electrical service territories or evidence of observation availability. Map scale is not metre accuracy; no scientific climate resolution is inferred from boundary detail.",
     "verified_at": "2026-10-30"
@@ -18181,6 +18175,57 @@
     ],
     "verified_at": "2026-11-06",
     "note": "Public official factual licence inventory; no explicit open bulk-reuse licence identified. Selected factual rows with attribution; original HTML, layout and prose not redistributed. Retrieval year, not asserted publication year."
+  },
+  {
+    "id": "boe_a_2026_15109",
+    "title": "Resolución de 15 de junio de 2026, de la Dirección General de Política Energética y Minas, por la que se acepta el desistimiento formulado por Statkraft Iberia Dos, SLU, de autorización administrativa previa para el parque eólico «Arrebol», de 58,1 MW, y su infraestructura de evacuación, en la provincia de Cádiz.",
+    "authors": [
+      "Agencia Estatal Boletín Oficial del Estado"
+    ],
+    "year": 2026,
+    "doi": null,
+    "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-15109",
+    "kind": "website",
+    "role": "data_source",
+    "used_by": [
+      "catalogues/wind/sources.json"
+    ],
+    "note": "Official administrative act; factual observations only. Procedural and physical boundaries retained.",
+    "verified_at": "2026-11-07"
+  },
+  {
+    "id": "boe_a_2026_15110",
+    "title": "Resolución de 15 de junio de 2026, de la Dirección General de Política Energética y Minas, por la que se acepta el desistimiento formulado por Statkraft Iberia Tres, SLU, de autorización administrativa previa del parque eólico «Lagunillas», de 65,7 MW, y su infraestructura de evacuación, en la provincia de Málaga.",
+    "authors": [
+      "Agencia Estatal Boletín Oficial del Estado"
+    ],
+    "year": 2026,
+    "doi": null,
+    "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-15110",
+    "kind": "website",
+    "role": "data_source",
+    "used_by": [
+      "catalogues/wind/sources.json"
+    ],
+    "note": "Official administrative act; factual observations only. Procedural and physical boundaries retained.",
+    "verified_at": "2026-11-07"
+  },
+  {
+    "id": "boe_b_2026_23315",
+    "title": "Anuncio del Área de Industria y Energía de la Subdelegación del Gobierno en Zaragoza, Dependencia de Industria y Energía de la Subdelegación del Gobierno en Teruel y la Dependencia de Industria y Energía de la Subdelegación del Gobierno en Tarragona por el que se somete a información pública la solicitud de Declaración de Impacto Ambiental y Autorización Administrativa Previa del proyecto PEol-280 AC parques eólicos Paucali de 63 MW, Arlo de 65,25 MW y Céfiro de 110,9 MW y su infraestructura de evacuación, en los términos municipales de Maella, provincia de Zaragoza; Mazaleón, Valdealgorfa, Valjunquera y Calaceite, provincia de Teruel; y Caseres, Batea, Vilalba dels Arcs, La Pobla de Massaluca, La Fatarella, Flix y Ascó, en la provincia de Tarragona.",
+    "authors": [
+      "Agencia Estatal Boletín Oficial del Estado"
+    ],
+    "year": 2026,
+    "doi": null,
+    "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-23315",
+    "kind": "website",
+    "role": "data_source",
+    "used_by": [
+      "catalogues/wind/sources.json"
+    ],
+    "note": "Official administrative act; factual observations only. Procedural and physical boundaries retained.",
+    "verified_at": "2026-11-07"
   },
   {
     "id": "aemet_bruna_20261106",

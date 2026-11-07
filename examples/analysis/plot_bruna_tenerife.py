@@ -40,7 +40,8 @@ import pandas as pd
 
 from energy_methods.storm_energy import storm_energy
 
-root = Path(__file__).resolve().parent / "data" / "bruna"
+example_dir = Path(__file__).resolve().parent if "__file__" in globals() else Path.cwd()
+root = example_dir / "data" / "bruna"
 weather = pd.read_csv(root / "bruna_forecast.csv", parse_dates=["timestamp"])
 provenance = json.loads((root / "bruna_provenance.json").read_text())
 print("Forecast retrieval:", provenance["records"][0]["retrieved_at_utc"])

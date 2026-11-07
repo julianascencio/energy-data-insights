@@ -115,6 +115,25 @@ def test_replay_defers_existing_identity_instead_of_duplicating_it():
     assert not new and decisions[0]["decision"] == "existing_identity_review"
 
 
+@pytest.mark.parametrize("incoming_alias", [False, True])
+def test_documented_alias_collision_is_held_not_merged(incoming_alias):
+    existing, _ = stage(review())
+    r = review()
+    r["identity"] = "different-procedure"
+    r["values"]["name"] = "Renamed project"
+    if incoming_alias:
+        r["values"]["aliases"] = ["SÝNTHETIC   A"]
+        r["locators"]["aliases"] = "Documented former name"
+    else:
+        existing[0]["aliases"] = ["Rénamed project"]
+    rows, decisions = stage(r, existing)
+    assert not rows
+    assert decisions == [{"notice_id": r["notice_id"], "decision": "existing_identity_review"}]
+    # Names in a different jurisdiction do not establish a Spanish identity.
+    existing[0]["country_code"] = "PRT"
+    assert len(stage(r, existing)[0]) == 1
+
+
 def test_supporting_correction_is_linked_without_creating_another_project():
     r = review()
     r["supporting_evidence"] = {

@@ -49,7 +49,7 @@ def main() -> None:
             raise ValueError("Unexpected forecast units or clock")
         hourly = payload["hourly"]
         times = pd.DatetimeIndex(pd.to_datetime(hourly["time"], utc=True))
-        if len(times) != 120 or not np.all(np.diff(times.asi8) == 3600_000_000_000):
+        if len(times) != 120 or not np.all((times[1:] - times[:-1]) == pd.Timedelta(hours=1)):
             raise ValueError("Incomplete hourly forecast window")
         if times[0] != pd.Timestamp("2026-11-07", tz="UTC"):
             raise ValueError("Unexpected forecast start")

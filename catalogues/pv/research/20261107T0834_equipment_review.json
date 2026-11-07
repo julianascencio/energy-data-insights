@@ -1,0 +1,110 @@
+{
+  "models_reviewed": 2,
+  "models_accepted": 2,
+  "typed_specs": 39,
+  "models": [
+    {
+      "record_id": "f58987eb-eb00-509c-9c61-98620a034dee",
+      "model": "PIN482601000",
+      "typed_specifications": 19,
+      "fields": [
+        "communication_protocols",
+        "connector_type",
+        "cooling_method",
+        "depth_m",
+        "efficiency_max_pct",
+        "enclosure_material",
+        "height_m",
+        "hybrid",
+        "ip_rating",
+        "mppt_max_v",
+        "mppt_min_v",
+        "operating_temperature_max_c",
+        "operating_temperature_min_c",
+        "output_current_max_a",
+        "product_warranty_years",
+        "vac_rated_v",
+        "vdc_max_v",
+        "weight_kg",
+        "width_m"
+      ],
+      "source_ids": [
+        "victron_rs_20261107T0834",
+        "victron_rs_install_20261107T0834",
+        "victron_warranty_20261107T0834",
+        "victron_rs_sheet_20261107T0834"
+      ]
+    },
+    {
+      "record_id": "5ba248d1-7bb2-559a-a136-225e0417fc59",
+      "model": "PMR482602020",
+      "typed_specifications": 20,
+      "fields": [
+        "communication_protocols",
+        "connector_type",
+        "cooling_method",
+        "depth_m",
+        "efficiency_max_pct",
+        "enclosure_material",
+        "height_m",
+        "hybrid",
+        "ip_rating",
+        "mppt_count",
+        "mppt_max_v",
+        "mppt_min_v",
+        "operating_temperature_max_c",
+        "operating_temperature_min_c",
+        "output_current_max_a",
+        "product_warranty_years",
+        "vac_rated_v",
+        "vdc_max_v",
+        "weight_kg",
+        "width_m"
+      ],
+      "source_ids": [
+        "victron_multi_20261107T0834",
+        "victron_multi_install_20261107T0834",
+        "victron_warranty_20261107T0834"
+      ]
+    }
+  ],
+  "field_holds": [
+    {
+      "model": "PIN482601000",
+      "field": "continuous output at 25 C",
+      "manual_w_at_46_52_v": [
+        4600,
+        5200
+      ],
+      "datasheet_w_at_46_52_v": [
+        4800,
+        5300
+      ],
+      "source_ids": [
+        "victron_rs_20261107T0834",
+        "victron_rs_sheet_20261107T0834"
+      ],
+      "decision": "Unresolved same-condition difference; no 25 C curve or rated AC scalar accepted."
+    },
+    {
+      "model": "PIN482601000",
+      "field": "MPPT count and maximum DC solar charge power",
+      "source_ids": [
+        "victron_rs_20261107T0834",
+        "victron_rs_install_20261107T0834",
+        "victron_rs_sheet_20261107T0834"
+      ],
+      "decision": "Single-tracker installation discussion versus per-tracker/total table scope is unresolved for this exact article; do not infer a count or charge-power rating."
+    },
+    {
+      "model": "PIN482601000",
+      "field": "AC charging architecture and input current",
+      "source_ids": [
+        "victron_rs_20261107T0834",
+        "victron_rs_sheet_20261107T0834"
+      ],
+      "decision": "Manual AC charging current and datasheet AC-coupled solar power describe different/unclear connection modes. No dedicated AC-input or AC charging current rating inferred."
+    }
+  ],
+  "no_new_manufacturer": true
+}

@@ -1,0 +1,105 @@
+{
+  "catalogue": {
+    "exit": 0,
+    "tail": [
+      "Final catalogue: 90579 unique records with schema and field evidence."
+    ]
+  },
+  "ruff": {
+    "exit": 0,
+    "tail": [
+      "All checks passed!"
+    ]
+  },
+  "format": {
+    "exit": 0,
+    "tail": [
+      "1326 files already formatted"
+    ]
+  },
+  "ty": {
+    "exit": 0,
+    "tail": [
+      "All checks passed!"
+    ]
+  },
+  "focused": {
+    "exit": 0,
+    "tail": [
+      "........................................................................ [ 61%]",
+      "........................................................................ [ 76%]",
+      "........................................................................ [ 91%]",
+      "........................................                                 [100%]",
+      "472 passed in 10.01s"
+    ]
+  },
+  "full": {
+    "exit": 0,
+    "tail": [
+      "..............................................                           [100%]",
+      "=========================== short test summary info ============================",
+      "SKIPPED [3] data-retrieval/tests/test_orbitalpv_imagery.py:191: Optional Orbital PV integration requires Python 3.13",
+      "SKIPPED [1] tests/test_candelaria_imagery_example.py:69: Native image loading requires Python 3.13 and the optional imagery group",
+      "3498 passed, 4 skipped in 114.30s (0:01:54)"
+    ]
+  },
+  "hygiene": {
+    "exit": 0,
+    "tail": [
+      "Repository check passed: 6471 candidate files; no flagged secrets or data."
+    ]
+  },
+  "citations": {
+    "exit": 0,
+    "tail": [
+      "Citation catalogue and all exports are consistent."
+    ]
+  },
+  "viewer": {
+    "exit": 0,
+    "tail": [
+      "\u2139 fail 0",
+      "\u2139 cancelled 0",
+      "\u2139 skipped 0",
+      "\u2139 todo 0",
+      "\u2139 duration_ms 153.465533"
+    ],
+    "tests": 40
+  },
+  "offline_example": {
+    "exit": 0,
+    "tail": [
+      "Offline PV example passed; console table retained in scratch."
+    ]
+  },
+  "snapshot": {
+    "exit": 0,
+    "tables": 5,
+    "rows": 90579,
+    "columns": 148,
+    "sha256_and_zstd_verified": true,
+    "separate_viewer_projection_verified": true
+  },
+  "parent_replay": {
+    "exit": 0,
+    "parent_replay": true,
+    "new_rows": 22,
+    "changed_rows": 64,
+    "records": 90579,
+    "previous_sources_preserved": 713,
+    "fields": {
+      "region": 18,
+      "extensions_json": 64,
+      "capacity_dc_mw": 15,
+      "expected_annual_generation_mwh": 15,
+      "owners": 46,
+      "operators": 1,
+      "offtakers": 1,
+      "grid_operator": 1,
+      "substation": 1,
+      "commissioning_date": 1,
+      "commissioning_year": 1,
+      "capacity_ac_mw": 2
+    }
+  }
+}

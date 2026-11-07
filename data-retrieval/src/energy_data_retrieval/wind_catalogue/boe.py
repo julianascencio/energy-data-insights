@@ -46,6 +46,11 @@ def _normalized(text: str) -> str:
     )
 
 
+def _names(row: dict[str, Any]) -> set[str]:
+    """Screen documented aliases as well as the current name; never merge by name."""
+    return {_normalized(name) for name in [row["name"], *(row.get("aliases") or [])]}
+
+
 class _Index(HTMLParser):
     def __init__(self, series: str = "A") -> None:
         super().__init__()
@@ -201,9 +206,10 @@ def stage_boe_notices(
     if set(ids) != set(expected_ids):
         raise ValueError("Incomplete notice review")
     names = {
-        _normalized(r["name"])
+        name
         for r in existing
         if r["entity_type"] == "projects" and r.get("country_code") == "ESP"
+        for name in _names(r)
     }
     record_ids = {r["record_id"] for r in existing}
     registry_keys = set().union(
@@ -230,7 +236,7 @@ def stage_boe_notices(
                     [child], originals, existing + rows, expected_ids=[ident], now=now
                 )
                 rows.extend(staged)
-                names.update(_normalized(r["name"]) for r in staged)
+                names.update(name for r in staged for name in _names(r))
                 record_ids.update(r["record_id"] for r in staged)
                 registry_keys.update(key for r in staged for key in _registry_keys(r))
                 decisions.extend({**d, "identity": child["identity"]} for d in ledger)
@@ -313,10 +319,10 @@ def stage_boe_notices(
                 }
             )
             continue
-        if rid in record_ids or _normalized(values["name"]) in names:
+        if rid in record_ids or _names(values) & names:
             decisions.append({"notice_id": ident, "decision": "existing_identity_review"})
             continue
-        names.add(_normalized(values["name"]))
+        names.update(_names(values))
         record_ids.add(rid)
         registry_keys.update(_registry_keys(values))
         values.update(

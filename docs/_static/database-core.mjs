@@ -461,6 +461,24 @@ export function windOemTableSummary(rows) {
   return result;
 }
 
+// Fleet arithmetic is a labeled check, never a replacement for reported MW.
+export function windFleetRatingSummary(rows) {
+  const result = {projects: 0, differences: 0, matching: 0, withoutCheck: 0, reportedZero: 0};
+  for (const row of rows.filter(r => r.entity_type === "projects")) {
+    let check;
+    try { check = JSON.parse(row.extensions_json || "{}").fleet_rating_check; } catch { /* Unknown. */ }
+    if (!check?.locator || !check.method || !row.sources?.includes(check.source_id) ||
+        ![check.calculated_mw, check.reported_mw].every(v => typeof v === "number" && Number.isFinite(v) && v >= 0)) {
+      result.withoutCheck++; continue;
+    }
+    result.projects++;
+    if (check.reported_mw === 0) result.reportedZero++;
+    if (Math.abs(check.calculated_mw - check.reported_mw) > 1e-9) result.differences++;
+    else result.matching++;
+  }
+  return result;
+}
+
 // Assessment envelopes are not selected turbines or scalar fleet geometry.
 export function windDesignSummary(rows) {
   const result = {projects: 0, envelopes: 0, withoutEnvelope: 0, unknownRotor: 0, unknownHub: 0, zeroRotor: 0, zeroHub: 0};

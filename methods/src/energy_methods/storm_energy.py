@@ -29,7 +29,9 @@ def storm_energy(frame: pd.DataFrame, baseline_wind_ms: float = 8.0) -> pd.DataF
     if frame.empty:
         raise ValueError("At least one complete hour is required")
     time = pd.DatetimeIndex(pd.to_datetime(frame.timestamp, utc=True))
-    if time.hasnans or (len(time) > 1 and not np.all(np.diff(time.asi8) == 3600_000_000_000)):
+    if time.hasnans or (
+        len(time) > 1 and not np.all((time[1:] - time[:-1]) == pd.Timedelta(hours=1))
+    ):
         raise ValueError("Timestamps must be unique, sorted and hourly without gaps")
     values = frame[["ghi_wm2", "clear_ghi_wm2", "wind_ms"]].to_numpy(dtype=float)
     if not np.isfinite(values).all() or (values < 0).any():

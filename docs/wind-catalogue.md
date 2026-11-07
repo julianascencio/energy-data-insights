@@ -1,14 +1,28 @@
 # Global Wind Database
 
 The Wind catalogue connects projects, exact equipment configurations, turbines and
-numerical curves. At batch `2026-11-06-1235`, the continuation contains
-**8,323 projects, 566 equipment records, 13,657 linked turbines and two original
-numerical curves**, across **64 countries and 66 equipment manufacturer labels**.
-Labels are not a reconciled corporate-entity count. Merged main at `64dcf522`
-contains 8,306 projects, 555 equipment records, 13,657 turbines and two curves.
-This run adds four projects, with no enrichments or equipment additions; it does not count
-previous batches again. These are catalogue counts, not a current operating
-census. Exact continuation queues are in `catalogues/wind/research/latest.json`.
+numerical curves. Batch `2026-11-07-0800` contains **8,328 projects, 566 equipment
+records, 13,657 linked turbines and two original numerical curves**, across
+**64 countries and 66 equipment manufacturer labels**. Merged main at `dbd83f04`
+contains 8,323 projects and the same equipment, turbine and curve counts.
+This run adds five Spanish project records; it does not recount earlier batches.
+These are catalogue counts, not a current operating census. Exact continuation
+queues are in `catalogues/wind/research/latest.json`.
+
+The nine complete BOE daily title partitions for July 6–11 and 13–15 contain six
+notices: three revised proposals (Paucali, Arlo and Céfiro), two withdrawn proposals
+(Arrebol and Lagunillas), two solar-only corrections excluded, and Desma held for
+original wind-permit reconciliation. All five new project scopes remain excluded
+from capacity totals. Céfiro retains reported 110.9 MW separately from the
+17 × 6.525 = 110.925 MW fleet check. Shared evacuation and construction budgets
+retain their own boundaries; planned fleets do not establish exact OEM revisions.
+
+The final REPD structural review covers 137 ordinary cases and 79 exceptions.
+The ordinary cursor ends at **2,137**, not 2,216; the latter includes the 79
+exceptions. All 2,216 remain deferred physical identities. The adapter now accepts
+explicit exception-reason partitions and screens documented BOE aliases before
+addition. The shared viewer exposes sourced fleet checks, unknown checks and
+reported zeros without changing capacity aggregation.
 
 The complete 5,344-row Wind partition of WRI Global Power Plant Database v1.3.0
 provides a historical discovery baseline. WRI stopped maintenance in early 2022.

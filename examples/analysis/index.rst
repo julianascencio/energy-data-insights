@@ -37,6 +37,12 @@ Combine inputs and methods into maps, forecasts, inspections and uncertainty stu
 
       Audit module counts from imagery and inspect a solar site in three dimensions.
 
+   .. grid-item-card:: PV claims and due diligence
+      :link: topic_pv_claims
+      :link-type: doc
+
+      Cross-check real project news claims against official benchmark assumptions.
+
    .. grid-item-card:: Building thermal control
       :link: topic_thermal_control
       :link-type: doc
@@ -76,6 +82,7 @@ Combine inputs and methods into maps, forecasts, inspections and uncertainty stu
    topic_degradation
    topic_forecasting
    topic_pv_inspection
+   topic_pv_claims
 
    topic_thermal_control
    topic_offshore_wind
