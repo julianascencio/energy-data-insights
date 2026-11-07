@@ -3,6 +3,7 @@
 import pytest
 
 from energy_methods.wind_installation import (
+    InstallationSchedule,
     commissioning_opportunity_mwh,
     simulate_installation,
 )
@@ -62,11 +63,19 @@ def test_grid_ready_is_critical_path() -> None:
         workable_days=[True] * 8,
         workable_days_per_turbine=2,
     )
-    common = dict(project_capacity_mw=20, net_capacity_factor=0.5, horizon_days=10)
-    assert commissioning_opportunity_mwh(early, **common) == pytest.approx(1680)
-    assert commissioning_opportunity_mwh(late, **common) == pytest.approx(1920)
-    assert commissioning_opportunity_mwh(early, grid_ready_day=8, **common) == pytest.approx(480)
-    assert commissioning_opportunity_mwh(late, grid_ready_day=8, **common) == pytest.approx(480)
+    def energy(schedule: InstallationSchedule, grid_day: int = 0) -> float:
+        return commissioning_opportunity_mwh(
+            schedule,
+            project_capacity_mw=20,
+            net_capacity_factor=0.5,
+            horizon_days=10,
+            grid_ready_day=grid_day,
+        )
+
+    assert energy(early) == pytest.approx(1680)
+    assert energy(late) == pytest.approx(1920)
+    assert energy(early, grid_day=8) == pytest.approx(480)
+    assert energy(late, grid_day=8) == pytest.approx(480)
 
 
 def test_zero_incremental_value_beyond_horizon() -> None:
