@@ -64,6 +64,7 @@ clearly identified synthetic inputs, attributed data fixtures or offline request
    api
    development
    _generated/guides/references
+   _generated/guides/court-barton-pv-claim-audit
 
 Scientific foundations
 ----------------------
