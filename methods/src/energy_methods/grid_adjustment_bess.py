@@ -34,7 +34,9 @@ class BessCycleScreen:
     break_even_sale_price_eur_mwh: float
 
 
-def infer_aggregate_unit_cost_growth(energy_growth_pct: float, cost_growth_pct: float) -> CostGrowth:
+def infer_aggregate_unit_cost_growth(
+    energy_growth_pct: float, cost_growth_pct: float
+) -> CostGrowth:
     """Separate volume and implied average-unit-cost effects of aggregate growth.
 
     Indices use an arbitrary previous-period reference of 1. The reported
