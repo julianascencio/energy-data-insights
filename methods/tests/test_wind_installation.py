@@ -71,9 +71,7 @@ def test_grid_ready_is_critical_path() -> None:
 
 def test_zero_incremental_value_beyond_horizon() -> None:
     schedule = simulate_installation(
-        1,
-        vessel_start_days=(0,),
-        workable_days=(True,), workable_days_per_turbine=1
+        1, vessel_start_days=(0,), workable_days=(True,), workable_days_per_turbine=1
     )
     result = commissioning_opportunity_mwh(
         schedule,
@@ -125,7 +123,9 @@ def test_insufficient_horizon_rejected() -> None:
 )
 def test_invalid_energy_inputs(capacity: float, cf: float, days: int) -> None:
     schedule = simulate_installation(
-        1, vessel_start_days=(0,), workable_days=(True,),
+        1,
+        vessel_start_days=(0,),
+        workable_days=(True,),
         workable_days_per_turbine=1,
     )
     with pytest.raises(ValueError):
