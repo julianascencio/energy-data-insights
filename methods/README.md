@@ -330,3 +330,13 @@ actual equipment. See the [solar/wind benchmark](../docs/forecast-benchmark.md)
 for real observations, runnable examples and approximation limits. The benchmark
 cites Ascencio-Vásquez et al. (2020), DOI 10.3390/en13092166, as methodological
 inspiration; XGBoost and wind have separate method references.
+
+## License
+
+Copyright (c) 2026 **ASVA Consulting TFE SL**. The original software is
+source-available under the [ASVA Noncommercial Software License 1.0](LICENSE).
+**Commercial use is prohibited**, including internal business use, paid client
+work, commercial products, and paid hosted services. Noncommercial use,
+modification, and sharing are allowed subject to the license.
+
+Third-party materials retain their own terms. See [licensing scope](LICENSING.md).

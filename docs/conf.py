@@ -13,7 +13,7 @@ from project_docs import prepare_sources  # noqa: E402
 
 project = "Energy Data Insights"
 author = "Energy Data Insights contributors"
-copyright = "2026, Energy Data Insights contributors"
+copyright = "2026, ASVA Consulting TFE SL"
 release = tomllib.loads((ROOT / "pyproject.toml").read_text())["project"]["version"]
 version = release
 
