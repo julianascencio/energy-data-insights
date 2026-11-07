@@ -1,42 +1,43 @@
 {
-  "batch": "2026-11-06-1335",
-  "base": "2dffff960992037d83a01e34313df6be939fd135",
-  "main": "64dcf52278bb942591d16571252e4090963f67a1",
+  "batch": "2026-11-07-0800",
+  "base": "dbd83f047b8d86f7940446c39b9ffe7fd78e7723",
+  "main": "dbd83f047b8d86f7940446c39b9ffe7fd78e7723",
   "local": {
-    "python": "58 BOE/REPD tests passed, including two malformed CSV regressions",
-    "viewer": "40 Node viewer tests passed",
-    "quality": "Changed-file Ruff lint/format; repository ty; citations and git diff checks passed",
-    "hygiene": "Passed:6196 candidate files",
-    "snapshots": "Two seven-file snapshots byte-identical, ZSTD; hashes unchanged from prior published batch",
-    "preservation": "git diff confirms all canonical Wind records/sources and unrelated sector catalogues byte-unchanged",
-    "docs": "Source documentation updated; no local Sphinx build this run"
+    "python": "382 Wind tests passed; final REPD compatibility adjustment followed by66passing BOE/REPD adapter tests",
+    "viewer": "41 Node tests passed",
+    "quality": "Changed-file Ruff lint and format; repository ty with explicit .venv passed; citations and git diff checks passed",
+    "hygiene": "Passed6443candidate files; no flagged secrets or generated data",
+    "snapshots": "Two seven-file snapshots byte-identical; every Parquet column uses ZSTD",
+    "preservation": "Every22548prior canonical records and453prior source entries identical; all other sector catalogue paths unchanged; all six capacity categories retain identical by-status totals",
+    "example": "Wind gallery example executed with Agg backend",
+    "docs": "Sphinx -W build passed with only Wind gallery execution selected; all sector database assets built. Wind published dataset hashes equal both validated snapshots. Final internal-link check passed774HTMLpages."
   },
   "snapshot_sha256": {
+    "manifest.json": "08e18524bae1307138b931f4eb9706a23c68b9301512be4c858f2ab8449fa878",
     "schema.json": "72634e7e496e7c5fec890171466e7b9b94008506c47028d4423633b257ace579",
-    "manifest.json": "d1df12a8eafbf7671b1a2c3b08444f4544eadff5df4f16df9d3bf66f874e426c",
-    "projects.parquet": "43516850302fd7403306d78a58b1f264f9f7aa60502f9f610bfd7d29e645b4db",
     "turbines.parquet": "8b394a9f05d5d383ef4af844cc949a3285c499f91bc9f2aebf1e30befd7cbd23",
-    "sources.json": "d6d3e96e34aebb9656dfe4b0a34c366320b1bf07e36eef51519e96a4ec1a281d",
     "curves.parquet": "e52e110f94ff420eb6b1ee57f93492939aeba64b8b3bbf50af9c18a1b3b6b735",
+    "projects.parquet": "f9d0a7208300520bc3d6b081619e1a5b014d33de7bdb698553b8c2fcf8e7461b",
+    "sources.json": "c9a1e541b03b2feccdb455c217ebf9a3dc189ed3cd965bd18079b7df478720c2",
     "equipment.parquet": "1ee8fa2f8e744e91d412abf6578c1b1c64f5ddebe7264f73b7836f08ed5cd071"
   },
   "main_comparison": {
     "main": {
-      "projects": 8306,
-      "equipment": 555,
-      "turbines": 13657,
-      "curves": 2,
-      "sources": 436
-    },
-    "branch": {
       "projects": 8323,
       "equipment": 566,
       "turbines": 13657,
       "curves": 2,
       "sources": 453
     },
+    "branch": {
+      "projects": 8328,
+      "equipment": 566,
+      "turbines": 13657,
+      "curves": 2,
+      "sources": 456
+    },
     "this_run_added": {
-      "projects": 0,
+      "projects": 5,
       "equipment": 0
     },
     "this_run_enriched": {
@@ -48,35 +49,26 @@
   },
   "remote_ci": "Pending publication",
   "not_executed": [
-    "full local pytest",
-    "local Sphinx/gallery build",
+    "full repository pytest",
+    "full local gallery execution",
     "package builds",
     "browser interaction"
   ],
   "concurrency": {
-    "branch": "research/wind-20261106-0835",
-    "pr": 198,
+    "branch": "research/wind-20261107",
     "nonblocking_lock_acquired": true,
-    "expected_head": "2dffff960992037d83a01e34313df6be939fd135",
+    "main": "dbd83f047b8d86f7940446c39b9ffe7fd78e7723",
     "reviewed_open_prs": [
-      192,
-      193,
-      194,
-      195,
-      196,
-      197,
-      198,
-      200,
-      201,
-      202
+      205,
+      206
     ],
-    "prepublication_updates_reviewed": [
-      192,
-      193,
-      195,
-      196
-    ],
-    "other_pr_shared_paths": "Latest Hydro/PV/DC updates inspected;no competing Wind/shared viewer writes. Bibliography changes onotherPRs remain unmerged."
+    "other_pr_shared_paths": "PR205 and PR206 metadata/changed paths reviewed; no competing Wind catalogue or shared viewer writes."
   },
-  "resolved_local_failures": []
+  "resolved_local_failures": [
+    "Initial targeted pytest included nonexistent analysis test glob; no tests ran. Corrected discovery ran382Wind tests.",
+    "Initial ty without docs dependencies failed; installed locked docs group and used explicit .venv; repository ty passed.",
+    "Staging finance JSON list rejected by schema before writing; corrected to object.",
+    "REPD expected216ordinary tail assertion exposed2137ordinary+79exception partition distinction; now separately reviewed.",
+    "First internal-link check started before build-finished asset publishing; rerun after successful Sphinx completion."
+  ]
 }

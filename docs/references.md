@@ -7919,3 +7919,27 @@ Department of Electricity Development, Government of Nepal (2026). **Constructio
 **Role:** data_source. Public official factual licence inventory; no explicit open bulk-reuse licence identified. Selected factual rows with attribution; original HTML, layout and prose not redistributed. Retrieval year, not asserted publication year.
 
 **Used by:** `catalogues/hydro/README.md`, `docs/hydro-catalogue.md`, `examples/database/plot_hydro_catalogue.py`.
+
+### boe_a_2026_15109
+
+Agencia Estatal Boletín Oficial del Estado (2026). **Resolución de 15 de junio de 2026, de la Dirección General de Política Energética y Minas, por la que se acepta el desistimiento formulado por Statkraft Iberia Dos, SLU, de autorización administrativa previa para el parque eólico «Arrebol», de 58,1 MW, y su infraestructura de evacuación, en la provincia de Cádiz.**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-15109)
+
+**Role:** data_source. Official administrative act; factual observations only. Procedural and physical boundaries retained.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### boe_a_2026_15110
+
+Agencia Estatal Boletín Oficial del Estado (2026). **Resolución de 15 de junio de 2026, de la Dirección General de Política Energética y Minas, por la que se acepta el desistimiento formulado por Statkraft Iberia Tres, SLU, de autorización administrativa previa del parque eólico «Lagunillas», de 65,7 MW, y su infraestructura de evacuación, en la provincia de Málaga.**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-15110)
+
+**Role:** data_source. Official administrative act; factual observations only. Procedural and physical boundaries retained.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### boe_b_2026_23315
+
+Agencia Estatal Boletín Oficial del Estado (2026). **Anuncio del Área de Industria y Energía de la Subdelegación del Gobierno en Zaragoza, Dependencia de Industria y Energía de la Subdelegación del Gobierno en Teruel y la Dependencia de Industria y Energía de la Subdelegación del Gobierno en Tarragona por el que se somete a información pública la solicitud de Declaración de Impacto Ambiental y Autorización Administrativa Previa del proyecto PEol-280 AC parques eólicos Paucali de 63 MW, Arlo de 65,25 MW y Céfiro de 110,9 MW y su infraestructura de evacuación, en los términos municipales de Maella, provincia de Zaragoza; Mazaleón, Valdealgorfa, Valjunquera y Calaceite, provincia de Teruel; y Caseres, Batea, Vilalba dels Arcs, La Pobla de Massaluca, La Fatarella, Flix y Ascó, en la provincia de Tarragona.**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-23315)
+
+**Role:** data_source. Official administrative act; factual observations only. Procedural and physical boundaries retained.
+
+**Used by:** `catalogues/wind/sources.json`.

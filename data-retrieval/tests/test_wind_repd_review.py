@@ -64,6 +64,33 @@ def test_cursor_past_end_is_not_a_verified_empty_partition():
         review_unlinked_applications(data, ledger, sha256=sha, offset=4, limit=200)
 
 
+def test_exception_partition_has_its_own_cursor_and_retains_reasons():
+    data, ledger, sha = fixture()
+    ledger[1]["reason"] = "Revised application"
+    ordinary = review_unlinked_applications(data, ledger, sha256=sha, offset=0, limit=3)
+    exceptions = review_unlinked_applications(
+        data, ledger, sha256=sha, offset=0, limit=3, reasons=("Revised application",)
+    )
+    assert [r["repd_id"] for r in ordinary] == ["3", "2"]
+    assert [r["repd_id"] for r in exceptions] == ["1"]
+    assert exceptions[0]["reason"] == "Revised application"
+    assert exceptions[0]["decision"] == "deferred_identity"
+
+
+def test_default_partition_preserves_empty_result_when_all_rows_are_exceptions():
+    data, ledger, sha = fixture()
+    for row in ledger:
+        row["reason"] = "Revised application"
+    assert review_unlinked_applications(data, ledger, sha256=sha, offset=0, limit=3) == []
+
+
+@pytest.mark.parametrize("reasons", [(), (None,), ("absent",), (REASON, REASON)])
+def test_exception_selection_cannot_include_missing_or_implicit_reasons(reasons):
+    data, ledger, sha = fixture()
+    with pytest.raises(ValueError):
+        review_unlinked_applications(data, ledger, sha256=sha, offset=0, limit=3, reasons=reasons)
+
+
 @pytest.mark.parametrize("suffix", [",unexpected", "missing"])
 def test_ragged_source_rows_are_not_silently_normalized(suffix):
     data, ledger, _ = fixture()
