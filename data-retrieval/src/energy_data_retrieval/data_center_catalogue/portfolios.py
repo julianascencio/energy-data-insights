@@ -2485,6 +2485,75 @@ def parse_jrc_2023_participants(content: bytes, *, source_url: str) -> dict[str,
     }
 
 
+def parse_jrc_2022_participants(content: bytes, *, source_url: str) -> dict[str, Any]:
+    """Stage the complete cross-language-stable 2022 JRC cohort."""
+    if urlsplit(source_url).hostname != "e3p.jrc.ec.europa.eu":
+        raise ValueError("Expected official European Commission JRC URL")
+    parser = _HtmlTables()
+    parser.feed(content.decode("utf-8-sig"))
+    rows = [row for table in parser.tables for row in table if len(row) >= 5]
+    expected: dict[str, list[tuple[str, str, str | None]]] = {
+        "KDDI France": [("FRA", "paris", "Paris")],
+        "Nantes Université": [("FRA", "Nantes", "Nantes")],
+        "LCL Belgium NV": [
+            ("BEL", "LCL Diegem (Belgium) 2", "Diegem"),
+            ("BEL", "LCL Antwerpen (Belgium) 3", "Antwerpen"),
+            ("BEL", "LCL Aalst (Belgium)", "Aalst"),
+        ],
+        "Interxion Denmark": [("DNK", "Ballerup", "Ballerup")],
+        "Qarnot computing": [("FRA", "Montrouge", "Montrouge")],
+        "ATOS Netherlands B.V.": [("NLD", "Eindhoven The Hurk", "Eindhoven")],
+        "Ikoula NET": [
+            ("FRA", "Reims", "Reims"),
+            ("FRA", "Eppes", "Eppes"),
+        ],
+    }
+    candidates: list[dict[str, Any]] = []
+    found: set[str] = set()
+    for row in rows:
+        participant = row[0]
+        if participant not in expected:
+            continue
+        if participant in found:
+            raise ValueError("Duplicate JRC 2022 participant row")
+        expected_rows = expected[participant]
+        labels = [part.strip() for part in row[2].split("|") if part.strip()]
+        try:
+            count = int(row[1])
+            adhesion_year = int(row[3])
+        except ValueError as exc:
+            raise ValueError("Changed JRC 2022 participant count or adhesion year") from exc
+        if count != len(expected_rows) or adhesion_year != 2022:
+            raise ValueError("Changed JRC 2022 participant count or adhesion year")
+        if labels != [label for _, label, _ in expected_rows]:
+            raise ValueError("Changed JRC 2022 facility identity set")
+        found.add(participant)
+        for (country_code, _label, locality), actual_label in zip(
+            expected_rows, labels, strict=True
+        ):
+            candidates.append(
+                {
+                    "adhesion_year": adhesion_year,
+                    "country_code": country_code,
+                    "external_id": actual_label,
+                    "locality": locality,
+                    "name": f"{participant} {actual_label}",
+                    "participant": participant,
+                    "registry_label": actual_label,
+                    "locator": f"Participants table / {participant} / {actual_label}",
+                }
+            )
+    if found != set(expected) or len(candidates) != 10:
+        raise ValueError("Changed JRC 2022 participant partition")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "displayed_rows": 10,
+        "candidates": candidates,
+        "review_required": True,
+    }
+
+
 def parse_rack_centre_campus(content: bytes, *, source_url: str) -> dict[str, Any]:
     """Stage Rack Centre's explicit two-building Lagos campus boundary.
 
