@@ -71,20 +71,27 @@ def test_zero_incremental_value_beyond_horizon() -> None:
 
 
 @pytest.mark.parametrize(
-    "kwargs",
+    "changes",
     [
-        dict(turbines=0, vessel_start_days=(0,), workable_days=(True,), workable_days_per_turbine=1),
-        dict(turbines=1, vessel_start_days=(), workable_days=(True,), workable_days_per_turbine=1),
-        dict(turbines=1, vessel_start_days=(-1,), workable_days=(True,), workable_days_per_turbine=1),
-        dict(turbines=1, vessel_start_days=(0,), workable_days=(), workable_days_per_turbine=1),
-        dict(turbines=1, vessel_start_days=(0,), workable_days=(1,), workable_days_per_turbine=1),
-        dict(turbines=1, vessel_start_days=(0,), workable_days=(True,), workable_days_per_turbine=0.5),
-        dict(turbines=1, vessel_start_days=(0,), workable_days=(True,), workable_days_per_turbine=float("nan")),
+        {"turbines": 0},
+        {"vessel_start_days": ()},
+        {"vessel_start_days": (-1,)},
+        {"workable_days": ()},
+        {"workable_days": (1,)},
+        {"workable_days_per_turbine": 0.5},
+        {"workable_days_per_turbine": float("nan")},
     ],
 )
-def test_invalid_installation_inputs(kwargs: dict[str, object]) -> None:
+def test_invalid_installation_inputs(changes: dict[str, object]) -> None:
+    parameters: dict[str, object] = {
+        "turbines": 1,
+        "vessel_start_days": (0,),
+        "workable_days": (True,),
+        "workable_days_per_turbine": 1,
+    }
+    parameters.update(changes)
     with pytest.raises(ValueError):
-        simulate_installation(**kwargs)
+        simulate_installation(**parameters)
 
 
 def test_insufficient_horizon_rejected() -> None:
