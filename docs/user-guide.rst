@@ -44,6 +44,7 @@ Data access and scientific methods
    _generated/guides/offshore-cable-exposure
    _generated/guides/kazakhstan-hybrid-dispatch
    _generated/guides/india-storage-peak-shift
+   _generated/guides/ree-adjustment-bess
    _generated/guides/portugal-renewable-import-mix-2026
    _generated/guides/thermal-counterfactual
    _generated/guides/timestral-solar-case
