@@ -1,6 +1,6 @@
 """
 Bruna: frontal progression and Tenerife energy impact maps
-=========================================================
+==========================================================
 
 A geographic companion to :doc:`plot_bruna_tenerife`. The top map shows the
 **schematic west-to-east progression of the frontal weather**, based on AEMET's

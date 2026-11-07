@@ -1,6 +1,6 @@
 """
 Bruna: Tenerife solar and wind forecast impact
-=============================================
+==============================================
 
 Frozen ECMWF IFS forecasts from Open-Meteo for 7-10 November 2026,
 retrieved before the event. This is a weather-to-power screening estimate,
