@@ -158,7 +158,7 @@ Anderson, Kevin S.; Hansen, Clifford W.; Holmgren, William F.; Jensen, Adam R.; 
 
 **Role:** software. Current project-level citation recommended by pvlib. Exact installed software versions are recorded in analysis manifests and the workspace lockfile.
 
-**Used by:** `methods/src/energy_methods/poa.py`.
+**Used by:** `examples/analysis/plot_bruna_tenerife.py`, `methods/src/energy_methods/poa.py`, `scripts/prepare_bruna_forecast.py`.
 
 ### pvlib_interval_transposition
 
@@ -286,7 +286,7 @@ Open-Meteo (n.d.). **Weather Forecast API: hourly variable definitions**. [Sourc
 
 **Role:** data. Provider definitions for preceding-hour radiation/gust variables and instantaneous temperature/wind. Archive-specific variable definitions take priority where products differ.
 
-**Used by:** `data-retrieval/README.md`, `data-retrieval/src/energy_data_retrieval/grid_discovery.py`, `data-retrieval/src/energy_data_retrieval/sources/open_meteo`, `docs/location-discovery.md`.
+**Used by:** `data-retrieval/README.md`, `data-retrieval/src/energy_data_retrieval/grid_discovery.py`, `data-retrieval/src/energy_data_retrieval/sources/open_meteo`, `docs/location-discovery.md`, `examples/analysis/plot_bruna_impact_maps.py`, `examples/analysis/plot_bruna_tenerife.py`, `scripts/prepare_bruna_forecast.py`.
 
 ### eyring_2016_cmip6
 
@@ -814,7 +814,7 @@ Natural Earth contributors (n.d.). **Natural Earth: Admin 0 - Countries**. [Sour
 
 **Role:** data. Public-domain country polygons at 1:10, 1:50 and 1:110 million map scales; default de facto boundaries. Country membership follows the source administrative units. The checked-in country example preserves unsimplified Austria/Slovenia contours from version 5.1.1, with the archive and subset checksums recorded. The worldwide connector coverage fixture retains 176 unchanged 1:110 million country geometries from the same version; Antarctica is explicitly excluded because its original unsplit world-spanning ring fails the country-map antimeridian contract. Its provenance records the source archive, derived GeoJSON checksum and exclusion. Country shapes supply geographic context rather than electrical service territories or evidence of observation availability. Map scale is not metre accuracy; no scientific climate resolution is inferred from boundary detail.
 
-**Used by:** `analysis/src/energy_analysis/chile_kgpv/pipeline.py`, `data-retrieval/src/energy_data_retrieval/sources/natural_earth`, `docs/country-mapping.md`, `docs/kgpv-chile.md`, `docs/worldwide-generation.md`, `examples/analysis/plot_country_risk.py`, `examples/analysis/plot_kgpv_chile.py`, `examples/connectors/data/candelaria_site.json`, `examples/connectors/data/generation_coverage_catalogue.json`, `examples/connectors/data/generation_coverage_provenance.json`, `examples/connectors/data/generation_coverage_world.geojson`, `examples/connectors/plot_candelaria_solar_farm.py`, `examples/connectors/plot_generation_coverage.py`, `methods/src/energy_methods/country_boundaries.py`, `methods/src/energy_methods/country_mapping.py`, `scripts/prepare_candelaria_imagery.py`, `scripts/prepare_connector_coverage.py`, `scripts/prepare_weather_risk_example.py`, `analysis/src/energy_analysis/pvdeg_chile.py`, `scripts/prepare_pvdeg_chile.py`, `examples/analysis/plot_pvdeg_chile.py`, `docs/pvdeg-chile.md`.
+**Used by:** `analysis/src/energy_analysis/chile_kgpv/pipeline.py`, `analysis/src/energy_analysis/pvdeg_chile.py`, `data-retrieval/src/energy_data_retrieval/sources/natural_earth`, `docs/country-mapping.md`, `docs/kgpv-chile.md`, `docs/pvdeg-chile.md`, `docs/worldwide-generation.md`, `examples/analysis/plot_bruna_impact_maps.py`, `examples/analysis/plot_country_risk.py`, `examples/analysis/plot_kgpv_chile.py`, `examples/analysis/plot_pvdeg_chile.py`, `examples/connectors/data/candelaria_site.json`, `examples/connectors/data/generation_coverage_catalogue.json`, `examples/connectors/data/generation_coverage_provenance.json`, `examples/connectors/data/generation_coverage_world.geojson`, `examples/connectors/plot_candelaria_solar_farm.py`, `examples/connectors/plot_generation_coverage.py`, `methods/src/energy_methods/country_boundaries.py`, `methods/src/energy_methods/country_mapping.py`, `scripts/prepare_candelaria_imagery.py`, `scripts/prepare_connector_coverage.py`, `scripts/prepare_pvdeg_chile.py`, `scripts/prepare_weather_risk_example.py`.
 
 ### shapely_documentation
 
@@ -7919,3 +7919,11 @@ Department of Electricity Development, Government of Nepal (2026). **Constructio
 **Role:** data_source. Public official factual licence inventory; no explicit open bulk-reuse licence identified. Selected factual rows with attribution; original HTML, layout and prose not redistributed. Retrieval year, not asserted publication year.
 
 **Used by:** `catalogues/hydro/README.md`, `docs/hydro-catalogue.md`, `examples/database/plot_hydro_catalogue.py`.
+
+### aemet_bruna_20261106
+
+Agencia Estatal de Meteorología (2026). **Nota informativa: Temporal de lluvias en Canarias y Península**. [Source](https://www.aemet.es/es/eltiempo/prediccion/destacados/p5_t?tipo=p53tesp1)
+
+**Role:** background. Bulletin retrieved 6 November 2026, issued 13:40. Bruna event context only, not quantitative generation data. Rolling bulletin URL may change.
+
+**Used by:** `examples/analysis/plot_bruna_impact_maps.py`, `examples/analysis/plot_bruna_tenerife.py`.
