@@ -1,6 +1,9 @@
 """Nepal DoED construction licences: bounded provenance, not operating status."""
 
 import math
+import re
+from collections import Counter
+from datetime import date, datetime
 from html.parser import HTMLParser
 from typing import Any
 
@@ -8,6 +11,7 @@ from energy_data_retrieval.pv_catalogue.catalogue import canonical_json
 
 from .catalogue import stable_id
 from .gppd import evidence_record
+from .ons_new import name_key
 
 SOURCE_ID = "doed-construction-over1-20261106"
 
@@ -83,7 +87,44 @@ def parse_inventory(html: str) -> list[dict[str, Any]]:
     return result
 
 
-def new_record(entry: dict[str, Any], *, now: str) -> dict[str, Any]:
+def parse_updated_date(html: str) -> str:
+    """Require one explicit page update date; do not convert licence calendar strings."""
+    matches = sorted(set(re.findall(r"Updated on\s*-\s*([A-Za-z]+ \d{1,2}, \d{4})", html)))
+    if len(matches) != 1:
+        raise ValueError("Require one explicit source update date")
+    return datetime.strptime(matches[0], "%B %d, %Y").date().isoformat()
+
+
+def validate_reviewed_batch(batch: dict[str, Any]) -> None:
+    """Require exhaustive, disjoint decisions within a frozen source-row partition."""
+    inventory, partition = batch["parsed_inventory"], batch["partition"]
+    if [r["row"] for r in inventory] != list(range(1, len(inventory) + 1)):
+        raise ValueError("Nonsequential frozen inventory")
+    if len({r["licence"] for r in inventory}) != len(inventory):
+        raise ValueError("Duplicate frozen licence identity")
+    first, last = partition["first_row"], partition["last_row"]
+    if not 1 <= first <= last <= len(inventory) or partition["total_source_rows"] != len(inventory):
+        raise ValueError("Invalid source partition")
+    expected_next = last + 1 if last < len(inventory) else None
+    if partition["next_row"] != expected_next:
+        raise ValueError("Invalid continuation cursor")
+    decisions = batch["accepted"] + batch["held"]
+    if sorted(e["inventory"]["row"] for e in decisions) != list(range(first, last + 1)):
+        raise ValueError("Partition decisions must be exhaustive and disjoint")
+    for entry in decisions:
+        item = entry["inventory"]
+        if item != inventory[item["row"] - 1]:
+            raise ValueError("Reviewed evidence differs from frozen source")
+    counts = Counter(name_key(r["name"]) for r in inventory)
+    if any(counts[name_key(e["inventory"]["name"])] > 1 for e in batch["accepted"]):
+        raise ValueError("Duplicate source name requires separate identity review")
+    if batch["new"] != len(batch["accepted"]):
+        raise ValueError("Accepted count differs from decisions")
+
+
+def new_record(
+    entry: dict[str, Any], *, now: str, source_id: str = SOURCE_ID, source_as_of: str | None = None
+) -> dict[str, Any]:
     """Accept only explicitly reviewed licence identities; preserve unknown scope."""
     item, review = entry["inventory"], entry["review"]
     if (
@@ -92,6 +133,8 @@ def new_record(entry: dict[str, Any], *, now: str) -> dict[str, Any]:
         or not review.get("identity_basis")
     ):
         raise ValueError("Explicit licence identity review required")
+    if source_as_of and date.fromisoformat(source_as_of) > date.fromisoformat(now[:10]):
+        raise ValueError("Source update date after retrieval")
     locator = f"Construction License Hydro >1 MW; S No {item['row']}; Lic No {item['licence']}"
     return evidence_record(
         dict(
@@ -121,11 +164,15 @@ def new_record(entry: dict[str, Any], *, now: str) -> dict[str, Any]:
                         value=item["capacity_mw"],
                         unit="MW",
                         kind="reported",
-                        period=now[:10],
-                        source_id=SOURCE_ID,
+                        period=source_as_of or now[:10],
+                        source_id=source_id,
                         locator=locator + "; Capacity (MW)",
                         boundary="Licensed project rating; not operating/installed power",
-                        uncertainty="Source measurement vintage unprovided; retrieval date only",
+                        uncertainty=(
+                            "Page update date; individual licence measurement vintage unknown"
+                            if source_as_of
+                            else "Source measurement vintage unprovided; retrieval date only"
+                        ),
                     )
                 ]
             ),
@@ -143,7 +190,7 @@ def new_record(entry: dict[str, Any], *, now: str) -> dict[str, Any]:
                 )
             ),
         ),
-        source_id=SOURCE_ID,
+        source_id=source_id,
         now=now,
         locator=locator + "; original named columns in doed_inventory",
     )

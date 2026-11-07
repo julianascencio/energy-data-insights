@@ -113,3 +113,75 @@ def test_nepal_collision_checked_by_shared_inserter(tmp_path, monkeypatch):
             record_factory=new_record,
         )
     assert not (tmp_path / "new.jsonl").exists()
+
+
+def test_page_update_date_and_capture_specific_provenance():
+    from energy_data_retrieval.hydro_catalogue.doed import parse_updated_date
+
+    stamp = "Updated on - October 15, 2026"
+    assert parse_updated_date(stamp + stamp) == "2026-10-15"
+    for text in ("", stamp + " Updated on - October 16, 2026"):
+        with pytest.raises(ValueError):
+            parse_updated_date(text)
+    row = new_record(
+        entry(),
+        now="2026-11-07T00:00:00Z",
+        source_id="synthetic-new-capture",
+        source_as_of="2026-10-15",
+    )
+    observation = json.loads(row["observations_json"])[0]
+    assert observation["source_id"] == "synthetic-new-capture"
+    assert observation["period"] == "2026-10-15"
+    assert row["sources"] == ["synthetic-new-capture"]
+    assert row["record_id"] == new_record(entry(), now="2026-11-06T00:00:00Z")["record_id"]
+    with pytest.raises(ValueError, match="after retrieval"):
+        new_record(entry(), now="2026-11-07T00:00:00Z", source_as_of="2026-11-08")
+
+
+def reviewed_batch():
+    one = entry()
+    two = copy.deepcopy(one["inventory"])
+    two.update(row=2, name="Different synthetic project", licence="093")
+    return dict(
+        parsed_inventory=[one["inventory"], two],
+        partition=dict(first_row=1, last_row=2, total_source_rows=2, next_row=None),
+        accepted=[one],
+        held=[dict(inventory=two, reason="Synthetic unresolved scope")],
+        new=1,
+    )
+
+
+def test_partition_is_exhaustive_disjoint_and_source_exact():
+    from energy_data_retrieval.hydro_catalogue.doed import validate_reviewed_batch
+
+    batch = reviewed_batch()
+    validate_reviewed_batch(batch)
+    for defect in ("missing", "duplicate", "changed", "cursor", "partition", "count"):
+        changed = copy.deepcopy(batch)
+        if defect == "missing":
+            changed["held"] = []
+        elif defect == "duplicate":
+            changed["held"].append(changed["accepted"][0])
+        elif defect == "changed":
+            changed["accepted"][0]["inventory"] = dict(
+                batch["accepted"][0]["inventory"], capacity_mw=9
+            )
+        elif defect == "cursor":
+            changed["partition"]["next_row"] = 3
+        elif defect == "partition":
+            changed["partition"]["first_row"] = 0
+        else:
+            changed["new"] = 2
+        with pytest.raises(ValueError):
+            validate_reviewed_batch(changed)
+
+
+def test_duplicate_name_outside_partition_is_not_accepted():
+    from energy_data_retrieval.hydro_catalogue.doed import validate_reviewed_batch
+
+    batch = reviewed_batch()
+    batch["parsed_inventory"][1]["name"] = batch["parsed_inventory"][0]["name"]
+    batch["partition"].update(last_row=1, next_row=2)
+    batch["held"] = []
+    with pytest.raises(ValueError, match="Duplicate source name"):
+        validate_reviewed_batch(batch)

@@ -1,5 +1,5 @@
 {
-  "reviewed_at": "2026-11-06T13:43:16.383080+00:00",
+  "reviewed_at": "2026-11-07T08:04:54.286422+00:00",
   "completed": [
     {
       "source": "wri-gppd-1.3.0",
@@ -471,6 +471,19 @@
       "new": 82,
       "held": 18,
       "cursor": "S No 100 complete; next 101; doed-20261106-0001-0100.json"
+    },
+    {
+      "source": "doed-construction-over1-20261107",
+      "partition": {
+        "first_row": 101,
+        "last_row": 200,
+        "next_row": 201,
+        "total_source_rows": 262
+      },
+      "new": 91,
+      "enriched": 0,
+      "held": 9,
+      "cursor": "S No 200 complete; next 201; doed-20261107-0101-0200.json. Prior 18 holds retained."
     }
   ],
   "next_sources": [
@@ -547,5 +560,5 @@
   ],
   "kengen_next_partition": "Resume African Hydropower Atlas Existing candidate screening after Excel row 242; EPRA registry remains blocked",
   "era_next_partition": "Rotate to Asia: review Nepal Department of Electricity Development generation licence inventory, starting hydropower construction licences; retain six ERA identity holds, Swam, Rushobe and Kisonko for follow-up.",
-  "next_partition": "Nepal DoED construction licences >1 MW: source S No 101–200, using frozen licence IDs and stored full source checksum; retain first-partition phase/name holds."
+  "next_partition": "Nepal DoED construction licences >1 MW: S No 201–262; retain 27 prior holds, especially Rolwaling duplicate licences 396/516 and cascade boundaries. Then rotate to Africa AHA Existing candidates after row 242."
 }

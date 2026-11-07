@@ -814,3 +814,43 @@ point coordinates are inferred. The shared viewer counts these records but
 excludes unresolved capacities and unmapped locations. See
 `nepal_doed_construction_hydro_2026` in the formal references and replay with
 `scripts/accept_hydro_doed.py` (optional `--html` source verification).
+
+
+## Nepal continuation: 7 November 2026
+
+The second DoED partition reviews **S No 101–200**, accepting **91 licensed
+project identities** and retaining **9 identity/scope holds**. Together with the
+previous partition, 173 DoED identities are accepted and 27 candidates remain
+held. Coverage is **7,395 records across 128 countries**, including **185 Nepal
+records**. The 7,304 prior canonical records and their timestamps are unchanged.
+
+The new capture reproduces all 262 normalized source rows. Its HTML checksum
+changed, so both capture checksums and retrieval times remain registered.
+The page explicitly says *Updated on — October 15, 2026*: new licensed-MW
+observations use **2026-10-15**, with individual measurement vintage unknown.
+This does not convert the raw licence issue/expiry calendar strings or establish
+current construction/operation. No licensed MW enters installed-capacity totals.
+
+Reviews compare full licence IDs, names, promoters, rivers, districts and source
+bounds. Separately named/licensed Daraudi B/C, Hongu and Budhi Gandaki projects
+retain distinct identities; shared infrastructure and aggregate capacity remain
+unresolved. Rolwaling's repeated name under licences 396/516 remains held, as do
+three explicit cascades and five historical-name/scope candidates. No fuzzy merge,
+parent link, plant centroid, pumping rating or storage energy is inferred.
+
+```bash
+uv run python scripts/accept_hydro_doed.py --batch catalogues/hydro/research/doed-20261107-0101-0200.json --html /path/to/doed-20261107.html
+```
+
+Omit `--html` for offline replay. With HTML, the capture checksum, full normalized
+inventory and page date must match. The importer also checks that partition
+decisions are exhaustive/disjoint, each decision reproduces the source row, and
+accepted names are not duplicated elsewhere in the full inventory. Both previous
+and new partitions replay without changing accepted records. Checksums and field
+completeness are in `research/doed-20261107-0101-0200-validation.json`.
+
+Attribution remains Nepal's Department of Electricity Development,
+`nepal_doed_construction_hydro_2026`. No open bulk-reuse licence is asserted;
+source-specific rights are not replaced by the repository software licence.
+Next: **DoED S No 201–262**, retaining all existing holds, then rotate back to
+African Hydropower Atlas Existing candidates after Excel row 242.
