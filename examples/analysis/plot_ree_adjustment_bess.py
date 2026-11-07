@@ -38,9 +38,7 @@ from energy_methods.grid_adjustment_bess import (
 # Published aggregate growth, not an observed hourly timeseries.
 # Sphinx-Gallery executes examples without setting __file__. Discover the
 # source-tree fixture from the invocation path or any ancestor, offline.
-script_path = Path(
-    globals().get("__file__", Path.cwd() / "plot_ree_adjustment_bess.py")
-).resolve()
+script_path = Path(globals().get("__file__", Path.cwd() / "plot_ree_adjustment_bess.py")).resolve()
 source_file = next(
     (
         candidate
