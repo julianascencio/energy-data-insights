@@ -1,0 +1,41 @@
+{
+  "source": "Open-Meteo / ECMWF IFS",
+  "model": "ecmwf_ifs",
+  "records": [
+    {
+      "site": "Arico",
+      "url": "https://api.open-meteo.com/v1/forecast?latitude=28.15&longitude=-16.43&start_date=2026-11-07&end_date=2026-11-11&hourly=shortwave_radiation%2Cwind_speed_120m&models=ecmwf_ifs&timezone=UTC&wind_speed_unit=ms",
+      "requested_latitude": 28.15,
+      "requested_longitude": -16.43,
+      "grid_latitude": 28.224955,
+      "grid_longitude": -16.409973,
+      "retrieved_at_utc": "2026-11-06T23:55:16.948818+00:00",
+      "sha256": "73c6be2d3374b8312a6caac95624402d58d98cea1862ce2e663ced5b71138f5c"
+    },
+    {
+      "site": "Granadilla",
+      "url": "https://api.open-meteo.com/v1/forecast?latitude=28.12&longitude=-16.58&start_date=2026-11-07&end_date=2026-11-11&hourly=shortwave_radiation%2Cwind_speed_120m&models=ecmwf_ifs&timezone=UTC&wind_speed_unit=ms",
+      "requested_latitude": 28.12,
+      "requested_longitude": -16.58,
+      "grid_latitude": 28.154655,
+      "grid_longitude": -16.493195,
+      "retrieved_at_utc": "2026-11-06T23:55:21.445347+00:00",
+      "sha256": "4fccdbd025b0f533a65a637cc2276e7238f9b2a5ac6340af8fa034dac7e39e71"
+    },
+    {
+      "site": "Buenavista",
+      "url": "https://api.open-meteo.com/v1/forecast?latitude=28.37&longitude=-16.85&start_date=2026-11-07&end_date=2026-11-11&hourly=shortwave_radiation%2Cwind_speed_120m&models=ecmwf_ifs&timezone=UTC&wind_speed_unit=ms",
+      "requested_latitude": 28.37,
+      "requested_longitude": -16.85,
+      "grid_latitude": 28.365553,
+      "grid_longitude": -16.855835,
+      "retrieved_at_utc": "2026-11-06T23:55:26.027260+00:00",
+      "sha256": "beb01cc8729b2f09d57f542e5455131c9ef73c9292162abf5a7f7de90bd89e7e"
+    }
+  ],
+  "model_initialization": "Not exposed by live API; retrieval time is NOT issue time",
+  "interval": "UTC start, one hour",
+  "event": "2026-11-07 through 2026-11-10 inclusive",
+  "reference": "pvlib Ineichen clear sky, sea level; steady 8 m/s hub-height wind",
+  "scope": "Representative locations, not measured production or island-wide totals"
+}

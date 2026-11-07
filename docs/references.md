@@ -7943,3 +7943,11 @@ Agencia Estatal Boletín Oficial del Estado (2026). **Anuncio del Área de Indus
 **Role:** data_source. Official administrative act; factual observations only. Procedural and physical boundaries retained.
 
 **Used by:** `catalogues/wind/sources.json`.
+
+### aemet_bruna_20261106
+
+Agencia Estatal de Meteorología (2026). **Nota informativa: Temporal de lluvias en Canarias y Península**. [Source](https://www.aemet.es/es/eltiempo/prediccion/destacados/p5_t?tipo=p53tesp1)
+
+**Role:** background. Bulletin retrieved 6 November 2026, issued 13:40. Bruna event context only, not quantitative generation data. Rolling bulletin URL may change.
+
+**Used by:** `examples/analysis/plot_bruna_impact_maps.py`, `examples/analysis/plot_bruna_tenerife.py`.
